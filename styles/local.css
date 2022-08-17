@@ -1,0 +1,293 @@
+
+ul{
+    list-style: none;
+}
+.header-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0px;
+    z-index: 5;
+}
+body{
+    position: relative;
+}
+.hero-outer-space{
+    position: relative;
+}
+.hero-outer-space::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(https://signarama-toronto.ca/wp-content/uploads/photo-gallery/xmas-17.jpg);
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(1);
+}
+body::after{
+    content: "SIGNARAMA TORONTO";
+    position: fixed;
+    font-size: 54px;
+    z-index: -1;
+    justify-content: center;
+    display: flex;
+    color: #fff;
+    background-color: #b62c26;
+    letter-spacing: 18px;
+    opacity: 0.03;
+    top: 0;
+    left: auto;
+    right: 0px;
+    -ms-writing-mode: tb-lr;
+    writing-mode: vertical-lr;
+    bottom: 0;
+    white-space: nowrap;
+    /* transform: rotate(90deg); */
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%), 0 2px 24px 2px rgb(0 0 0 / 4%);
+    font-family: 'Gelasio', serif;
+}
+.hero-wrapper {
+    min-height: 750px;
+}
+.project-completed-content {
+    
+    max-width: 90%;
+}
+.help-section-inner{
+    max-width: 90%;
+    margin: 0px auto;
+}
+.help-section-inner .help-section-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.help-section-wrapper{
+    padding: 35px 0px;
+}
+.help-section-inner .help-section-box > div{
+    max-width: 45%;
+    width: 100%;
+}
+.help-section-inner .help-section-box .help-context h1{
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+.help-section-inner .help-section-box .help-context p{
+    margin-bottom: 10px;
+}
+.help-section-inner .help-section-box .help-context p span a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+}
+.help-section-inner .help-section-box .help-context p.intro{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.mapframewrapper{
+    position: relative;
+    display: flex;
+    /* background-color: #f6f6f6; */
+    align-items: center;
+}
+.mapframewrapper > iframe{
+    position: absolute;
+    z-index: 2;
+    filter: grayscale(0.6);
+}
+.proud-of-inner ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.proud-of-inner ul li{
+    max-width: 22%;
+    width: 100%;
+}
+.proud-of-wrapper{
+    padding: 35px 0px;
+}
+.proud-of-wrapper .proud-of-inner{
+    max-width: 90%;
+    margin:0px auto;
+}
+.proud-of-inner ul li > img{
+    max-width: 90%;
+    margin: 0px auto;
+    display: block;
+    height: 65px;
+    object-fit: contain;
+}
+.compl-project {
+    max-width: 100%;
+}
+.login-info {
+    max-width: 50%;
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: -70px;
+}
+.about-page .login-info{
+    margin: 0px auto;
+    max-width: 580px;
+}
+.about-page .compl-number, .about-page .compl-project{
+    display: none;
+}
+.uplifted-content {
+    min-height: auto;
+    height: auto;
+    background-image: none;
+    margin: 0px 0px 0px 0px;
+    color: #ffffff;
+    padding: 20px 20px;
+    background-color: #333333;
+}
+.header-wrapper .header-inner{
+    max-width: 90%;
+    width: 100%;
+    margin: 0px auto;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: none;
+}
+.header-wrapper .header-inner.scrolled{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);
+}
+.hero-text .read-more{
+    position: inherit;
+}
+.menu > ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.menu > ul > li span{
+    cursor: pointer;
+}
+.menu > ul > li{
+    padding: 0px 15px;
+}
+.menu > ul > li .submenu{
+    display: none;
+}
+.header{
+    display: flex;
+    align-items: center;
+    padding: 5px 2px;
+    justify-content: space-between;
+}
+.logo{
+    max-width: 250px;
+    width: 100%;
+    line-height: 0px;
+}
+.footer-wrapper > .footer-inner{
+    max-width: 90%;
+    padding: 30px 0px;
+    background-color: #fff;
+    margin: 0px auto;
+}
+.footer-wrapper .footer-inner .footer-box-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer-heading h2{
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+.footer-inner .left-boxes{
+    max-width: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+footer.footer-wrapper > .footer-inner * {
+    color: #000;
+}
+.footer-inner .left-boxes > div{
+    max-width: 50%;
+    width: 100%;
+    padding-right: 20px;
+}
+ul.contactinformation > li:not(:last-child), ul.officehours > li:not(:last-child), ul.socialmedia > li:not(:last-child){
+    margin-bottom: 10px;
+}
+ul.contactinformation > li, ul.officehours > li{
+    font-size: 18px;
+}
+.credit-inner{
+    text-align: center;
+    padding: 20px 0px;
+}
+.credit-inner p{
+    font-size: 18px;
+}
+ul.socialmedia > li a{
+    font-size: 18px;
+}
+
+@media (max-width:1430px){
+    .project-completed-content{
+        flex-wrap: wrap;
+    }
+    .login-info{
+        margin-top: 20px;
+    }
+    .login-info{
+        max-width: 100%;
+    }
+    .wally-wrapper{
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+
+    }
+    .wally-wrapper > div, .rectangle-shape{
+        max-width: 100%;
+    }
+    .rectangle-shape::before {
+        
+        left: 0;
+        top: 0;
+        
+    }
+}
+
+@media (max-width:1023px){
+    .menu{
+      display: none;
+    }
+  }
+  
+  @media (max-width:767px){
+    .footer-inner .left-boxes{
+        flex-direction: column;
+        max-width: 100%;
+    }
+    .footer-inner .left-boxes > div{
+        max-width: 100%;
+    }
+    .hero-text{
+      padding: 0px 10px;
+    }
+    .hero-text h5{
+      font-size: 20px;
+      margin: 10px 0px;
+    }
+    .hero-text h1{
+      font-size: 32px;
+    }
+    .hero-wrapper{
+      min-height: 400px;
+    }
+  }

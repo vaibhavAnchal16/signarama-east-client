@@ -1,4 +1,4 @@
 const Signs = () => {
-  return <div> Signs</div>;
+  return <div> Signs page</div>;
 };
 export default Signs;
