@@ -1,7 +1,8 @@
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { LazyImage } from "./LazyImage";
+import LazyImage from "./LazyImage";
 
-export const Team = ({ title }) => {
+const Team = ({ title }) => {
   const teams = [
     {
       title: "Awnings",
@@ -273,3 +274,5 @@ export const Team = ({ title }) => {
     </section>
   );
 };
+
+export default Team;

@@ -1,6 +1,7 @@
+import React from "react";
 import { useState } from "react";
 
-export const ConnectForm = (props) => {
+const ConnectForm = (props) => {
   const [step, setStep] = useState(1);
   const manageForm = (e, type) => {
     e.preventDefault();
@@ -61,3 +62,5 @@ export const ConnectForm = (props) => {
     </div>
   );
 };
+
+export default ConnectForm;

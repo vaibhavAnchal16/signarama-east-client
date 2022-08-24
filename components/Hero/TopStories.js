@@ -1,6 +1,7 @@
-import { SliderWithMiniImage } from "../SliderWithMiniImage";
+import React from "react";
+import SliderWithMiniImage from "../SliderWithMiniImage";
 
-export const TopStories = () => {
+const TopStories = () => {
   return (
     <section className="top-stories">
       <div className="section-heading">
@@ -18,3 +19,5 @@ export const TopStories = () => {
     </section>
   );
 };
+
+export default TopStories;

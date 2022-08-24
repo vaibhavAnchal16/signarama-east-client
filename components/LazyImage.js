@@ -1,6 +1,7 @@
+import React from "react";
 import { useRouter } from "next/router";
 
-export const LazyImage = (props) => {
+const LazyImage = (props) => {
   const router = useRouter();
   return (
     <img
@@ -16,3 +17,5 @@ export const LazyImage = (props) => {
     />
   );
 };
+
+export default LazyImage;

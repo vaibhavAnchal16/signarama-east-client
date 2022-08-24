@@ -1,6 +1,5 @@
-import { ProjectsCompleted } from "./components/Hero/ProjectCompleted";
-import { LazyImage } from "./components/LazyImage";
-import { MapIframe } from "./components/MapIframe";
+import { Layout, LazyImage, MapIframe } from "../components";
+import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 
 const ContactUs = () => {
   return (
@@ -66,3 +65,7 @@ const ContactUs = () => {
   );
 };
 export default ContactUs;
+
+ContactUs.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

@@ -1,4 +1,5 @@
-export const ProudOf = ({ title }) => {
+import React from "react";
+const ProudOf = ({ title }) => {
   return (
     <div className="proud-of-wrapper">
       <div className="proud-of-inner">
@@ -44,3 +45,5 @@ export const ProudOf = ({ title }) => {
     </div>
   );
 };
+
+export default ProudOf;

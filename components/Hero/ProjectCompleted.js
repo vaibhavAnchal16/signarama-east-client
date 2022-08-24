@@ -1,6 +1,7 @@
-import { ConnectForm } from "../ConnectForm";
+import React from "react";
+import ConnectForm from "../ConnectForm";
 
-export const ProjectsCompleted = ({ className }) => {
+const ProjectsCompleted = ({ className }) => {
   return (
     <section className={`project-completed-wrapper ${className}`}>
       <div className="project-completed-content">
@@ -33,3 +34,5 @@ export const ProjectsCompleted = ({ className }) => {
     </section>
   );
 };
+
+export default ProjectsCompleted;

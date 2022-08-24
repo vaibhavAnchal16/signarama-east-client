@@ -1,7 +1,8 @@
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { LazyImage } from "../LazyImage";
+import LazyImage from "../LazyImage";
 const _ = require("lodash");
-export const Services = () => {
+const Services = () => {
   const items = [
     {
       title: "Awnings",
@@ -275,3 +276,5 @@ export const Services = () => {
     </section>
   );
 };
+
+export default Services;

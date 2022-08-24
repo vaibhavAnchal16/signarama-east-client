@@ -1,8 +1,9 @@
+import React from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { LazyImage } from "./LazyImage";
+import LazyImage from "./LazyImage";
 
-export const Header = () => {
+const Header = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -11,9 +12,13 @@ export const Header = () => {
       () => {
         let top = window.scrollY;
         if (top < 50) {
-          document.querySelector(".header-inner").classList.remove("scrolled");
+          document.querySelector(".header-inner") &&
+            document
+              .querySelector(".header-inner")
+              .classList.remove("scrolled");
         } else {
-          document.querySelector(".header-inner").classList.add("scrolled");
+          document.querySelector(".header-inner") &&
+            document.querySelector(".header-inner").classList.add("scrolled");
         }
       },
       false
@@ -129,3 +134,5 @@ export const Header = () => {
     </div>
   );
 };
+
+export default Header;

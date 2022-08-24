@@ -2,16 +2,14 @@ import "../styles/globals.css";
 import "../styles/local.css";
 import "../styles/form.css";
 import "../styles/blog.css";
+import "../styles/admin.css";
 import "@splidejs/react-splide/css";
 
-import Layout from "./components/Layout";
-
 function MyApp({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page);
+
+  return getLayout(<Component {...pageProps} />);
 }
 
 export default MyApp;

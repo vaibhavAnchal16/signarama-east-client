@@ -1,6 +1,7 @@
+import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-export const SliderWithMiniImage = () => {
+const SliderWithMiniImage = () => {
   const data = [
     {
       title: "Signarama Toronto put up a 300ft banner for M Downtown store",
@@ -73,3 +74,5 @@ export const SliderWithMiniImage = () => {
     </>
   );
 };
+
+export default SliderWithMiniImage;

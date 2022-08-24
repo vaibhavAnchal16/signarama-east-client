@@ -1,0 +1,36 @@
+ #adminlayout .admin-side-bar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    max-height: 100vh;
+    background-color: #f1f1f1;
+    max-width: 20%;
+    width: 100%;
+ }
+ #adminlayout .admin-content{
+    max-width: 80%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 10px 20px;
+ }
+ #adminlayout .admin-side-float{
+    /* padding: 10px 10px; */
+ }
+ #adminlayout .admin-side-float{
+    height: 100%;
+ }
+ #adminlayout .admin-side-float ul{
+    padding: 10px px;
+ }
+ #adminlayout .admin-side-float ul > li{
+    /* margin:10px 0px; */
+    padding: 10px 10px;
+    cursor: pointer;
+ }
+ #adminlayout .admin-side-float ul > li.active{
+    background-color: #000;
+    color: #fff;
+ }

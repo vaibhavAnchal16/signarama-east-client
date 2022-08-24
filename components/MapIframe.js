@@ -1,4 +1,5 @@
-export const MapIframe = () => {
+import React from "react";
+const MapIframe = () => {
   return (
     <iframe
       loading="lazy"
@@ -11,3 +12,5 @@ export const MapIframe = () => {
     ></iframe>
   );
 };
+
+export default MapIframe;

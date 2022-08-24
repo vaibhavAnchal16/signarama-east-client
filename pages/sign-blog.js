@@ -1,7 +1,45 @@
 import { BiSearchAlt } from "react-icons/bi";
-import { BlogCard } from "./components/BlogCard";
-
-const SignBlog = () => {
+import client from "../apollo-client";
+import { BlogCard, Layout } from "../components";
+import { BLOGS } from "../graphql/queries";
+const SignBlog = ({ blogs }) => {
+  return (
+    <>
+      <section className="sign-blogs-search-wrapper">
+        <section className="sign-blogs-search-inner">
+          <div className="section-heading">
+            <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
+              Blogs & <span className="highlighted">Stories </span>
+            </h1>
+            <p>
+              {" "}
+              Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,
+              CBRE, Triovest, SNC Lavalin and list goes on...
+            </p>
+          </div>
+          <form className="blog-search">
+            <div className="fields-wrapper fields-flex search">
+              <input type="text" placeholder="Search Signarama Blogs.." />
+              <button>
+                {" "}
+                <BiSearchAlt />
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+      <section className="sign-blogs-wrapper">
+        <section className="sign-blogs-inner">
+          {blogs?.map((blg, i) => (
+            <BlogCard key={i} title={blg?.title} image={blg?.image} />
+          ))}
+        </section>
+      </section>
+    </>
+  );
+};
+// This also gets called at build time
+export async function getServerSideProps({ params, query }) {
   const blogs = [
     {
       title: "Instacart Gets Their New Head Office Sign From Signarama Toronto",
@@ -198,40 +236,25 @@ const SignBlog = () => {
         "https://signarama-toronto.ca/wp-content/uploads/2020/10/image0-3-min.jpeg",
     },
   ];
+  const { data } = await client.query({
+    query: BLOGS,
+    variables: {
+      page: query?.page ? Number(query.page) : 1,
+      size: 12,
+    },
+  });
 
-  return (
-    <>
-      <section className="sign-blogs-search-wrapper">
-        <section className="sign-blogs-search-inner">
-          <div className="section-heading">
-            <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
-              Blogs & <span className="highlighted">Stories </span>
-            </h1>
-            <p>
-              {" "}
-              Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,
-              CBRE, Triovest, SNC Lavalin and list goes on...
-            </p>
-          </div>
-          <form className="blog-search">
-            <div className="fields-wrapper fields-flex search">
-              <input type="text" placeholder="Search Signarama Blogs.." />
-              <button>
-                {" "}
-                <BiSearchAlt />
-              </button>
-            </div>
-          </form>
-        </section>
-      </section>
-      <section className="sign-blogs-wrapper">
-        <section className="sign-blogs-inner">
-          {blogs?.map((blg, i) => (
-            <BlogCard key={i} title={blg?.title} image={blg?.image} />
-          ))}
-        </section>
-      </section>
-    </>
-  );
-};
+  // params contains the post `id`.
+  // If the route is like /posts/1, then params.id is 1
+  // const res = await fetch(`https://.../posts/${params.id}`);
+  // const post = await res.json();
+
+  // Pass post data to the page via props
+  return { props: { blogs: data?.blogs } };
+}
+
 export default SignBlog;
+
+SignBlog.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

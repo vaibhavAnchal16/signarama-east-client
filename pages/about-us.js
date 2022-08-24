@@ -1,8 +1,6 @@
-import { ClientLists } from "./components/ClientLists";
-import { ProjectsCompleted } from "./components/Hero/ProjectCompleted";
-import { Wally } from "./components/Hero/Wally";
-import { ProudOf } from "./components/ProudOf";
-import { Team } from "./components/Team";
+import { ClientLists, Layout, ProudOf, Team } from "../components";
+import ProjectsCompleted from "../components/Hero/ProjectCompleted";
+import Wally from "../components/Hero/Wally";
 
 const AboutUs = () => {
   return (
@@ -32,3 +30,7 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+AboutUs.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

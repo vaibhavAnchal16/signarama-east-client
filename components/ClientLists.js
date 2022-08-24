@@ -1,4 +1,5 @@
-export const ClientLists = ({ title }) => {
+import React from "react";
+const ClientLists = ({ title }) => {
   return (
     <section className="about-us">
       <div className="wally-wrapper">
@@ -28,3 +29,5 @@ export const ClientLists = ({ title }) => {
     </section>
   );
 };
+
+export default ClientLists;

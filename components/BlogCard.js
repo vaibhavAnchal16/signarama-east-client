@@ -1,8 +1,16 @@
-import { LazyImage } from "./LazyImage";
+import { useRouter } from "next/router";
+import React from "react";
+import LazyImage from "./LazyImage";
 
-export const BlogCard = ({ title, image }) => {
+const BlogCard = ({ title, image }) => {
+  const router = useRouter();
   return (
-    <div className="blog-card-wrapper">
+    <div
+      className="blog-card-wrapper"
+      onClick={(e) => {
+        router.push(`/blog/${title.replaceAll(" ", "-").toLowerCase()}`);
+      }}
+    >
       <div className="blog-card-inner">
         <div className="image">
           <LazyImage
@@ -26,3 +34,5 @@ export const BlogCard = ({ title, image }) => {
     </div>
   );
 };
+
+export default BlogCard;

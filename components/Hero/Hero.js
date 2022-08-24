@@ -1,6 +1,7 @@
+import React from "react";
 import Link from "next/link";
 
-export const Hero = () => {
+export default function Hero() {
   return (
     <div className="hero-outer-space">
       <div
@@ -22,4 +23,4 @@ export const Hero = () => {
       </div>
     </div>
   );
-};
+}

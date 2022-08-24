@@ -1,12 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Hero } from "./components/Hero/Hero";
-import { ProjectsCompleted } from "./components/Hero/ProjectCompleted";
-import { Services } from "./components/Hero/Services";
-import { TopStories } from "./components/Hero/TopStories";
-import { Wally } from "./components/Hero/Wally";
-import { ProudOf } from "./components/ProudOf";
-import { Team } from "./components/Team";
+import {
+  Hero,
+  Layout,
+  ProudOf,
+  Services,
+  Team,
+  TopStories,
+} from "../components";
+import ProjectsCompleted from "../components/Hero/ProjectCompleted";
+import Wally from "../components/Hero/Wally";
 
 export default function Home() {
   return (
@@ -27,3 +29,7 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};

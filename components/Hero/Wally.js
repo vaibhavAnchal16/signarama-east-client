@@ -1,4 +1,5 @@
-export const Wally = ({ title }) => {
+import React from "react";
+const Wally = ({ title }) => {
   return (
     <section className="about-us">
       <div className="wally-wrapper">
@@ -46,3 +47,5 @@ export const Wally = ({ title }) => {
     </section>
   );
 };
+
+export default Wally;

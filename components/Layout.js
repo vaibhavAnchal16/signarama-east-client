@@ -1,6 +1,6 @@
-import { Footer } from "./Footer";
-import { Header } from "./Header";
-import { TopBar } from "./TopBar";
+import React from "react";
+import Footer from "./Footer";
+import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
