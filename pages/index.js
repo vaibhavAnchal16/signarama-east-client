@@ -7,8 +7,10 @@ import {
   Team,
   TopStories,
 } from "../components";
+import { Process } from "../components/Hero/Process";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import Wally from "../components/Hero/Wally";
+import TestimonialSlider from "../components/TestimonialSlider";
 
 export default function Home() {
   return (
@@ -19,12 +21,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
-      <ProjectsCompleted className="home-page" />
-      <Wally title={true} />
       <Services />
 
+      <ProjectsCompleted className="home-page" />
+
       <TopStories />
+      <Wally title={true} />
       <ProudOf title={true} />
+      <TestimonialSlider />
       <Team title={false} />
     </div>
   );

@@ -46,3 +46,7 @@
     cursor: pointer;
     border-radius: 3px;
 }
+.fields-wrapper button.submit{
+    background-color: #b60521;
+    color: #fff;   
+}

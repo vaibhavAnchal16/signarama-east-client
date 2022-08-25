@@ -53,7 +53,11 @@ const ConnectForm = (props) => {
                 Previous
               </button>
             )}{" "}
-            <button type="button" onClick={(e) => manageForm(e, "NEXT")}>
+            <button
+              type="button"
+              className={step === 2 ? `submit` : ``}
+              onClick={(e) => manageForm(e, "NEXT")}
+            >
               {step === 1 ? `Next` : "Submit"}
             </button>
           </div>

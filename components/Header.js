@@ -12,13 +12,19 @@ const Header = () => {
       () => {
         let top = window.scrollY;
         if (top < 50) {
-          document.querySelector(".header-inner") &&
+          document.querySelector(".header-wrapper") &&
             document
-              .querySelector(".header-inner")
+              .querySelector(".header-wrapper")
               .classList.remove("scrolled");
         } else {
-          document.querySelector(".header-inner") &&
-            document.querySelector(".header-inner").classList.add("scrolled");
+          document.querySelector(".header-wrapper") &&
+            document.querySelector(".header-wrapper").classList.add("scrolled");
+        }
+
+        if (top < 250) {
+          document.querySelector("body").classList.remove("branding");
+        } else {
+          document.querySelector("body").classList.add("branding");
         }
       },
       false

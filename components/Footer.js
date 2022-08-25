@@ -1,4 +1,5 @@
 import React from "react";
+import { Wave } from "./Helpers/Icons";
 const Footer = () => {
   return (
     <div>
@@ -66,6 +67,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <Wave />
     </div>
   );
 };

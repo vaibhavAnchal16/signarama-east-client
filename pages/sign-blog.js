@@ -39,7 +39,7 @@ const SignBlog = ({ blogs }) => {
   );
 };
 // This also gets called at build time
-export async function getServerSideProps({ params, query }) {
+export async function getStaticProps({ params, query }) {
   const blogs = [
     {
       title: "Instacart Gets Their New Head Office Sign From Signarama Toronto",
@@ -236,13 +236,13 @@ export async function getServerSideProps({ params, query }) {
         "https://signarama-toronto.ca/wp-content/uploads/2020/10/image0-3-min.jpeg",
     },
   ];
-  const { data } = await client.query({
-    query: BLOGS,
-    variables: {
-      page: query?.page ? Number(query.page) : 1,
-      size: 12,
-    },
-  });
+  // const { data } = await client.query({
+  //   query: BLOGS,
+  //   variables: {
+  //     page: query?.page ? Number(query.page) : 1,
+  //     size: 12,
+  //   },
+  // });
 
   // params contains the post `id`.
   // If the route is like /posts/1, then params.id is 1
@@ -250,7 +250,7 @@ export async function getServerSideProps({ params, query }) {
   // const post = await res.json();
 
   // Pass post data to the page via props
-  return { props: { blogs: data?.blogs } };
+  return { props: { blogs } };
 }
 
 export default SignBlog;

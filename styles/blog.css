@@ -6,7 +6,7 @@
     justify-content: center;
 }
 .sign-blogs-search-wrapper .sign-blogs-search-inner{
-    max-width: 90%;
+    max-width: 1440px;
     margin: 0px auto;
     width: 100%;
 }
@@ -23,7 +23,7 @@
 .fields-wrapper.fields-flex button{
     width: 100%;
     max-width: 42px;
-    background-color: #c4312f;
+    background-color: #b60521;
     border: none;
     color: #fff;
     border-radius: 0px 3px 3px 0px;
@@ -35,7 +35,7 @@
 .sign-blogs-wrapper .sign-blogs-inner{
     display: flex;
     flex-direction: row-reverse;
-    max-width: 90%;
+    max-width: 1440px;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;

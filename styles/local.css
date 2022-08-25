@@ -7,14 +7,28 @@ ul{
     top: 0;
     left: 0;
     right: 0;
-    padding: 10px 0px;
+    padding: 10px 25px;
     z-index: 5;
+        box-shadow: 0 2px 5px rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);
 }
 body{
     position: relative;
 }
 .hero-outer-space{
     position: relative;
+    padding: 130px 0px 20px;
+    overflow: hidden;
+}
+.hero-outer-space > svg{
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    left: auto;
+    z-index: -1;
+    transform: rotate(90deg);
+}
+.hero-outer-space > svg > path{
+    fill: #b60521;
 }
 .hero-outer-space::after{
     content: "";
@@ -23,7 +37,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(https://signarama-toronto.ca/wp-content/uploads/photo-gallery/xmas-17.jpg);
+    /* background-image: url(https://signarama-toronto.ca/wp-content/uploads/photo-gallery/xmas-17.jpg); */
     z-index: -1;
     background-position: center;
     background-size: cover;
@@ -37,9 +51,10 @@ body::after{
     justify-content: center;
     display: flex;
     color: #fff;
-    background-color: #b62c26;
+    background-color:#f7e0e4;
     letter-spacing: 18px;
-    opacity: 0.03;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
     top: 0;
     left: auto;
     right: 0px;
@@ -51,15 +66,15 @@ body::after{
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%), 0 2px 24px 2px rgb(0 0 0 / 4%);
     font-family: 'Gelasio', serif;
 }
-.hero-wrapper {
-    min-height: 750px;
+body.branding::after{
+    opacity: 1;
 }
 .project-completed-content {
-    
-    max-width: 90%;
+    padding: 0px 25px;
+    max-width: 1440px;
 }
 .help-section-inner{
-    max-width: 90%;
+    max-width: 1440px;
     margin: 0px auto;
 }
 .help-section-inner .help-section-box{
@@ -114,11 +129,12 @@ body::after{
     padding: 35px 0px;
 }
 .proud-of-wrapper .proud-of-inner{
-    max-width: 90%;
+    max-width: 1440px;
     margin:0px auto;
+    padding: 0px 25px;
 }
 .proud-of-inner ul li > img{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0px auto;
     display: block;
     height: 65px;
@@ -133,7 +149,7 @@ body::after{
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    margin-top: -70px;
+    /* margin-top: -70px; */
 }
 .about-page .login-info{
     margin: 0px auto;
@@ -152,14 +168,17 @@ body::after{
     background-color: #333333;
 }
 .header-wrapper .header-inner{
-    max-width: 90%;
+    max-width: 1440px;
     width: 100%;
     margin: 0px auto;
     background-color: transparent;
     border-radius: 5px;
     box-shadow: none;
 }
-.header-wrapper .header-inner.scrolled{
+.header-wrapper.scrolled{
+    box-shadow: none;
+}
+.header-wrapper.scrolled .header-inner{
     background-color: #fff;
     box-shadow: 0 2px 5px rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);
 }
@@ -192,9 +211,8 @@ body::after{
     line-height: 0px;
 }
 .footer-wrapper > .footer-inner{
-    max-width: 90%;
-    padding: 30px 0px;
-    background-color: #fff;
+    max-width: 1440px;
+    padding: 30px 25px;
     margin: 0px auto;
 }
 .footer-wrapper .footer-inner .footer-box-inner{
@@ -287,7 +305,5 @@ ul.socialmedia > li a{
     .hero-text h1{
       font-size: 32px;
     }
-    .hero-wrapper{
-      min-height: 400px;
-    }
+    
   }
