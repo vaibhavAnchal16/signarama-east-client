@@ -1,51 +1,41 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { EditorState } from "draft-js";
+import createImagePlugin from "@draft-js-plugins/image";
 import dynamic from "next/dynamic";
-import { convertFromRaw, convertToRaw } from "draft-js";
-
+// import { convertFromRaw, convertToRaw } from "draft-js";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { imageUpload } from "./ImageUpload";
+import { convertToHTML } from "draft-convert";
 const Editor = dynamic(
   () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
   { ssr: false }
 );
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+const imagePlugin = createImagePlugin();
 
 const RichTextEditor = (props) => {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
+  const currentContentAsHTML = convertToHTML({
+    entityToHTML: (entity, originalText) => {
+      if (entity.type === "IMAGE") {
+        return `<img src="${entity.data.src}" />`;
+      }
+      return originalText;
+    },
+  })(editorState.getCurrentContent());
+
   const onEditorStateChange = (editorState) => {
     setEditorState(editorState);
-    props.handleContent(convertToRaw(editorState.getCurrentContent()));
+    props.handleContent(currentContentAsHTML);
   };
 
   const uploadImageCallBack = async (file) => {
-    console.log("HEYA", file);
-    const filename =
-      file?.name.split(".").slice(0, -1).join(".") + new Date().valueOf();
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", process.env.NEXT_PUBLIC_UPLOAD_PRESET);
-    formData.append("folder", "BLOGSIMAGES");
-    formData.append("public_id", filename);
-    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDNAME}/image/upload`;
-    try {
-      const response = await fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        body: formData, // body data type must match "Content-Type" header
-      });
-      const data = await response.json();
-      return {
-        data: {
-          link: data?.secure_url,
-        },
-      };
-    } catch (error) {
-      return error;
-    }
-
-    // const imgData = await apiClient.uploadInlineImageForArticle(file);
-    // return Promise.resolve({ data: {
-    //   link: `${process.env.NEXT_PUBLIC_API_URL}${imgData[0].formats.small.url}`
-    // }});
+    const url = await imageUpload(file, "BLOGSIMAGES");
+    return {
+      data: {
+        link: url,
+      },
+    };
   };
 
   return (
@@ -85,6 +75,7 @@ const RichTextEditor = (props) => {
             alt: { present: false, mandatory: false },
           },
         }}
+        plugins={[imagePlugin]}
       />
     </div>
   );

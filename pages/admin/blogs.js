@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { DropZone } from "../../components/Helpers/DropZone";
 import RichTextEditor from "../../components/Helpers/RichTextEditor";
+import { convertToHTML } from "draft-convert";
+import { useMutation } from "@apollo/client";
+import { CREATEBLOG } from "../../graphql/mutations";
+import { convertToRaw } from "draft-js";
 
 const Blogs = () => {
   const [action, setAction] = useState(null);
   const [value, setValue] = useState("");
   const [body, setBody] = useState("");
+  const [createblog] = useMutation(CREATEBLOG);
   const [image, setImage] = useState({
     preview: null,
   });
@@ -16,9 +21,7 @@ const Blogs = () => {
 
   useEffect(() => {
     document.querySelectorAll("input").forEach((el) => {
-      console.log(el);
       el.addEventListener("focus", function (e) {
-        console.log(e);
         e.currentTarget.style = "";
       });
     });
@@ -26,11 +29,6 @@ const Blogs = () => {
 
   const handleEditorContent = (content) => {
     setBody(content);
-
-    // this.setState({
-    //   body: content,
-    //   articleUpdated: true
-    // });
   };
 
   return (
@@ -39,19 +37,18 @@ const Blogs = () => {
         <div className="modal-form-wrapper ">
           <div className="modal-form-inner">
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const input = e.target;
                 if (input.title.value.trim() == "") {
                   input.title.style = "border: 1px solid red";
                   return;
                 }
-
-                console.log(input);
                 const inputValues = {
                   title: input.title.value.trim(),
                   description: body,
-                  seo: {
+                  featuredImage: image?.preview,
+                  seoData: {
                     seoTitle: input.seoTitle.value,
                     seoDescription: input.seoDescription.value,
                     seoType: input.seoType.value,
@@ -59,8 +56,18 @@ const Blogs = () => {
                     structuredData: input.structuredData.value,
                   },
                 };
-
-                console.log(inputValues);
+                try {
+                  const { data } = await createblog({
+                    variables: {
+                      ...inputValues,
+                    },
+                  });
+                  if (data) {
+                    resetForm();
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
               }}
             >
               <div className="modal-form-header">

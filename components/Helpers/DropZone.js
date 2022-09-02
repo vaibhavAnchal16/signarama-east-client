@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { imageUpload } from "./ImageUpload";
 
-export const DropZone = ({ file, setFile, text, types, setBlockSubmit }) => {
+export const DropZone = ({
+  file,
+  setFile,
+  text,
+  types,
+  setBlockSubmit,
+  folder,
+}) => {
   const [loading, setLoading] = useState(false);
   const { getRootProps, getInputProps } = useDropzone({
     acceptedFiles: "",
@@ -24,31 +32,12 @@ export const DropZone = ({ file, setFile, text, types, setBlockSubmit }) => {
         //   setBlockSubmit(false);
         return;
       }
-      console.log(file);
-      // const { data, error, loading } = await fileupload({
-      //   variables: {
-      //     file,
-      //   },
-      // });
-      // setLoading(loading);
-      // if (error) {
-      //   toast.error(error?.message);
-      //   setFile({
-      //     ...file,
-      //     error: error?.message,
-      //   });
-      //   setLoading(loading);
-      //   setBlockSubmit(false);
-      // }
-      // if (data?.singleUpload) {
-      //   setFile({
-      //     ...file,
-      //     preview: data?.singleUpload?.fileurl,
-      //     error: null,
-      //   });
-      //   setLoading(loading);
-      //   setBlockSubmit(false);
-      // }
+
+      const url = await imageUpload(file, "BLOGSIMAGES");
+      setFile({
+        preview: url,
+      });
+      setLoading(false);
     },
   });
 

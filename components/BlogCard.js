@@ -2,13 +2,13 @@ import { useRouter } from "next/router";
 import React from "react";
 import LazyImage from "./LazyImage";
 
-const BlogCard = ({ title, image }) => {
+const BlogCard = ({ title, image, slug }) => {
   const router = useRouter();
   return (
     <div
       className="blog-card-wrapper"
       onClick={(e) => {
-        router.push(`/blog/${title.replaceAll(" ", "-").toLowerCase()}`);
+        router.push(`/blog/${slug}`);
       }}
     >
       <div className="blog-card-inner">
@@ -17,7 +17,7 @@ const BlogCard = ({ title, image }) => {
             style={{ maxWidth: "100%", cursor: "pointer" }}
             src={image}
             alt={title}
-            link="/"
+            // link="/"
           />
         </div>
         <div className="context">

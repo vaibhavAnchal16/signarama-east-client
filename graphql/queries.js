@@ -18,3 +18,15 @@ export const BLOGS = gql`
     }
   }
 `;
+
+export const BLOG = gql`
+  query Blog($slug: String!) {
+    blog(slug: $slug) {
+      title
+      description
+      featuredImage
+      slug
+      seoData
+    }
+  }
+`;

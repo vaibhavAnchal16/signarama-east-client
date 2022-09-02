@@ -85,3 +85,24 @@
     font-size: 16px;
     font-weight: 100;
 }
+.blog-details{
+    padding: 110px 0px;
+}
+.blog-details .blog-content-box{
+    max-width: 768px;
+    margin: 0px auto;
+}
+.blog-content-box .blog-title{
+    font-size: 60px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+.blog-description > *{
+    margin: 15px 0px;
+}
+.blog-description > p{
+    font-size: 18px;
+}
+.blog-description figure, .blog-description figure img{
+    max-width: 100%;
+}
