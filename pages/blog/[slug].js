@@ -58,6 +58,7 @@ export async function getServerSideProps(context) {
       slug,
     },
   });
+  console.log(data);
   return { props: { blog: data?.blog } };
 }
 

@@ -1,20 +1,20 @@
 import { gql } from "@apollo/client";
 
 export const BLOGS = gql`
-  query Blogs($page: Int, $size: Int) {
-    blogs(page: $page, size: $size) {
-      title
-      description
-      featuredImage
-      blogCategory {
+  query Blogs($page: Int, $filters: JSON, $size: Int) {
+    blogs(page: $page, filters: $filters, size: $size) {
+      page
+      size
+      total
+      blogs {
+        _id
         title
         description
         featuredImage
         slug
         seoData
+        published
       }
-      slug
-      seoData
     }
   }
 `;
@@ -27,6 +27,7 @@ export const BLOG = gql`
       featuredImage
       slug
       seoData
+      published
     }
   }
 `;

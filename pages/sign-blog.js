@@ -49,11 +49,12 @@ export async function getServerSideProps({ params, query }) {
     query: BLOGS,
     variables: {
       page: query?.page ? Number(query.page) : 1,
-      size: 3,
+      size: 20,
     },
   });
+  console.log(data);
   // Pass post data to the page via props
-  return { props: { blogs: data?.blogs } };
+  return { props: { blogs: data?.blogs?.blogs } };
 }
 
 export default SignBlog;

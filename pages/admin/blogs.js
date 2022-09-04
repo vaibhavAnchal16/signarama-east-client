@@ -1,20 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { DropZone } from "../../components/Helpers/DropZone";
-import RichTextEditor from "../../components/Helpers/RichTextEditor";
-import { convertToHTML } from "draft-convert";
-import { useMutation } from "@apollo/client";
-import { CREATEBLOG } from "../../graphql/mutations";
-import { convertToRaw } from "draft-js";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATEBLOG, UPDATEBLOG } from "../../graphql/mutations";
+import { BLOGS } from "../../graphql/queries";
+import DataTable from "react-data-table-component";
+import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 
 const Blogs = () => {
+  const editorRef = useRef();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor, HtmlEmbed } = editorRef.current || {};
+
   const [action, setAction] = useState(null);
-  const [value, setValue] = useState("");
-  const [body, setBody] = useState("");
+  const [blockRichText, setBlockRichText] = useState(true);
+  const [description, setDescription] = useState("");
   const [createblog] = useMutation(CREATEBLOG);
+  const [updateblog] = useMutation(UPDATEBLOG);
+  const [page, setPage] = useState(1);
+  const [filters, setFilters] = useState({});
   const [image, setImage] = useState({
     preview: null,
   });
+  const size = 20;
+
+  const { data, loading, refetch } = useQuery(BLOGS, {
+    variables: {
+      page,
+      size,
+      filters,
+    },
+  });
+
   const resetForm = () => {
     setAction(null);
   };
@@ -27,9 +44,108 @@ const Blogs = () => {
     });
   }, [action]);
 
-  const handleEditorContent = (content) => {
-    setBody(content);
+  useEffect(() => {
+    editorRef.current = {
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
+
+  const MyCustomUploadAdapterPlugin = (editor) => {
+    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
+      return new MyUploadAdapter(loader);
+    };
   };
+
+  const custom_config = {
+    extraPlugins: [MyCustomUploadAdapterPlugin],
+    toolbar: {
+      items: [
+        "heading",
+        "|",
+        "bold",
+        "italic",
+        "link",
+        "bulletedList",
+        "numberedList",
+        "|",
+        "blockQuote",
+        "insertTable",
+        "|",
+        "imageUpload",
+        "undo",
+        "redo",
+      ],
+    },
+    table: {
+      contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    },
+  };
+
+  const columns = [
+    {
+      name: "Title",
+      selector: (row) => row.title,
+    },
+    {
+      name: "Status",
+      cell: (row) => <div>{row?.published ? `Published` : `Draft`}</div>,
+    },
+    {
+      name: "Actions",
+      cell: (row) => (
+        <button
+          onClick={(e) => {
+            setAction({
+              module: "edit",
+              data: {
+                ...row,
+              },
+            });
+            setImage({
+              preview: row?.featuredImage,
+            });
+            setDescription(row?.description);
+          }}
+        >
+          Edit{" "}
+        </button>
+      ),
+    },
+  ];
+
+  // const uploadAdapter = (loader) => {
+  //   return {
+  //     upload: async () => {
+  //       console.log(loader);
+  //       const file = loader?.file;
+
+  //       const url = await imageUpload(file, "BLOGSIMAGES");
+  //       return {
+  //         default: url,
+  //       };
+  //     },
+  //   };
+  // };
+
+  // const RichContentForm = () => {
+  //   return (
+  //     <div className="rich-content-form">
+  //       <div className="fields-wrapper">
+  //         <label> Title</label>
+  //         <input placeholder="Section Title" />
+  //       </div>
+  //       <div className="fields-wrapper">
+  //         <label> Section Description</label>
+  //         <textarea></textarea>
+  //       </div>
+  //       <div className="fields-wrapper">
+  //         <button> Add Image</button>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div>
@@ -46,7 +162,7 @@ const Blogs = () => {
                 }
                 const inputValues = {
                   title: input.title.value.trim(),
-                  description: body,
+                  description: description,
                   featuredImage: image?.preview,
                   seoData: {
                     seoTitle: input.seoTitle.value,
@@ -56,17 +172,37 @@ const Blogs = () => {
                     structuredData: input.structuredData.value,
                   },
                 };
-                try {
-                  const { data } = await createblog({
-                    variables: {
-                      ...inputValues,
-                    },
-                  });
-                  if (data) {
-                    resetForm();
+
+                if (action?.module === "add") {
+                  try {
+                    const { data } = await createblog({
+                      variables: {
+                        ...inputValues,
+                      },
+                    });
+                    if (data) {
+                      resetForm();
+                      refetch();
+                    }
+                  } catch (error) {
+                    console.log(error);
                   }
-                } catch (error) {
-                  console.log(error);
+                }
+                if (action?.module === "edit") {
+                  try {
+                    const { data } = await updateblog({
+                      variables: {
+                        id: action?.data?._id,
+                        ...inputValues,
+                      },
+                    });
+                    if (data) {
+                      resetForm();
+                      refetch();
+                    }
+                  } catch (error) {
+                    console.log(error);
+                  }
                 }
               }}
             >
@@ -77,12 +213,49 @@ const Blogs = () => {
               <div className="form-data">
                 <div className="fields-wrapper">
                   <label> Title</label>
-                  <input placeholder="Title" name="title" />
+                  <input
+                    placeholder="Title"
+                    name="title"
+                    defaultValue={action?.data?.title}
+                  />
                 </div>
 
                 <div className="fields-wrapper">
-                  <label> Description</label>
-                  <RichTextEditor handleContent={handleEditorContent} />
+                  <div className="rich-content-wrapper">
+                    {editorLoaded ? (
+                      <>
+                        {blockRichText ? (
+                          <CKEditor
+                            editor={ClassicEditor}
+                            config={custom_config}
+                            className="mt-3 wrap-ckeditor"
+                            data={description}
+                            onChange={(event, editor) => {
+                              const data = editor.getData();
+
+                              setDescription(data);
+                            }}
+                          />
+                        ) : (
+                          <>
+                            {" "}
+                            <textarea defaultValue={description} />
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      "loading..."
+                    )}
+                  </div>
+                </div>
+                <div className="fields-wrapper">
+                  <button
+                    type="button"
+                    onClick={(_) => setBlockRichText(!blockRichText)}
+                  >
+                    {" "}
+                    {blockRichText ? `Show Html` : `Show Advanced Editor`}
+                  </button>
                 </div>
 
                 <div className="fields-wrapper">
@@ -101,26 +274,43 @@ const Blogs = () => {
 
                 <div className="fields-wrapper">
                   <label> Seo Title</label>
-                  <input placeholder="Seo Title" name="seoTitle" />
+                  <input
+                    placeholder="Seo Title"
+                    name="seoTitle"
+                    defaultValue={action?.data?.seoData?.seoTitle ?? ""}
+                  />
                 </div>
 
                 <div className="fields-wrapper">
                   <label> Seo Description</label>
-                  <input placeholder="Seo Description" name="seoDescription" />
+                  <input
+                    placeholder="Seo Description"
+                    name="seoDescription"
+                    defaultValue={action?.data?.seoData?.seoDescription ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Seo Type</label>
-                  <input placeholder="Seo Type" name="seoType" />
+                  <input
+                    placeholder="Seo Type"
+                    name="seoType"
+                    defaultValue={action?.data?.seoData?.seoType ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Seo Tags</label>
-                  <input placeholder="Seo Tags" name="seoTags" />
+                  <input
+                    placeholder="Seo Tags"
+                    name="seoTags"
+                    defaultValue={action?.data?.seoData?.seoTags ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Structured Data</label>
                   <textarea
                     placeholder="Structured Data"
                     name="structuredData"
+                    defaultValue={action?.data?.seoData?.structuredData ?? ""}
                   />
                 </div>
               </div>
@@ -152,9 +342,8 @@ const Blogs = () => {
           Add Blog
         </button>
       </div>
-
-      <div className="admin-content">
-        <div></div>
+      <div>
+        <DataTable data={data?.blogs?.blogs} columns={columns} />
       </div>
     </div>
   );
