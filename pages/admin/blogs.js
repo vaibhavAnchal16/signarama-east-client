@@ -115,38 +115,6 @@ const Blogs = () => {
     },
   ];
 
-  // const uploadAdapter = (loader) => {
-  //   return {
-  //     upload: async () => {
-  //       console.log(loader);
-  //       const file = loader?.file;
-
-  //       const url = await imageUpload(file, "BLOGSIMAGES");
-  //       return {
-  //         default: url,
-  //       };
-  //     },
-  //   };
-  // };
-
-  // const RichContentForm = () => {
-  //   return (
-  //     <div className="rich-content-form">
-  //       <div className="fields-wrapper">
-  //         <label> Title</label>
-  //         <input placeholder="Section Title" />
-  //       </div>
-  //       <div className="fields-wrapper">
-  //         <label> Section Description</label>
-  //         <textarea></textarea>
-  //       </div>
-  //       <div className="fields-wrapper">
-  //         <button> Add Image</button>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
   return (
     <div>
       {action && (

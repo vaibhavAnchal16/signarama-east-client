@@ -223,12 +223,23 @@ const Team = ({ title }) => {
 
   const options = {
     type: "loop",
-    perPage: 6,
+    perPage: 5,
     pagination: false,
     arrows: false,
     autoplay: true,
     pauseOnHover: true,
     interval: 3000,
+    breakpoints: {
+      1400: {
+        perPage: 4,
+      },
+      767: {
+        perPage: 2,
+      },
+      416: {
+        perPage: 1,
+      },
+    },
   };
   return (
     <section className="team-wrapper">

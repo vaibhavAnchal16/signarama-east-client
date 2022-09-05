@@ -230,6 +230,20 @@ const Services = () => {
     autoplay: true,
     pauseOnHover: true,
     interval: 3000,
+    breakpoints: {
+      1400: {
+        perPage: 4,
+      },
+      1200: {
+        perPage: 3,
+      },
+      767: {
+        perPage: 2,
+      },
+      416: {
+        perPage: 1,
+      },
+    },
   };
   return (
     <section className="services-wrapper">

@@ -21,6 +21,7 @@
     "react-dom": "^18.0.0",
     "react-dropzone": "^14.2.2",
     "react-icons": "^4.4.0",
+    "react-select": "^5.4.0",
     "sanitize-html": "^2.7.1"
   },
   "devDependencies": {

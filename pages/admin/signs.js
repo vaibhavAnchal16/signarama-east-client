@@ -1,15 +1,46 @@
+import { useEffect, useRef, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
-import { useEffect, useState } from "react";
 import { DropZone } from "../../components/Helpers/DropZone";
-import RichTextEditor from "../../components/Helpers/RichTextEditor";
+import { useMutation, useQuery } from "@apollo/client";
+import { CREATESIGN, UPDATESIGN } from "../../graphql/mutations";
+import Select from "react-select";
+import { GALLERYIDS, SIGNS } from "../../graphql/queries";
+import DataTable from "react-data-table-component";
+import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
+import { SignTypes } from "../../components/Helpers/StaticData";
 
 const Signs = () => {
+  const editorRef = useRef();
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  const { CKEditor, ClassicEditor, HtmlEmbed } = editorRef.current || {};
   const [action, setAction] = useState(null);
-  const [value, setValue] = useState("");
-  const [body, setBody] = useState("");
+  const [blockRichText, setBlockRichText] = useState(true);
+  const [signTypeSelected, setSignTypeSelected] = useState("");
+  const [description, setDescription] = useState("");
+  const [gallerySelected, setGallerySelected] = useState(null);
+  const [createsign] = useMutation(CREATESIGN);
+  const [updatesign] = useMutation(UPDATESIGN);
+  const [page, setPage] = useState(1);
+  const [filters, setFilters] = useState({});
+
   const [image, setImage] = useState({
     preview: null,
   });
+  const size = 20;
+
+  const { data, loading, refetch } = useQuery(SIGNS, {
+    variables: {
+      page,
+      size,
+      filters,
+    },
+  });
+
+  const galleries = useQuery(GALLERYIDS, {
+    page: null,
+    size: null,
+  });
+
   const resetForm = () => {
     setAction(null);
   };
@@ -22,9 +53,83 @@ const Signs = () => {
     });
   }, [action]);
 
-  const handleEditorContent = (content) => {
-    setBody(content);
+  useEffect(() => {
+    editorRef.current = {
+      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
+      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+    };
+    setEditorLoaded(true);
+  }, []);
+
+  const MyCustomUploadAdapterPlugin = (editor) => {
+    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
+      return new MyUploadAdapter(loader);
+    };
   };
+
+  const custom_config = {
+    extraPlugins: [MyCustomUploadAdapterPlugin],
+    toolbar: {
+      items: [
+        "heading",
+        "|",
+        "bold",
+        "italic",
+        "link",
+        "bulletedList",
+        "numberedList",
+        "|",
+        "blockQuote",
+        "insertTable",
+        "|",
+        "imageUpload",
+        "undo",
+        "redo",
+      ],
+    },
+    table: {
+      contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    },
+  };
+
+  const columns = [
+    {
+      name: "Title",
+      selector: (row) => row.title,
+    },
+    {
+      name: "Status",
+      cell: (row) => <div>{row?.published ? `Published` : `Draft`}</div>,
+    },
+    {
+      name: "Actions",
+      cell: (row) => (
+        <button
+          onClick={(e) => {
+            setAction({
+              module: "edit",
+              data: {
+                ...row,
+              },
+            });
+            setImage({
+              preview: row?.featuredImage,
+            });
+            setSignTypeSelected(row?.type);
+            setDescription(row?.description);
+            if (row?.gallery) {
+              setGallerySelected({
+                label: row?.gallery?.title,
+                value: row?.gallery?._id,
+              });
+            }
+          }}
+        >
+          Edit{" "}
+        </button>
+      ),
+    },
+  ];
 
   return (
     <div>
@@ -32,7 +137,7 @@ const Signs = () => {
         <div className="modal-form-wrapper ">
           <div className="modal-form-inner">
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
                 const input = e.target;
                 if (input.title.value.trim() == "") {
@@ -40,19 +145,52 @@ const Signs = () => {
                   return;
                 }
 
-                const SignValues = {
+                const inputValues = {
                   title: input.title.value.trim(),
-                  description: body,
-                  seo: {
+                  description: description,
+                  type: signTypeSelected,
+                  featuredImage: image?.preview,
+                  seoData: {
                     seoTitle: input.seoTitle.value,
                     seoDescription: input.seoDescription.value,
                     seoType: input.seoType.value,
                     seoTags: input.seoTags.value,
                     structuredData: input.structuredData.value,
                   },
+                  gallery: gallerySelected?.value,
                 };
-                resetForm();
-                console.log(SignValues);
+
+                if (action?.module === "add") {
+                  try {
+                    const { data } = await createsign({
+                      variables: {
+                        ...inputValues,
+                      },
+                    });
+                    if (data) {
+                      resetForm();
+                      refetch();
+                    }
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }
+                if (action?.module === "edit") {
+                  try {
+                    const { data } = await updatesign({
+                      variables: {
+                        id: action?.data?._id,
+                        ...inputValues,
+                      },
+                    });
+                    if (data) {
+                      resetForm();
+                      refetch();
+                    }
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }
               }}
             >
               <div className="modal-form-header">
@@ -62,12 +200,52 @@ const Signs = () => {
               <div className="form-data">
                 <div className="fields-wrapper">
                   <label> Title</label>
-                  <input placeholder="Title" name="title" />
+                  <input
+                    placeholder="Title"
+                    name="title"
+                    defaultValue={action?.data?.title}
+                  />
                 </div>
 
                 <div className="fields-wrapper">
-                  <label> Description</label>
-                  <RichTextEditor handleContent={handleEditorContent} />
+                  <div className="rich-content-wrapper">
+                    {editorLoaded ? (
+                      <>
+                        {blockRichText ? (
+                          <CKEditor
+                            editor={ClassicEditor}
+                            config={custom_config}
+                            className="mt-3 wrap-ckeditor"
+                            data={description}
+                            onChange={(event, editor) => {
+                              const data = editor.getData();
+
+                              setDescription(data);
+                            }}
+                          />
+                        ) : (
+                          <>
+                            {" "}
+                            <textarea
+                              defaultValue={description}
+                              onChange={(e) => {
+                                setDescription(e.currentTarget.value);
+                              }}
+                            />
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      "loading..."
+                    )}
+                    <button
+                      type="button"
+                      onClick={(_) => setBlockRichText(!blockRichText)}
+                    >
+                      {" "}
+                      {blockRichText ? `Show Html` : `Show Advanced Editor`}
+                    </button>
+                  </div>
                 </div>
 
                 <div className="fields-wrapper">
@@ -79,6 +257,47 @@ const Signs = () => {
                   />
                 </div>
 
+                <div className="fields-wrapper">
+                  <label> Select Image Gallery</label>
+
+                  <Select
+                    options={galleries?.data?.galleries?.galleries?.map(
+                      (gallery) => {
+                        return {
+                          label: gallery?.title,
+                          value: gallery?._id,
+                        };
+                      }
+                    )}
+                    value={gallerySelected}
+                    onChange={(_) => setGallerySelected(_)}
+                    placeholder="Select Image Gallery"
+                    className="custom-select"
+                  />
+                </div>
+
+                <div className="fields-wrapper">
+                  <label> Type of Sign</label>
+
+                  <div className="signtypesselector">
+                    {SignTypes?.map((sign, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`${
+                          sign === signTypeSelected ? `active` : ``
+                        }`}
+                        onClick={(e) => {
+                          setSignTypeSelected(sign);
+                        }}
+                      >
+                        {" "}
+                        {sign}{" "}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 {/* title,description,type,tags*/}
                 <div className="form-inner-headings">
                   <h2> SEO Data</h2>
@@ -86,26 +305,43 @@ const Signs = () => {
 
                 <div className="fields-wrapper">
                   <label> Seo Title</label>
-                  <input placeholder="Seo Title" name="seoTitle" />
+                  <input
+                    placeholder="Seo Title"
+                    name="seoTitle"
+                    defaultValue={action?.data?.seoData?.seoTitle ?? ""}
+                  />
                 </div>
 
                 <div className="fields-wrapper">
                   <label> Seo Description</label>
-                  <input placeholder="Seo Description" name="seoDescription" />
+                  <input
+                    placeholder="Seo Description"
+                    name="seoDescription"
+                    defaultValue={action?.data?.seoData?.seoDescription ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Seo Type</label>
-                  <input placeholder="Seo Type" name="seoType" />
+                  <input
+                    placeholder="Seo Type"
+                    name="seoType"
+                    defaultValue={action?.data?.seoData?.seoType ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Seo Tags</label>
-                  <input placeholder="Seo Tags" name="seoTags" />
+                  <input
+                    placeholder="Seo Tags"
+                    name="seoTags"
+                    defaultValue={action?.data?.seoData?.seoTags ?? ""}
+                  />
                 </div>
                 <div className="fields-wrapper">
                   <label> Structured Data</label>
                   <textarea
                     placeholder="Structured Data"
                     name="structuredData"
+                    defaultValue={action?.data?.seoData?.structuredData ?? ""}
                   />
                 </div>
               </div>
@@ -134,12 +370,11 @@ const Signs = () => {
           }
         >
           {" "}
-          Add Signs
+          Add Sign
         </button>
       </div>
-
-      <div className="admin-content">
-        <div></div>
+      <div>
+        <DataTable data={data?.signs?.signs} columns={columns} />
       </div>
     </div>
   );

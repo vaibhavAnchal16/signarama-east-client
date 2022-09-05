@@ -89,6 +89,9 @@
    background-color: #b60521;
    color: #fff;
  }
+ .modal-form-footer > button[type=submit]:disabled{
+  background-color: #f1f1f1;
+ }
  .modal-form-footer > button:not(:last-child){
    margin-right: 10px;
  }

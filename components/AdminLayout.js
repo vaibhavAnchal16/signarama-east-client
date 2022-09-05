@@ -22,6 +22,10 @@ export default function AdminLayout({ children }) {
       name: "Manage Blogs",
       link: "/admin/blogs",
     },
+    {
+      name: "Image Galleries",
+      link: "/admin/galleries",
+    },
   ];
 
   const handleClick = (e) => {

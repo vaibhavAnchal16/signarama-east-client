@@ -46,11 +46,59 @@ const Header = () => {
       subMenu: null,
     },
     {
-      name: "Store Front",
+      name: "Signs",
       link: null,
       subMenu: [
         {
           name: "First Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
+          link: "/",
+        },
+        {
+          name: "Second Item",
           link: "/",
         },
         {
@@ -92,7 +140,23 @@ const Header = () => {
             <ul>
               {menu?.map((menuItem, i) => {
                 return (
-                  <li key={i}>
+                  <li
+                    key={i}
+                    onMouseOver={(e) => {
+                      if (menuItem?.subMenu) {
+                        e.currentTarget
+                          .querySelector(".submenu")
+                          .classList.add("open");
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (menuItem?.subMenu) {
+                        e.currentTarget
+                          .querySelector(".submenu")
+                          .classList.remove("open");
+                      }
+                    }}
+                  >
                     <span
                       onClick={handleClick}
                       // onClick={(_) => {
@@ -106,7 +170,14 @@ const Header = () => {
                       {menuItem?.name}
                     </span>
                     {menuItem?.subMenu ? (
-                      <div className="submenu">
+                      <div
+                        className="submenu open"
+                        onMouseOver={(e) => {
+                          if (menuItem?.subMenu) {
+                            e.currentTarget.classList.add("open");
+                          }
+                        }}
+                      >
                         <ul>
                           {menuItem?.subMenu?.map((smenu, index) => (
                             <li key={index}>
