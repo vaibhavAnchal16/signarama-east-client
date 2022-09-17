@@ -1,25 +1,7 @@
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-const SliderWithMiniImage = () => {
-  const data = [
-    {
-      title: "Signarama Toronto put up a 300ft banner for M Downtown store",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/2018/04/hotstory-1.jpg",
-    },
-    {
-      title:
-        "Victory café got their new illuminated channel letters sign for their re-opening",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/2017/10/victoriacafe.jpg",
-    },
-    {
-      title: "Remax re-brands itself with help from Signarama Toronto",
-      image:
-        " https://signarama-toronto.ca/wp-content/uploads/2018/04/remax.jpg",
-    },
-  ];
+const SliderWithMiniImage = ({ trending }) => {
   const options = {
     type: "loop",
     perPage: 1,
@@ -37,13 +19,13 @@ const SliderWithMiniImage = () => {
         aria-label="My Favorite Images"
         options={options}
       >
-        {data?.map((item, i) => {
+        {trending?.map((item, i) => {
           return (
             <SplideSlide className="outer-slide-story" key={i}>
               <div className="carousel-wrapper">
                 <div
                   className="carousel-bg-image"
-                  style={{ backgroundImage: `url(${item?.image})` }}
+                  style={{ backgroundImage: `url(${item?.featuredImage})` }}
                 >
                   {" "}
                 </div>
@@ -56,7 +38,7 @@ const SliderWithMiniImage = () => {
             className="u-expanded-width u-image u-image-contain u-image-default u-image-1"
           /> */}
                       <img
-                        src={item?.image}
+                        src={item?.featuredImage}
                         alt=""
                         className="u-border-16 u-border-palette-5-base u-image u-image-default u-image-2"
                       />

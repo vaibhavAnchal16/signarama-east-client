@@ -253,7 +253,7 @@ body.branding::after {
     max-width: 768px;
     width: 100%;
     background-color: #fff;
-    padding: 25px 25px;
+    padding: 8px 16px;
     border-radius: 15px;
     box-shadow: 0 2px 5px
     rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);

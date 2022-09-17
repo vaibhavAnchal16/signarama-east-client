@@ -11,10 +11,12 @@ const Blogs = () => {
   const editorRef = useRef();
   const [editorLoaded, setEditorLoaded] = useState(false);
   const { CKEditor, ClassicEditor, HtmlEmbed } = editorRef.current || {};
-
   const [action, setAction] = useState(null);
   const [blockRichText, setBlockRichText] = useState(true);
   const [description, setDescription] = useState("");
+  const [published, setPublished] = useState(true);
+  const [trending, setTrending] = useState(false);
+  const [recentWork, setRecentWork] = useState(false);
   const [createblog] = useMutation(CREATEBLOG);
   const [updateblog] = useMutation(UPDATEBLOG);
   const [page, setPage] = useState(1);
@@ -106,6 +108,9 @@ const Blogs = () => {
             setImage({
               preview: row?.featuredImage,
             });
+            setPublished(row?.published);
+            setRecentWork(row?.recentWork);
+            setTrending(row?.trending);
             setDescription(row?.description);
           }}
         >
@@ -139,6 +144,9 @@ const Blogs = () => {
                     seoTags: input.seoTags.value,
                     structuredData: input.structuredData.value,
                   },
+                  published,
+                  trending,
+                  recentWork,
                 };
 
                 if (action?.module === "add") {
@@ -233,6 +241,34 @@ const Blogs = () => {
                     setFile={setImage}
                     types={["jpeg", "png", "jpg"]}
                   />
+                </div>
+                <div className="fields-wrapper">
+                  <div className="signtypesselector">
+                    <button
+                      onClick={(_) => setPublished(!published)}
+                      type="button"
+                      className={published ? `active` : ``}
+                    >
+                      {" "}
+                      Published
+                    </button>
+                    <button
+                      onClick={(_) => setTrending(!trending)}
+                      type="button"
+                      className={trending ? `active` : ``}
+                    >
+                      {" "}
+                      Trending Story
+                    </button>
+                    <button
+                      type="button"
+                      onClick={(_) => setRecentWork(!recentWork)}
+                      className={recentWork ? `active` : ``}
+                    >
+                      {" "}
+                      Add to recent work section.
+                    </button>
+                  </div>
                 </div>
 
                 {/* title,description,type,tags*/}

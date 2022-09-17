@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import LazyImage from "./LazyImage";
+import client from "../apollo-client";
+import { SIGNS } from "../graphql/queries";
 
 const Header = () => {
   const router = useRouter();
-
+  const [signs, setSigns] = useState([]);
   useEffect(() => {
     window.addEventListener(
       "scroll",
@@ -31,6 +33,20 @@ const Header = () => {
     );
   });
 
+  useEffect(() => {
+    (async () => {
+      const { data } = await client.query({
+        query: SIGNS,
+        variables: {
+          page: null,
+          size: null,
+          filters: null,
+        },
+      });
+      setSigns(data?.signs?.signs);
+    })();
+  }, []);
+
   const handleClick = (e) => {
     e.preventDefault();
     const href = e.currentTarget.getAttribute("href");
@@ -48,64 +64,7 @@ const Header = () => {
     {
       name: "Signs",
       link: null,
-      subMenu: [
-        {
-          name: "First Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-        {
-          name: "Second Item",
-          link: "/",
-        },
-      ],
+      subMenu: signs,
     },
     {
       name: "Blogs",
@@ -181,18 +140,9 @@ const Header = () => {
                         <ul>
                           {menuItem?.subMenu?.map((smenu, index) => (
                             <li key={index}>
-                              <span
-                                href={smenu?.link}
-                                onClick={handleClick}
-                                // onClick={(_) => {
-                                //   if (smenu?.link) {
-                                //     router.push(smenu?.link);
-                                //   }
-                                //   return;
-                                // }}
-                              >
+                              <span href={smenu?.slug} onClick={handleClick}>
                                 {" "}
-                                {smenu?.name}{" "}
+                                {smenu?.title}{" "}
                               </span>{" "}
                             </li>
                           ))}

@@ -14,6 +14,8 @@ export const BLOGS = gql`
         slug
         seoData
         published
+        trending
+        recentWork
       }
     }
   }
@@ -117,6 +119,17 @@ export const GALLERIES = gql`
         description
         images
       }
+    }
+  }
+`;
+
+export const GALLERYBYTITLE = gql`
+  query GalleryByName($title: String!) {
+    galleryByName(title: $title) {
+      _id
+      title
+      description
+      images
     }
   }
 `;

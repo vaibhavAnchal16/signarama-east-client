@@ -5,12 +5,18 @@ export const CREATEBLOG = gql`
     $description: String!
     $featuredImage: String
     $seoData: JSON
+    $published: Boolean
+    $trending: Boolean
+    $recentWork: Boolean
   ) {
     createBlog(
       title: $title
       description: $description
       featuredImage: $featuredImage
       seoData: $seoData
+      published: $published
+      trending: $trending
+      recentWork: $recentWork
     ) {
       title
     }
@@ -25,6 +31,9 @@ export const UPDATEBLOG = gql`
     $featuredImage: String
     $seoData: JSON
     $blogCategory: [ID]
+    $published: Boolean
+    $trending: Boolean
+    $recentWork: Boolean
   ) {
     updateBlog(
       _id: $id
@@ -33,6 +42,9 @@ export const UPDATEBLOG = gql`
       featuredImage: $featuredImage
       seoData: $seoData
       blogCategory: $blogCategory
+      published: $published
+      trending: $trending
+      recentWork: $recentWork
     ) {
       _id
     }

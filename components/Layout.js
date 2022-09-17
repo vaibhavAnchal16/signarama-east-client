@@ -1,4 +1,6 @@
 import React from "react";
+import client from "../apollo-client";
+import { SIGNS } from "../graphql/queries";
 import Footer from "./Footer";
 import Header from "./Header";
 

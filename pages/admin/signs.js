@@ -43,6 +43,11 @@ const Signs = () => {
 
   const resetForm = () => {
     setAction(null);
+    setGallerySelected(null);
+    setSignTypeSelected("");
+    setImage({
+      preview: null,
+    });
   };
 
   useEffect(() => {

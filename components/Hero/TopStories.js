@@ -1,7 +1,7 @@
 import React from "react";
 import SliderWithMiniImage from "../SliderWithMiniImage";
 
-const TopStories = () => {
+const TopStories = ({ trending }) => {
   return (
     <section className="top-stories">
       <div className="section-heading">
@@ -15,7 +15,7 @@ const TopStories = () => {
           would best suit your requirements.
         </p>
       </div>
-      <SliderWithMiniImage />
+      <SliderWithMiniImage trending={trending} />
     </section>
   );
 };

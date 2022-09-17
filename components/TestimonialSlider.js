@@ -2,7 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { HalfCircle, HalfCurve } from "./Helpers/Icons";
 
-const TestimonialSlider = () => {
+const TestimonialSlider = ({ testimonials }) => {
   const data = [
     {
       title: "Signarama Toronto put up a 300ft banner for M Downtown store",
@@ -40,11 +40,11 @@ const TestimonialSlider = () => {
     <div className="testimonial-slider-wrapper">
       <HalfCircle />
       <Splide className="testimonial-slider" options={options}>
-        {data?.map((item, i) => {
+        {testimonials?.images?.map((item, i) => {
           return (
             <SplideSlide className="outer-slide-testimonial" key={i}>
               <div className="inner-slide-testimonial">
-                <img src={item?.image} style={{ maxWidth: "100%" }} />
+                <img src={item} style={{ maxWidth: "100%" }} />
               </div>
             </SplideSlide>
           );
