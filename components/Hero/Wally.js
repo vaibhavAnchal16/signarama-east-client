@@ -42,6 +42,28 @@ const Wally = ({ title }) => {
               best suit your requirements.
             </p>
           </div>
+          <div className="wally-section">
+            <img src="//res.cloudinary.com/signaramatoronto/image/upload/f_auto/STATICASSETS/wally_dult3v.png" />
+            <div className="designation">
+              <div>
+                {" "}
+                <div className="nameandlinked">
+                  <span>Wally Tomaszek</span>
+                  <span>
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/company/sign-a-rama-toronto/"
+                    >
+                      <img src="//res.cloudinary.com/signaramatoronto/image/upload/f_auto/STATICASSETS/linkedin-icon_cparra.png" />{" "}
+                    </a>
+                  </span>
+                </div>
+                <span className="wally-desig">
+                  General Manager Signarama Toronto
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

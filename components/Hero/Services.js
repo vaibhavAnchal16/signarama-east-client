@@ -54,14 +54,16 @@ const Services = ({ signs }) => {
                   {item?.map((inerslides, index) => (
                     <Link href={`/${inerslides?.slug}`} key={index}>
                       <div className="inner-slide">
-                        <LazyImage
-                          src={inerslides?.featuredImage}
-                          style={{
-                            maxWidth: "100%",
-                            width: "100%",
-                            cursor: "pointer",
-                          }}
-                        />
+                        <div style={{ overflow: "hidden" }}>
+                          <LazyImage
+                            src={inerslides?.featuredImage}
+                            style={{
+                              maxWidth: "100%",
+                              width: "100%",
+                              cursor: "pointer",
+                            }}
+                          />
+                        </div>
                         <p> {inerslides?.title}</p>
                       </div>
                     </Link>

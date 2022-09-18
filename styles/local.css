@@ -3,11 +3,11 @@ ul {
 }
 
 .header-wrapper {
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     padding: 10px 25px;
+    background-color: #fff;
     z-index: 5;
     box-shadow: 0 2px 5px rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);
 }
@@ -18,7 +18,7 @@ body {
 
 .hero-outer-space {
     position: relative;
-    padding: 130px 0px 20px;
+    padding: 0px 0px 20px;
     overflow: hidden;
 }
 
@@ -27,6 +27,7 @@ body {
     top: -2px;
     right: -4px;
     left: auto;
+    display: none;
     z-index: -1;
     transform: rotate(90deg);
 }
@@ -169,6 +170,7 @@ body.branding::after {
 }
 
 .login-info {
+    box-shadow: 0 0px 6px rgb(0 0 0 / 6%), 0 2px 5px rgb(0 0 0 / 4%);
     max-width: 50%;
     width: 100%;
     position: relative;
@@ -208,6 +210,8 @@ body.branding::after {
 
 .header-wrapper.scrolled {
     box-shadow: none;
+    background-color: transparent;
+    position: fixed;
 }
 
 .header-wrapper.scrolled .header-inner {
@@ -218,7 +222,15 @@ body.branding::after {
 .hero-text .read-more {
     position: inherit;
 }
-
+.hero-wrapper > .hero-content{
+    width: 100%;
+}
+.hero-slider img{
+    height: 65vh;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+}
 .menu>ul {
     display: flex;
     list-style: none;
@@ -228,6 +240,14 @@ body.branding::after {
 
 .menu>ul>li span {
     cursor: pointer;
+    position: relative;
+}
+.menu .submenu ul>li span::before{
+    content: "-";
+    position: relative;
+    display: inline-block;
+    margin-right: 2px;
+    color:#b60521;
 }
 
 .menu>ul>li {
@@ -245,20 +265,20 @@ body.branding::after {
 .menu>ul>li .submenu ul > li{
     max-width: 49%;
     width: 100%;
-    padding: 5px 0px;
+    padding: 8px 0px;
 }
-.menu>ul>li .submenu.open{
+.menu>ul>li.open .submenu{
     display: block;
     position: absolute;
     max-width: 768px;
     width: 100%;
     background-color: #fff;
-    padding: 8px 16px;
-    border-radius: 15px;
-    box-shadow: 0 2px 5px
-    rgb(0 0 0 / 6%), 0 4px 6px rgb(0 0 0 / 10%);
-    top: 25px;
+    padding: 16px 16px;
+    border-radius: 6px;
+    box-shadow: 0 0px 6px rgb(0 0 0 / 6%), 0 2px 5px rgb(0 0 0 / 4%);
+    top: 45px;
     right: 0;
+    z-index: 3;
     /* transform: translate(50%,-50%); */
 }
 .header {

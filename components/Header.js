@@ -102,38 +102,27 @@ const Header = () => {
                   <li
                     key={i}
                     onMouseOver={(e) => {
+                      document
+                        .querySelectorAll(".menu ul > li")
+                        .forEach(function (el) {
+                          el.classList.remove("open");
+                        });
                       if (menuItem?.subMenu) {
-                        e.currentTarget
-                          .querySelector(".submenu")
-                          .classList.add("open");
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (menuItem?.subMenu) {
-                        e.currentTarget
-                          .querySelector(".submenu")
-                          .classList.remove("open");
+                        e.currentTarget.classList.add("open");
                       }
                     }}
                   >
-                    <span
-                      onClick={handleClick}
-                      // onClick={(_) => {
-                      //   if (menuItem?.link) {
-                      //     router.push(menuItem?.link);
-                      //   }
-                      //   return;
-                      // }}
-                      href={menuItem?.link}
-                    >
+                    <span onClick={handleClick} href={menuItem?.link}>
                       {menuItem?.name}
                     </span>
                     {menuItem?.subMenu ? (
                       <div
                         className="submenu open"
-                        onMouseOver={(e) => {
+                        onMouseLeave={(e) => {
                           if (menuItem?.subMenu) {
-                            e.currentTarget.classList.add("open");
+                            e.currentTarget
+                              .closest("li")
+                              .classList.remove("open");
                           }
                         }}
                       >

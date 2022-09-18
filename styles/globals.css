@@ -29,6 +29,7 @@ p {
   bottom: 0;
   z-index: -1;
   transform: rotate(-90deg);
+  display: none;
 }
 .credit-wrapper + svg > path{
   fill: #b60521;
@@ -125,6 +126,65 @@ section.hero {
   padding: 0px;
   border-radius: 100%;
 }
+.floating-items{
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 0px 10px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  /* display: flex; */
+  /* margin: 0px auto; */
+}
+.floating-items-inner svg{
+  max-width: 30px;
+}
+.floating-items .floating-items-inner{
+  display: flex;
+  flex-direction: column;
+}
+.floating-items .floating-items-inner > a{
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.floating-items .floating-items-inner a > span:not(.onhover){
+  background-color: #b60521;
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  padding: 15px;
+  border-radius: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.floating-items .floating-items-inner a > span:not(.onhover) svg path{
+fill: #fff;
+}
+.floating-items .floating-items-inner span.onhover{
+  opacity: 0;
+  width: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  margin-left: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.floating-items .floating-items-inner > div:hover span.onhover{
+  opacity: 1;
+  width: auto;
+  overflow: auto;
+}
+.floating-items .floating-items-inner > div:hover span.onhover a{
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 800;
+  color: #b60521;
+  letter-spacing: 0.9px;
+
+}
 .testimonial-slider-wrapper  .splide__arrow svg, .stories-slider .splide__arrow svg {
   fill: #fff;
   height: 10px;
@@ -184,7 +244,8 @@ section.hero {
 .hero-text h1 {
   font-weight: 700;
   font-size: 62px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   font-family: Montserrat, sans-serif;
   /* font-family: "Playfair Display", serif; */
   /* font-family: Helvetica, sans-serif; */
@@ -227,6 +288,11 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   cursor: pointer;
   border-radius: 5px;
   overflow: hidden;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%), 0 2px 24px 2px rgb(0 0 0 / 4%);
 }
 .outer-slide > .inner-slide img{
@@ -235,11 +301,22 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   width: 100%;
   object-fit: cover;
 }
+.outer-slide > .inner-slide:hover{
+  transform: scale(1.1);
+}
+.outer-slide > .inner-slide:hover p{
+  /* background-color: #f1f1f1; */
+}
 .outer-slide > .inner-slide p{
   padding: 10px 15px;
   font-size: 18px;
   font-weight: 500;
   text-align: center;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .hero-text .read-more {
   width: 100%;
@@ -271,6 +348,7 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   display: flex;
   /* z-index: 5; */
   margin: 35px 0px;
+  position: relative;
 }
 .project-completed-wrapper.about-page.contact-page{
   position: relative;
@@ -289,6 +367,21 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   max-width: 1140px;
   margin: 0 auto;
   align-items: center;
+  position: relative;
+}
+.project-completed-wrapper::before{
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(//res.cloudinary.com/signaramatoronto/image/upload/v1663498430/BLOGSIMAGES/image0-min1663498427510.jpg);
+  opacity: 0.4;
+  filter: blur(6px);
+  bottom: 0;
+  top: 0;
+  margin: auto;
 }
 .compl-project {
   max-width: 380px;
@@ -323,6 +416,37 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   margin-bottom: 15px;
   margin-top: 0px;
 }
+.wally-section{
+  max-width: 360px;
+  width: 100%;
+  margin: 20px auto;
+}
+.wally-section .nameandlinked{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wally-section .nameandlinked img{
+  max-width: 30px;
+  width: 100%;
+  margin-left: 10px;
+}
+.wally-section .designation{
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.wally-section .designation span.wally-desig{
+  font-size: 85%;
+  opacity: 0.8;
+}
+.wally-section > img{
+  max-width: 100%;
+  border-radius: 100%;
+  display: block;
+  margin: auto;
+}
 .login-info {
   display: flex;
   flex-direction: column;
@@ -352,8 +476,8 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   font-size: 18px;
 }
 .login-info .red-box{
-  /* background-color: #b60521; */
-  border: 1px solid #000;
+  background-color: #fff;
+  /* border: 1px solid #000; */
   padding: 20px;
 }
 
