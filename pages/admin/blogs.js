@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREATEBLOG, UPDATEBLOG } from "../../graphql/mutations";
 import { BLOGS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
+// import Font from "@ckeditor/ckeditor5-font/src/font";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 
 const Blogs = () => {
@@ -49,7 +50,7 @@ const Blogs = () => {
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+      ClassicEditor: require("ckeditor5-build-classic-nextjs"),
     };
     setEditorLoaded(true);
   }, []);
@@ -61,12 +62,43 @@ const Blogs = () => {
   };
 
   const custom_config = {
+    // plugins: [Font],
     extraPlugins: [MyCustomUploadAdapterPlugin],
+    fontColor: {
+      colors: [
+        {
+          color: "hsl(0, 0%, 0%)",
+          label: "Black",
+        },
+        {
+          color: "hsl(0, 0%, 30%)",
+          label: "Dim grey",
+        },
+        {
+          color: "hsl(0, 0%, 60%)",
+          label: "Grey",
+        },
+        {
+          color: "hsl(0, 0%, 90%)",
+          label: "Light grey",
+        },
+        {
+          color: "hsl(0, 0%, 100%)",
+          label: "White",
+          hasBorder: true,
+        },
+
+        // ...
+      ],
+    },
+
     toolbar: {
       items: [
         "heading",
+        "fontColor",
         "|",
         "bold",
+        "color",
         "italic",
         "link",
         "bulletedList",

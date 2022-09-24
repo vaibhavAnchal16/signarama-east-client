@@ -1,4 +1,4 @@
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import ClassicEditor from "ckeditor5-build-classic-nextjs";
 import CKEditor from "@ckeditor/ckeditor5-react";
 
 const EditorComponent = (props) => {

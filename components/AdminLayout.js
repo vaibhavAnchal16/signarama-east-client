@@ -36,6 +36,7 @@ export default function AdminLayout({ children }) {
     }
   };
 
+  if (typeof window === undefined) return <>Hi</>;
   return (
     <ApolloProvider client={client}>
       <section className="admin-template-wrapper" id="adminlayout">

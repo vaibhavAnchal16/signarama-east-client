@@ -61,7 +61,7 @@ const Signs = () => {
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      ClassicEditor: require("@ckeditor/ckeditor5-build-classic"),
+      ClassicEditor: require("ckeditor5-build-classic-nextjs"),
     };
     setEditorLoaded(true);
   }, []);

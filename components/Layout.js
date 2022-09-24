@@ -6,6 +6,7 @@ import Header from "./Header";
 import { Email, Phone } from "./Helpers/Icons";
 
 export default function Layout({ children }) {
+  if (typeof window === undefined) return <>Hi</>;
   return (
     <>
       {/* <TopBar /> */}
