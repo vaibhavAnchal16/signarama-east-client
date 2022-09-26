@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import LazyImage from "./LazyImage";
@@ -8,6 +8,7 @@ import { SIGNS } from "../graphql/queries";
 const Header = () => {
   const router = useRouter();
   const [signs, setSigns] = useState([]);
+  const [menu, setMenu] = useState(null);
   useEffect(() => {
     window.addEventListener(
       "scroll",
@@ -35,7 +36,7 @@ const Header = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await client.query({
+      const { data, loading } = await client.query({
         query: SIGNS,
         variables: {
           page: null,
@@ -43,7 +44,10 @@ const Header = () => {
           filters: null,
         },
       });
-      setSigns(data?.signs?.signs);
+      setSigns({
+        signs: data?.signs?.signs,
+        loading,
+      });
     })();
   }, []);
 
@@ -55,34 +59,37 @@ const Header = () => {
     }
   };
 
-  const menu = [
-    {
-      name: "Home",
-      link: "/",
-      subMenu: null,
-    },
-    {
-      name: "Signs",
-      link: null,
-      subMenu: signs,
-    },
-    {
-      name: "Blogs",
-      link: "/sign-blog",
-      subMenu: null,
-    },
-    {
-      name: "About us",
-      link: "/about-us",
-      subMenu: null,
-    },
-    {
-      name: "Contact Us",
-      link: "/contact-us",
-      subMenu: null,
-    },
-  ];
+  useEffect(() => {
+    setMenu([
+      {
+        name: "Home",
+        link: "/",
+        subMenu: null,
+      },
+      {
+        name: "Signs",
+        link: null,
+        subMenu: signs?.signs,
+      },
+      {
+        name: "Blogs",
+        link: "/sign-blog",
+        subMenu: null,
+      },
+      {
+        name: "About us",
+        link: "/about-us",
+        subMenu: null,
+      },
+      {
+        name: "Contact Us",
+        link: "/contact-us",
+        subMenu: null,
+      },
+    ]);
+  }, [signs, setMenu]);
 
+  if (signs?.loading) return "Loading";
   return (
     <div className="header-wrapper">
       <div className="header-inner">

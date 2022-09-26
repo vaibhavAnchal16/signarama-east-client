@@ -61,9 +61,15 @@ const Blogs = () => {
     };
   };
 
+  const pasteUploadImage = (editor) => {
+    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
+      return new MyUploadAdapter(loader);
+    };
+  };
+
   const custom_config = {
     // plugins: [Font],
-    extraPlugins: [MyCustomUploadAdapterPlugin],
+    extraPlugins: [MyCustomUploadAdapterPlugin, pasteUploadImage],
     fontColor: {
       colors: [
         {

@@ -2,9 +2,15 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import LazyImage from "../LazyImage";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useState } from "react";
 const _ = require("lodash");
 const Services = ({ signs }) => {
-  var chunks = _.chunk(signs, 3);
+  const [chunks, setChunks] = useState([]);
+  useEffect(() => {
+    setChunks(_.chunk(signs, 3));
+  }, [signs]);
+
   const options = {
     type: "loop",
     perPage: 5,
