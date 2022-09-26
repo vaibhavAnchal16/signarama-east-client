@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer-wrapper">
         <div className="footer-inner">
           <div className="footer-heading">
-            <h2> Contact / Office Hours</h2>
+            <h2>Contact / <span className="highlighted">Office Hours</span></h2>
           </div>
           <div className="footer-box-inner">
             <div className="left-boxes">

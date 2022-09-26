@@ -50,7 +50,7 @@ const ConnectForm = (props) => {
             {step !== 1 && (
               <button type="button" onClick={(e) => manageForm(e, "PREVIOUS")}>
                 {" "}
-                Previous
+                <span>Previous</span>
               </button>
             )}{" "}
             <button
@@ -58,7 +58,8 @@ const ConnectForm = (props) => {
               className={step === 2 ? `submit` : ``}
               onClick={(e) => manageForm(e, "NEXT")}
             >
-              {step === 1 ? `Next` : "Submit"}
+              <span>{step === 1 ? `Next` : "Submit"}</span>
+              
             </button>
           </div>
         </form>
