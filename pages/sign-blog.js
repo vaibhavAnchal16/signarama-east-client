@@ -36,6 +36,7 @@ const SignBlog = ({ blogs }) => {
               title={blg?.title}
               image={blg?.featuredImage}
               slug={blg?.slug}
+              description={blg?.description}
             />
           ))}
         </section>

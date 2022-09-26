@@ -21,7 +21,9 @@ export default function Home({
   trending,
   testimonials,
   teams,
+  loader,
 }) {
+  if (loader) return "Loading...";
   return (
     <div>
       <Head>
@@ -93,6 +95,12 @@ export async function getServerSideProps({ params, query }) {
   // Pass post data to the page via props
   return {
     props: {
+      loader:
+        data?.loading ||
+        trending?.loading ||
+        recent?.loading ||
+        testimonials?.loading ||
+        team?.loading,
       signs: data?.signs?.signs,
       trending: trending?.data?.blogs?.blogs,
       recentworks: recent?.data?.blogs?.blogs,

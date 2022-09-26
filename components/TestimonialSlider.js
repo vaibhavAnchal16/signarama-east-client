@@ -3,29 +3,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { HalfCircle, HalfCurve } from "./Helpers/Icons";
 
 const TestimonialSlider = ({ testimonials }) => {
-  const data = [
-    {
-      title: "Signarama Toronto put up a 300ft banner for M Downtown store",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/photo-gallery/Columbia_Dental_letter_of_recomendation.jpg",
-    },
-    {
-      title:
-        "Victory café got their new illuminated channel letters sign for their re-opening",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/photo-gallery/cclcs-letter-of-recomendation.png",
-    },
-    {
-      title: "Remax re-brands itself with help from Signarama Toronto",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/photo-gallery/Letter-for-Signarama---October-2015.jpg",
-    },
-    {
-      title: "Remax re-brands itself with help from Signarama Toronto",
-      image:
-        "https://signarama-toronto.ca/wp-content/uploads/photo-gallery/Marriott_200412032014_0000.jpg",
-    },
-  ];
   const options = {
     type: "loop",
     perPage: 1,
