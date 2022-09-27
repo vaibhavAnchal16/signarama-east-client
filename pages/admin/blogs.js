@@ -37,6 +37,7 @@ const Blogs = () => {
 
   const resetForm = () => {
     setAction(null);
+    setDescription("");
   };
 
   useEffect(() => {

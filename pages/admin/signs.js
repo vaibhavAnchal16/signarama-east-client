@@ -26,7 +26,7 @@ const Signs = () => {
   const [image, setImage] = useState({
     preview: null,
   });
-  const size = 20;
+  const size = 50;
 
   const { data, loading, refetch } = useQuery(SIGNS, {
     variables: {
@@ -48,6 +48,7 @@ const Signs = () => {
     setImage({
       preview: null,
     });
+    setDescription("")
   };
 
   useEffect(() => {
