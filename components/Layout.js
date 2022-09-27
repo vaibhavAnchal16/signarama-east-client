@@ -19,7 +19,7 @@ export default function Layout({ children }) {
             </span>
             <span className="onhover">
               {" "}
-              <a>+416-922-7446</a>
+              <span>+416-922-7446</span>
             </span>
           </a>
           <a href="mailto:info@signarama-toronto.ca">
@@ -27,7 +27,7 @@ export default function Layout({ children }) {
               <Email />{" "}
             </span>
             <span className="onhover">
-              <a>info@signarama-toronto.ca</a>{" "}
+              <span>info@signarama-toronto.ca</span>{" "}
             </span>
           </a>
         </div>
