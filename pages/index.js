@@ -49,6 +49,7 @@ export default function Home({
 }
 
 export async function getServerSideProps({ params, query }) {
+  console.log(client);
   const { data } = await client.query({
     query: SIGNS,
     variables: {
