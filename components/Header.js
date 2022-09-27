@@ -9,10 +9,6 @@ const Header = () => {
   const _ = require("lodash");
   const router = useRouter();
   const [signs, setSigns] = useState([]);
-  const navData = _.chain(signs)
-    ?.groupBy("type")
-    .map((elm, key) => ({ name: key, signs: elm }))
-    .value();
   const [menu, setMenu] = useState(null);
   useEffect(() => {
     window.addEventListener(
@@ -53,8 +49,38 @@ const Header = () => {
         signs: data?.signs?.signs,
         loading,
       });
+      setMenu([
+        {
+          name: "Home",
+          link: "/",
+          subMenu: null,
+        },
+        {
+          name: "Signs",
+          link: null,
+          subMenu: _.chain(data?.signs?.signs)
+            ?.groupBy("type")
+            .map((elm, key) => ({ name: key, signs: elm }))
+            .value(),
+        },
+        {
+          name: "Blogs",
+          link: "/sign-blog",
+          subMenu: null,
+        },
+        {
+          name: "About us",
+          link: "/about-us",
+          subMenu: null,
+        },
+        {
+          name: "Contact Us",
+          link: "/contact-us",
+          subMenu: null,
+        },
+      ]);
     })();
-  }, []);
+  }, [setSigns, setMenu]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -63,36 +89,6 @@ const Header = () => {
       router.push(href);
     }
   };
-
-  useEffect(() => {
-    setMenu([
-      {
-        name: "Home",
-        link: "/",
-        subMenu: null,
-      },
-      {
-        name: "Signs",
-        link: null,
-        subMenu: signs?.signs,
-      },
-      {
-        name: "Blogs",
-        link: "/sign-blog",
-        subMenu: null,
-      },
-      {
-        name: "About us",
-        link: "/about-us",
-        subMenu: null,
-      },
-      {
-        name: "Contact Us",
-        link: "/contact-us",
-        subMenu: null,
-      },
-    ]);
-  }, [signs, setMenu]);
 
   if (signs?.loading) return "Loading";
   return (
@@ -149,26 +145,25 @@ const Header = () => {
                               </span>{" "}
                             </li>
                           ))} */
-                              navData?.map((navItem, ind) => (
-                                <>
-                                  <div className={`item-${ind}`}>
-                                    <h2 key={ind}>{navItem?.name}</h2>
-                                    <ul>
-                                      {navItem?.signs?.map((item, i) => (
-                                        <li key={i}>
+                              menuItem?.subMenu?.map((navItem, ind) => (
+                                <div className={`item-${ind}`} key={ind}>
+                                  {console.log(navItem)}
+                                  <h2>{navItem?.name}</h2>
+                                  <ul>
+                                    {navItem?.signs?.map((item, i) => (
+                                      <li key={i}>
+                                        {" "}
+                                        <span
+                                          href={item?.slug}
+                                          onClick={handleClick}
+                                        >
                                           {" "}
-                                          <span
-                                            href={item?.slug}
-                                            onClick={handleClick}
-                                          >
-                                            {" "}
-                                            {item?.title}{" "}
-                                          </span>{" "}
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                </>
+                                          {item?.title}{" "}
+                                        </span>{" "}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
                               ))
                             }
                           </div>

@@ -1,3 +1,5 @@
+
+
 ul {
     list-style: none;
 }
@@ -351,6 +353,122 @@ ul.officehours>li {
 ul.socialmedia>li a {
     font-size: 18px;
 }
+
+
+/* NAMISH CHANGES */
+body {
+    font-family: Montserrat, sans-serif;
+  }
+  
+  .menu>ul>li.open .submenu {
+      max-width: 850px;
+      top: 70px;
+      /* right: 0;
+      left: 670px; */
+  }
+  .menu>ul {
+      position: static;
+  }
+  .menu>ul li {
+      font-size: 15px;
+  }
+  .submenu .ghost {
+      display: flex;
+      justify-content: space-between;
+  }
+  .menu>ul>li .submenu ul {
+  display: flex;
+  flex-direction: column;
+  }
+  .menu>ul>li .submenu ul > li {
+      max-width: inherit;
+  }
+  .ghost h2 {
+      padding: 10px 0px;
+      color: #b60521;
+  }
+  .admin-side-float span{
+      display: block;
+  }
+  .blog-description img{
+      /* width: 100%; */
+      max-width: 100%;
+  }
+  /* .blog-description p:has(img) {
+      text-align: center;
+  } */
+  .carousel-wrapper {
+      max-height: 700px;
+  }
+  .carousel-content {
+      height: 100%;
+      position: absolute;
+  }
+  .u-container-layout {
+      height: 100%;
+      justify-content: center;
+  }
+  .hero-text {
+      padding: 40px;
+  }
+  .services-wrapper, .top-stories, .about-us, .footer-wrapper {
+      padding: 40px 0px;
+  }
+  .proud-of-inner ul {
+      margin-bottom: 20px;
+  }
+  .wally-wrapper .abt-descp {
+      padding-bottom: 20px;
+  }
+  .header {
+      position: relative;
+  }
+  .fields-wrapper.fields-flex button {
+      height: 40px;
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
+      font-weight: 700;
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
+      -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -ms-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper:hover{
+      box-shadow: 0 0 5px rgba(33,33,33,.1);
+      transform: scale(1.1);
+      border-radius: 10px;
+  } 
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
+      padding: 10px 15px;
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
+      margin: 15px 0px;
+  }
+  .outer-slide > .inner-slide p {
+      font-family: Montserrat, sans-serif;
+  }
+  .fields-wrapper button {
+      transition: .3s ease;
+  }
+  .fields-wrapper button span {
+      font-size: 15px;
+      font-family: 'Montserrat';
+      font-weight: 500;
+  }
+  .fields-wrapper button:hover {
+      background-color: #b60521;
+  }
+  .fields-wrapper button:hover span {
+      color: white;
+  }
+  footer.footer-wrapper>.footer-inner .highlighted {
+      color:#b60521;
+  }
+/* NAMISH CHANGES */
 
 @media (max-width:1430px) {
     .compl-project{

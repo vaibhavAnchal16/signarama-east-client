@@ -8,7 +8,7 @@ const ContactUs = () => {
         <section className="sign-blogs-search-inner">
           <div className="section-heading">
             <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
-              Contact <span className="highlighted">Signrama Toronto </span>
+              Contact <span className="highlighted">Signarama Toronto </span>
             </h1>
             {/* <p>
               Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,
