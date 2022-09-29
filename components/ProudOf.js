@@ -1,7 +1,7 @@
 import React from "react";
 const ProudOf = ({ title }) => {
   return (
-    <div className="proud-of-wrapper">
+    <section className="proud-of-wrapper animate__animated">
       <div className="proud-of-inner">
         <div className="section-heading-award" style={{ textAlign: "center" }}>
           {title && (
@@ -42,7 +42,7 @@ const ProudOf = ({ title }) => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

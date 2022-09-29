@@ -4,7 +4,7 @@ import SliderWithMiniImage from "../SliderWithMiniImage";
 
 const RecentWorks = ({ recentworks }) => {
   return (
-    <section className="sign-blogs-wrapper">
+    <section className="sign-blogs-wrapper animate__animated">
       <div className="section-heading">
         <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
           Recent <span className="highlighted">Work </span>

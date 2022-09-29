@@ -35,7 +35,7 @@ export default function Hero() {
     // },
   };
   return (
-    <div className="hero-outer-space">
+    <section className="hero-outer-space animate__animated">
       <Wave />
       <div
         className="hero-wrapper"
@@ -72,7 +72,7 @@ export default function Hero() {
               id="heroimage"
               src="//res.cloudinary.com/signaramatoronto/image/upload/f_auto/BLOGSIMAGES/big-banner1663438000984.jpg"
             /> */}
-            <div className="hero-text">
+            <section className="hero-text">
               <h1>
                 Your one-stop shop for all your{" "}
                 <span className="highlighted"> Signage</span> solutions
@@ -85,11 +85,11 @@ export default function Hero() {
               <Link href="/about-us" className="read-more">
                 Read More
               </Link>
-            </div>
+            </section>
           </div>
         </div>
         <Process />
       </div>
-    </div>
+    </section>
   );
 }

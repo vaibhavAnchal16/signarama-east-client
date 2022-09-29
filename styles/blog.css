@@ -41,6 +41,9 @@
     justify-content: space-between;
     margin: 0px auto;
 }
+.nogray{
+    filter: grayscale(0)!important;
+}
 .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper{
     max-width: 32%;
     margin-bottom: 35px;

@@ -1,7 +1,7 @@
 import React from "react";
 const Wally = ({ title }) => {
   return (
-    <section className="about-us">
+    <section className="about-us animate__animated">
       <div className="wally-wrapper">
         {/* <div className="flex-test">
           <div className="rectangle-shape"></div>

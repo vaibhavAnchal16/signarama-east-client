@@ -3,6 +3,7 @@ import "../styles/local.css";
 import "../styles/form.css";
 import "../styles/blog.css";
 import "../styles/admin.css";
+import "animate.css";
 import "@splidejs/react-splide/css";
 
 function MyApp({ Component, pageProps }) {

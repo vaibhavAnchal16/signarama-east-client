@@ -3,7 +3,7 @@ import SliderWithMiniImage from "../SliderWithMiniImage";
 
 const TopStories = ({ trending }) => {
   return (
-    <section className="top-stories">
+    <section className="top-stories animate__animated">
       <div className="section-heading">
         <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
           Trending <span className="highlighted">Stories </span>

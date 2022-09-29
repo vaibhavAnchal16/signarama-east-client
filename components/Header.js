@@ -147,7 +147,6 @@ const Header = () => {
                           ))} */
                               menuItem?.subMenu?.map((navItem, ind) => (
                                 <div className={`item-${ind}`} key={ind}>
-                                  {console.log(navItem)}
                                   <h2>{navItem?.name}</h2>
                                   <ul>
                                     {navItem?.signs?.map((item, i) => (

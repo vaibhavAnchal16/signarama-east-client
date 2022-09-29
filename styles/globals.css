@@ -52,6 +52,16 @@ p {
   color: #36311F;
   font-family: 'Open Sans', sans-serif;
 }
+.grayit{
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+.nograyit{
+  filter: grayscale(0);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
 .howsewingworks-inner .howsewingworksbox h2 {
   font-style: normal;
   font-weight: 600;

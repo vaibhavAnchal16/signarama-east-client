@@ -14,7 +14,7 @@ const TestimonialSlider = ({ testimonials }) => {
   };
 
   return (
-    <div className="testimonial-slider-wrapper">
+    <section className="testimonial-slider-wrapper">
       <HalfCircle />
       <Splide className="testimonial-slider" options={options}>
         {testimonials?.images?.map((item, i) => {
@@ -28,7 +28,7 @@ const TestimonialSlider = ({ testimonials }) => {
         })}
       </Splide>
       <HalfCurve />
-    </div>
+    </section>
   );
 };
 

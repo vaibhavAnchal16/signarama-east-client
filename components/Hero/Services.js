@@ -35,7 +35,7 @@ const Services = ({ signs }) => {
     },
   };
   return (
-    <section className="services-wrapper">
+    <section className="services-wrapper animate__animated">
       <div className="section-heading">
         <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
           Our <span className="highlighted">Services </span>

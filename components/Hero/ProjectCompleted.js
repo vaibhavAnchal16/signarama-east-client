@@ -3,7 +3,9 @@ import ConnectForm from "../ConnectForm";
 
 const ProjectsCompleted = ({ className }) => {
   return (
-    <section className={`project-completed-wrapper ${className}`}>
+    <section
+      className={`project-completed-wrapper animate__animated ${className}`}
+    >
       <div className="project-completed-content">
         <span className="compl-number">450+</span>
         <div className="compl-project">

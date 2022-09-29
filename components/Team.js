@@ -24,7 +24,7 @@ const Team = ({ title, teams }) => {
     },
   };
   return (
-    <section className="team-wrapper">
+    <section className="team-wrapper animate__animated">
       {title && (
         <div className="section-heading">
           <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
