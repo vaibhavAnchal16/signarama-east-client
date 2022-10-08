@@ -51,31 +51,37 @@ export default function Layout({ children }) {
       <Header />
       <div className="floating-items">
         <div className="floating-items-inner">
-          <a href="tel:4169227446">
-            <span className="pulse">
-              <Phone />
-            </span>
-            <span className="onhover">
-              {" "}
-              <span>+416-922-7446</span>
-            </span>
-          </a>
-          <a href="mailto:info@signarama-toronto.ca">
-            <span className="pulse">
-              <Email />{" "}
-            </span>
-            <span className="onhover">
-              <span>info@signarama-toronto.ca</span>{" "}
-            </span>
-          </a>
-          <a href="/contact-us?focusform=true">
-            <span className="pulse">
-              <ContactForm />{" "}
-            </span>
-            <span className="onhover">
-              <span>Contact Us</span>{" "}
-            </span>
-          </a>
+          <Link href="tel:4169227446">
+            <a>
+              <span className="pulse">
+                <Phone />
+              </span>
+              <span className="onhover">
+                {" "}
+                <span>+416-922-7446</span>
+              </span>
+            </a>
+          </Link>
+          <Link href="mailto:info@signarama-toronto.ca">
+            <a>
+              <span className="pulse">
+                <Email />{" "}
+              </span>
+              <span className="onhover">
+                <span>info@signarama-toronto.ca</span>{" "}
+              </span>
+            </a>
+          </Link>
+          <Link href="/contact-us?focusform=true">
+            <a>
+              <span className="pulse">
+                <ContactForm />{" "}
+              </span>
+              <span className="onhover">
+                <span>Contact Us</span>{" "}
+              </span>
+            </a>
+          </Link>
         </div>
       </div>
       <main>{children}</main>
