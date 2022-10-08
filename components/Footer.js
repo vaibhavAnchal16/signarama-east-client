@@ -49,6 +49,7 @@ const Footer = () => {
                   {" "}
                   <a
                     href="https://www.facebook.com/SignaramaToronto/"
+                    rel="noreferrer"
                     target="_blank"
                   >
                     Facebook
@@ -58,6 +59,7 @@ const Footer = () => {
                   {" "}
                   <a
                     href="https://www.linkedin.com/company/sign-a-rama-toronto/"
+                    rel="noreferrer"
                     target="_blank"
                   >
                     Linked In
@@ -67,6 +69,7 @@ const Footer = () => {
                   {" "}
                   <a
                     href="https://plus.google.com/u/0/b/103480397092757649225/"
+                    rel="noreferrer"
                     target="_blank"
                   >
                     Google Plus
