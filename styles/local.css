@@ -37,7 +37,59 @@ body {
 .hero-outer-space>svg>path {
     fill: #b60521;
 }
-
+#nav-icon3 {
+    width: 24px;
+    height: 16px;
+    position: relative;
+    margin: 0 auto 0 0px;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+#nav-icon3, #nav-icon3 span {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#nav-icon3 span:first-child {
+    top: 0;
+}
+#nav-icon3 span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transition: .25s ease-in-out;
+}
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+    top: 6px;
+}
+#nav-icon3.open span:nth-child(4) {
+    top: 18px;
+    width: 0;
+    left: 50%;
+}
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+    top: 6px;
+}
+#nav-icon3.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#nav-icon3 span:nth-child(4) {
+    top: 12px;
+}
+#nav-icon3.open span:first-child {
+    top: 18px;
+    width: 0;
+    left: 50%;
+}
+#nav-icon3.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 .hero-outer-space::after {
     content: "";
     position: absolute;
@@ -104,7 +156,9 @@ body.branding::after {
     max-width: 45%;
     width: 100%;
 }
-
+.help-section-inner .help-section-box>div img{
+    max-width: 100%;
+}
 .help-section-inner .help-section-box .help-context h1 {
     font-size: 60px;
     margin-bottom: 25px;
@@ -286,7 +340,7 @@ body.branding::after {
 .header {
     display: flex;
     align-items: center;
-    padding: 10px 5px;
+    padding: 10px 10px;
     justify-content: space-between;
 }
 
@@ -309,7 +363,7 @@ body.branding::after {
 }
 
 .footer-heading h2 {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 25px;
 }
 
@@ -322,8 +376,12 @@ body.branding::after {
 
 footer.footer-wrapper>.footer-inner * {
     color: #000;
+    transition: all 0.2s ease-in-out;
 }
-
+footer.footer-wrapper>.footer-inner .socialmedia li a:hover{
+    color: #b60521;
+    margin-left: 1px;
+}
 .footer-inner .left-boxes>div {
     max-width: 50%;
     width: 100%;
@@ -498,30 +556,59 @@ body {
     }
 
     .rectangle-shape::before {
-
         left: 0;
         top: 0;
-
     }
 }
 
 @media (max-width:1023px) {
-
+    .floating-items .floating-items-inner a > span:not(.onhover) {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+    .hero-slider img {
+        height: auto;
+    }
+    .floating-items .floating-items-inner > a {
+        margin-bottom: 10px;
+    }
+    .header-wrapper {
+        padding: 10px 10px;
+    }
+    .menu>ul>li .submenu ul {
+        padding-left: 8px;
+    }
+    .ghost h2 {
+        font-size: 16px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        padding: 0px 0px;
+    
+    }
+    .menu>ul li {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
     .menu {
         display: none;
+        padding: 8px 0px;
         position: absolute;
-            left: 0;
-            right: 0;
-            top: 50px;
-            background: #fff;
-            max-height: 85vh;
-            overflow: auto;
-            z-index: 6;
+        box-shadow: 0 0px 6px rgb(0 0 0 / 6%), 0 2px 5px rgb(0 0 0 / 4%);
+        left: 0;
+        right: 0;
+        top: 50px;
+        background: #fff;
+        border-radius: 5px;
+        max-height: 85vh;
+        overflow: auto;
+        z-index: 6;
     }
     .menu>ul>li.open .submenu{
         position: relative;
         top: 0;
         box-shadow: none;
+        padding: 0px;
     }
     .menu>ul, .submenu .ghost{
         flex-direction: column;
@@ -615,26 +702,86 @@ body {
 
 
 @media (max-width:767px) {
+    .section-heading {
+        padding: 0px 0px 5px 0px;
+    }
+    .project-completed-content , .howsewingworks-inner{
+        padding: 0px 15px;
+    }
     .footer-inner .left-boxes {
         flex-direction: column;
         max-width: 100%;
     }
-
+    .compl-number {
+        font-size: 70px;
+    }
+    .compl-project h2 {
+        margin: 0px 15px;
+        font-size: 20px;
+    }
+    .section-heading h1, .section-heading-award h1{
+        font-size: 20px;
+    }
+    .compl-project p {
+        margin: 0px 0px;
+        padding: 15px 15px;
+        font-size: 16px;
+    }
+    .u-container-layout .story-wrapper h2.story-title {
+        font-size: 20px;
+    }
+    .login-info p , .abt-descp p{
+        font-size: 16px;
+    }
+    .wally-section {
+        max-width: 220px;
+        margin: 0px auto;
+    }
+    .info-text-2 {
+        margin: 0px auto;
+    }
+    .login-info h2 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .hero-text a {
+        height: 40px;
+        max-width: 200px;
+    }
+    .outer-slide > .inner-slide p {
+        padding: 10px 10px;
+        font-size: 16px;
+    }
+    .proud-of-inner ul{
+        flex-wrap: wrap;
+    }
+    .proud-of-inner ul li{
+        max-width: 50%;
+    }
+    .proud-of-inner ul li:not(:last-child){
+        margin-bottom: 15px;
+    }
+    .section-heading p, .section-heading-award p {
+        font-size: 16px;
+        max-width: 100%;
+    }
     .footer-inner .left-boxes>div {
         max-width: 100%;
     }
 
     .hero-text {
-        padding: 0px 10px;
+        padding: 0px 15px;
     }
 
     .hero-text h5 {
-        font-size: 20px;
+        font-size: 16px;
         margin: 10px 0px;
     }
 
     .hero-text h1 {
-        font-size: 32px;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
 }

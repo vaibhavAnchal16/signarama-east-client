@@ -171,7 +171,12 @@ const Header = () => {
               className="hamburger-icon"
               onClick={(e) => setMobileMenu(!mobileMenu)}
             >
-              <span> Menu</span>
+              <div id="nav-icon3" className={mobileMenu ? `open` : ``}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
           </div>
         </div>

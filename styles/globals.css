@@ -21,7 +21,7 @@ p {
 }
 @keyframes pulse-animation {
   0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0px rgb(166 41 39 / 73%);
   }
   100% {
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
@@ -35,6 +35,14 @@ p {
   width: 100%;
   position: relative;
   padding: 0px 5px;
+}
+.ck.ck-color-table{
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.ck .ck-button.ck-color-table__remove-color{
+  max-width: 100%;
 }
 .credit-wrapper + svg{
   position: absolute;
@@ -153,7 +161,7 @@ section.hero {
   position: fixed;
   top: 0;
   padding: 0px 10px;
-  z-index: 5;
+  z-index: 4;
   display: flex;
   justify-content: center;
   bottom: 0;
@@ -162,6 +170,7 @@ section.hero {
 }
 .floating-items-inner svg{
   max-width: 30px;
+  height: 30px;
 }
 .floating-items .floating-items-inner{
   display: flex;
@@ -177,6 +186,7 @@ section.hero {
 .floating-items .floating-items-inner > a:hover span.onhover{
   opacity: 1;
   width: auto;
+  height: auto;
 }
 .floating-items .floating-items-inner a > span:not(.onhover){
   background-color: #b60521;
@@ -194,6 +204,7 @@ fill: #fff;
 .floating-items .floating-items-inner span.onhover{
   opacity: 0;
   width: 0px;
+  height: 0px;
   overflow: hidden;
   color: #b60521;
   pointer-events: none;
@@ -204,6 +215,7 @@ fill: #fff;
 .floating-items .floating-items-inner > div:hover span.onhover{
   opacity: 1;
   width: auto;
+  height: auto;
   overflow: auto;
 }
 .floating-items .floating-items-inner > div:hover span.onhover a{

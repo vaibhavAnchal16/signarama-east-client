@@ -1,7 +1,19 @@
+import { useEffect } from "react";
 import { Layout, LazyImage, MapIframe } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 
-const ContactUs = () => {
+const ContactUs = ({ query }) => {
+  useEffect(() => {
+    if (query?.focusform === "true") {
+      if (document.querySelector(".contact-page")) {
+        document.querySelector(".contact-page").scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
+      }
+    }
+  }, [query]);
   return (
     <>
       <section className="sign-blogs-search-wrapper">
@@ -65,6 +77,10 @@ const ContactUs = () => {
   );
 };
 export default ContactUs;
+
+ContactUs.getInitialProps = ({ query }) => {
+  return { query };
+};
 
 ContactUs.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;

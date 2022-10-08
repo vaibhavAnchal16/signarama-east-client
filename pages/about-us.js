@@ -1,8 +1,10 @@
+import client from "../apollo-client";
 import { ClientLists, Layout, ProudOf, Team } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import Wally from "../components/Hero/Wally";
+import { GALLERYBYTITLE } from "../graphql/queries";
 
-const AboutUs = () => {
+const AboutUs = ({ teams }) => {
   return (
     <>
       <section className="sign-blogs-search-wrapper">
@@ -24,12 +26,29 @@ const AboutUs = () => {
 
       <ClientLists />
 
-      <Team title={true} />
+      <Team title={true} teams={teams} />
     </>
   );
 };
 
 export default AboutUs;
+
+export async function getServerSideProps({ params, query }) {
+  const team = await client.query({
+    query: GALLERYBYTITLE,
+    variables: {
+      title: "Team",
+    },
+  });
+
+  // Pass post data to the page via props
+  return {
+    props: {
+      loader: team?.loading,
+      teams: team?.data?.galleryByName,
+    },
+  };
+}
 
 AboutUs.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;

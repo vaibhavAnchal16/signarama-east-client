@@ -17,7 +17,7 @@ const RecentWorks = ({ recentworks }) => {
         </p> */}
       </div>
 
-      <section className="sign-blogs-inner">
+      <div className="sign-blogs-inner">
         {recentworks?.map((blg, i) => (
           <BlogCard
             key={i}
@@ -26,7 +26,7 @@ const RecentWorks = ({ recentworks }) => {
             slug={blg?.slug}
           />
         ))}
-      </section>
+      </div>
     </section>
   );
 };

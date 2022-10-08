@@ -48,7 +48,7 @@ const Signs = () => {
     setImage({
       preview: null,
     });
-    setDescription("")
+    setDescription("");
   };
 
   useEffect(() => {

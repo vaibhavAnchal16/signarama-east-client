@@ -6,7 +6,9 @@ const Footer = () => {
       <footer className="footer-wrapper">
         <div className="footer-inner">
           <div className="footer-heading">
-            <h2>Contact / <span className="highlighted">Office Hours</span></h2>
+            <h2>
+              Contact / <span className="highlighted">Office Hours</span>
+            </h2>
           </div>
           <div className="footer-box-inner">
             <div className="left-boxes">
@@ -45,15 +47,30 @@ const Footer = () => {
               <ul className="socialmedia">
                 <li>
                   {" "}
-                  <a href="">Facebook</a>{" "}
+                  <a
+                    href="https://www.facebook.com/SignaramaToronto/"
+                    target="_blank"
+                  >
+                    Facebook
+                  </a>{" "}
                 </li>
                 <li>
                   {" "}
-                  <a href="">Linked In</a>{" "}
+                  <a
+                    href="https://www.linkedin.com/company/sign-a-rama-toronto/"
+                    target="_blank"
+                  >
+                    Linked In
+                  </a>{" "}
                 </li>
                 <li>
                   {" "}
-                  <a href="">Google Plus</a>{" "}
+                  <a
+                    href="https://plus.google.com/u/0/b/103480397092757649225/"
+                    target="_blank"
+                  >
+                    Google Plus
+                  </a>{" "}
                 </li>
               </ul>
             </div>

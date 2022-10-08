@@ -5,8 +5,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREATEBLOG, UPDATEBLOG } from "../../graphql/mutations";
 import { BLOGS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
-// import Font from "@ckeditor/ckeditor5-font/src/font";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
+import { Colors } from "../../components/Helpers/Colors";
 
 const Blogs = () => {
   const editorRef = useRef();
@@ -69,34 +69,14 @@ const Blogs = () => {
   };
 
   const custom_config = {
-    // plugins: [Font],
+    // plugins: [ImageCaptionPlugin, ImageStylePlugin, ImageToolbarPlugin],
     extraPlugins: [MyCustomUploadAdapterPlugin, pasteUploadImage],
     fontColor: {
-      colors: [
-        {
-          color: "hsl(0, 0%, 0%)",
-          label: "Black",
-        },
-        {
-          color: "hsl(0, 0%, 30%)",
-          label: "Dim grey",
-        },
-        {
-          color: "hsl(0, 0%, 60%)",
-          label: "Grey",
-        },
-        {
-          color: "hsl(0, 0%, 90%)",
-          label: "Light grey",
-        },
-        {
-          color: "hsl(0, 0%, 100%)",
-          label: "White",
-          hasBorder: true,
-        },
-
-        // ...
-      ],
+      colors: Colors.map((color) => {
+        return {
+          color,
+        };
+      }),
     },
 
     toolbar: {
@@ -115,6 +95,8 @@ const Blogs = () => {
         "insertTable",
         "|",
         "imageUpload",
+        "ImageTextAlternative",
+        "mediaEmbed",
         "undo",
         "redo",
       ],

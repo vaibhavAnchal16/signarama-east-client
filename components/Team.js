@@ -4,13 +4,14 @@ import LazyImage from "./LazyImage";
 
 const Team = ({ title, teams }) => {
   const options = {
-    type: "loop",
+    type: "slide",
     perPage: 5,
+    perMove: 1,
     pagination: false,
     arrows: false,
     autoplay: true,
     pauseOnHover: true,
-    interval: 3000,
+    interval: 5000,
     breakpoints: {
       1400: {
         perPage: 4,

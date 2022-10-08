@@ -43,7 +43,7 @@ export default function Home({
 
       {/* <TestimonialSlider testimonials={testimonials} /> */}
       <RecentWorks recentworks={recentworks} />
-      <Team title={false} teams={teams} />
+      <Team title={true} teams={teams} />
     </div>
   );
 }
