@@ -187,7 +187,7 @@ body.branding::after {
 }
 
 .about-page .compl-number,
-.about-page .compl-project {
+.about-page .compl-project, .hamburger-icon {
     display: none;
 }
 
@@ -506,8 +506,29 @@ body {
 }
 
 @media (max-width:1023px) {
+
     .menu {
         display: none;
+        position: absolute;
+            left: 0;
+            right: 0;
+            top: 50px;
+            background: #fff;
+            max-height: 85vh;
+            overflow: auto;
+            z-index: 6;
+    }
+    .menu>ul>li.open .submenu{
+        position: relative;
+        top: 0;
+        box-shadow: none;
+    }
+    .menu>ul, .submenu .ghost{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu.open-mobile, .menu>ul>li .submenu, .hamburger-icon{
+        display: block;
     }
     .howsewingworks-inner{
         flex-wrap: wrap;
@@ -587,7 +608,7 @@ body {
         padding: 15px 0px;
     }
     .carousel-wrapper{
-        min-height: auto;
+        min-height: 375px;
         padding: 0px 0px;
     }
 }

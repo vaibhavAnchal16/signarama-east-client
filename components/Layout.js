@@ -45,7 +45,7 @@ export default function Layout({ children }) {
       <div className="floating-items">
         <div className="floating-items-inner">
           <a href="tel:4169227446">
-            <span>
+            <span className="pulse">
               <Phone />
             </span>
             <span className="onhover">
@@ -54,7 +54,7 @@ export default function Layout({ children }) {
             </span>
           </a>
           <a href="mailto:info@signarama-toronto.ca">
-            <span>
+            <span className="pulse">
               <Email />{" "}
             </span>
             <span className="onhover">

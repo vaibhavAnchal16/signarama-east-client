@@ -49,7 +49,6 @@ export default function Home({
 }
 
 export async function getServerSideProps({ params, query }) {
-  console.log(process.env.NEXT_PUBLIC_SERVER_URL);
   const { data } = await client.query({
     query: SIGNS,
     variables: {

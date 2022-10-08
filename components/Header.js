@@ -10,6 +10,7 @@ const Header = () => {
   const router = useRouter();
   const [signs, setSigns] = useState([]);
   const [menu, setMenu] = useState(null);
+  const [mobileMenu, setMobileMenu] = useState(false);
   useEffect(() => {
     window.addEventListener(
       "scroll",
@@ -104,7 +105,8 @@ const Header = () => {
                 link="/"
               />
             </div>
-            <div className="menu">
+
+            <div className={`menu ${mobileMenu ? `open-mobile` : ``}`}>
               <ul>
                 {menu?.map((menuItem, i) => {
                   return (
@@ -136,35 +138,25 @@ const Header = () => {
                           }}
                         >
                           <div className="ghost">
-                            {
-                              /* {menuItem?.subMenu?.map((smenu, index) => (
-                            <li key={index}>
-                              <span href={smenu?.slug} onClick={handleClick}>
-                                {" "}
-                                {smenu?.title}{" "}
-                              </span>{" "}
-                            </li>
-                          ))} */
-                              menuItem?.subMenu?.map((navItem, ind) => (
-                                <div className={`item-${ind}`} key={ind}>
-                                  <h2>{navItem?.name}</h2>
-                                  <ul>
-                                    {navItem?.signs?.map((item, i) => (
-                                      <li key={i}>
+                            {menuItem?.subMenu?.map((navItem, ind) => (
+                              <div className={`item-${ind}`} key={ind}>
+                                <h2>{navItem?.name}</h2>
+                                <ul>
+                                  {navItem?.signs?.map((item, i) => (
+                                    <li key={i}>
+                                      {" "}
+                                      <span
+                                        href={item?.slug}
+                                        onClick={handleClick}
+                                      >
                                         {" "}
-                                        <span
-                                          href={item?.slug}
-                                          onClick={handleClick}
-                                        >
-                                          {" "}
-                                          {item?.title}{" "}
-                                        </span>{" "}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              ))
-                            }
+                                        {item?.title}{" "}
+                                      </span>{" "}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       ) : (
@@ -174,6 +166,12 @@ const Header = () => {
                   );
                 })}
               </ul>
+            </div>
+            <div
+              className="hamburger-icon"
+              onClick={(e) => setMobileMenu(!mobileMenu)}
+            >
+              <span> Menu</span>
             </div>
           </div>
         </div>
