@@ -19,7 +19,7 @@ export default function Layout({ children }) {
         if (intersecting) {
           entry.target.classList.remove("grayit");
           entry.target.classList.add("nograyit");
-          entry.target.classList.add("animate__slideInUp");
+          // entry.target.classList.add("animate__slideInUp");
         } else {
           entry.target.classList.remove("nograyit");
           entry.target.classList.add("grayit");

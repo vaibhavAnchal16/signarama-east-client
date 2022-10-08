@@ -41,7 +41,7 @@ export default function Home({
       <ProudOf title={true} />
       <Wally title={true} />
 
-      <TestimonialSlider testimonials={testimonials} />
+      {/* <TestimonialSlider testimonials={testimonials} /> */}
       <RecentWorks recentworks={recentworks} />
       <Team title={false} teams={teams} />
     </div>
