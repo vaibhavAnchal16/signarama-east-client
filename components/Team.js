@@ -20,7 +20,7 @@ const Team = ({ title, teams }) => {
         perPage: 2,
       },
       416: {
-        perPage: 1,
+        perPage: 2,
       },
     },
   };

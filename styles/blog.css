@@ -121,7 +121,16 @@
 }
 
 @media (max-width: 767px){
+    .sign-blogs-search-wrapper {
+        min-height: 250px;
+    }
+    .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
         max-width: 100%;
+        margin-bottom: 15px;
     }
 }

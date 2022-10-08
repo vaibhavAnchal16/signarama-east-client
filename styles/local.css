@@ -702,6 +702,33 @@ body {
 
 
 @media (max-width:767px) {
+    .help-section-inner .help-section-box {
+        flex-direction: column;
+    }
+    .help-section-inner .help-section-box>div, .project-completed-wrapper.about-page.contact-page  {
+        max-width: 100%;
+    }
+    .help-section-wrapper {
+        padding: 35px 15px;
+    }
+    .project-completed-wrapper::before {
+        display: none;
+    }
+    .footer-wrapper>.footer-inner {
+        padding: 30px 15px;
+    }
+    .help-section-inner .help-section-box .help-context p.intro {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .footer-wrapper .footer-inner .footer-box-inner {
+        flex-direction: column;
+    }
+    .help-section-inner .help-section-box .help-context h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
     .section-heading {
         padding: 0px 0px 5px 0px;
     }
@@ -719,8 +746,26 @@ body {
         margin: 0px 15px;
         font-size: 20px;
     }
+    .right-boxes{
+        margin-top: 20px;
+    }
+    .hero-text h1, .footer-heading h2 {
+        font-size: 20px;
+    }
+    .footer-wrapper .footer-inner .footer-box-inner *{
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .credit-inner p{
+        font-size: 16px;
+        padding: 0px 15px;
+    }
     .section-heading h1, .section-heading-award h1{
         font-size: 20px;
+    }
+    .credit-inner {
+        text-align: center;
+        padding: 15px 0px;
     }
     .compl-project p {
         margin: 0px 0px;
@@ -764,6 +809,7 @@ body {
     .section-heading p, .section-heading-award p {
         font-size: 16px;
         max-width: 100%;
+        padding: 0px 15px;
     }
     .footer-inner .left-boxes>div {
         max-width: 100%;

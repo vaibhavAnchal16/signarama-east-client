@@ -85,9 +85,16 @@ const Header = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0
+    );
     const href = e.currentTarget.getAttribute("href");
     if (href) {
       router.push(href);
+      if (vw < 1024) {
+        setMobileMenu(false);
+      }
     }
   };
 
