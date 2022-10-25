@@ -10,7 +10,6 @@ const ProudOf = ({ title }) => {
               Winners
             </h1>
           )}
-
           <p>
             We are fully insured with $10,000,000 liability insurance coverage,
             we have all WSIB clearance certificates and are “Contractor Check
@@ -20,27 +19,28 @@ const ProudOf = ({ title }) => {
             Association.
           </p>
         </div>
-
-        <ul className="list-inline slidelogos vm">
-          <li>
-            <img
-              className="img-responsive"
-              src="https://signarama-toronto.ca/wp-content/uploads/2018/03/tsa.png"
-            />
-          </li>
-          <li>
-            <img
-              className="img-responsive"
-              src="https://signarama-toronto.ca/wp-content/uploads/2018/04/ama.png"
-            />
-          </li>
-          <li>
-            <img
-              className="img-responsive"
-              src="https://signarama-toronto.ca/wp-content/uploads/2018/04/contractcheck.png"
-            />
-          </li>
-        </ul>
+        <marquee>
+          <ul className="list-inline slidelogos vm">
+            <li>
+              <img
+                className="img-responsive"
+                src="https://signarama-toronto.ca/wp-content/uploads/2018/03/tsa.png"
+              />
+            </li>
+            <li>
+              <img
+                className="img-responsive"
+                src="https://signarama-toronto.ca/wp-content/uploads/2018/04/ama.png"
+              />
+            </li>
+            <li>
+              <img
+                className="img-responsive"
+                src="https://signarama-toronto.ca/wp-content/uploads/2018/04/contractcheck.png"
+              />
+            </li>
+          </ul>
+        </marquee>
       </div>
     </section>
   );

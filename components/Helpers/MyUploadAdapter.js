@@ -1,7 +1,7 @@
 class MyUploadAdapter {
   constructor(loader) {
     // CKEditor 5's FileLoader instance.
-    console.log(loader);
+    // console.log(loader);
     this.loader = loader;
     // URL where to send files.
     this.url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDNAME}/image/upload`;

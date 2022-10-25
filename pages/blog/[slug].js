@@ -3,6 +3,7 @@ import sanitizeHtml from "sanitize-html";
 
 import { Layout, LazyImage } from "../../components";
 import { BLOG } from "../../graphql/queries";
+import Head from "next/head";
 
 const Blog = ({ blog }) => {
   const createMarkup = (html) => {
@@ -24,29 +25,38 @@ const Blog = ({ blog }) => {
           a: ["href"],
           img: ["src", "alt"],
         },
+        exclusiveFilter: function (frame) {
+          return frame.tag === "p" && !frame.text.trim();
+        },
       }),
     };
   };
 
   return (
-    <div className="blog-details">
-      <div className="blog-details-inner">
-        <div className="blog-content-box">
-          <h1 className="blog-title"> {blog?.title} </h1>
-          <LazyImage
-            src={blog?.featuredImage}
-            alt={blog?.title}
-            style={{
-              width: "100%",
-            }}
-          />
-          <div
-            className="blog-description"
-            dangerouslySetInnerHTML={createMarkup(blog?.description)}
-          ></div>
+    <>
+      <Head>
+        <title>{blog?.seoData?.seoTitle}</title>
+        <meta name="description" content={blog?.seoData?.seoDescription} />
+      </Head>
+      <div className="blog-details">
+        <div className="blog-details-inner">
+          <div className="blog-content-box">
+            <h1 className="blog-title"> {blog?.title} </h1>
+            <LazyImage
+              src={blog?.featuredImage}
+              alt={blog?.title}
+              style={{
+                width: "100%",
+              }}
+            />
+            <div
+              className="blog-description"
+              dangerouslySetInnerHTML={createMarkup(blog?.description)}
+            ></div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -58,7 +68,6 @@ export async function getServerSideProps(context) {
       slug,
     },
   });
-  console.log(data);
   return { props: { blog: data?.blog } };
 }
 

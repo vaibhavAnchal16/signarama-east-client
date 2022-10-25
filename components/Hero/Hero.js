@@ -74,13 +74,24 @@ export default function Hero() {
             /> */}
             <section className="hero-text">
               <h1>
-                Your one-stop shop for all your{" "}
-                <span className="highlighted"> Signage</span> solutions
+                ONE OF THE OLDEST <span className="highlighted"> SIGN</span>{" "}
+                COMPANIES IN TORONTO
               </h1>
+              <h5>Offering a One Stop Experience surpassing expectations.</h5>
               <h5>
-                Fully insured with $10,000,000 liability insurance coverage and
-                marketing award winners.
+                Serving businesses in Toronto, the GTA and Nationally since
+                1986.
               </h5>
+
+              <h5>
+                Contractor Check, Comply Works Accredited, Members of the
+                American Marketing Association and The Canadian Sign Association
+                .
+              </h5>
+              <h5>
+                We are fully insured carrying $10,000,000 liability insurance
+              </h5>
+              <h5>Design and Marketing Award winners</h5>
 
               <Link href="/about-us" className="read-more">
                 Read More

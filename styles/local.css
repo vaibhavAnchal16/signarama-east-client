@@ -63,6 +63,9 @@ body {
     left: 0;
     transition: .25s ease-in-out;
 }
+.footer-outer-layer{
+    background-color: #4c4c4c;
+}
 #nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
     top: 6px;
 }
@@ -375,8 +378,15 @@ body.branding::after {
 }
 
 footer.footer-wrapper>.footer-inner * {
-    color: #000;
+    color: #fff;
     transition: all 0.2s ease-in-out;
+}
+
+footer.footer-wrapper>.footer-inner a{
+    cursor: pointer;
+}
+footer.footer-wrapper>.footer-inner a:hover{
+    color: #b60521;
 }
 footer.footer-wrapper>.footer-inner .socialmedia li a:hover{
     color: #b60521;
@@ -406,6 +416,7 @@ ul.officehours>li {
 
 .credit-inner p {
     font-size: 18px;
+    color: #fff;
 }
 
 ul.socialmedia>li a {
@@ -429,6 +440,10 @@ body {
   }
   .menu>ul li {
       font-size: 15px;
+  }
+  .menu>ul li:hover > span{
+    text-decoration: underline;
+    color: #b60521;
   }
   .submenu .ghost {
       display: flex;

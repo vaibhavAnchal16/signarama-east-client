@@ -2,7 +2,7 @@ import React from "react";
 import { Wave } from "./Helpers/Icons";
 const Footer = () => {
   return (
-    <div>
+    <div className="footer-outer-layer">
       <footer className="footer-wrapper">
         <div className="footer-inner">
           <div className="footer-heading">
@@ -23,11 +23,14 @@ const Footer = () => {
                   </li>
                   <li className="phone">
                     {" "}
-                    <p> 416.922.7446</p>{" "}
+                    <a href="tel:416.922.7446"> 416.922.7446</a>{" "}
                   </li>
                   <li className="email">
                     {" "}
-                    <p> info@signarama-toronto.ca</p>{" "}
+                    <a href="mailto:info@signarama-toronto.ca">
+                      {" "}
+                      info@signarama-toronto.ca
+                    </a>{" "}
                   </li>
                 </ul>
               </div>

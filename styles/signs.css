@@ -1,0 +1,246 @@
+.serv-internal-wrapper {
+    color: #ffffff;
+    background-color: #b60521;
+  }
+  
+  .serv-internal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 0;
+  }
+  .services-img {
+    max-width: 30%;
+    position: relative;
+    z-index: 1;
+  }
+  .services-img::after {
+    content: "";
+    background-color: #fff;
+    max-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    z-index: -1;
+  }
+  .services-img img {
+    max-width: 100%;
+  }
+  
+  .page-main-heading {
+    font-size: 60px;
+    text-shadow: 2px 2px 30px rgb(0 0 0 / 40%);
+    position: relative;
+    z-index: 2;
+  }
+  .services-descp {
+    text-align: center;
+    max-width: 80%;
+    padding: 25px;
+  }
+  .services-descp p {
+    padding: 10px 0px;
+    font-weight: 500;
+  }
+  
+  .learn-more-btn {
+    margin: 17px 0px;
+  }
+  
+  .btn {
+    padding: 13px 44px 14px 43px;
+    background-color: #fff;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-image: none;
+    color: black;
+    position: relative;
+    transition: 0.3s ease all;
+    text-decoration: none;
+  }
+  
+  .btn-white:hover {
+    color: white;
+    background-color: #b6025e;
+    border-color: white;
+  }
+  
+  /* servies-detail */
+  
+  .services-detail-content {
+    display: flex;
+    flex-direction: column;
+    padding: 35px 0;
+  }
+  .serv-brief {
+    display: flex;
+    justify-content: space-between;
+  }
+  .heading {
+    font-size: 50px;
+    color: #b60521;
+  }
+  
+  .serv-detail-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .serv-detail-text p {
+    line-height: 28px;
+    padding: 20px 0px;
+  }
+  .serv-detail-btn {
+    text-align: center;
+    margin: 17px 0px;
+  }
+  .btn-red {
+    background-color:#b60521;
+    color: white;
+  }
+  .btn-red:hover {
+    color: #b60521;
+    background-color: white;
+    border-color: #b60521;
+  }
+  
+  .img-wrapper img {
+    max-width: 100%;
+  }
+  .img-wrapper {
+    position: relative;
+  }
+  
+  div.img-wrapper::after {
+    content: "";
+    background-color:#b60521;
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+    z-index: -1;
+    display: none;
+  }
+  .serv-detail-img {
+    max-width: 60%;
+    width: 100%;
+  }
+  .serv-sliders {
+    padding: 35px 0px;
+  }
+  .slider {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .slider-img {
+    max-width: 25%;
+    max-height: 242px;
+    /* padding-right: 10px; */
+    display: flex;
+    padding-top: 10px;
+  }
+  .slider .slider-img:not(:nth-child(4)):not(:nth-child(8)) {
+    padding-right: 10px;
+  }
+  .slider-img img {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+  }
+  
+  /*  ! ---- services-detail  ------*/
+  
+  @media (max-width: 1199px) {
+    .page-main-heading {
+      font-size: 70px;
+    }
+    .services-descp p {
+      font-size: 15px;
+    }
+    .btn {
+      padding: 10px 40px;
+      font-size: 15px;
+    }
+    .heading {
+      font-size: 40px;
+    }
+    .learn-more-btn,
+    .serv-detail-btn {
+      margin: 13px 0px;
+    }
+    .img-wrapper {
+      min-height: 100%;
+    }
+    .slider .slider-img {
+      max-height: 170px;
+    }
+  }
+  
+  @media (max-width: 1023px) {
+    .serv-brief {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .serv-detail-text {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .serv-detail-img {
+      margin-bottom: 30px;
+      max-width: 50%;
+    }
+    .serv-detail-text .heading {
+      padding: 25px 0px;
+    }
+    .slider .slider-img {
+      max-height: 165px;
+      min-height: 165px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .page-main-heading {
+      font-size: 50px;
+    }
+    .slider .slider-img {
+      max-height: 125px;
+      min-height: 125px;
+      padding-top: 7px;
+      padding-right: 7px !important;
+    }
+    .slider-img img {
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-main-heading {
+      font-size: 35px;
+    }
+  
+    .services-descp p,
+    .serv-detail-text p {
+      font-size: 13px;
+    }
+    .btn {
+      font-size: 13px;
+    }
+    .serv-detail-text .heading {
+      font-size: 30px;
+    }
+    .slider .slider-img {
+      padding-top: 5px;
+      padding-right: 5px !important;
+      max-width: 50%;
+    }
+  }
+  

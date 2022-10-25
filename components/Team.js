@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import LazyImage from "./LazyImage";
+import Link from "next/link";
 
 const Team = ({ title, teams }) => {
+  const [chunks, setChunks] = useState([]);
   const options = {
     type: "slide",
-    perPage: 5,
+    perPage: 6,
     perMove: 1,
     pagination: false,
     arrows: false,
@@ -24,6 +26,10 @@ const Team = ({ title, teams }) => {
       },
     },
   };
+  useEffect(() => {
+    setChunks(_.chunk(teams?.images, 3));
+  }, [teams]);
+
   return (
     <section className="team-wrapper animate__animated">
       {title && (
@@ -41,29 +47,39 @@ const Team = ({ title, teams }) => {
       )}
       <div className="team-inner">
         <div className="team-inner-box">
+          {/* {console.log(chunks)} */}
           <Splide
             className="team-slider"
             aria-label="My Favorite Images"
             options={options}
           >
-            {teams?.images?.map((item, i) => {
+            {chunks?.map((item, i) => {
               return (
                 <SplideSlide className="outer-slide" key={i}>
-                  <LazyImage
-                    src={item}
-                    style={{
-                      //   maxWidth: "100%",
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      cursor: "pointer",
-                    }}
-                  />
+                  {item?.map((image, index) => (
+                    <>
+                      <LazyImage
+                        src={image}
+                        style={{
+                          //   maxWidth: "100%",
+                          width: "100%",
+                          height: "250px",
+                          objectFit: "cover",
+                          cursor: "pointer",
+                        }}
+                      />
+                    </>
+                  ))}
                 </SplideSlide>
               );
             })}
           </Splide>
         </div>
+      </div>
+      <div className="our-people-cta">
+        <Link href="/our-people" className="read-more">
+          Show More
+        </Link>
       </div>
     </section>
   );
