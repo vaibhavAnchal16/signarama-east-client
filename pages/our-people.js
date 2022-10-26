@@ -7,16 +7,15 @@ const OurPeople = ({ teams, loader }) => {
   if (loader) return ``;
   return (
     <>
-      <div className="blog-details bg-gray">
-        <div className="blog-details-inner">
-          <div className="blog-content-box">
-            <h1 className="blog-title">
-              {" "}
-              Our <span className="highlighted">People</span>{" "}
+      <section class="sign-blogs-search-wrapper">
+        <section class="sign-blogs-search-inner">
+          <div class="section-heading">
+            <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
+              Our <span class="highlighted">People </span>
             </h1>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
       <GalleryGrid images={teams?.images} />
     </>
   );

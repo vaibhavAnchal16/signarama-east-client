@@ -60,7 +60,7 @@ const Wally = ({ title }) => {
                   </span>
                 </div>
                 <span className="wally-desig">
-                  General Manager Signarama Toronto
+                  President, Signarama Toronto
                 </span>
               </div>
             </div>

@@ -863,7 +863,14 @@ section.our-services {
   flex-direction: column;
   justify-content: center;
 } */
-
+.pagination button{
+  border: none;
+  background-color: #b60521;
+  color: #fff;
+  padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+}
 
 .info-text-2 {
   font-weight: 300;

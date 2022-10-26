@@ -19,11 +19,21 @@ const Blog = ({ blog }) => {
           "strong",
           "a",
           "img",
+          "span",
+          "iframe",
+          "oembed",
+          "div",
           "figure",
+          "address",
+          "article",
+          "aside",
+          "footer",
+          "header",
         ],
         allowedAttributes: {
           a: ["href"],
           img: ["src", "alt"],
+          oembed: ["url"],
         },
         exclusiveFilter: function (frame) {
           return frame.tag === "p" && !frame.text.trim();
@@ -49,6 +59,7 @@ const Blog = ({ blog }) => {
                 width: "100%",
               }}
             />
+            {console.log(blog?.description)}
             <div
               className="blog-description"
               dangerouslySetInnerHTML={createMarkup(blog?.description)}

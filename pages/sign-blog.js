@@ -86,7 +86,7 @@ const SignBlog = ({ blogs }) => {
             }}
           >
             {" "}
-            Next
+            Previous
           </button>
           <button
             onClick={(e) => {
