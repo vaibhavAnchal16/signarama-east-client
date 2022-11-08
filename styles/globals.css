@@ -8,11 +8,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: Montserrat, sans-serif;
 }
-
 p {
   font-family: "Open Sans", sans-serif;
 }
@@ -120,16 +118,22 @@ section.hero {
 .images-gallery-box > .single-image{
   max-width: 33%;
   width: 100%;
-  min-height: 300px;
-  background-position: center;
-  background-size: cover;
+  height: 300px;
   border: 1px solid #fff;
+  overflow: hidden;
+}
+.images-gallery-box > .single-image img{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
   filter: grayscale(1);
   cursor: pointer;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
-.images-gallery-box > .single-image:hover{
+.images-gallery-box > .single-image:hover img{
   filter: grayscale(0);
-
+  transform: scale(1.1);
 }
 .bg-gray{
   background-color: #fbf9f98c;
@@ -184,16 +188,16 @@ section.hero {
   border-radius: 100%;
 }
 .floating-items{
-  align-items: center;
-  position: fixed;
-  top: 0;
-  padding: 0px 10px;
-  z-index: 4;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  /* display: flex; */
-  /* margin: 0px auto; */
+      /* align-items: center; */
+      position: fixed;
+      top: calc(50vh - 113px);
+      /* padding: 0px 10px; */
+      z-index: 4;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* bottom: 0; */
+      /* display: flex; */
+      /* margin: 0px auto; */
 }
 .floating-items-inner svg{
   max-width: 30px;
@@ -206,6 +210,7 @@ section.hero {
 .floating-items .floating-items-inner > a{
   margin-bottom: 15px;
   cursor: pointer;
+  padding: 0px 12px;
   display: inline-flex;
   align-items: center;
   text-decoration: none;
@@ -375,16 +380,15 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
 }
 .outer-slide > .inner-slide img{
   max-width: 100%;
-  height: 185px;
+  height: 210px;
   width: 100%;
   object-fit: cover;
   filter: grayscale(1);
 }
-.outer-slide > .inner-slide:hover{
-  transform: scale(1.1);
-}
+
 .outer-slide > .inner-slide:hover img{
   filter: grayscale(0);
+  transform: scale(1.1);
 }
 .outer-slide > .inner-slide:hover p{
   /* background-color: #f1f1f1; */
@@ -576,6 +580,12 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
 }
 .team-wrapper .outer-slide{
   padding: 0px 0px;
+}
+.team-wrapper .outer-slide .team-image{
+  overflow: hidden;
+}
+.team-wrapper .outer-slide .team-image:hover img{
+  transform: scale(1.1);
 }
 .section-heading-award p {
   text-align: center;

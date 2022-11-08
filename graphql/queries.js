@@ -93,6 +93,15 @@ export const SIGN = gql`
   }
 `;
 
+export const MYPROFILE = gql`
+  query MyProfile {
+    myProfile {
+      _id
+      name
+    }
+  }
+`;
+
 export const GALLERYIDS = gql`
   query Query($page: Int, $size: Int) {
     galleries(page: $page, size: $size) {

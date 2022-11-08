@@ -195,13 +195,16 @@ body.branding::after {
     filter: grayscale(0.6);
 }
 
-.proud-of-inner ul {
+.proud-of-inner ul, .hero-text ul {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2%;
 }
-
-.proud-of-inner ul li {
+.hero-text ul{
+    margin-bottom: 15px;
+}
+.proud-of-inner ul li , .hero-text ul li{
     max-width: 22%;
     width: 100%;
 }
@@ -216,7 +219,7 @@ body.branding::after {
     padding: 0px 25px;
 }
 
-.proud-of-inner ul li>img {
+.proud-of-inner ul li>img , .hero-text ul li > img{
     max-width: 100%;
     margin: 0px auto;
     display: block;
@@ -271,6 +274,7 @@ body.branding::after {
     box-shadow: none;
     background-color: transparent;
     position: fixed;
+    z-index: 1;
 }
 
 .header-wrapper.scrolled .header-inner {
@@ -374,14 +378,35 @@ body.branding::after {
     max-width: 50%;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    gap: 10%;
 }
 
 footer.footer-wrapper>.footer-inner * {
     color: #fff;
     transition: all 0.2s ease-in-out;
 }
-
+footer.footer-wrapper>.footer-inner .footer-section-heading{
+    margin: 0px 0px 20px;
+}
+footer.footer-wrapper>.footer-inner .right-boxes{
+    display: flex;
+    max-width: 50%;
+    width: 100%;
+    gap: 10%;
+}
+footer.footer-wrapper>.footer-inner .right-boxes > *{
+    max-width: 50%;
+}
+.footer-wrapper .footer-inner .recent-blogs-section li a{
+    font-size: 14px;
+    text-decoration: none;
+}
+.recent-blogs-section li:not(:last-child){
+    margin-bottom: 6px;
+    border-bottom: 1px solid #ffffff2e;
+    padding-bottom: 3px;
+}
 footer.footer-wrapper>.footer-inner a{
     cursor: pointer;
 }
@@ -395,7 +420,6 @@ footer.footer-wrapper>.footer-inner .socialmedia li a:hover{
 .footer-inner .left-boxes>div {
     max-width: 50%;
     width: 100%;
-    padding-right: 20px;
 }
 
 ul.contactinformation>li:not(:last-child),
@@ -503,19 +527,6 @@ body {
       font-weight: 700;
   }
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
-      -webkit-transition: transform 0.3s ease-in-out;
-    -moz-transition: transform 0.3s ease-in-out;
-    -ms-transition: transform 0.3s ease-in-out;
-    -o-transition: transform 0.3s ease-in-out;
-      transition: transform 0.3s ease-in-out;
-      
-  }
-  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper:hover{
-      box-shadow: 0 0 5px rgba(33,33,33,.1);
-      transform: scale(1.1);
-      border-radius: 10px;
-  } 
-  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
       padding: 10px 15px;
   }
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
@@ -573,6 +584,19 @@ body {
     .rectangle-shape::before {
         left: 0;
         top: 0;
+    }
+    .footer-wrapper .footer-inner .footer-box-inner{
+        flex-wrap: wrap;
+    }
+    footer.footer-wrapper>.footer-inner .right-boxes, footer.footer-wrapper>.footer-inner .left-boxes {
+        max-width: 100%;
+    }
+    footer.footer-wrapper>.footer-inner .right-boxes{
+        margin-bottom: 20px;
+    }
+    .recent-blogs-section li:not(:last-child) {
+        border-bottom: none;
+        margin-bottom: 10px;
     }
 }
 
@@ -812,13 +836,13 @@ body {
         padding: 10px 10px;
         font-size: 16px;
     }
-    .proud-of-inner ul{
+    .proud-of-inner ul, .hero-text ul{
         flex-wrap: wrap;
     }
     .proud-of-inner ul li{
         max-width: 50%;
     }
-    .proud-of-inner ul li:not(:last-child){
+    .proud-of-inner ul li:not(:last-child), .hero-text ul li:not(:last-child){
         margin-bottom: 15px;
     }
     .section-heading p, .section-heading-award p {
@@ -826,8 +850,14 @@ body {
         max-width: 100%;
         padding: 0px 15px;
     }
-    .footer-inner .left-boxes>div {
+    footer.footer-wrapper>.footer-inner .right-boxes {
+        flex-wrap: wrap;
+    }
+    .footer-inner .left-boxes>div , footer.footer-wrapper>.footer-inner .right-boxes > * {
         max-width: 100%;
+    }
+    .footer-inner .left-boxes>div:not(:last-child), footer.footer-wrapper>.footer-inner .right-boxes > div:not(:last-child){
+        margin-bottom: 20px;
     }
 
     .hero-text {

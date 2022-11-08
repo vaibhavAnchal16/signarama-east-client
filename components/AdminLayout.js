@@ -1,10 +1,12 @@
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import React from "react";
 import client from "../apollo-client";
+import { MYPROFILE } from "../graphql/queries";
 
 export default function AdminLayout({ children }) {
   const router = useRouter();
+
   const routes = [
     {
       name: "Dashboard",

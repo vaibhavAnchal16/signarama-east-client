@@ -92,6 +92,26 @@ export default function Hero() {
                 We are fully insured carrying $10,000,000 liability insurance
               </h5>
               <h5>Design and Marketing Award winners</h5>
+              <ul className="list-inline slidelogos vm">
+                <li>
+                  <img
+                    className="img-responsive"
+                    src="https://signarama-toronto.ca/wp-content/uploads/2018/03/tsa.png"
+                  />
+                </li>
+                <li>
+                  <img
+                    className="img-responsive"
+                    src="https://signarama-toronto.ca/wp-content/uploads/2018/04/ama.png"
+                  />
+                </li>
+                <li>
+                  <img
+                    className="img-responsive"
+                    src="https://signarama-toronto.ca/wp-content/uploads/2018/04/contractcheck.png"
+                  />
+                </li>
+              </ul>
 
               <Link href="/about-us" className="read-more">
                 Read More

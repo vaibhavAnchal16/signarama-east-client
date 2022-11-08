@@ -1,12 +1,36 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import client from "../apollo-client";
-import { SIGNS } from "../graphql/queries";
+import { BLOGS } from "../graphql/queries";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ContactForm, Email, Phone } from "./Helpers/Icons";
 
 export default function Layout({ children }) {
+  const [recentBlogs, setRecentBlogs] = useState({
+    loading: true,
+  });
+  useEffect(() => {
+    (async () => {
+      const { data, loading, error } = await client.query({
+        query: BLOGS,
+        variables: {
+          page: 1,
+          size: 5,
+          filters: {
+            recentWork: true,
+            published: true,
+          },
+        },
+      });
+      setRecentBlogs({
+        loading,
+        blogs: data?.blogs?.blogs,
+        error,
+      });
+    })();
+  }, []);
+
   // const handleScroll = () => {
   //   const vw = Math.max(
   //     document.documentElement.clientWidth || 0,
@@ -85,7 +109,7 @@ export default function Layout({ children }) {
         </div>
       </div>
       <main>{children}</main>
-      <Footer />
+      <Footer recentBlogs={recentBlogs} />
     </>
   );
 }

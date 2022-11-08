@@ -25,6 +25,7 @@
     "react-dropzone": "^14.2.2",
     "react-icons": "^4.4.0",
     "react-select": "^5.4.0",
+    "react-simple-image-viewer": "^1.2.2",
     "sanitize-html": "^2.7.1",
     "styled-components": "^5.3.5"
   },

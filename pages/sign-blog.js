@@ -6,7 +6,7 @@ import { BlogCard, Layout } from "../components";
 import { BLOGS } from "../graphql/queries";
 const SignBlog = ({ blogs }) => {
   const [search, setSearch] = useState("");
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -22,7 +22,7 @@ const SignBlog = ({ blogs }) => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (type === "increment") {
-      const page = value + 1;
+      const page = +value + 1;
       window.location.href = `${window.location.pathname}?page=${page}`;
     }
     if (type === "decrement" && value > 1) {

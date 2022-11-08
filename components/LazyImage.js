@@ -36,7 +36,7 @@ const LazyImage = (props) => {
       style={{
         ...props?.style,
         opacity: loading && props?.src ? 0.3 : 1,
-        transition: "opacity .15s linear",
+        transition: "all 0.3s linear",
       }}
     />
   );

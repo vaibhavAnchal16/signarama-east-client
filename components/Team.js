@@ -1,17 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import LazyImage from "./LazyImage";
 import Link from "next/link";
+import ImageViewer from "react-simple-image-viewer";
 
 const Team = ({ title, teams }) => {
   const [chunks, setChunks] = useState([]);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
   const options = {
     type: "slide",
     perPage: 6,
     perMove: 1,
     pagination: false,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     pauseOnHover: true,
     interval: 5000,
     breakpoints: {
@@ -55,9 +69,18 @@ const Team = ({ title, teams }) => {
           >
             {chunks?.map((item, i) => {
               return (
-                <SplideSlide className="outer-slide" key={i}>
+                <SplideSlide className="outer-slide" key={i} data-index={i * 3}>
                   {item?.map((image, index) => (
-                    <>
+                    <div
+                      className="team-image"
+                      key={index}
+                      data-indexinner={index}
+                      onClick={(e) => {
+                        const val =
+                          e.currentTarget.parentNode.getAttribute("data-index");
+                        openImageViewer(Number(val) + index);
+                      }}
+                    >
                       <LazyImage
                         src={image}
                         style={{
@@ -68,7 +91,7 @@ const Team = ({ title, teams }) => {
                           cursor: "pointer",
                         }}
                       />
-                    </>
+                    </div>
                   ))}
                 </SplideSlide>
               );
@@ -81,6 +104,15 @@ const Team = ({ title, teams }) => {
           Show More
         </Link>
       </div>
+      {isViewerOpen && (
+        <ImageViewer
+          src={teams?.images}
+          currentIndex={currentImage}
+          disableScroll={false}
+          closeOnClickOutside={true}
+          onClose={closeImageViewer}
+        />
+      )}
     </section>
   );
 };
