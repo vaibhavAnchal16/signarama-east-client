@@ -20,7 +20,22 @@
     /* padding: 10px 10px; */
  }
  #adminlayout .admin-side-float{
-    height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ }
+ .footer-admin-links{
+  padding: 10px 10px;
+ }
+ .footer-admin-links button{
+  margin-left: 10px;
+  background-color: #b60521;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  cursor: pointer;
  }
  #adminlayout .admin-side-float ul{
     padding: 10px px;

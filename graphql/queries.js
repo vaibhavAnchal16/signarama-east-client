@@ -98,6 +98,7 @@ export const MYPROFILE = gql`
     myProfile {
       _id
       name
+      email
     }
   }
 `;

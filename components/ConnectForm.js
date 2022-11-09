@@ -1,23 +1,46 @@
+import { useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
+import client from "../apollo-client";
+import { SENDFORM } from "../graphql/mutations";
+import { imageUpload } from "./Helpers/ImageUpload";
 
 const ConnectForm = (props) => {
+  const router = useRouter();
   const [step, setStep] = useState(1);
+  const [file, setFile] = useState(null);
   const manageForm = (e, type, step) => {
     if (step < 2 && type === "NEXT") {
-      setStep((step) => step + 1);
+      setTimeout(function () {
+        setStep((step) => step + 1);
+      }, 500);
     }
     if (step > 1 && type === "PREVIOUS") {
-      setStep((step) => step - 1);
+      setTimeout(function () {
+        setStep((step) => step - 1);
+      }, 500);
     }
   };
+
+  const formImageUpload = async (file) => {
+    setFile({
+      loading: true,
+    });
+    const url = await imageUpload(file, "FORMATTACHMENTS");
+    setFile({
+      loading: false,
+      url,
+    });
+  };
+
   return (
     <div className="form-wrapper" {...props}>
       <div className="form-inner">
         <form
           className="contact-form"
-          onSubmit={(e) => {
-            const { name, email, phone, address, message, file } = e.target;
+          onSubmit={async (e) => {
+            const { name, email, phone, address, message } = e.target;
             e.preventDefault();
             console.log(
               name.value,
@@ -27,6 +50,26 @@ const ConnectForm = (props) => {
               message.value,
               file
             );
+            if (step === 2) {
+              try {
+                const { data, loading, error } = await client.mutate({
+                  mutation: SENDFORM,
+                  variables: {
+                    name: name.value,
+                    phoneNumber: phone.value,
+                    address: address.value,
+                    message: message.value,
+                    attachment: file?.url,
+                    email: email.value,
+                  },
+                });
+                if (data) {
+                  router.push(`/thankyou/?${data?.createFormEntry?._id}`);
+                }
+              } catch (error) {
+                console.log(error);
+              }
+            }
           }}
         >
           <div className={step === 1 ? `show` : `hide`}>
@@ -55,7 +98,13 @@ const ConnectForm = (props) => {
             </div>
             <div className="fields-wrapper">
               <label> Upload File </label>
-              <input type="file" name="file" />
+              <input
+                type="file"
+                name="file"
+                onChange={(e) => {
+                  formImageUpload(e.currentTarget.files[0]);
+                }}
+              />
             </div>
           </div>
           <div className="fields-wrapper formctas">
@@ -69,6 +118,7 @@ const ConnectForm = (props) => {
               </button>
             )}{" "}
             <button
+              disabled={file?.loading ?? false}
               type={step === 2 ? `submit` : `button`}
               className={step === 2 ? `submit` : ``}
               onClick={(e) => manageForm(e, "NEXT", step)}

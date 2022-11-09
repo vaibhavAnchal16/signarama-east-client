@@ -23,6 +23,16 @@ export const CREATEBLOG = gql`
   }
 `;
 
+export const LOGIN = gql`
+  mutation Mutation($email: String!, $password: String!) {
+    loginUser(email: $email, password: $password) {
+      _id
+      name
+      token
+    }
+  }
+`;
+
 export const UPDATEBLOG = gql`
   mutation Mutation(
     $id: ID!
@@ -122,6 +132,28 @@ export const UPDATEGALLERY = gql`
       title: $title
       description: $description
       images: $images
+    ) {
+      _id
+    }
+  }
+`;
+
+export const SENDFORM = gql`
+  mutation CreateFormEntry(
+    $name: String!
+    $phoneNumber: String!
+    $email: String!
+    $address: String
+    $attachment: String
+    $message: String
+  ) {
+    createFormEntry(
+      name: $name
+      phoneNumber: $phoneNumber
+      email: $email
+      address: $address
+      attachment: $attachment
+      message: $message
     ) {
       _id
     }

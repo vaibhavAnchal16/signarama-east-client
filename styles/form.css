@@ -108,6 +108,9 @@
     background-color: #b60521;
     color: #fff;   
 }
+.fields-wrapper button.submit:disabled{
+    cursor: not-allowed;
+}
 .fields-wrapper textarea {
     min-height: 100px;
 }

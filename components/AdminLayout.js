@@ -1,11 +1,30 @@
 import { ApolloProvider, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import client from "../apollo-client";
 import { MYPROFILE } from "../graphql/queries";
 
 export default function AdminLayout({ children }) {
   const router = useRouter();
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data, loading } = await client.query({
+          query: MYPROFILE,
+        });
+        setUser(data?.myProfile);
+      } catch (error) {
+        router.push("/login");
+      }
+
+      // setRecentBlogs({
+      //   loading,
+      //   blogs: data?.blogs?.blogs,
+      //   error,
+      // });
+    })();
+  }, []);
 
   const routes = [
     {
@@ -38,7 +57,7 @@ export default function AdminLayout({ children }) {
     }
   };
 
-  if (typeof window === undefined) return <>Hi</>;
+  if (typeof window === undefined) return <>Loading...</>;
   return (
     <ApolloProvider client={client}>
       <section className="admin-template-wrapper" id="adminlayout">
@@ -59,6 +78,23 @@ export default function AdminLayout({ children }) {
                   </li>
                 ))}
               </ul>
+              <div className="footer-admin-links">
+                <span>
+                  {" "}
+                  Hey {user?.name},{" "}
+                  <button
+                    className=""
+                    type="button"
+                    onClick={(e) => {
+                      localStorage.removeItem("signarama_token");
+                      router.push("/login");
+                    }}
+                  >
+                    {" "}
+                    Logout
+                  </button>
+                </span>
+              </div>
             </div>
           </div>
           <div className="admin-content">
