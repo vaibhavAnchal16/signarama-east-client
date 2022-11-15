@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BiSearchAlt } from "react-icons/bi";
@@ -33,6 +34,10 @@ const SignBlog = ({ blogs }) => {
 
   return (
     <>
+      <Head>
+        <title>Blog | Sign A Rama Toronto</title>
+        <meta name="description" content="Blogs & Stories" />
+      </Head>
       <section className="sign-blogs-search-wrapper">
         <section className="sign-blogs-search-inner">
           <div className="section-heading">

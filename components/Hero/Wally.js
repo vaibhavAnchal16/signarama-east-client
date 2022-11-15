@@ -53,7 +53,7 @@ const Wally = ({ title }) => {
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://www.linkedin.com/company/sign-a-rama-toronto/"
+                      href="https://ca.linkedin.com/in/wallytomaszek"
                     >
                       <img src="//res.cloudinary.com/signaramatoronto/image/upload/f_auto/STATICASSETS/linkedin-icon_cparra.png" />{" "}
                     </a>

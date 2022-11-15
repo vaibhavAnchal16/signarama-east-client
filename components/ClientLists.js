@@ -14,14 +14,16 @@ const ClientLists = ({ title }) => {
 
           <div className="abt-descp">
             <p className="info-text">
-              Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,
-              CBRE, Triovest, SNC Lavalin, Province of Ontario, University
-              Health Network, Princess Margaret Hospital, Mizrahi Developments,
-              Candarel, Toronto Police Services, Browns Shoes, Lululemon,
-              Rockin&apos; Horse Saloon, Starbucks, Sherbourne Health Centre,
-              Ontario Nurses Association, Roche Bobois, Bo Concepts, OMERS,
-              OACCAC, National Ballet School, Lawson Real Estate, Marriott
-              Hotels and hundreds of retail stores throughout the city.
+              Some of our Clients include Home Alive Pets, Eataly, Sweat and
+              Tonic, John Fluefog, Aritzia, Tilleys, Peak, Hotel One, Delta
+              Hotels, Fairmount Hotels, YMCA, CBRE, Triovest, SNC Lavalin,
+              Province of Ontario, University Health Network, Princess Margaret
+              Hospital, Mizrahi Developments, Candarel, Toronto Police Services,
+              Browns Shoes, Lululemon, Rockin&apos; Horse Saloon, Starbucks,
+              Sherbourne Health Centre, Ontario Nurses Association, Roche
+              Bobois, Bo Concepts, OMERS, OACCAC, National Ballet School, Lawson
+              Real Estate, Marriott Hotels and hundreds of retail stores
+              throughout the city.
             </p>
           </div>
         </div>
