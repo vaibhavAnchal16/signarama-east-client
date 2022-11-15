@@ -74,10 +74,12 @@ export default function Hero() {
             /> */}
             <section className="hero-text">
               <h1>
-                ONE OF THE OLDEST <span className="highlighted"> SIGN</span>{" "}
-                COMPANIES IN TORONTO
+                ONE OF THE OLDEST{" "}
+                <span className="highlighted"> SIGN COMPANIES</span> IN TORONTO
               </h1>
-              <h5>Offering a One Stop Experience surpassing expectations.</h5>
+              <h5 className="highlighted">
+                Offering A One Stop Experience Surpassing Expectations.
+              </h5>
               <h5>
                 Serving businesses in Toronto, the GTA and Nationally since
                 1986.
@@ -91,7 +93,9 @@ export default function Hero() {
               <h5>
                 We are fully insured carrying $10,000,000 liability insurance
               </h5>
-              <h5>Design and Marketing Award winners</h5>
+              <h5 className="highlighted">
+                Design And Marketing Award Winners
+              </h5>
               <ul className="list-inline slidelogos vm">
                 <li>
                   <img

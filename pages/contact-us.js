@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect } from "react";
 import { Layout, LazyImage, MapIframe } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
@@ -16,6 +17,15 @@ const ContactUs = ({ query }) => {
   }, [query]);
   return (
     <>
+      <Head>
+        <title>
+          Contact Us | Sign A Rama Toronto | Sign Company Toronto | Custom Signs
+        </title>
+        <meta
+          name="description"
+          content="Sign A Rama Toronto is one of the oldest full-service sign company in Toronto delivering high-end signs to businesses in & around Toronto since 1986. Contact us today by calling us or filling in the contact form with your sign queries and we'll get back to you in no time!"
+        />
+      </Head>
       <section className="sign-blogs-search-wrapper">
         <section className="sign-blogs-search-inner">
           <div className="section-heading">

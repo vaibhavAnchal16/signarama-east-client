@@ -359,7 +359,13 @@ fill: #fff;
   font-style: normal;
   font-family: "Open Sans", sans-serif;
   margin-top: 0px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+.hero-text h5::before{
+  content: "-";
+  position: relative;
+  display: inline-flex;
+  margin-right: 10px;
 }
 
 .hero-text h1 {

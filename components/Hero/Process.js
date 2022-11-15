@@ -14,7 +14,7 @@ export const Process = () => {
           </svg>
 
           <h2> Share </h2>
-          <p> SHARE with us your perfect signage idea.</p>
+          <p> Share with us your signage ideas, vision and inspirations.</p>
         </div>
         <div className="howsewingworksbox">
           <svg
@@ -28,7 +28,11 @@ export const Process = () => {
           </svg>
 
           <h2> Discuss </h2>
-          <p> We will share our knowledge with the possible options.</p>
+          <p>
+            {" "}
+            We will show and share with you our knowledge and experience with
+            options and costs.
+          </p>
         </div>
         <div className="howsewingworksbox">
           <svg
@@ -44,7 +48,8 @@ export const Process = () => {
           <h2> Demonstration </h2>
           <p>
             {" "}
-            We will SHOW what the sign will look like finished and installed.
+            We will show you what your sign will look like finished and
+            installed.
           </p>
         </div>
         <div className="howsewingworksbox">
@@ -58,11 +63,11 @@ export const Process = () => {
             <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
           </svg>
 
-          <h2> Approval </h2>
+          <h2> Approvals </h2>
           <p>
             {" "}
-            Only upon your APROVAL of the proof we will start the production of
-            the signs.
+            Upon your approval of the proof and obtaining of permits, if
+            applicable, we will start production.
           </p>
         </div>
         <div className="howsewingworksbox">
@@ -102,8 +107,10 @@ export const Process = () => {
           <h2> Installation </h2>
           <p>
             {" "}
-            If required we do all installations, just let us know what and
-            where!
+            Our in-house certified insured installers or our nationwide agents
+            will install your signage to proof and shop drawings. We are
+            Contractor Check, Comply Works Certified, and carry $5M liability
+            insurance for a worry-free experience.
           </p>
         </div>
       </div>

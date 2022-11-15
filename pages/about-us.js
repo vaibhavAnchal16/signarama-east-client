@@ -1,3 +1,4 @@
+import Head from "next/head";
 import client from "../apollo-client";
 import { ClientLists, Layout, ProudOf, Team } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
@@ -7,6 +8,15 @@ import { GALLERYBYTITLE } from "../graphql/queries";
 const AboutUs = ({ teams }) => {
   return (
     <>
+      <Head>
+        <title>
+          About Sign A Rama Toronto | Sign Company Toronto | Custom Signs |
+        </title>
+        <meta
+          name="description"
+          content="Sign A Rama Toronto is a premier sign company in Toronto delivering high-end signs to businesses in and around Toronto since 1986. We are a one-stop destination for all your signage needs offering end to end signage solutions from design to installation."
+        />
+      </Head>
       <section className="sign-blogs-search-wrapper">
         <section className="sign-blogs-search-inner">
           <div className="section-heading">
