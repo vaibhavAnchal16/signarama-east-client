@@ -21,7 +21,7 @@ const AboutUs = ({ teams }) => {
         <section className="sign-blogs-search-inner">
           <div className="section-heading">
             <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
-              About <span className="highlighted">Signrama Toronto </span>
+              About <span className="highlighted">Signarama Toronto </span>
             </h1>
             {/* <p>
               Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,

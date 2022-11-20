@@ -7,9 +7,10 @@ import LazyImage from "../LazyImage";
 
 export default function Hero() {
   const images = [
-    "//res.cloudinary.com/signaramatoronto/image/upload/f_auto/BLOGSIMAGES/big-banner1663438000984.jpg",
-    "//res.cloudinary.com/signaramatoronto/image/upload/v1663437874/BLOGSIMAGES/cutoutletters1663437872008.jpg",
-    "//res.cloudinary.com/signaramatoronto/image/upload/v1663408831/BLOGSIMAGES/awnings1663408822598.jpg",
+    "/images/collage1.jpg",
+    "/images/collage2.jpg",
+    "/images/collage3.jpg",
+    "/images/collage4.jpg",
   ];
   const options = {
     type: "loop",
@@ -78,7 +79,9 @@ export default function Hero() {
                 <span className="highlighted"> SIGN COMPANIES</span> IN TORONTO
               </h1>
               <h5 className="highlighted">
-                Offering A One Stop Experience Surpassing Expectations.
+                <strong>
+                  Offering A One Stop Experience Surpassing Expectations.
+                </strong>
               </h5>
               <h5>
                 Serving businesses in Toronto, the GTA and Nationally since
@@ -94,26 +97,20 @@ export default function Hero() {
                 We are fully insured carrying $10,000,000 liability insurance
               </h5>
               <h5 className="highlighted">
-                Design And Marketing Award Winners
+                <strong>Design And Marketing Award Winners</strong>
               </h5>
               <ul className="list-inline slidelogos vm">
                 <li>
-                  <img
-                    className="img-responsive"
-                    src="https://signarama-toronto.ca/wp-content/uploads/2018/03/tsa.png"
-                  />
+                  <img className="img-responsive" src="/images/tsa.png" />
                 </li>
                 <li>
-                  <img
-                    className="img-responsive"
-                    src="https://signarama-toronto.ca/wp-content/uploads/2018/04/ama.png"
-                  />
+                  <img className="img-responsive" src="/images/CW.webp" />
                 </li>
                 <li>
-                  <img
-                    className="img-responsive"
-                    src="https://signarama-toronto.ca/wp-content/uploads/2018/04/contractcheck.png"
-                  />
+                  <img className="img-responsive" src="/images/ama.png" />
+                </li>
+                <li>
+                  <img className="img-responsive" src="/images/ctcheck.png" />
                 </li>
               </ul>
 

@@ -5,7 +5,7 @@ const LazyImage = (props) => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [currentSrc, updateSrc] = useState(props?.placeholder);
-
+  console.log(props.src);
   useEffect(() => {
     // start loading original image
     if (props?.src) {
