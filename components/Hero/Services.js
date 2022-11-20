@@ -70,7 +70,9 @@ const Services = ({ signs }) => {
                             }}
                           />
                         </div>
-                        <p> {inerslides?.title}</p>
+                        <p className="highlighted">
+                          <strong> {inerslides?.title}</strong>
+                        </p>
                       </div>
                     </Link>
                   ))}

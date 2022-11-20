@@ -22,22 +22,16 @@ const ProudOf = ({ title }) => {
         <marquee>
           <ul className="list-inline slidelogos vm">
             <li>
-              <img
-                className="img-responsive"
-                src="https://signarama-toronto.ca/wp-content/uploads/2018/03/tsa.png"
-              />
+              <img className="img-responsive" src="/images/tsa.png" />
             </li>
             <li>
-              <img
-                className="img-responsive"
-                src="https://signarama-toronto.ca/wp-content/uploads/2018/04/ama.png"
-              />
+              <img className="img-responsive" src="/images/CW.webp" />
             </li>
             <li>
-              <img
-                className="img-responsive"
-                src="https://signarama-toronto.ca/wp-content/uploads/2018/04/contractcheck.png"
-              />
+              <img className="img-responsive" src="/images/ama.png" />
+            </li>
+            <li>
+              <img className="img-responsive" src="/images/ctcheck.png" />
             </li>
           </ul>
         </marquee>
