@@ -10,7 +10,7 @@ const ProjectsCompleted = ({ className }) => {
       <div className="project-completed-content">
         <span className="compl-number">450+</span>
         <div className="compl-project">
-          <h2>Completed Projects</h2>
+          <h2 className="highlighted">Our Customers</h2>
           <p>
             Home Alive Pets, Eataly, Sweat and Tonic, John Fluefog, Aritzia,
             Tilleys, Peak, Hotel One, Delta Hotels, Fairmount Hotels, YMCA,

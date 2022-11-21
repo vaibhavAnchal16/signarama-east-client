@@ -47,16 +47,15 @@ const BlogCard = ({ title, image, slug, description }) => {
         </div>
         <div className="context">
           <h3> {title} </h3>
-          <hr />
-          <p
-          // dangerouslySetInnerHTML={createMarkup(description)
-          //   ?.toString()
-          //   ?.substring(0, 25)}
+          {/* <hr /> */}
+          {/* <button>Read More</button> */}
+          {/* <p
+          
           >
             This is some description that we will pull directly from the back
             end of the server and show it here as short description of this
             blog.
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
