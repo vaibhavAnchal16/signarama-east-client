@@ -84,8 +84,7 @@ export const Process = () => {
           <h2> Production </h2>
           <p>
             {" "}
-            After creating your dream signage we will contact you for
-            pick-up/delivery/or install.
+            After creating your signage, we will contact you for installation.
           </p>
         </div>
         <div className="howsewingworksbox">

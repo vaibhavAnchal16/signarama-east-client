@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import ConnectForm from "../ConnectForm";
 
@@ -11,9 +12,20 @@ const ProjectsCompleted = ({ className }) => {
         <div className="compl-project">
           <h2>Completed Projects</h2>
           <p>
-            We employing Lean Construction practices on our projects to create a
-            better environment for our employees and partners, and deliver
-            better value to our customers.
+            Home Alive Pets, Eataly, Sweat and Tonic, John Fluefog, Aritzia,
+            Tilleys, Peak, Hotel One, Delta Hotels, Fairmount Hotels, YMCA,
+            CBRE, Triovest, SNC Lavalin, Province of Ontario, University Health
+            Network..{" "}
+            <Link href="/about-us">
+              <span className="highlighted"> read more</span>
+            </Link>
+            {/* , Princess Margaret
+            Hospital, Mizrahi Developments, Candarel, Toronto Police Services,
+            Browns Shoes, Lululemon, Rockin&apos; Horse Saloon, Starbucks,
+            Sherbourne Health Centre, Ontario Nurses Association, Roche Bobois,
+            Bo Concepts, OMERS, OACCAC, National Ballet School, Lawson Real
+            Estate, Marriott Hotels and hundreds of retail stores throughout the
+            city. */}
           </p>
         </div>
         <div className="login-info">
