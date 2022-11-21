@@ -289,7 +289,7 @@ body.branding::after {
     width: 100%;
 }
 .hero-slider img{
-    height: 65vh;
+    /* height: 65vh; */
     width: 100%;
     transition: all 0.3s ease-in-out;
     object-fit: cover;
@@ -525,6 +525,23 @@ body {
   }
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
       font-weight: 700;
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover .context h3{
+    color: #b60521;
+  }
+  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover::after{
+    content: "signarama toronto";
+    position: absolute;
+    bottom: -10px;
+    margin: 0px auto;
+    text-align: center;
+    color: #b60521;
+    font-size: 14px;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background-color: #b60521;
   }
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
       padding: 10px 15px;
