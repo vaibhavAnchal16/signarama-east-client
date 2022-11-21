@@ -75,7 +75,7 @@ export default function Hero() {
             /> */}
             <section className="hero-text">
               <h1>
-                ONE OF THE OLDEST{" "}
+                ONE OF THE OLDEST <br />
                 <span className="highlighted"> SIGN COMPANIES</span> IN TORONTO
               </h1>
               <h5 className="highlighted">

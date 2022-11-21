@@ -100,12 +100,13 @@ p {
   left: 48px;
 }
 .howsewingworks-inner .howsewingworksbox p {
-  font-style: normal;
+  line-height: 180%;
+  /* font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
   color: #36311F;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; */
 }
 .grayit{
   filter: grayscale(1);
@@ -312,7 +313,7 @@ fill: #fff;
   width: 100%;
    text-align: center;
   margin: 0 auto;
-  max-width: 836px;
+  max-width: 945px;
   align-items: center;
   justify-content: center;
   /* color: white; */
@@ -370,7 +371,7 @@ fill: #fff;
 
 .hero-text h1 {
   font-weight: 700;
-  font-size: 62px;
+  font-size: 52px;
   margin-bottom: 30px;
   margin-top: 30px;
   font-family: Montserrat, sans-serif;
@@ -634,20 +635,20 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
 .section-heading-award p {
   text-align: center;
   max-width: 80%;
-  font-size: 18px;
+  /* font-size: 18px; */
   margin: 0px auto;
-  font-weight: 100;
-  line-height: 160%;  
+  /* font-weight: 100; */
+  line-height: 180%;  
   text-align: center;
   margin-bottom: 25px;
 }
 .section-heading p{
   text-align: center;
   max-width: 52%;
-  font-size: 18px;
+  /* font-size: 18px; */
   margin: 0px auto;
-  font-weight: 100;
-  line-height: 160%;
+  /* font-weight: 100; */
+  line-height: 180%;
 }
 .section-heading-award h1{
   width: 100%;
