@@ -4,6 +4,7 @@ import sanitizeHtml from "sanitize-html";
 import { Layout, LazyImage } from "../../components";
 import { BLOG } from "../../graphql/queries";
 import Head from "next/head";
+import Link from "next/link";
 
 const Blog = ({ blog }) => {
   const createMarkup = (html) => {
@@ -59,11 +60,13 @@ const Blog = ({ blog }) => {
                 width: "100%",
               }}
             />
-            {console.log(blog?.description)}
             <div
               className="blog-description"
               dangerouslySetInnerHTML={createMarkup(blog?.description)}
             ></div>
+            <div className="read-more-link">
+              <Link href="/contact-us">Contact Us</Link>
+            </div>
           </div>
         </div>
       </div>

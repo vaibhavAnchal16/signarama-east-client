@@ -163,7 +163,7 @@ body.branding::after {
     max-width: 100%;
 }
 .help-section-inner .help-section-box .help-context h1 {
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 25px;
 }
 
@@ -710,7 +710,7 @@ body {
         max-width: 90%;
     }
     .section-heading h1, .section-heading-award h1 {
-        font-size: 36px;
+        font-size: 30px;
     }
     .project-completed-content{
         flex-wrap: wrap;
@@ -758,6 +758,9 @@ body {
 
 
 @media (max-width:767px) {
+    .carousel-wrapper {
+        min-height: 270px;
+    }
     .help-section-inner .help-section-box {
         flex-direction: column;
     }
@@ -817,7 +820,7 @@ body {
         padding: 0px 15px;
     }
     .section-heading h1, .section-heading-award h1{
-        font-size: 20px;
+        font-size: 18px;
     }
     .credit-inner {
         text-align: center;
@@ -863,7 +866,7 @@ body {
         margin-bottom: 15px;
     }
     .section-heading p, .section-heading-award p {
-        font-size: 16px;
+        font-size: 12px;
         max-width: 100%;
         padding: 0px 15px;
     }

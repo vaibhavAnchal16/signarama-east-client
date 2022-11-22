@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 35px 0;
+    padding: 35px 15px;
   }
   .services-img {
     max-width: 30%;
@@ -31,10 +31,11 @@
   }
   
   .page-main-heading {
-    font-size: 60px;
+    font-size: 35px;
     text-shadow: 2px 2px 30px rgb(0 0 0 / 40%);
     position: relative;
     z-index: 2;
+    font-weight: 600;
   }
   .services-descp {
     text-align: center;
@@ -167,7 +168,7 @@
   
   @media (max-width: 1199px) {
     .page-main-heading {
-      font-size: 70px;
+      font-size: 35px;
     }
     .services-descp p {
       font-size: 15px;
@@ -214,8 +215,12 @@
   }
   
   @media (max-width: 767px) {
+    .serv-internal-content {
+      
+      padding: 25px 15px;
+  }
     .page-main-heading {
-      font-size: 50px;
+      font-size: 30px;
     }
     .slider .slider-img {
       max-height: 125px;
@@ -230,9 +235,11 @@
   
   @media (max-width: 480px) {
     .page-main-heading {
-      font-size: 35px;
+      font-size: 18px;
     }
-  
+    .services-descp h2, .serv-detail-text h2{
+      font-size: 18px;
+    }
     .services-descp p,
     .serv-detail-text p {
       font-size: 13px;
@@ -241,7 +248,7 @@
       font-size: 13px;
     }
     .serv-detail-text .heading {
-      font-size: 30px;
+      font-size: 18px;
     }
     .slider .slider-img {
       padding-top: 5px;

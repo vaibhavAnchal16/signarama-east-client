@@ -1,7 +1,9 @@
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useRouter } from "next/router";
 
 const SliderWithMiniImage = ({ trending }) => {
+  const router = useRouter();
   const options = {
     type: "loop",
     perPage: 1,
@@ -21,11 +23,21 @@ const SliderWithMiniImage = ({ trending }) => {
       >
         {trending?.map((item, i) => {
           return (
-            <SplideSlide className="outer-slide-story" key={i}>
+            <SplideSlide
+              className="outer-slide-story"
+              key={i}
+              style={{ cursor: "pointer" }}
+              onClick={(e) => {
+                router.push(`/blog/${item.slug}`);
+              }}
+            >
               <div className="carousel-wrapper">
                 <div
                   className="carousel-bg-image"
-                  style={{ backgroundImage: `url(${item?.featuredImage})` }}
+                  style={{
+                    cursor: "pointer",
+                    backgroundImage: `url(${item?.featuredImage})`,
+                  }}
                 >
                   {" "}
                 </div>

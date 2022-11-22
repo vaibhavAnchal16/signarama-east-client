@@ -4,6 +4,7 @@ import { SIGN } from "../graphql/queries";
 import sanitizeHtml from "sanitize-html";
 import Head from "next/head";
 import GalleryGrid from "../components/GalleryGrid";
+import Link from "next/link";
 
 const Signs = ({ loading, sign }) => {
   const createMarkup = (html) => {
@@ -86,7 +87,9 @@ const Signs = ({ loading, sign }) => {
               dangerouslySetInnerHTML={createMarkup(sign?.description)}
             ></div>
           </div>
-
+          <div className="read-more-link">
+            <Link href="/contact-us">Contact Us</Link>
+          </div>
           <GalleryGrid images={sign?.gallery?.images} />
         </div>
       </div>
