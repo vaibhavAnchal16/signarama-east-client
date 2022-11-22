@@ -8,12 +8,12 @@ const TopStories = ({ trending }) => {
         <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
           Trending <span className="highlighted">Stories </span>
         </h1>
-        <p>
+        {/* <p>
           {" "}
           Need Help ? We have a talented team of experienced signage consultants
           who can offer expert advice on the kind of sign or promotion that
           would best suit your requirements.
-        </p>
+        </p> */}
       </div>
       <SliderWithMiniImage trending={trending} />
     </section>

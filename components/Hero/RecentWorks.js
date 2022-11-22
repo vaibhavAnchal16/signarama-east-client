@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import BlogCard from "../BlogCard";
 import SliderWithMiniImage from "../SliderWithMiniImage";
@@ -26,6 +27,9 @@ const RecentWorks = ({ recentworks }) => {
             slug={blg?.slug}
           />
         ))}
+        <div className="read-more-link">
+          <Link href="/sign-blog">See More</Link>
+        </div>
       </div>
     </section>
   );

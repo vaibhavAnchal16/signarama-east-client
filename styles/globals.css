@@ -219,13 +219,18 @@ section.hero {
   border-radius: 100%;
   opacity: 1;
 }
+.splide.stories-slider:hover .splide__arrow{
+  background-color: #b60521;
+  opacity: 1;
+}
 .stories-slider .splide__arrow{
   background-color: #000;
-  height: 40px;
-  width: 38px;
+  height: 55px;
+  width: 55px;
   padding: 0px;
   border-radius: 100%;
 }
+
 .floating-items{
       /* align-items: center; */
       position: fixed;
@@ -297,10 +302,15 @@ fill: #fff;
   letter-spacing: 0.9px;
 
 }
-.testimonial-slider-wrapper  .splide__arrow svg, .stories-slider .splide__arrow svg {
+.testimonial-slider-wrapper  .splide__arrow svg {
   fill: #fff;
   height: 10px;
   width: 10px;
+}
+.stories-slider .splide__arrow svg{
+  fill: #fff;
+  height: 15px;
+  width: 15px;
 }
 .testimonial-slider-wrapper 
 .testimonial-slider-wrapper .splide__track{
@@ -318,7 +328,10 @@ fill: #fff;
   justify-content: center;
   /* color: white; */
 }
-.hero-text a, .team-wrapper a{
+div.read-more-link{
+  width: 100%;
+}
+.hero-text a, .team-wrapper a, div.read-more-link a{
   height: 45px;
   max-width: 245px;
   width: 100%;
@@ -654,14 +667,14 @@ ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
   width: 100%;
   max-width: 100%;
   margin: 0 auto 15px;
-  font-size: 60px;
+  font-size: 35px;
   margin-left: 0px;
 }
 .section-heading h1 {
   width: 100%;
   max-width: 100%;
   margin: 0 auto 15px;
-  font-size: 60px;
+  font-size: 35px;
   margin-left: 0px;
 }
 section.our-services {
@@ -775,11 +788,11 @@ section.our-services {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  -webkit-filter: blur(10px);
-  -moz-filter: blur(10px);
-  -o-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
 }
 .carousel-content {
   height: 100%;

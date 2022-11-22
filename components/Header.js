@@ -153,7 +153,7 @@ const Header = () => {
                                     <li key={i}>
                                       {" "}
                                       <span
-                                        href={item?.slug}
+                                        href={`/${item?.slug}`}
                                         onClick={handleClick}
                                       >
                                         {" "}
