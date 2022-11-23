@@ -16,7 +16,10 @@ const ProjectsCompleted = ({ className }) => {
             Tilleys, Peak, Hotel One, Delta Hotels, Fairmount Hotels, YMCA,
             CBRE, Triovest, SNC Lavalin, Province of Ontario, University Health
             Network, Princess Margaret Hospital, Ontario Nurses Association...{" "}
-            <Link href="/about-us" style={{ cursor: "pointer" }}>
+            <Link
+              href="/about-us?section=clients"
+              style={{ cursor: "pointer" }}
+            >
               <span className="highlighted"> read more</span>
             </Link>
           </p>

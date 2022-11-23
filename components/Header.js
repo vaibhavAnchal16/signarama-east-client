@@ -37,6 +37,14 @@ const Header = () => {
   });
 
   useEffect(() => {
+    if (mobileMenu) {
+      document.querySelector("body").classList.add("no-scroll");
+    } else {
+      document.querySelector("body").classList.remove("no-scroll");
+    }
+  }, [mobileMenu]);
+
+  useEffect(() => {
     (async () => {
       const { data, loading } = await client.query({
         query: SIGNS,
