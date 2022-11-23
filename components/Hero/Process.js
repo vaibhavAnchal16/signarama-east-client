@@ -108,7 +108,7 @@ export const Process = () => {
             {" "}
             Our in-house certified insured installers or our nationwide agents
             will install your signage to proof and shop drawings. We are
-            Contractor Check, Comply Works Certified, and carry $5M liability
+            Contractor Check, Comply Works Certified, and carry $10M liability
             insurance for a worry-free experience.
           </p>
         </div>

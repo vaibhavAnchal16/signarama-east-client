@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import client from "../apollo-client";
 import { ClientLists, Layout, ProudOf, Team } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
@@ -6,6 +8,17 @@ import Wally from "../components/Hero/Wally";
 import { GALLERYBYTITLE } from "../graphql/queries";
 
 const AboutUs = ({ teams }) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query?.section === "clients") {
+      document.querySelector("#clientlistsection").scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  }, []);
   return (
     <>
       <Head>

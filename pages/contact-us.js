@@ -53,7 +53,7 @@ const ContactUs = ({ query }) => {
                 Office Address :{" "}
                 <span>
                   {" "}
-                  Signarama Toronto, 873 Bay St. Toronto, ONTARIO M5S 3K6{" "}
+                  Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6{" "}
                 </span>
               </p>
               <p className="eml">

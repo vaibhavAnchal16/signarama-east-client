@@ -67,11 +67,11 @@ const Footer = ({ recentBlogs }) => {
                   <li>
                     {" "}
                     <a
-                      href="https://plus.google.com/u/0/b/103480397092757649225/"
+                      href="https://www.instagram.com/signaramato/"
                       rel="noreferrer"
                       target="_blank"
                     >
-                      Google Plus
+                      Instagram
                     </a>{" "}
                   </li>
                 </ul>
@@ -91,7 +91,7 @@ const Footer = ({ recentBlogs }) => {
                       {" "}
                       <p>
                         {" "}
-                        Signarama Toronto, 873 Bay St. Toronto, ONTARIO M5S 3K6
+                        Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
                       </p>{" "}
                     </li>
                     <li className="phone">

@@ -1,7 +1,7 @@
 import React from "react";
 const ClientLists = ({ title }) => {
   return (
-    <section className="about-us">
+    <section className="about-us" id="clientlistsection">
       <div className="wally-wrapper">
         <div className="about-owner-wrapper">
           {title && (

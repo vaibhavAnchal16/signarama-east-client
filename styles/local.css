@@ -859,8 +859,12 @@ body {
     .proud-of-inner ul, .hero-text ul{
         flex-wrap: wrap;
     }
+    .proud-of-inner ul{
+        max-width: 360px;
+        margin: 0px auto;
+    }
     .proud-of-inner ul li{
-        max-width: 50%;
+        max-width: 48%;
     }
     .proud-of-inner ul li:not(:last-child), .hero-text ul li:not(:last-child){
         margin-bottom: 15px;
