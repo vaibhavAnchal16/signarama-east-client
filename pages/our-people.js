@@ -7,11 +7,11 @@ const OurPeople = ({ teams, loader }) => {
   if (loader) return ``;
   return (
     <>
-      <section class="sign-blogs-search-wrapper">
-        <section class="sign-blogs-search-inner">
-          <div class="section-heading">
+      <section className="sign-blogs-search-wrapper">
+        <section className="sign-blogs-search-inner">
+          <div className="section-heading">
             <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
-              Our <span class="highlighted">People </span>
+              Our <span className="highlighted">People </span>
             </h1>
           </div>
         </section>
