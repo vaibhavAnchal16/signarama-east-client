@@ -71,7 +71,6 @@ export default function Layout({ children }) {
 
   return (
     <>
-      {/* <TopBar /> */}
       <Header />
       <div className="floating-items">
         <div className="floating-items-inner">
