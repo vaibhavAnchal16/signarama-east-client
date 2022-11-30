@@ -415,12 +415,12 @@ div.read-more-link{
   font-family: "Courier Prime", monospace;
   color: #b60521 !important;
 } */
-ul > li.outer-slide:nth-child(even) .inner-slide:not(:last-child){
-  margin-bottom: 45px;
-}
-ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
+ul > li.outer-slide .inner-slide:not(:last-child){
   margin-bottom: 25px;
 }
+/* ul > li.outer-slide:nth-child(odd) .inner-slide:not(:last-child){
+  margin-bottom: 25px;
+} */
 .outer-slide{
   padding: 10px 10px;
 }
