@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         strategy="lazyOnload"
         src={`//www.googletagmanager.com/ns.html?id=GTM-TDXML5`}
       />
-      <Script strategy="lazyOnload">
+      {/* <Script strategy="lazyOnload">
         {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
                     page_path: window.location.pathname,
                     });
                 `}
-      </Script>
+      </Script> */}
       <Head>
         <meta
           name="google-site-verification"
