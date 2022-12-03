@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
           name="google-site-verification"
           content="h_QtqfyzK99ssLNCxeTGaDF3joPBXCkYcx00DKFHF58"
         />
+        <link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
 
       {getLayout(<Component {...pageProps} />)}
