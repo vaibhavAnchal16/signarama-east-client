@@ -35,7 +35,8 @@ export const imageUploadMultiple = async (files, setFiles, folder) => {
         body: formData, // body data type must match "Content-Type" header
       });
       const data = await response.json();
-      setFiles((_) => [..._, data?.secure_url]);
+      console.log(data.secure_url);
+      setFiles((_) => [data?.secure_url, ..._]);
     } catch (error) {
       return error;
     }

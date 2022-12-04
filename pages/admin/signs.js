@@ -20,13 +20,13 @@ const Signs = () => {
   const [gallerySelected, setGallerySelected] = useState(null);
   const [createsign] = useMutation(CREATESIGN);
   const [updatesign] = useMutation(UPDATESIGN);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(null);
   const [filters, setFilters] = useState({});
 
   const [image, setImage] = useState({
     preview: null,
   });
-  const size = 50;
+  const size = null;
 
   const { data, loading, refetch } = useQuery(SIGNS, {
     variables: {
@@ -136,7 +136,7 @@ const Signs = () => {
       ),
     },
   ];
-
+  if (loading) return "Please wait..";
   return (
     <div>
       {action && (

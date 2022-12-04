@@ -52,6 +52,81 @@ const Galleries = () => {
     },
   ];
 
+  function slist(target) {
+    // (A) SET CSS + GET ALL LIST ITEMS
+    target.classList.add("slist");
+    let items = target.querySelectorAll(".images-preview-form-wrapper"),
+      current = null;
+    // (B) MAKE ITEMS DRAGGABLE + SORTABLE
+    for (let i of items) {
+      // (B1) ATTACH DRAGGABLE
+      i.draggable = true;
+
+      // (B2) DRAG START - YELLOW HIGHLIGHT DROPZONES
+      i.ondragstart = (ev) => {
+        current = i;
+        for (let it of items) {
+          if (it != current) {
+            it.classList.add("hint");
+          }
+        }
+      };
+
+      // (B3) DRAG ENTER - RED HIGHLIGHT DROPZONE
+      i.ondragenter = (ev) => {
+        if (i != current) {
+          i.classList.add("active");
+        }
+      };
+
+      // (B4) DRAG LEAVE - REMOVE RED HIGHLIGHT
+      i.ondragleave = () => {
+        i.classList.remove("active");
+      };
+
+      // (B5) DRAG END - REMOVE ALL HIGHLIGHTS
+      i.ondragend = () => {
+        for (let it of items) {
+          it.classList.remove("hint");
+          it.classList.remove("active");
+        }
+      };
+
+      // (B6) DRAG OVER - PREVENT THE DEFAULT "DROP", SO WE CAN DO OUR OWN
+      i.ondragover = (evt) => {
+        evt.preventDefault();
+      };
+
+      // (B7) ON DROP - DO SOMETHING
+      i.ondrop = (evt) => {
+        evt.preventDefault();
+        if (i != current) {
+          let currentpos = 0,
+            droppedpos = 0;
+          for (let it = 0; it < items.length; it++) {
+            if (current == items[it]) {
+              currentpos = it;
+            }
+            if (i == items[it]) {
+              droppedpos = it;
+            }
+          }
+          if (currentpos < droppedpos) {
+            i.parentNode.insertBefore(current, i.nextSibling);
+          } else {
+            i.parentNode.insertBefore(current, i);
+          }
+        }
+      };
+    }
+  }
+
+  useEffect(() => {
+    if (action) {
+      slist(document.getElementById("sortlist"));
+    }
+  }, [action]);
+
   if (loading) return "Please wait..";
   return (
     <div>
@@ -66,11 +141,16 @@ const Galleries = () => {
                   input.title.style = "border: 1px solid red";
                   return;
                 }
-
+                const imagesdragged = document.querySelectorAll(
+                  ".images-preview-form .images-preview-form-wrapper img"
+                );
+                const imageUrls = [...imagesdragged].map((el) =>
+                  el.getAttribute("src")
+                );
                 const inputValues = {
                   title: input.title.value.trim(),
                   description,
-                  images,
+                  images: imageUrls,
                 };
 
                 if (action?.module === "add") {
@@ -139,7 +219,7 @@ const Galleries = () => {
                 </div>
 
                 <div className="fields-wrapper">
-                  <div className="images-preview-form">
+                  <div className="images-preview-form" id="sortlist">
                     {images?.map((url, i) => {
                       return (
                         <div className="images-preview-form-wrapper" key={i}>

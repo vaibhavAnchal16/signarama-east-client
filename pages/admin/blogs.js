@@ -140,7 +140,7 @@ const Blogs = () => {
       ),
     },
   ];
-
+  if (loading) return "Please wait..";
   return (
     <div>
       {action && (
@@ -369,6 +369,30 @@ const Blogs = () => {
       </div>
       <div>
         <DataTable data={data?.blogs?.blogs} columns={columns} />
+      </div>
+      <div className="pagination">
+        {page > 1 && (
+          <button
+            onClick={(e) => {
+              if (page > 1) {
+                setPage((page) => page - 1);
+              }
+              // managePagination("decrement", page);
+            }}
+          >
+            Previous
+          </button>
+        )}
+
+        <button
+          onClick={(e) => {
+            setPage((page) => page + 1);
+            // managePagination("increment", page);
+          }}
+        >
+          {" "}
+          Next
+        </button>
       </div>
     </div>
   );
