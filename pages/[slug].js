@@ -106,6 +106,11 @@ export async function getServerSideProps(context) {
       slug,
     },
   });
+  if (!data?.sign) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: {
       loading,

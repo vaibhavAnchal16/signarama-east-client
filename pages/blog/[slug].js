@@ -82,6 +82,11 @@ export async function getServerSideProps(context) {
       slug,
     },
   });
+  if (!data?.blog) {
+    return {
+      notFound: true,
+    };
+  }
   return { props: { blog: data?.blog } };
 }
 

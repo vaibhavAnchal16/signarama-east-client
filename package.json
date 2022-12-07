@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "export": "npm run build && next export && mv out _static",
     "lint": "next lint"
@@ -19,6 +20,7 @@
     "lodash": "^4.17.21",
     "next": "12.2.3",
     "next-images": "^1.8.4",
+    "next-sitemap": "^3.1.32",
     "react": "^18.0.0",
     "react-data-table-component": "^7.5.3",
     "react-dom": "^18.0.0",

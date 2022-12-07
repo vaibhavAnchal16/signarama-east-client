@@ -1,5 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
+import { NextResponse } from "next/server";
 import React from "react";
 import { useState } from "react";
 import client from "../apollo-client";
@@ -42,14 +43,6 @@ const ConnectForm = (props) => {
           onSubmit={async (e) => {
             const { name, email, phone, address, message } = e.target;
             e.preventDefault();
-            console.log(
-              name.value,
-              email.value,
-              phone.value,
-              address.value,
-              message.value,
-              file
-            );
             if (step === 2) {
               try {
                 const { data, loading, error } = await client.mutate({
@@ -64,7 +57,8 @@ const ConnectForm = (props) => {
                   },
                 });
                 if (data) {
-                  router.push(`/thankyou/?${data?.createFormEntry?._id}`);
+                  // router.push(`/thankyou/?${data?.createFormEntry?._id}`);
+                  window.location.href = `${window.location.origin}/thankyou`;
                 }
               } catch (error) {
                 console.log(error);
