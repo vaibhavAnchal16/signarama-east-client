@@ -19,12 +19,12 @@ export const getServerSideProps = async (ctx) => {
       filters: null,
     },
   });
-  const newsigns = signs?.data?.signs.map((item) => ({
+  const newsigns = signs?.data?.signs?.map((item) => ({
     loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}${item.slug}`,
     lastmod: new Date().toISOString(),
   }));
 
-  const newblogs = blogs?.data?.blogs.map((item) => ({
+  const newblogs = blogs?.data?.blogs?.map((item) => ({
     loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}${item.slug}`,
     lastmod: new Date().toISOString(),
   }));

@@ -116,6 +116,7 @@ export async function getServerSideProps({ params, query }) {
     };
   }
   const { data } = await client.query({
+    fetchPolicy: "no-cache",
     query: BLOGS,
     variables: {
       page: query?.page ? Number(query.page) : 1,
