@@ -8,21 +8,12 @@ import {
   Team,
   TopStories,
 } from "../components";
-import { Process } from "../components/Hero/Process";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import RecentWorks from "../components/Hero/RecentWorks";
 import Wally from "../components/Hero/Wally";
-import TestimonialSlider from "../components/TestimonialSlider";
 import { BLOGS, GALLERYBYTITLE, SIGNS } from "../graphql/queries";
 
-export default function Home({
-  signs,
-  recentworks,
-  trending,
-  testimonials,
-  teams,
-  loader,
-}) {
+export default function Home({ signs, recentworks, trending, teams, loader }) {
   if (loader) return "Loading...";
   return (
     <div>
@@ -61,6 +52,7 @@ export async function getServerSideProps({ params, query }) {
     },
   });
   const trending = await client.query({
+    fetchPolicy: "no-cache",
     query: BLOGS,
     variables: {
       page: 1,
@@ -71,6 +63,7 @@ export async function getServerSideProps({ params, query }) {
     },
   });
   const recent = await client.query({
+    fetchPolicy: "no-cache",
     query: BLOGS,
     variables: {
       page: 1,
@@ -82,6 +75,7 @@ export async function getServerSideProps({ params, query }) {
   });
 
   const testimonials = await client.query({
+    fetchPolicy: "no-cache",
     query: GALLERYBYTITLE,
     variables: {
       title: "Testimonial",
