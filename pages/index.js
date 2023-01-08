@@ -58,6 +58,7 @@ export async function getServerSideProps({ params, query }) {
       page: 1,
       size: 10,
       filters: {
+        published: true,
         trending: true,
       },
     },
@@ -69,6 +70,7 @@ export async function getServerSideProps({ params, query }) {
       page: 1,
       size: 9,
       filters: {
+        published: true,
         recentWork: true,
       },
     },

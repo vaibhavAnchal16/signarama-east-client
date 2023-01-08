@@ -108,7 +108,9 @@ const SignBlog = ({ blogs }) => {
 };
 // This also gets called at build time
 export async function getServerSideProps({ params, query }) {
-  const filters = {};
+  const filters = {
+    published: true,
+  };
   if (query.search) {
     filters["title"] = {
       $regex: query.search,

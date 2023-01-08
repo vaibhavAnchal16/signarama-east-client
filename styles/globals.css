@@ -83,6 +83,16 @@ p {
 .ck .ck-button.ck-color-table__remove-color{
   max-width: 100%;
 }
+.dropzonearea .dropzonepreview {
+  max-width: 225px;
+  /* height: 200px; */
+  margin: 6px auto 6px 0px;
+  /* border-radius: 100%; */
+  overflow: hidden;  
+}
+.dropzonearea .dropzonepreview > img{
+  max-width: 100%;
+}
 .credit-wrapper + svg{
   position: absolute;
   bottom: 0;

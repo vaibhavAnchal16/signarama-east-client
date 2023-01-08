@@ -61,6 +61,9 @@ export const DropZone = ({
             {loading ? "Please wait.." : <>{text}, or Click to Browse</>}
           </p>
         </div>
+        <div className="dropzonepreview">
+          <img src={file?.preview ?? ""} />
+        </div>
       </div>
       {file?.preview && (
         <div className="removedropfile">
