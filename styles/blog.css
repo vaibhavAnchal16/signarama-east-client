@@ -127,6 +127,12 @@
 .blog-description > *{
     margin: 15px 0px;
 }
+.blog-description iframe{
+    width: 100%;
+}
+.blog-description oembed{
+    display: none;
+}
 .blog-description > p{
     font-size: 18px;
 }

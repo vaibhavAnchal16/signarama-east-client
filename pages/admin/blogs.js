@@ -22,6 +22,7 @@ const Blogs = () => {
   const [updateblog] = useMutation(UPDATEBLOG);
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState({});
+  const [formLoading, setFormLoading] = useState(false);
   const [image, setImage] = useState({
     preview: null,
   });
@@ -78,7 +79,6 @@ const Blogs = () => {
         };
       }),
     },
-
     toolbar: {
       items: [
         "heading",
@@ -103,6 +103,9 @@ const Blogs = () => {
     },
     table: {
       contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    },
+    mediaEmbed: {
+      previewsInData: true,
     },
   };
 
@@ -169,7 +172,7 @@ const Blogs = () => {
                   trending,
                   recentWork,
                 };
-
+                setFormLoading(true);
                 if (action?.module === "add") {
                   try {
                     const { data } = await createblog({
@@ -180,8 +183,10 @@ const Blogs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      setFormLoading(false);
                     }
                   } catch (error) {
+                    setFormLoading(false);
                     console.log(error);
                   }
                 }
@@ -196,9 +201,11 @@ const Blogs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      setFormLoading(false);
                     }
                   } catch (error) {
                     console.log(error);
+                    setFormLoading(false);
                   }
                 }
               }}
@@ -229,7 +236,6 @@ const Blogs = () => {
                             data={description}
                             onChange={(event, editor) => {
                               const data = editor.getData();
-
                               setDescription(data);
                             }}
                           />
@@ -345,9 +351,12 @@ const Blogs = () => {
                   {" "}
                   Cancel
                 </button>{" "}
-                <button type="submit">
-                  {" "}
-                  {action?.module === "add" ? `Save` : `Update`}{" "}
+                <button type="submit" disabled={formLoading}>
+                  {formLoading ? (
+                    <> Please Wait....</>
+                  ) : (
+                    <>{action?.module === "add" ? `Save` : `Update`} </>
+                  )}
                 </button>
               </div>
             </form>

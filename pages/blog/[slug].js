@@ -5,43 +5,51 @@ import { Layout, LazyImage } from "../../components";
 import { BLOG } from "../../graphql/queries";
 import Head from "next/head";
 import Link from "next/link";
+import { useCallback, useEffect } from "react";
 
 const Blog = ({ blog }) => {
   const createMarkup = (html) => {
     return {
       __html: sanitizeHtml(html, {
-        allowedTags: [
-          "p",
-          "h1",
-          "h2",
-          "h3",
-          "h4",
-          "h5",
-          "strong",
-          "a",
-          "img",
-          "span",
-          "iframe",
-          "oembed",
-          "div",
-          "figure",
-          "address",
-          "article",
-          "aside",
-          "footer",
-          "header",
-        ],
-        allowedAttributes: {
-          a: ["href"],
-          img: ["src", "alt"],
-          oembed: ["url"],
-        },
+        allowedTags: false,
+        allowedAttributes: false,
         exclusiveFilter: function (frame) {
           return frame.tag === "p" && !frame.text.trim();
         },
       }),
     };
   };
+
+  function getId(url) {
+    var regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return "error";
+    }
+  }
+
+  useEffect(() => {
+    const checkDescription = setInterval(function () {
+      const blogdescsection = document.querySelector(".blog-description");
+      if (blog && blogdescsection) {
+        clearInterval(checkDescription);
+        const tagsoemebeds = blogdescsection.querySelectorAll("oembed");
+        tagsoemebeds.forEach((element) => {
+          const iframeelement = document.createElement("div");
+          const videoId = getId(element.getAttribute("url"));
+          const srcforoembed = `//www.youtube.com/embed/${videoId}`;
+          iframeelement.innerHTML = `<iframe id=${videoId} height="415" src=${srcforoembed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+          if (!document.querySelector(`#${videoId}`)) {
+            element.insertAdjacentHTML("afterend", iframeelement.innerHTML);
+          }
+        });
+      }
+    });
+  }, [blog]);
 
   return (
     <>

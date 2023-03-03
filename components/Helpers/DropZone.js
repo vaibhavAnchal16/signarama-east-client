@@ -13,7 +13,7 @@ export const DropZone = ({
   const [loading, setLoading] = useState(false);
   const { getRootProps, getInputProps } = useDropzone({
     acceptedFiles: "",
-    noClick: file?.preview ?? false,
+    // noClick: file?.preview ?? false,
     noKeyboard: true,
     multiple: false,
     onDrop: async (acceptedFiles) => {
