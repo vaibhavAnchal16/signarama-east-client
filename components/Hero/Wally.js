@@ -47,7 +47,7 @@ const Wally = ({ title }) => {
                 {" "}
                 <div className="nameandlinked">
                   <span>Wally Tomaszek</span>
-                  <span>
+                  {/* <span>
                     <a
                       target="_blank"
                       rel="noreferrer"
@@ -55,11 +55,11 @@ const Wally = ({ title }) => {
                     >
                       <img src="//res.cloudinary.com/signaramatoronto/image/upload/f_auto/STATICASSETS/linkedin-icon_cparra.png" />{" "}
                     </a>
-                  </span>
+                  </span> */}
                 </div>
-                <span className="wally-desig">
+                {/* <span className="wally-desig">
                   President, Signarama Toronto
-                </span>
+                </span> */}
               </div>
             </div>
           </div>
