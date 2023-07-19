@@ -86,6 +86,7 @@ export async function getServerSideProps(context) {
   const { slug } = context.query;
   const { data } = await client.query({
     query: BLOG,
+    fetchPolicy: "network-only",
     variables: {
       slug,
     },
