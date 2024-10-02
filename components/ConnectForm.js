@@ -13,6 +13,25 @@ const ConnectForm = (props) => {
   const [step, setStep] = useState(1);
   const [file, setFile] = useState(null);
   const manageForm = async (e, type, step) => {
+    const { name, email, phone, address, message } = formRef.current;
+    if (step === 1 && name.value?.trim() === "") {
+      name.closest(".fields-wrapper").classList.add("error");
+      name.focus();
+      return;
+    }
+    if (
+      (step === 1 && email.value?.trim() === "") ||
+      email.value.indexOf("@") === -1
+    ) {
+      email.closest(".fields-wrapper").classList.add("error");
+      email.focus();
+      return;
+    }
+    if (step === 1 && phone.value?.trim() === "") {
+      phone.closest(".fields-wrapper").classList.add("error");
+      phone.focus();
+      return;
+    }
     if (step < 2 && type === "NEXT") {
       setTimeout(function () {
         setStep((step) => step + 1);
@@ -24,7 +43,6 @@ const ConnectForm = (props) => {
       }, 500);
     }
     if (step === 2 && !type) {
-      const { name, email, phone, address, message } = formRef.current;
       try {
         const { data } = await client.mutate({
           mutation: SENDFORM,
@@ -46,6 +64,10 @@ const ConnectForm = (props) => {
     }
   };
 
+  const removeErrorClass = (e) => {
+    e.target.closest(".fields-wrapper").classList.remove("error");
+  };
+
   const formImageUpload = async (file) => {
     setFile({
       loading: true,
@@ -64,15 +86,15 @@ const ConnectForm = (props) => {
           <div className={step === 1 ? `show` : `hide`}>
             <div className="fields-wrapper">
               <label> Name </label>
-              <input name="name" />
+              <input onChange={removeErrorClass} name="name" />
             </div>
             <div className="fields-wrapper">
               <label> Email </label>
-              <input name="email" />
+              <input onChange={removeErrorClass} name="email" />
             </div>
             <div className="fields-wrapper">
               <label> Phone Number </label>
-              <input name="phone" />
+              <input onChange={removeErrorClass} name="phone" />
             </div>
           </div>
 

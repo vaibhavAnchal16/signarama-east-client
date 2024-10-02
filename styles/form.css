@@ -17,6 +17,9 @@
     margin-bottom: 20px;
     position: relative;
 }
+.fields-wrapper.error input{
+    border: 1px solid #ff0000!important;
+}
 .fields-wrapper > label{
     position: absolute;
     left: 5px;
