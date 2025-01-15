@@ -14,6 +14,7 @@
     "@apollo/client": "^3.6.9",
     "@ckeditor/ckeditor5-react": "^5.0.2",
     "@splidejs/react-splide": "^0.7.8",
+    "@splidejs/splide-extension-grid": "^0.4.1",
     "animate.css": "^4.1.1",
     "ckeditor5-build-classic-nextjs": "^29.5.26",
     "graphql": "^16.6.0",
@@ -30,6 +31,7 @@
     "react-select": "^5.4.0",
     "react-simple-image-viewer": "^1.2.2",
     "sanitize-html": "^2.7.1",
+    "sass": "^1.83.4",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

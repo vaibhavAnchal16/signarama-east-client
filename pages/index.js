@@ -12,6 +12,7 @@ import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import RecentWorks from "../components/Hero/RecentWorks";
 import Wally from "../components/Hero/Wally";
 import { BLOGS, GALLERYBYTITLE, SIGNS } from "../graphql/queries";
+import Hero2 from "../components/Hero2/Hero2";
 
 export default function Home({ signs, recentworks, trending, teams, loader }) {
   if (loader) return "Loading...";
@@ -25,19 +26,20 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+      <Hero2 />
+      {/* <Hero /> */}
       <Services signs={signs} />
 
-      <ProjectsCompleted className="home-page" />
+      {/* <ProjectsCompleted className="home-page" />
 
       <TopStories trending={trending} />
 
       <ProudOf title={true} />
-      <Wally title={true} />
+      <Wally title={true} /> */}
 
       {/* <TestimonialSlider testimonials={testimonials} /> */}
-      <RecentWorks recentworks={recentworks} />
-      <Team title={true} teams={teams} />
+      {/* <RecentWorks recentworks={recentworks} />
+      <Team title={true} teams={teams} /> */}
     </div>
   );
 }

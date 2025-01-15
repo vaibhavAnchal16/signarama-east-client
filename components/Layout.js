@@ -72,7 +72,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <div className="floating-items">
+      {/* <div className="floating-items">
         <div className="floating-items-inner">
           <Link href="tel:4169227446">
             <a>
@@ -106,7 +106,7 @@ export default function Layout({ children }) {
             </a>
           </Link>
         </div>
-      </div>
+      </div> */}
       <main>{children}</main>
       <Footer recentBlogs={recentBlogs} />
     </>
