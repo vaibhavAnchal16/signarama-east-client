@@ -1,15 +1,123 @@
 import React from "react";
 import Button from "../Button/Button";
-import { HeroIllustration } from "../icons";
-import Image from "next/image";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import LazyImage from "../LazyImage";
+const options = {
+  type: "slide",
+  perPage: 1,
+  speed: 1000,
+  rewindSpeed: 1000,
+  perMove: 1,
+  interval: 3000,
+  arrows: false,
+  pagination: false,
+  autoplay: false,
+  // autoWidth: true,
+  pauseOnHover: true,
+  interval: 3000,
+  // breakpoints: {
+  //   1400: {
+  //     perPage: 4,
+  //   },
+  //   1200: {
+  //     perPage: 3,
+  //   },
+  //   767: {
+  //     perPage: 2,
+  //   },
+  //   416: {
+  //     perPage: 1,
+  //   },
+  // },
+};
 
 export default function Hero2() {
+  const HeroSliderComponent = () => {
+    return (
+      <Splide
+        className="hero-slider"
+        aria-label="My Favorite Images"
+        options={options}
+      >
+        <SplideSlide className="hero-outer-slide">
+          <div className="hero-inner-slide">
+            <div
+              className="d-flex d-flex-between"
+              style={{
+                alignItems: "flex-end",
+              }}
+            >
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712326521/BLOGSIMAGES/IMG_97381712326520386.jpg`}
+                style={{
+                  maxWidth: "60%",
+                }}
+              />
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664993995/BLOGSIMAGES/IMG_81551664993992095.jpg`}
+                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
+                style={{
+                  maxWidth: "40%",
+                }}
+              />
+            </div>
+          </div>
+        </SplideSlide>
+        <SplideSlide className="hero-outer-slide">
+          <div className="hero-inner-slide">
+            <div
+              className="d-flex d-flex-between"
+              style={{
+                alignItems: "flex-end",
+              }}
+            >
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664994745/BLOGSIMAGES/20211005_1802211664994742006.jpg`}
+                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
+                style={{
+                  maxWidth: "45%",
+                }}
+              />
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1678032699/BLOGSIMAGES/unnamed%20%2851%291678032698082.jpg`}
+                style={{
+                  maxWidth: "60%",
+                }}
+              />
+            </div>
+          </div>
+        </SplideSlide>
+        <SplideSlide className="hero-outer-slide">
+          <div className="hero-inner-slide">
+            <div
+              className="d-flex d-flex-between"
+              style={{
+                alignItems: "flex-end",
+              }}
+            >
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664987264/BLOGSIMAGES/image-min%20%282%291664987262349.jpg`}
+                style={{
+                  maxWidth: "40%",
+                }}
+              />
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664907275/BLOGSIMAGES/IMG_8210-min1664907273491.jpg`}
+                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
+                style={{
+                  maxWidth: "60%",
+                }}
+              />
+            </div>
+          </div>
+        </SplideSlide>
+      </Splide>
+    );
+  };
+
   return (
     <>
       <div className="hero-outer-space">
-        <div className="illustration">
-          <img src="/newimages/circlevector.svg" />
-        </div>
         <div className="d-padding">
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
@@ -38,7 +146,8 @@ export default function Hero2() {
                   //   }}
                   //   icon={heroCtaIcon}
                 >
-                  Schedule a Call
+                  Get in Touch
+                  {/* Get in Touch */}
                 </Button>
                 <Button
                   type={`outline`}
@@ -56,7 +165,13 @@ export default function Hero2() {
                 </Button>
               </div>
             </div>
-            <div className="hero-image">...</div>
+            <div className="hero-image d-flex d-flex-end">
+              <div className="illustration">
+                <img src="/newimages/tower.png" />
+              </div>
+              <HeroSliderComponent />
+              {/* <img src="/newimages/check1.png" /> */}
+            </div>
           </div>
         </div>
       </div>
@@ -72,10 +187,13 @@ export default function Hero2() {
             <div className="building-outer-space-text">
               <h1 className="d-margin-b">
                 {" "}
-                <div className="ab-image">
+                {/* <div className="ab-image">
                   <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1688676366/BLOGSIMAGES/image4%20%281%29-min1688676366015.jpg" />
-                </div>
-                Creating a Better Tomorrow, One Sign at a Time
+                </div> */}
+                {/* <span>
+                  <Infinity />{" "}
+                </span>{" "} */}
+                Signarama Brampton - Your Preferred Signage Partner
               </h1>
               <p className="d-margin-b">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -109,9 +227,9 @@ export default function Hero2() {
               </div>
             </div>
           </div>
-          <div className="ab-image">
+          {/* <div className="ab-image">
             <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1734394918/BLOGSIMAGES/EATALY%20HOLIDAY%20POP%20UP-51734394918513.jpg" />
-          </div>
+          </div> */}
         </div>
       </div>
     </>

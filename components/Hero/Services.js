@@ -7,38 +7,29 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useState } from "react";
 import Button from "../Button/Button";
-import sanitizeHtml from "sanitize-html";
-import { Infinity } from "../icons";
+
+import { Infinity, QualityIcon } from "../icons";
+import { createMarkup } from "../Helpers/CreateMarkup";
 const _ = require("lodash");
-const Services = ({ signs }) => {
+const Services = ({ data }) => {
   const [active, setActive] = useState("Storefront");
-  const createMarkup = (html) => {
-    return {
-      __html: sanitizeHtml(html, {
-        allowedTags: false,
-        allowedAttributes: false,
-        exclusiveFilter: function (frame) {
-          return frame.tag === "p" && !frame.text.trim();
-        },
-      }),
-    };
-  };
 
   // useEffect(() => {
   //   setChunks(_.chunk(signs, 3));
   // }, [signs]);
   const signTypes = useMemo(() => {
-    return _.uniq(signs?.map((sign) => sign?.type));
-  }, signs);
+    return _.uniq(data?.map((sign) => sign?.type));
+  }, data);
   const groupSigns = useMemo(() => {
-    return _.groupBy(signs, "type");
-  }, signs);
+    return _.groupBy(data, "type");
+  }, data);
   const options = {
     type: "loop",
-    perPage: 4,
+    perPage: 3,
     gap: "2rem",
     speed: 1000,
     rewindSpeed: 1000,
+    center: true,
     interval: 3000,
     pagination: false,
     arrows: false,
@@ -73,7 +64,9 @@ const Services = ({ signs }) => {
       <section className="services-outer-space">
         <div className="d-padding">
           <div className="services-outer-space-text">
-            <h1 className="d-margin-b">Our Quality Services</h1>
+            <h1 className="d-margin-b">
+              Our Services <QualityIcon />
+            </h1>
             <p className="d-margin-b">
               lorem Ipsum is simply dummy text of the printing and typesetting
               lorem Ipsum is simply dummy text of the printing and typesetting
@@ -93,12 +86,12 @@ const Services = ({ signs }) => {
                         behavior: "smooth",
                         block: "center",
                       });
-                      document.getElementById(signType).classList.add("active");
-                      setTimeout(() => {
-                        document
-                          .getElementById(signType)
-                          .classList.remove("active");
-                      }, 1000);
+                      // document.getElementById(signType).classList.add("active");
+                      // setTimeout(() => {
+                      //   document
+                      //     .getElementById(signType)
+                      //     .classList.remove("active");
+                      // }, 1000);
 
                       // setChunks(
                       //   _.chunk(
@@ -118,9 +111,9 @@ const Services = ({ signs }) => {
             {Object.entries(groupSigns)?.map(([key, value], index) => (
               <div
                 className="services-box"
-                // style={
-                //   active === key ? { display: "block" } : { display: "none" }
-                // }
+                style={
+                  active === key ? { display: "block" } : { display: "none" }
+                }
                 id={key}
                 key={index}
               >
@@ -145,15 +138,14 @@ const Services = ({ signs }) => {
                               />
                             </div>
                             <div className="sign-name">
-                              <p>
-                                <strong> {item?.title}</strong>
-                              </p>
-                              {/* <span
-                              className="sign-description"
-                              dangerouslySetInnerHTML={createMarkup(
-                                item?.description?.substring(0, 200)
-                              )}
-                            ></span> */}
+                              <p className="d-margin-b">{item?.title}</p>
+                              <span
+                                className="sign-description"
+                                dangerouslySetInnerHTML={createMarkup(
+                                  item?.description,
+                                  200
+                                )}
+                              ></span>
                             </div>
                           </div>
                         </Link>
@@ -166,46 +158,6 @@ const Services = ({ signs }) => {
           </div>
         </div>
       </section>
-      <div className="building-something-outer-space">
-        <div className="d-padding-l d-padding-r">
-          <div className="d-flex d-flex-wrap d-flex-center">
-            <div className="building-outer-space-text">
-              <div className="illustration il1">
-                <img src="/newimages/circlevector.svg" />
-              </div>
-              <h1 className="">
-                {" "}
-                Let's Build{" "}
-                <span>
-                  <Infinity />{" "}
-                </span>{" "}
-                Something
-              </h1>
-              <h1 className="d-margin-b"> Extraordinary Together</h1>
-
-              <div className="d-flex d-flex-wrap d-flex-center d-column-gap d-margin-b">
-                <Button
-                  type={`outline`}
-                  //   onClick={e => {
-                  //     const params = new URLSearchParams(window.location.search)
-                  //     let url = `/get-demo/`
-                  //     if (params.size > 0) {
-                  //       url = `${url}?${params.toString()}`
-                  //     }
-                  //     navigate(url)
-                  //   }}
-                  //   icon={heroCtaIcon}
-                >
-                  Check our Projects
-                </Button>
-              </div>
-              <div className="illustration il2">
-                <img src="/newimages/circlevector.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

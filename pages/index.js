@@ -13,11 +13,17 @@ import RecentWorks from "../components/Hero/RecentWorks";
 import Wally from "../components/Hero/Wally";
 import { BLOGS, GALLERYBYTITLE, SIGNS } from "../graphql/queries";
 import Hero2 from "../components/Hero2/Hero2";
+import FeaturedProjects2 from "../components/FeaturedProjects2/FeaturedProjects2";
+import LatestNews2 from "../components/LatestNews2/LatestNews2";
+import BuildingSomething from "../components/BuildingSomething/BuildingSomething";
+import Faq2 from "../components/Faq2/Faq2";
+import ClientSayings from "../components/ClientSayings/ClientSayings";
 
 export default function Home({ signs, recentworks, trending, teams, loader }) {
   if (loader) return "Loading...";
   return (
     <div>
+      {/* <div className="parallax-background"></div> */}
       <Head>
         <title>Sign Company Toronto | Sign A Rama Toronto | Custom Signs</title>
         <meta
@@ -28,7 +34,12 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       </Head>
       <Hero2 />
       {/* <Hero /> */}
-      <Services signs={signs} />
+      <FeaturedProjects2 data={recentworks} />
+      <Services data={signs} />
+      <ClientSayings />
+      <LatestNews2 data={trending} />
+      <Faq2 />
+      <BuildingSomething />
 
       {/* <ProjectsCompleted className="home-page" />
 
@@ -38,8 +49,8 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       <Wally title={true} /> */}
 
       {/* <TestimonialSlider testimonials={testimonials} /> */}
-      {/* <RecentWorks recentworks={recentworks} />
-      <Team title={true} teams={teams} /> */}
+      {/* <RecentWorks recentworks={recentworks} /> */}
+      {/* <Team title={true} teams={teams} /> */}
     </div>
   );
 }

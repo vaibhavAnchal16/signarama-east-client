@@ -16,6 +16,7 @@ export const BLOGS = gql`
         published
         trending
         recentWork
+        createdAt
       }
     }
   }

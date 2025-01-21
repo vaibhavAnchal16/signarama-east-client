@@ -12,8 +12,9 @@ body {
 
 .hero-outer-space {
     position: relative;
-    padding: 0px 0px 20px;
+    padding: 60px 0px 20px;
     overflow: hidden;
+    background: linear-gradient(to left, #ffffff 50%, var(--black-bg) 50%);
 }
 
 /* .hero-outer-space>svg {
@@ -219,7 +220,7 @@ body {
 }
 
 .header-wrapper .header-inner {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     width: 100%;
     margin: 0px auto;
     background-color: transparent;
@@ -261,7 +262,8 @@ body {
 .menu>ul>li span {
     cursor: pointer;
     position: relative;
-    color: var(--white-font);
+    /* color: var(--lite-font); */
+    color:var(--white-font);
 }
 .menu .submenu ul>li span::before{
     content: "-";
@@ -293,7 +295,7 @@ body {
     position: absolute;
     max-width: 768px;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--card-bg);
     padding: 16px 16px;
     border-radius: 6px;
     box-shadow: 0 0px 6px rgb(0 0 0 / 6%), 0 2px 5px rgb(0 0 0 / 4%);
@@ -437,7 +439,7 @@ body {
   }
   .menu>ul li:hover > span{
     text-decoration: underline;
-    color: #b60521;
+    color: var(--red-bg);
   }
   .submenu .ghost {
       display: flex;
@@ -452,7 +454,7 @@ body {
   }
   .ghost h2 {
       padding: 10px 0px;
-      color: #b60521;
+      color: var(--white-font);
   }
   .admin-side-float span{
       display: block;
