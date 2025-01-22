@@ -69,8 +69,8 @@
 <path d="M-50.1245 385.032L185.375 280.022L56.4994 -9.0002L-179 96.0096L-50.1245 385.032Z" fill="url(#paint62_radial_2007_3445)"/>
 </g>
 <defs>
-<filter id="filter0_f_2007_3445" x="-319" y="-149" width="644.375" height="674.032" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_f_2007_3445" x="-319" y="-149" width="644.375" height="674.032" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feGaussianBlur stdDeviation="70" result="effect1_foregroundBlur_2007_3445"/>
 </filter>

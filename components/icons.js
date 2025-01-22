@@ -8,8 +8,8 @@ export const Infinity = () => (
   >
     <g filter="url(#filter0_i_4020_3670)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M65 10.0239C62.3695 10.0239 59.9251 10.6925 57.797 11.8612C50.1292 16.0721 39.8708 16.0721 32.203 11.8612C30.0749 10.6925 27.6305 10.0239 25 10.0239C16.7157 10.0239 10 16.7397 10 25.0239C10 33.3082 16.7157 40.0239 25 40.0239C27.6305 40.0239 30.0749 39.3554 32.203 38.1866C39.8708 33.9757 50.1292 33.9757 57.797 38.1866C59.9251 39.3553 62.3695 40.0239 65 40.0239C73.2843 40.0239 80 33.3082 80 25.0239C80 16.7397 73.2843 10.0239 65 10.0239ZM52.9834 3.09598C48.3135 5.66052 41.6865 5.66052 37.0166 3.09598C33.4507 1.1377 29.3554 0.0239245 25 0.0239247C11.1929 0.0239253 -1.69631e-06 11.2168 -1.09278e-06 25.0239C-4.89256e-07 38.831 11.1929 50.0239 25 50.0239C29.3554 50.0239 33.4507 48.9101 37.0166 46.9519C41.6865 44.3873 48.3135 44.3873 52.9834 46.9519C56.5493 48.9101 60.6446 50.0239 65 50.0239C78.8071 50.0239 90 38.831 90 25.0239C90 11.2168 78.8071 0.0239223 65 0.0239229C60.6446 0.0239231 56.5493 1.1377 52.9834 3.09598Z"
         fill="#020100"
       />
@@ -22,9 +22,9 @@ export const Infinity = () => (
         width="90"
         height="54"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -122,9 +122,9 @@ export const QualityIcon = ({ fill = "#c3122f" }) => (
         width="40.6172"
         height="41"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -175,9 +175,9 @@ export const FeaturedIcon = ({ fill = "#c3122f" }) => (
         width="39"
         height="41"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -229,9 +229,9 @@ export const ClientSaysIcon = ({ fill = "#c3122f" }) => (
         width="39"
         height="64.5238"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -271,8 +271,8 @@ export const NewsIcon = ({ fill = "#c3122f" }) => (
   >
     <g filter="url(#filter0_i_2007_3404)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M19 6.41646C17.627 6.41646 16.514 7.52946 16.514 8.90244H10.1215C10.1215 3.99897 14.0965 0.0239258 19 0.0239258C23.9035 0.0239258 27.8785 3.99897 27.8785 8.90244C27.8785 13.8059 23.9035 17.7809 19 17.7809V11.3884C20.3729 11.3884 21.486 10.2754 21.486 8.90244C21.486 7.52946 20.3729 6.41646 19 6.41646ZM31.6074 19.0239C31.6074 17.6509 30.4944 16.5379 29.1215 16.5379V10.1454C34.025 10.1454 38 14.1205 38 19.0239C38 23.9274 34.025 27.9024 29.1215 27.9024C24.218 27.9024 20.243 23.9274 20.243 19.0239H26.6355C26.6355 20.3969 27.7485 21.5099 29.1215 21.5099C30.4944 21.5099 31.6074 20.3969 31.6074 19.0239ZM8.87851 21.5099C7.50553 21.5099 6.39253 20.3969 6.39253 19.0239C6.39253 17.6509 7.50553 16.5379 8.87851 16.5379C10.2515 16.5379 11.3645 17.6509 11.3645 19.0239H17.757C17.757 14.1205 13.782 10.1454 8.87851 10.1454C3.97505 10.1454 0 14.1205 0 19.0239C0 23.9274 3.97505 27.9024 8.87851 27.9024V21.5099ZM19 31.6314C20.3729 31.6314 21.486 30.5184 21.486 29.1454H27.8785C27.8785 34.0489 23.9035 38.0239 19 38.0239C14.0965 38.0239 10.1215 34.0489 10.1215 29.1454C10.1215 24.2419 14.0965 20.2669 19 20.2669V26.6595C17.627 26.6595 16.514 27.7725 16.514 29.1454C16.514 30.5184 17.627 31.6314 19 31.6314Z"
         fill={fill}
       />
@@ -285,9 +285,9 @@ export const NewsIcon = ({ fill = "#c3122f" }) => (
         width="39"
         height="41"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -327,8 +327,8 @@ export const FaqIcon = ({ fill = "#c3122f" }) => (
   >
     <g filter="url(#filter0_i_2007_3425)">
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M16.625 27.3364C16.625 24.0572 13.9667 21.3989 10.6875 21.3989C4.78496 21.3989 1.39367e-06 16.614 0 10.7114C0 4.80888 4.78496 0.0239258 10.6875 0.0239258C16.59 0.0239244 21.375 4.80888 21.375 10.7114C21.375 13.9906 24.0333 16.6489 27.3125 16.6489C33.215 16.6489 38 21.4339 38 27.3364C38 33.239 33.215 38.0239 27.3125 38.0239C21.41 38.0239 16.625 33.239 16.625 27.3364Z"
         fill={fill}
       />
@@ -345,9 +345,9 @@ export const FaqIcon = ({ fill = "#c3122f" }) => (
         width="39"
         height="41"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"

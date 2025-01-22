@@ -1,11 +1,11 @@
 <svg width="38" height="39" viewBox="0 0 38 39" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_2007_3425)">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.625 27.3364C16.625 24.0572 13.9667 21.3989 10.6875 21.3989C4.78496 21.3989 1.39367e-06 16.614 0 10.7114C0 4.80888 4.78496 0.0239258 10.6875 0.0239258C16.59 0.0239244 21.375 4.80888 21.375 10.7114C21.375 13.9906 24.0333 16.6489 27.3125 16.6489C33.215 16.6489 38 21.4339 38 27.3364C38 33.239 33.215 38.0239 27.3125 38.0239C21.41 38.0239 16.625 33.239 16.625 27.3364Z" fill="#FF0000"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M16.625 27.3364C16.625 24.0572 13.9667 21.3989 10.6875 21.3989C4.78496 21.3989 1.39367e-06 16.614 0 10.7114C0 4.80888 4.78496 0.0239258 10.6875 0.0239258C16.59 0.0239244 21.375 4.80888 21.375 10.7114C21.375 13.9906 24.0333 16.6489 27.3125 16.6489C33.215 16.6489 38 21.4339 38 27.3364C38 33.239 33.215 38.0239 27.3125 38.0239C21.41 38.0239 16.625 33.239 16.625 27.3364Z" fill="#FF0000"/>
 </g>
 <path d="M17.125 27.3364C17.125 23.7811 14.2428 20.8989 10.6875 20.8989C5.0611 20.8989 0.500001 16.3378 0.5 10.7114C0.5 5.08502 5.0611 0.523926 10.6875 0.523926C16.3139 0.523924 20.875 5.08502 20.875 10.7114C20.875 14.2668 23.7572 17.1489 27.3125 17.1489C32.9389 17.1489 37.5 21.71 37.5 27.3364C37.5 32.9628 32.9389 37.5239 27.3125 37.5239C21.6861 37.5239 17.125 32.9628 17.125 27.3364Z" stroke="black"/>
 <defs>
-<filter id="filter0_i_2007_3425" x="-1" y="0.0239258" width="39" height="41" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter0_i_2007_3425" x="-1" y="0.0239258" width="39" height="41" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="-1" dy="3"/>

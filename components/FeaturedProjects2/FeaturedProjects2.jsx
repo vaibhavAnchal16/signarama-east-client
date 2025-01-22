@@ -115,11 +115,11 @@ export default function FeaturedProjects2({ data }) {
                 position: "relative",
               }}
             >
-              <div class="splide__arrows cstm d-flex">
-                <button class="splide__arrow splide__arrow--prev d-flex d-flex-center">
+              <div className="splide__arrows cstm d-flex">
+                <button className="splide__arrow splide__arrow--prev d-flex d-flex-center">
                   <ArrowNext fill="#fff" />
                 </button>
-                <button class="splide__arrow splide__arrow--next d-flex d-flex-center">
+                <button className="splide__arrow splide__arrow--next d-flex d-flex-center">
                   <ArrowNext fill="#fff" />
                 </button>
               </div>
