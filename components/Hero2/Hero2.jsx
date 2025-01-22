@@ -1,20 +1,26 @@
 import React from "react";
 import Button from "../Button/Button";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import LazyImage from "../LazyImage";
 const options = {
   type: "slide",
   perPage: 1,
-  speed: 1000,
+  speed: 2000,
   rewindSpeed: 1000,
   perMove: 1,
-  interval: 3000,
+  interval: 5000,
   arrows: false,
   pagination: false,
   autoplay: false,
   // autoWidth: true,
   pauseOnHover: true,
-  interval: 3000,
+  // autoScroll: {
+  //   pauseOnHover: false,
+  //   pauseOnFocus: false,
+  //   rewind: false,
+  //   speed: 0.5,
+  // },
   // breakpoints: {
   //   1400: {
   //     perPage: 4,
@@ -38,6 +44,7 @@ export default function Hero2() {
         className="hero-slider"
         aria-label="My Favorite Images"
         options={options}
+        // extensions={{ AutoScroll }}
       >
         <SplideSlide className="hero-outer-slide">
           <div className="hero-inner-slide">
@@ -103,6 +110,30 @@ export default function Hero2() {
               />
               <LazyImage
                 src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664907275/BLOGSIMAGES/IMG_8210-min1664907273491.jpg`}
+                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
+                style={{
+                  maxWidth: "60%",
+                }}
+              />
+            </div>
+          </div>
+        </SplideSlide>
+        <SplideSlide className="hero-outer-slide">
+          <div className="hero-inner-slide">
+            <div
+              className="d-flex d-flex-between"
+              style={{
+                alignItems: "flex-end",
+              }}
+            >
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1733756975/BLOGSIMAGES/Michels%20X%20SAR%20-51733756974530.jpg`}
+                style={{
+                  maxWidth: "40%",
+                }}
+              />
+              <LazyImage
+                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1665065221/BLOGSIMAGES/image1-1%20%284%291665065218928.jpg`}
                 // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
                 style={{
                   maxWidth: "60%",

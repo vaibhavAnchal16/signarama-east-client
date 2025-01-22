@@ -14,7 +14,7 @@ body {
     position: relative;
     padding: 60px 0px 20px;
     overflow: hidden;
-    background: linear-gradient(to left, #ffffff 50%, var(--black-bg) 50%);
+    background: linear-gradient(to left, #ffffff 42%, var(--black-bg) 50%);
 }
 
 /* .hero-outer-space>svg {
@@ -262,15 +262,22 @@ body {
 .menu>ul>li span {
     cursor: pointer;
     position: relative;
+    display: inline-flex;
+    align-items: center;
     /* color: var(--lite-font); */
     color:var(--white-font);
 }
 .menu .submenu ul>li span::before{
-    content: "-";
+    content: "";
     position: relative;
     display: inline-block;
-    margin-right: 2px;
-    color:#b60521;
+    height: 3px;
+    width: 3px;
+    font-size: 0px;
+    background: var(--red-bg);
+    margin-right: 5px;
+    transform: rotate(45deg);
+    opacity: 0.8;
 }
 
 .menu>ul>li {
@@ -295,14 +302,16 @@ body {
     position: absolute;
     max-width: 768px;
     width: 100%;
-    background-color: var(--card-bg);
+    background-color: #fff;
     padding: 16px 16px;
     border-radius: 6px;
     box-shadow: 0 0px 6px rgb(0 0 0 / 6%), 0 2px 5px rgb(0 0 0 / 4%);
     top: 45px;
     right: 0;
     z-index: 3;
-    /* transform: translate(50%,-50%); */
+    background-image: url(/newimages/menubg.svg);
+    background-position: center 30%;
+    background-size: cover;
 }
 .header {
     display: flex;
@@ -344,7 +353,7 @@ body {
 
 footer.footer-wrapper>.footer-inner * {
     transition: all 0.2s ease-in-out;
-    color: var(--white-font);
+    color: var(--lite-font);
     font-size: 14px;
     line-height: 22px;
     font-weight: 300;
@@ -362,7 +371,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
     max-width: 50%;
 }
 .footer-wrapper .footer-inner .recent-blogs-section li a{
-    color: var(--white-font);
+    color: var(--lite-font);
     font-size: 14px;
     line-height: 22px;
     font-weight: 300;
@@ -376,7 +385,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 }
 footer.footer-wrapper>.footer-inner a{
     cursor: pointer;
-    color: var(--white-font);
+    color: var(--lite-font);
     font-size: 14px;
     line-height: 22px;
     font-weight: 300;

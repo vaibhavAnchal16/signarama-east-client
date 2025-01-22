@@ -149,7 +149,8 @@ body{
     left: 0;
     right: 0;
     &.scrolled{
-        background: var(--black-bg);
+        // background: var(--black-bg);
+        background-color: #fff;
         box-shadow: 0 5px 15px #0000004f;
     }
 }
@@ -269,7 +270,15 @@ body{
 .d-flex-1{
     flex: 1;
 }
+.d-flex-align-start{
+    align-items: flex-start;
+}
 .hero-outer-space{
+    &.illustrationbg{
+        background-image: url(/newimages/menubg.svg);
+        background-position: center 18%;
+        background-size: cover;
+    }
     .illustration{
         position: absolute;
         top: 0;
@@ -345,6 +354,10 @@ body{
         line-height: 22px;
         font-weight: 300;
         text-align: center;
+    }
+    .btn-wrapper.outline button.btn-component{
+        color: var(--dark-bg-text);
+        border-color: var(--dark-bg-text);
     }
     }
     .ratings{
@@ -449,9 +462,19 @@ body{
     border-radius: 4px;
     background: var(--card-bg);
     /* padding: 5px 10px; */
+    &:not(.nohoveeffect){
+        &:hover{
+            transition: all .3s ease-in-out;
+            .inner-slide{
+                margin-top: -10px;
+            }
+        }
+    }
+    
     .inner-slide{
         height: 100%;
         position: relative;
+        transition: all .3s ease-in-out;
         .sign-name{
             padding: 20px 0px 10px;
             p{
@@ -475,9 +498,11 @@ body{
   }
 footer.footer-wrapper>.footer-inner .footer-section-heading {
     >h2{
-        color: var(--lite-font);
+        color: var(--lite-bg-text);
+        font-weight: 400;
         *{
-            color: var(--lite-font);
+            color: var(--lite-bg-text);
+            font-weight: 400;
         }
     }
 }
@@ -573,6 +598,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
         .hero-inner-slide{
             height: 100%;
             >div{
+                cursor: grab;
                 overflow: hidden;
                 height: 100%;
                 column-gap: 20px;
@@ -595,6 +621,36 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
                     }
                 }
             }
+        }
+    }
+}
+.contact-page-details{
+    h1{
+        font-size: 30px;
+    }
+}
+.social-icons{
+    .btn-wrapper{
+        max-width: fit-content;
+        button{
+            span{
+                display: inline-flex;
+            }
+            svg{
+                height: 24px;
+                width: 24px;
+                path{
+                    fill: var(--lite-bg-text);
+                }
+            }
+            
+        }
+        &.outline{
+            button{
+                &.btn-component{
+                    // border-color: var(--red-bg);
+                }
+            }       
         }
     }
 }

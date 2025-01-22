@@ -24,7 +24,7 @@ const Services = ({ data }) => {
     return _.groupBy(data, "type");
   }, data);
   const options = {
-    type: "loop",
+    type: "slide",
     perPage: 3,
     gap: "2rem",
     speed: 1000,

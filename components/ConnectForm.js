@@ -6,6 +6,7 @@ import { useState } from "react";
 import client from "../apollo-client";
 import { SENDFORM } from "../graphql/mutations";
 import { imageUpload } from "./Helpers/ImageUpload";
+import Button from "./Button/Button";
 
 const ConnectForm = (props) => {
   const router = useRouter();
@@ -98,7 +99,9 @@ const ConnectForm = (props) => {
             </div>
           </div>
 
-          <div className={step === 2 ? `show` : `hide`}>
+          <div
+          // className={step === 2 ? `show` : `hide`}
+          >
             <div className="fields-wrapper">
               <label> Address </label>
               <input name="address" />
@@ -108,7 +111,7 @@ const ConnectForm = (props) => {
               <input name="message" />
             </div>
             <div className="fields-wrapper">
-              <label> Upload File </label>
+              {/* <label> Upload File </label> */}
               <input
                 type="file"
                 name="file"
@@ -118,8 +121,8 @@ const ConnectForm = (props) => {
               />
             </div>
           </div>
-          <div className="fields-wrapper formctas">
-            {step !== 1 && (
+          <div className="d-flex d-flex-end">
+            {/* {step !== 1 && (
               <button
                 type="button"
                 onClick={(e) => manageForm(e, "PREVIOUS", step)}
@@ -127,15 +130,23 @@ const ConnectForm = (props) => {
                 {" "}
                 <span>Previous</span>
               </button>
-            )}{" "}
-            <button
+            )}{" "} */}
+
+            <Button
+              type={`fill`}
+              onClick={(e) => manageForm(e, step !== 2 ? "NEXT" : null, step)}
+              disabled={file?.loading ?? false}
+            >
+              Send
+            </Button>
+            {/* <button
               disabled={file?.loading ?? false}
               type={`button`}
               className={step === 2 ? `submit` : ``}
               onClick={(e) => manageForm(e, step !== 2 ? "NEXT" : null, step)}
             >
               <span>{step === 1 ? `Next` : "Submit"}</span>
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

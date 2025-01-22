@@ -4,6 +4,7 @@ import LazyImage from "../LazyImage";
 import Link from "next/link";
 import { createMarkup } from "../Helpers/CreateMarkup";
 import { ArrowIcon, ArrowNext, FeaturedIcon } from "../icons";
+import { useRef } from "react";
 const options = {
   type: "slide",
   perPage: 3,
@@ -44,6 +45,7 @@ const options = {
 
 export default function FeaturedProjects2({ data }) {
   if (!data) return null;
+  const splideRef = useRef(null);
   return (
     <section className="featured-outer-space">
       <div className="d-padding-l d-padding-r d-padding-t">
@@ -73,6 +75,7 @@ export default function FeaturedProjects2({ data }) {
             className="services-slider"
             aria-label="My Favorite Images"
             options={options}
+            ref={splideRef}
           >
             {data?.map((item, i) => {
               return (
@@ -116,10 +119,23 @@ export default function FeaturedProjects2({ data }) {
               }}
             >
               <div className="splide__arrows cstm d-flex">
-                <button className="splide__arrow splide__arrow--prev d-flex d-flex-center">
+                <button
+                  className="splide__arrow splide__arrow--prev d-flex d-flex-center"
+                  onClick={() => {
+                    const currenIndex = splideRef.current.splide.index;
+                    splideRef.current.go(currenIndex - 1);
+                  }}
+                >
                   <ArrowNext fill="#fff" />
                 </button>
-                <button className="splide__arrow splide__arrow--next d-flex d-flex-center">
+                <button
+                  className="splide__arrow splide__arrow--next d-flex d-flex-center"
+                  onClick={() => {
+                    const currenIndex = splideRef.current.splide.index;
+                    splideRef.current.go(currenIndex + 1);
+                    // console.log(splideRef.current);
+                  }}
+                >
                   <ArrowNext fill="#fff" />
                 </button>
               </div>

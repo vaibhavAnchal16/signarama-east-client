@@ -1,7 +1,15 @@
 import Head from "next/head";
 import { useEffect } from "react";
-import { Layout, LazyImage, MapIframe } from "../components";
+import { ConnectForm, Layout, LazyImage, MapIframe } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
+import Faq2 from "../components/Faq2/Faq2";
+import Button from "../components/Button/Button";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  QualityIcon,
+} from "../components/icons";
 
 const ContactUs = ({ query }) => {
   useEffect(() => {
@@ -26,20 +34,17 @@ const ContactUs = ({ query }) => {
           content="Sign A Rama Toronto is one of the oldest full-service sign company in Toronto delivering high-end signs to businesses in & around Toronto since 1986. Contact us today by calling us or filling in the contact form with your sign queries and we'll get back to you in no time!"
         />
       </Head>
-      <section className="sign-blogs-search-wrapper">
+      {/* <section className="sign-blogs-search-wrapper">
         <section className="sign-blogs-search-inner">
           <div className="section-heading">
             <h1 style={{ textAlign: "center", maxWidth: "100%" }}>
               Contact <span className="highlighted">Signarama Toronto </span>
             </h1>
-            {/* <p>
-              Some of our Clients include Delta Hotels, Fairmount Hotels, YMCA,
-              CBRE, Triovest, SNC Lavalin and list goes on...
-            </p> */}
+            
           </div>
         </section>
-      </section>
-      <section className="help-section-wrapper">
+      </section> */}
+      {/* <section className="help-section-wrapper">
         <div className="help-section-inner">
           <div className="help-section-box">
             <div className="help-context">
@@ -78,11 +83,93 @@ const ContactUs = ({ query }) => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="mapframewrapper">
-        <MapIframe />
-        <ProjectsCompleted className="about-page contact-page" />
-      </section>
+      </section> */}
+
+      <div className="hero-outer-space illustrationbg">
+        <div className="d-padding">
+          <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
+            <div className="hero-text">
+              <h1 className="d-margin-b"> Contact Us</h1>
+              <p className="d-margin-b">
+                We value your feedback and would love to hear from your. Whether
+                you have a question, a comment, a suggestion or just want to say
+                hi, we are here to help you.
+              </p>
+            </div>
+            <div className="hero-image d-flex d-flex-end"></div>
+          </div>
+          <div>
+            <LazyImage
+              src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1736882809/BLOGSIMAGES/remax1736882809598.jpg`}
+              // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
+              style={{
+                maxWidth: "100%",
+                width: "100%",
+                borderRadius: "10px",
+                maxHeight: "500px",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      {/* <ProjectsCompleted className="about-page contact-page" /> */}
+      <div className="contact-page-details d-margin-t">
+        <div className="d-padding-l d-padding-r d-padding-b d-flex d-flex-between d-column-gap d-flex-align-start">
+          <div>
+            <h1 className="d-margin-b">Getin Touch</h1>
+            <div className="d-flex d-flex-column">
+              <Button type="fill d-margin-b full-width">
+                info@signarama-toronto.ca
+              </Button>
+              <Button type="fill full-width">416.922.7446</Button>
+            </div>
+
+            <h1 className="d-margin-t d-margin-b">Our Office</h1>
+            <div>
+              <p className="d-margin-b">
+                Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
+              </p>
+              <Button type="fill full-width">416.922.7446</Button>
+            </div>
+
+            <h1 className="d-margin-t d-margin-b">Connect with us</h1>
+            <div className="d-flex d-column-gap social-icons">
+              <Button type="outline">
+                <Facebook />
+              </Button>
+              <Button type="outline">
+                <Instagram />
+              </Button>
+              <Button type="outline">
+                <LinkedIn />
+              </Button>
+            </div>
+          </div>
+          <div
+            className="full-width"
+            style={{
+              width: "100%",
+            }}
+          >
+            <h1
+              className="d-margin-b d-inline-flex d-flex-center d-column-gap"
+              style={{
+                whiteSpace: "nowrap",
+              }}
+            >
+              <QualityIcon /> Have a Project in your mind?
+            </h1>
+            <div className="outer-slide nohoveeffect">
+              <div className="inner-slide">
+                <ConnectForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Faq2 />
+      {/* <BuildingSomething /> */}
     </>
   );
 };

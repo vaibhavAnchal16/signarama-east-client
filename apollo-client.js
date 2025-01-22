@@ -9,6 +9,8 @@ import { setContext } from "@apollo/client/link/context";
 const api_url =
   process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:4000/graphql";
 
+console.log(api_url);
+
 const httpLink = createHttpLink({
   uri: api_url,
 });
