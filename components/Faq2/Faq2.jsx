@@ -1,8 +1,8 @@
 import { FaqIcon } from "../icons";
 
-export default function Faq2() {
+export default function Faq2({ className = "" }) {
   return (
-    <section className="faq-outer-space">
+    <section className={`faq-outer-space ${className}`}>
       <div className="d-padding-l d-padding-r d-padding-b">
         <div className="faq-outer-space-text l-margin-b">
           <div>

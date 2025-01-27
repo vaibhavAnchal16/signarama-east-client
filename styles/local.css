@@ -15,6 +15,7 @@ body {
     padding: 60px 0px 20px;
     overflow: hidden;
     background: linear-gradient(to left, #ffffff 42%, var(--black-bg) 50%);
+
 }
 
 /* .hero-outer-space>svg {
@@ -421,7 +422,7 @@ ul.officehours>li {
 
 .credit-inner p {
     font-size: 18px;
-    color: #fff;
+    color: var(--lite-bg-text);
 }
 
 ul.socialmedia>li a {

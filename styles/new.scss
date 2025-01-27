@@ -57,6 +57,7 @@
   }
   body {
     font-family: "Open Sans", sans-serif;
+
   }
   body.no-scroll{
     overflow: hidden;
@@ -92,6 +93,9 @@ body{
     background-color: var(--black-bg);
     .full-width{
         max-width: 100%;
+    }
+    .bg-white{
+        background-color: #fff;
     }
 }
 .d-padding{
@@ -279,14 +283,18 @@ body{
         background-position: center 18%;
         background-size: cover;
     }
+    .map-iframe{
+        border-radius: 5px;
+    }
     .illustration{
         position: absolute;
         top: 0;
         right: 0;
-        height: 90%;
+        opacity: 0.6;
+        height: 100%;
         bottom: 0;
         object-fit: contain;
-        transform: translate(30%, 0px);
+        // transform: translate(30%, 0px);
         img{
             height: 100%;
             width: 100%;
@@ -296,6 +304,8 @@ body{
         .hero-text{
             max-width: 49%;
             width: 100%;
+            position: relative;
+            z-index: 1;
             >h1{
  
             }
@@ -314,13 +324,21 @@ body{
             right: 0;
             top: 0;
             bottom: 0; 
-
+            // background: url(/newimages/canadathemebg2.png);
+            // background-size: contain;
+            // background-position: center;
+            // background-repeat: no-repeat;
             img{
                 width: 100%;
                 max-width: 100%;
+                object-fit: contain;
                 // height: 100%;
                 // object-fit: cover;
             }
+        }
+        +*{
+            position: relative;
+            z-index: 1;
         }
     }
 }

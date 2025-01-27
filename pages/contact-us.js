@@ -85,7 +85,12 @@ const ContactUs = ({ query }) => {
         </div>
       </section> */}
 
-      <div className="hero-outer-space illustrationbg">
+      <div
+        className="hero-outer-space bg-white"
+        style={{
+          background: "#fff",
+        }}
+      >
         <div className="d-padding">
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
@@ -96,10 +101,14 @@ const ContactUs = ({ query }) => {
                 hi, we are here to help you.
               </p>
             </div>
-            <div className="hero-image d-flex d-flex-end"></div>
+            <div className="hero-image d-flex d-flex-end">
+              <div className="illustration">
+                <img src="/newimages/canadathemebg2.png" />
+              </div>
+            </div>
           </div>
-          <div>
-            <LazyImage
+          <MapIframe />
+          {/* <LazyImage
               src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1736882809/BLOGSIMAGES/remax1736882809598.jpg`}
               // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
               style={{
@@ -109,12 +118,11 @@ const ContactUs = ({ query }) => {
                 maxHeight: "500px",
                 objectFit: "cover",
               }}
-            />
-          </div>
+            /> */}
         </div>
       </div>
       {/* <ProjectsCompleted className="about-page contact-page" /> */}
-      <div className="contact-page-details d-margin-t">
+      <div className="contact-page-details bg-white">
         <div className="d-padding-l d-padding-r d-padding-b d-flex d-flex-between d-column-gap d-flex-align-start">
           <div>
             <h1 className="d-margin-b">Getin Touch</h1>
@@ -168,7 +176,7 @@ const ContactUs = ({ query }) => {
           </div>
         </div>
       </div>
-      <Faq2 />
+      <Faq2 className="bg-white" />
       {/* <BuildingSomething /> */}
     </>
   );

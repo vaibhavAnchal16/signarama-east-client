@@ -198,7 +198,7 @@ export default function Hero2() {
             </div>
             <div className="hero-image d-flex d-flex-end">
               <div className="illustration">
-                <img src="/newimages/tower.png" />
+                <img src="/newimages/canadathemebg2.png" />
               </div>
               <HeroSliderComponent />
               {/* <img src="/newimages/check1.png" /> */}
