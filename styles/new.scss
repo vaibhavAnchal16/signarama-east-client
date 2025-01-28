@@ -21,7 +21,7 @@
     // --red-bg: #FF0000;
     --red-bg: #c3122f;
     --white-font: #020100;
-    --lite-font: #6f6f6f;
+    --lite-font: #525252;
     --btn-color: #F0F0F0;
     --btn-hover: #F0F0F0;
     --dark-bg: #d8d8d8;
@@ -49,6 +49,12 @@
     background-position: center;
     /* transform: translateZ(-1px) scale(2); */
     z-index: -1;
+}
+.wavepattern{
+    background: #fff;
+    background-image: url(/newimages/menubg.svg);
+    background-position: center 30%;
+    background-size: cover;
 }
 * {
     margin: 0;
@@ -146,7 +152,7 @@ body{
 }
 .header-wrapper {
     padding: 24px 64px;
-    z-index: 5;
+    z-index: 2;
     position: fixed;
     top: 0;
     top: 0;
@@ -336,9 +342,20 @@ body{
                 // object-fit: cover;
             }
         }
+        
         +*{
             position: relative;
             z-index: 1;
+        }
+    }
+    &.about-us{
+        .hero-inner-space{
+            .hero-text{
+                max-width: 32%;
+                &.full-width{
+                    max-width: calc(100% - 32%);
+                }
+            }
         }
     }
 }

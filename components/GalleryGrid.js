@@ -8,11 +8,13 @@ const GalleryGrid = ({ images }) => {
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
     setIsViewerOpen(true);
+    document.querySelector(".header-wrapper.scrolled").style.zIndex = 0;
   }, []);
 
   const closeImageViewer = () => {
     setCurrentImage(0);
     setIsViewerOpen(false);
+    document.querySelector(".header-wrapper.scrolled").style.zIndex = 2;
   };
 
   return (
@@ -34,13 +36,20 @@ const GalleryGrid = ({ images }) => {
         </div>
       </div>
       {isViewerOpen && (
-        <ImageViewer
-          src={images}
-          currentIndex={currentImage}
-          disableScroll={false}
-          closeOnClickOutside={true}
-          onClose={closeImageViewer}
-        />
+        <div
+        // style={{
+        //   position: "relative",
+        //   zIndex: 9999,
+        // }}
+        >
+          <ImageViewer
+            src={images}
+            currentIndex={currentImage}
+            disableScroll={false}
+            closeOnClickOutside={true}
+            onClose={closeImageViewer}
+          />
+        </div>
       )}
     </section>
   );

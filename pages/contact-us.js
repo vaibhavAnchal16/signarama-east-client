@@ -155,7 +155,7 @@ const ContactUs = ({ query }) => {
             </div>
           </div>
           <div
-            className="full-width"
+            className="full-width d-padding-l "
             style={{
               width: "100%",
             }}
@@ -168,7 +168,7 @@ const ContactUs = ({ query }) => {
             >
               <QualityIcon /> Have a Project in your mind?
             </h1>
-            <div className="outer-slide nohoveeffect">
+            <div className="bg-white">
               <div className="inner-slide">
                 <ConnectForm />
               </div>
