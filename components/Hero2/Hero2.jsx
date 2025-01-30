@@ -10,11 +10,17 @@ const options = {
   rewindSpeed: 1000,
   perMove: 1,
   interval: 5000,
-  arrows: false,
+  arrows: true,
   pagination: false,
   autoplay: false,
-  // autoWidth: true,
   pauseOnHover: true,
+  classes: {
+    // Add classes to the arrow buttons.
+    arrows: {
+      arrows: "splide__arrows cstm",
+    },
+  },
+
   // autoScroll: {
   //   pauseOnHover: false,
   //   pauseOnFocus: false,
@@ -153,43 +159,29 @@ export default function Hero2() {
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
               <h1 className="d-margin-b">
-                {" "}
-                Creating a Better Tomorrow, One Sign at a Time
+                Signarama Brampton: Your Expert Sign Makers
               </h1>
               <p className="d-margin-b">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem Ipsum is simply dummy
-                text of the printing and typesetting industry. Lorem Ipsum is
-                simply dummy text of the printing and typesetting industry.
+                Your trusted Brampton sign company for custom-designed
+                storefront signs, banners, LED signs, channel letters and more.
+                From Design To Manufacture And Installation, We’ve Got You
+                Covered!
               </p>
               <div className="d-flex d-flex-wrap d-column-gap">
-                <Button
-                  type={`fill`}
-                  //   onClick={e => {
-                  //     const params = new URLSearchParams(window.location.search)
-                  //     let url = `/get-demo/`
-                  //     if (params.size > 0) {
-                  //       url = `${url}?${params.toString()}`
-                  //     }
-                  //     navigate(url)
-                  //   }}
-                  //   icon={heroCtaIcon}
-                >
+                <Button type={`fill`} href="/contact-us#contact">
                   Get in Touch
                   {/* Get in Touch */}
                 </Button>
                 <Button
                   type={`outline`}
-                  //   onClick={e => {
-                  //     const params = new URLSearchParams(window.location.search)
-                  //     let url = `/get-demo/`
-                  //     if (params.size > 0) {
-                  //       url = `${url}?${params.toString()}`
-                  //     }
-                  //     navigate(url)
-                  //   }}
+                  onClick={(e) => {
+                    document
+                      .querySelector(".services-outer-space")
+                      .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                  }}
                   //   icon={heroCtaIcon}
                 >
                   View our Projects
@@ -197,9 +189,9 @@ export default function Hero2() {
               </div>
             </div>
             <div className="hero-image d-flex d-flex-end">
-              <div className="illustration">
+              {/* <div className="illustration">
                 <img src="/newimages/canadathemebg2.png" />
-              </div>
+              </div> */}
               <HeroSliderComponent />
               {/* <img src="/newimages/check1.png" /> */}
             </div>
@@ -211,9 +203,9 @@ export default function Hero2() {
           <img src="/newimages/circlevector.svg" />
         </div>
         <div className="d-padding">
-          <div className="ab-image">
+          {/* <div className="ab-image">
             <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1712326521/BLOGSIMAGES/IMG_97381712326520386.jpg" />
-          </div>
+          </div> */}
           <div className="d-flex d-flex-wrap d-flex-center">
             <div className="building-outer-space-text">
               <h1 className="d-margin-b">
@@ -224,22 +216,28 @@ export default function Hero2() {
                 {/* <span>
                   <Infinity />{" "}
                 </span>{" "} */}
-                Signarama Brampton - Your Preferred Signage Partner
+                {/* Signarama Brampton: */}
+                Where Your Vision <br /> Takes Shape
               </h1>
-              <p className="d-margin-b">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem Ipsum is simply dummy
-                text of the printing and typesetting industry. Lorem Ipsum is
-                simply dummy text of the printing and typesetting industry.
-              </p>
-              <div className="ab-image">
+              <h2 className="s-margin-b">
+                Helping Businesses In Brampton and the GTA Look Great For Over
+                20 Years.
+              </h2>
+              <h2 className="d-margin-b">
+                More Than Just Signs, We're Your Brand Storytellers
+              </h2>
+
+              <h2 className="d-margin-b">
+                Full Service Sign Company From Design To Installation
+              </h2>
+
+              {/* <div className="ab-image">
                 <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1724001476/BLOGSIMAGES/EATALY%20X%20SAR%20DON%20MILLS-051724001475869.jpg" />
-              </div>
+              </div> */}
               <div className="d-flex d-flex-wrap d-flex-center d-column-gap d-margin-b">
                 <Button
                   type={`outline`}
+                  href={`/about-us`}
                   //   onClick={e => {
                   //     const params = new URLSearchParams(window.location.search)
                   //     let url = `/get-demo/`
@@ -250,7 +248,7 @@ export default function Hero2() {
                   //   }}
                   //   icon={heroCtaIcon}
                 >
-                  Learn more about us
+                  Read More
                 </Button>
               </div>
               <div className="ratings d-flex d-flex-wrap d-flex-center">

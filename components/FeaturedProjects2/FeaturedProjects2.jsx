@@ -93,7 +93,7 @@ export default function FeaturedProjects2({ data }) {
                         />
                       </div>
                       <div className="sign-name">
-                        <p className="s-margin-b">{item?.title}</p>
+                        <p className="s-margin-b font-bold">{item?.title}</p>
                         <span
                           className="sign-description"
                           dangerouslySetInnerHTML={createMarkup(

@@ -15,6 +15,7 @@ import Wally from "../components/Hero/Wally";
 import { GALLERYBYTITLE } from "../graphql/queries";
 import ClientSayings from "../components/ClientSayings/ClientSayings";
 import BuildingSomething from "../components/BuildingSomething/BuildingSomething";
+import WhyChooseSignarama from "../components/WhyChooseSignarama/WhyChooseSignarama";
 
 const AboutUs = ({ teams }) => {
   const router = useRouter();
@@ -46,36 +47,6 @@ const AboutUs = ({ teams }) => {
         // }}
       >
         <div className="d-padding-t d-padding-l d-padding-r">
-          <div className="hero-inner-space d-flex d-flex-wrap d-flex-between d-margin-b">
-            <div className="hero-text">
-              <h1 className="d-margin-b"> About Signarama Brampton </h1>
-            </div>
-            <div className="hero-text full-width">
-              <p className="d-margin-b">
-                Signarama Toronto is one of the oldest sign companies in
-                Toronto. We are a full service, sign and display company helping
-                businesses both big and small with their needs for custom signs,
-                displays and large format printing since 1986.
-              </p>
-              <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements. Our production staff in all
-                our three facilities are professional and efficient to ensure
-                creative and timely delivery of sign and display products. We're
-                privately owned and pride ourselves on maintaining outstanding
-                service and unique creativity as part of our company culture.
-              </p>
-              <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements.
-              </p>
-              {/* <div className="illustration">
-                <img src="/newimages/canadathemebg2.png" />
-              </div> */}
-            </div>
-          </div>
           <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
             <div
               style={{
@@ -95,71 +66,114 @@ const AboutUs = ({ teams }) => {
               />
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        className="hero-outer-space about-us"
-        style={{
-          background: "initial",
-          padding: "0",
-        }}
-      >
-        <div className="d-padding-l d-padding-r d-padding-b d-padding-t">
-          <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
+          <div className="hero-inner-space d-flex d-flex-wrap d-flex-between d-margin-b d-margin-t">
             <div className="hero-text">
               <h1 className="d-margin-b">
-                {" "}
-                Out Story <br />& Values{" "}
+                {/* About Signarama Brampton: */}
+                Your Trusted Source for Custom Signs & Graphics
               </h1>
             </div>
             <div className="hero-text full-width">
               <p className="d-margin-b">
-                Signarama Toronto is one of the oldest sign companies in
-                Toronto. We are a full service, sign and display company helping
-                businesses both big and small with their needs for custom signs,
-                displays and large format printing since 1986.
+                Signarama Brampton has been a leading provider of high-quality,
+                custom signs and graphics for over 20 years, helping businesses
+                throughout Brampton and the Greater Toronto Area (GTA) make a
+                powerful impact. We're more than just a sign shop; we're your
+                partners in visual communication, dedicated to creating signage
+                that elevates your brand and drives results.
               </p>
               <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements. Our production staff in all
-                our three facilities are professional and efficient to ensure
-                creative and timely delivery of sign and display products. We're
-                privately owned and pride ourselves on maintaining outstanding
-                service and unique creativity as part of our company culture.
+                Our journey began with a simple mission: to provide exceptional
+                signage solutions combined with unparalleled customer service.
+                Today, we're proud to be a leading sign company in Brampton,
+                known for our creativity, quality, and commitment to exceeding
+                client expectations.
               </p>
               <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements.
+                <span className="font-bold">Our Commitment: </span> We believe
+                that effective signage is crucial for success in today's
+                competitive market. That's why we combine our extensive
+                experience with the latest technologies and high-quality
+                materials to create signs that are not only visually appealing
+                but also durable and long-lasting.
               </p>
               <p className="d-margin-b">
-                Signarama Toronto is one of the oldest sign companies in
-                Toronto. We are a full service, sign and display company helping
-                businesses both big and small with their needs for custom signs,
-                displays and large format printing since 1986.
+                <span className="font-bold">Our Services:</span> We offer a
+                comprehensive range of signage solutions tailored to meet your
+                specific needs, including:
               </p>
-              <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements. Our production staff in all
-                our three facilities are professional and efficient to ensure
-                creative and timely delivery of sign and display products. We're
-                privately owned and pride ourselves on maintaining outstanding
-                service and unique creativity as part of our company culture.
-              </p>
-              <p className="d-margin-b">
-                We have a talented team of experienced signage consultants who
-                can offer expert advice on the kind of sign or promotion that
-                would best suit your requirements.
-              </p>
+              <ul className="about-list">
+                <li>
+                  <p>
+                    <span className="font-bold">Storefront Signs:</span> Attract
+                    customers and build brand recognition with impactful
+                    storefront signage.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span className="font-bold">Vehicle Wraps & Graphics:</span>{" "}
+                    Turn your vehicles into mobile billboards, maximizing your
+                    brand's reach.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span className="font-bold">Banners & Posters:</span>{" "}
+                    Promote events, sales, and special offers with vibrant,
+                    eye-catching banners.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span className="font-bold">Illuminated Signs:</span> Stand
+                    out day and night with illuminated signs, including channel
+                    letters and LED signs.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span className="font-bold">Interior Signs:</span> Enhance
+                    your interior space with wayfinding, ADA-compliant, and
+                    decorative signage.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span className="font-bold">Trade Show Displays:</span> Make
+                    a lasting impression at trade shows and events with custom
+                    displays.
+                  </p>
+                </li>
+
+                <li>
+                  <p>And much more! Including window frosting.</p>
+                </li>
+              </ul>
+
+              {/* <div className="illustration">
+                <img src="/newimages/canadathemebg2.png" />
+              </div> */}
             </div>
           </div>
         </div>
       </div>
 
-      <ClientSayings />
-      <BuildingSomething />
+      <WhyChooseSignarama />
+
+      <BuildingSomething
+        title=""
+        title2=""
+        subTitle="<span>Contact Signarama Brampton today for a free consultation and discover how we can help your business achieve its signage goals.</span>"
+        icon={null}
+        ctaTitle="Contact Us"
+      />
+
+      <ClientSayings paddingClasses="d-padding-l d-padding-r d-padding-b d-padding-t" />
 
       {/* <ProjectsCompleted className="about-page" /> */}
 

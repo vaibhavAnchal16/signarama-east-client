@@ -104,6 +104,18 @@ body{
         background-color: #fff;
     }
 }
+.font-thin{
+    font-weight: 100!important;
+}
+.font-thick{
+    font-weight: 400!important;
+}
+.font-bold{
+    font-weight: 700!important;
+}
+.font-bolder{
+    font-weight: 900!important;
+}
 .d-padding{
     padding: 120px 64px;
 }
@@ -160,8 +172,13 @@ body{
     right: 0;
     &.scrolled{
         // background: var(--black-bg);
-        background-color: #fff;
+        padding: 15px 54px;
+        // transition: all 0.3s ease-in;
+        .header-inner{
+        background: linear-gradient(to left, #ffffff 42%, var(--black-bg) 50%);
         box-shadow: 0 5px 15px #0000004f;
+        padding: 9px 10px;
+        }
     }
 }
 .d-column-gap{
@@ -317,7 +334,7 @@ body{
             }
             >p{
                 color: var(--lite-font);
-                font-size: 14px;
+                font-size: 15px;
                 line-height: 22px;
                 font-weight: 300;
             }
@@ -353,7 +370,7 @@ body{
             .hero-text{
                 max-width: 32%;
                 &.full-width{
-                    max-width: calc(100% - 32%);
+                    max-width: calc(100% - 35%);
                 }
             }
         }
@@ -383,9 +400,13 @@ body{
         color: var(--dark-bg-text);
         text-align: center;
     }
+    >h2{
+        color: var(--dark-bg-text);
+        text-align: center;
+    }
     >p{
         color: var(--dark-bg-text);
-        font-size: 14px;
+        font-size: 15px;
         line-height: 22px;
         font-weight: 300;
         text-align: center;
@@ -420,7 +441,7 @@ body{
     }
     >p{
         color: var(--lite-font);
-        font-size: 14px;
+        font-size: 15px;
         line-height: 22px;
         font-weight: 300;
         text-align: center;
@@ -464,9 +485,12 @@ body{
             color: var(--white-font);
             text-align: center;
         }
+        >h2{
+            text-align: center;
+        }
         >p{
             color: var(--lite-font);
-            font-size: 14px;
+            font-size: 15px;
             line-height: 22px;
             font-weight: 300;
             text-align: center;
@@ -502,6 +526,16 @@ body{
             transition: all .3s ease-in-out;
             .inner-slide{
                 margin-top: -10px;
+                .sign-name{
+                    >p{
+                        color: var(--red-bg);
+                    }
+                    +div{
+                        a{
+                            color: var(--red-bg);
+                        }
+                    }
+                }
             }
         }
     }
@@ -511,7 +545,7 @@ body{
         position: relative;
         transition: all .3s ease-in-out;
         .sign-name{
-            padding: 20px 0px 10px;
+            padding: 20px 0px 20px;
             p{
                 font-weight: 500;
                 font-size: 16px;
@@ -522,7 +556,7 @@ body{
                 *{
                     color: var(--lite-font);
                     font-weight: 300;
-                    font-size: 14px;
+                    font-size: 15px;
                 }
             }
         }
@@ -575,12 +609,12 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
     .learn-more{
         p{
             color: var(--lite-font);
-            font-size: 14px;
+            font-size: 15px;
             line-height: 22px;
         }
         a{
             color: var(--white-font);
-            font-weight: 300;
+            font-weight: 700;
         }
     }
 }
@@ -661,7 +695,11 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
 }
 .contact-page-details{
     h1{
-        font-size: 30px;
+        font-size: 24px;
+        line-height: 26px;
+    }
+    h2{
+        font-size: 18px;
     }
 }
 .social-icons{
@@ -688,4 +726,19 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             }       
         }
     }
+}
+
+.hero-text {
+    ul {
+        padding-left: 10px;
+        li{
+            margin-bottom: 12px;
+            p{
+                color: var(--lite-font);
+                font-size: 15px;
+                line-height: 22px;
+                font-weight: 300;
+            }
+    }
+}
 }

@@ -34,6 +34,7 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       </Head>
       <Hero2 />
       {/* <Hero /> */}
+      {console.log(recentworks, trending)}
       <FeaturedProjects2 data={recentworks} />
       <Services data={signs} />
       <ClientSayings />

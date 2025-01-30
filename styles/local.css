@@ -163,7 +163,7 @@ body {
 /* .hero-text ul{
     margin-bottom: 15px;
 } */
-.proud-of-inner ul li , .hero-text ul li{
+.proud-of-inner ul li {
     max-width: 22%;
     width: 100%;
 }
@@ -322,7 +322,7 @@ body {
 }
 
 .logo {
-    max-width: 250px;
+    max-width: 200px;
     width: 100%;
     line-height: 0px;
 }
@@ -355,7 +355,7 @@ body {
 footer.footer-wrapper>.footer-inner * {
     transition: all 0.2s ease-in-out;
     color: var(--lite-font);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
     font-weight: 300;
 }
@@ -373,7 +373,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 }
 .footer-wrapper .footer-inner .recent-blogs-section li a{
     color: var(--lite-font);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
     font-weight: 300;
     text-align: center;
@@ -387,7 +387,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 footer.footer-wrapper>.footer-inner a{
     cursor: pointer;
     color: var(--lite-font);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 22px;
     font-weight: 300;
     text-align: center;
@@ -518,7 +518,7 @@ body {
     margin: 0px auto;
     text-align: center;
     color: #b60521;
-    font-size: 14px;
+    font-size: 15px;
     left: 0;
     right: 0;
     width: 50%;
@@ -625,7 +625,7 @@ body {
     
     }
     .menu>ul li {
-        font-size: 14px;
+        font-size: 15px;
         padding: 8px 15px;
     }
     .menu {

@@ -57,14 +57,26 @@ export default function LatestNews2({ data }) {
           }}
         >
           <div>
-            <h1 className="d-margin-b">
-              <NewsIcon /> Latest Stories
-            </h1>
-            <p className="">
-              lorem Ipsum is simply dummy text of the printing and typesetting
-              lorem Ipsum is simply dummy text of the printing and typesetting
-              lorem Ipsum is simply dummy text of the printing and typesetting.
-            </p>
+            <div
+              className="d-flex d-flex-center d-column-gap"
+              style={{
+                alignItems: "flex-start",
+              }}
+            >
+              <span className="d-margin-t">
+                <NewsIcon />
+              </span>
+
+              <div>
+                <h1 className="d-margin-b">
+                  Recent Projects & Signage Successes
+                </h1>
+                <p className="">
+                  Explore our latest work, discover innovative sign solutions,
+                  and see how we're helping Brampton businesses shine.
+                </p>
+              </div>
+            </div>
           </div>
           <Button type={`fill`}>View all Stories</Button>
         </div>
@@ -92,7 +104,7 @@ export default function LatestNews2({ data }) {
                         />
                       </div>
                       <div className="sign-name">
-                        <p className="s-margin-b">{item?.title}</p>
+                        <p className="s-margin-b font-bold">{item?.title}</p>
                         {/* <span
                           className="sign-description"
                           dangerouslySetInnerHTML={createMarkup(
@@ -111,7 +123,8 @@ export default function LatestNews2({ data }) {
                           <CalendarIcon />{" "}
                           <span>{moment(item?.createdAt).format("ll")}</span>
                         </p>
-                        <Link href={``}>Read more..</Link>
+
+                        <Link href={`/`}>Read more..</Link>
                       </div>
                     </div>
                   </Link>

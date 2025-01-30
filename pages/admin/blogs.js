@@ -293,7 +293,7 @@ const Blogs = () => {
                       className={recentWork ? `active` : ``}
                     >
                       {" "}
-                      Add to recent work section.
+                      Add to Featured Projects
                     </button>
                   </div>
                 </div>

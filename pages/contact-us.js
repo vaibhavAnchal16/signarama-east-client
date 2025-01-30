@@ -10,6 +10,8 @@ import {
   LinkedIn,
   QualityIcon,
 } from "../components/icons";
+import WhyChooseSignarama from "../components/WhyChooseSignarama/WhyChooseSignarama";
+import BuildingSomething from "../components/BuildingSomething/BuildingSomething";
 
 const ContactUs = ({ query }) => {
   useEffect(() => {
@@ -85,26 +87,25 @@ const ContactUs = ({ query }) => {
         </div>
       </section> */}
 
-      <div
-        className="hero-outer-space bg-white"
-        style={{
-          background: "#fff",
-        }}
-      >
+      <div className="hero-outer-space bg-white wavepattern">
         <div className="d-padding">
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
-              <h1 className="d-margin-b"> Contact Us</h1>
+              <h1 className="d-margin-b">
+                {/* Contact Signarama Brampton: */}
+                Let's Discuss Your Signage Needs
+              </h1>
               <p className="d-margin-b">
-                We value your feedback and would love to hear from your. Whether
-                you have a question, a comment, a suggestion or just want to say
-                hi, we are here to help you.
+                Ready to transform your brand's visibility with impactful
+                signage? We're here to help! Contact Signarama Brampton today to
+                discuss your project, get a free quote, or learn more about our
+                comprehensive sign solutions.
               </p>
             </div>
             <div className="hero-image d-flex d-flex-end">
-              <div className="illustration">
+              {/* <div className="illustration">
                 <img src="/newimages/canadathemebg2.png" />
-              </div>
+              </div> */}
             </div>
           </div>
           <MapIframe />
@@ -123,26 +124,39 @@ const ContactUs = ({ query }) => {
       </div>
       {/* <ProjectsCompleted className="about-page contact-page" /> */}
       <div className="contact-page-details bg-white">
-        <div className="d-padding-l d-padding-r d-padding-b d-flex d-flex-between d-column-gap d-flex-align-start">
+        <div className="d-padding-l d-padding-t d-padding-r d-flex d-flex-between d-column-gap d-flex-align-start">
           <div>
-            <h1 className="d-margin-b">Getin Touch</h1>
-            <div className="d-flex d-flex-column">
-              <Button type="fill d-margin-b full-width">
-                info@signarama-toronto.ca
-              </Button>
+            <h1 className="s-margin-b">Here's How to Reach Us:</h1>
+            <h2 className="s-margin-b font-thick">
+              <span className="font-bold">Call Us:</span> Speak directly with
+              one of our signage specialists.
+            </h2>
+            <div className="d-flex d-flex-column d-margin-b">
               <Button type="fill full-width">416.922.7446</Button>
             </div>
+            <h2 className="s-margin-b font-thick">
+              <span className="font-bold">Email Us:</span> Send us your project
+              details and we'll get back to you promptly.
+            </h2>
 
-            <h1 className="d-margin-t d-margin-b">Our Office</h1>
+            <div className="d-flex d-flex-column d-margin-b">
+              <Button type="fill full-width">info@signarama-toronto.ca</Button>
+            </div>
+
+            <h2 className="s-margin-b font-thick">
+              <span className="font-bold">Visit Our Showroom:</span> See
+              examples of our work and discuss your vision in person.
+            </h2>
+
             <div>
-              <p className="d-margin-b">
+              <h1 className="d-margin-b">
                 Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
-              </p>
-              <Button type="fill full-width">416.922.7446</Button>
+              </h1>
+              <Button type="fill full-width">Show Address on Google</Button>
             </div>
 
-            <h1 className="d-margin-t d-margin-b">Connect with us</h1>
-            <div className="d-flex d-column-gap social-icons">
+            {/* <h1 className="d-margin-t d-margin-b">Connect with us</h1> */}
+            <div className="d-flex d-column-gap social-icons d-margin-t">
               <Button type="outline">
                 <Facebook />
               </Button>
@@ -176,8 +190,18 @@ const ContactUs = ({ query }) => {
           </div>
         </div>
       </div>
-      <Faq2 className="bg-white" />
-      {/* <BuildingSomething /> */}
+      <div className="bg-white">
+        <WhyChooseSignarama />
+        <BuildingSomething
+          title=""
+          title2=""
+          subTitle="<span>We're conveniently located in Brampton and serve businesses throughout the Greater Toronto Area.<br/><br/> Whether you need a storefront sign, Illuminated Sign, banner, or any other type of signage, Signarama Brampton is your trusted partner.</span>"
+          icon={null}
+          ctaTitle="Directions"
+        />
+        <Faq2 className="d-padding-t" />
+        {/* <BuildingSomething /> */}
+      </div>
     </>
   );
 };

@@ -1,7 +1,15 @@
 import Button from "../Button/Button";
 import { Infinity } from "../icons";
+import parse from "html-react-parser";
 
-export default function BuildingSomething() {
+export default function BuildingSomething({
+  icon = <Infinity />,
+  title = "Let's Build",
+  title2 = "Something",
+  subTitle = "Extraordinary Together",
+  ctaTitle = `View Our Projects`,
+  ctaLink = `/contact-us/`,
+}) {
   return (
     <div className="building-something-outer-space">
       <div className="d-padding-l d-padding-r">
@@ -12,17 +20,14 @@ export default function BuildingSomething() {
             </div>
             <h1 className="">
               {" "}
-              Let's Build{" "}
-              <span>
-                <Infinity />{" "}
-              </span>{" "}
-              Something
+              {title} <span>{icon}</span> {title2}
             </h1>
-            <h1 className="d-margin-b"> Extraordinary Together</h1>
+            <h1 className="d-margin-b">{parse(subTitle || "")}</h1>
 
             <div className="d-flex d-flex-wrap d-flex-center d-column-gap d-margin-b">
               <Button
-                type={`outline`}
+                type={`outline dark`}
+                href={ctaLink}
                 //   onClick={e => {
                 //     const params = new URLSearchParams(window.location.search)
                 //     let url = `/get-demo/`
@@ -33,7 +38,7 @@ export default function BuildingSomething() {
                 //   }}
                 //   icon={heroCtaIcon}
               >
-                View Our Projects
+                {ctaTitle}
               </Button>
             </div>
             <div className="illustration il2">

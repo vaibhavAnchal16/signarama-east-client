@@ -1,18 +1,20 @@
 import { ClientSaysIcon } from "../icons";
 
-export default function ClientSayings() {
+export default function ClientSayings({
+  paddingClasses = "d-padding-l d-padding-r d-padding-b",
+}) {
   return (
     <section className="services-outer-space">
-      <div className="d-padding-l d-padding-r d-padding-b">
+      <div className={paddingClasses}>
         <div className="services-outer-space-text">
           <h1 className="d-margin-b">
-            What Our Clients Say <ClientSaysIcon />
+            Our Signs Speak for Themselves, But Our Clients Do Too.{" "}
+            <ClientSaysIcon />
           </h1>
-          <p className="d-margin-b">
-            lorem Ipsum is simply dummy text of the printing and typesetting
-            lorem Ipsum is simply dummy text of the printing and typesetting
-            lorem Ipsum is simply dummy text of the printing and typesetting.
-          </p>
+          <h2 className="d-margin-b">
+            See how Signarama Brampton has helped businesses like yours achieve
+            real results with impactful signage.
+          </h2>
           <div className="d-flex d-flex-wrap d-column-gap d-row-gap d-flex-center">
             <div className="ratings d-flex d-flex-wrap d-flex-center">
               <img

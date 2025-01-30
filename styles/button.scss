@@ -85,9 +85,6 @@ $mobile: 767px;
                             fill: #000;
                         }
                     }
-                    .left{
-                     
-                    }
                 }
                 &:hover{
                     color: var(--red-bg);
@@ -156,6 +153,22 @@ $mobile: 767px;
                     }
                     .right{
                         transform: translate(150%, 0px);
+                    }
+                }
+            }
+        }
+        &.dark{
+            button.btn-component{
+                border: 1px solid var(--dark-bg-text);
+                color: var(--dark-bg-text);
+                border-color: var(--dark-bg-text);
+                &:hover{
+                    color: var(--red-bg);
+                    &::before{
+                        background-color: var(--dark-bg-text);
+                    }
+                    &::after{
+                        background-color: transparent;
                     }
                 }
             }
