@@ -29,14 +29,13 @@ const options = {
     },
   },
   breakpoints: {
-    1400: {
-      perPage: 4,
-    },
     1200: {
       perPage: 3,
+      gap: "1rem",
     },
-    767: {
+    991: {
       perPage: 2,
+      gap: "1rem",
     },
     416: {
       perPage: 1,
@@ -78,7 +77,9 @@ export default function LatestNews2({ data }) {
               </div>
             </div>
           </div>
-          <Button type={`fill`}>View all Stories</Button>
+          <Button href={`/sign-blog`} type={`fill`}>
+            View all Stories
+          </Button>
         </div>
 
         <div className="services-inner d-margin-t">
@@ -91,7 +92,7 @@ export default function LatestNews2({ data }) {
             {data?.map((item, i) => {
               return (
                 <SplideSlide className="outer-slide" key={i}>
-                  <Link href={`/${item?.slug}`}>
+                  <Link href={`/blog/${item?.slug}`}>
                     <div className="inner-slide d-flex d-flex-column">
                       <div style={{ overflow: "hidden" }}>
                         <LazyImage

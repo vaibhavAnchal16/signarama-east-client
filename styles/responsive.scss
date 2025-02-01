@@ -1,0 +1,414 @@
+$tablet: 1024px;
+$ipad: 991px;
+$mobile: 767px;
+
+
+@media (max-width: $tablet){
+    h1{
+        font-size: 48px;
+    }
+    .header-wrapper{
+        padding: 24px 32px;
+        &.scrolled{
+            padding: 15px 22px;
+        }
+    }
+    .d-padding{
+        padding: 60px 32px;
+    }
+    .d-padding-t{
+        padding-top: 60px;
+    }
+    .d-padding-b{
+        padding-bottom: 60px;
+    }
+    .d-padding-l{
+        padding-left: 32px;
+    }
+    .d-padding-r{
+        padding-right: 32px;
+    }
+    .d-margin{
+        margin: 12px;
+    }
+    .d-margin-l{
+        margin-left: 12px;
+    }
+    .d-margin-r{
+        margin-right: 12px;
+    }
+    .d-margin-t{
+        margin-top: 12px;
+    }
+    .d-margin-b{
+        margin-bottom: 12px;
+    }
+
+    .s-margin{
+        margin: 8px;
+    }
+    .s-margin-l{
+        margin-left: 8px;
+    }
+    .s-margin-r{
+        margin-right: 8px;
+    }
+    .s-margin-t{
+        margin-top: 8px;
+    }
+    .s-margin-b{
+        margin-bottom: 8px;
+    }
+
+    .l-margin{
+        margin: 24px;
+    }
+    .l-margin-l{
+        margin-left: 24px;
+    }
+    .l-margin-r{
+        margin-right: 24px;
+    }
+    .l-margin-t{
+        margin-top: 24px;
+    }
+    .l-margin-b{
+        margin-bottom: 24px;
+    }
+
+    .hero-outer-space {
+        padding: 40px 0px 20px;
+        .hero-inner-space {
+            .hero-text{
+                max-width: 100%;
+
+            }
+            .hero-image{
+                position: unset;
+                max-width: 100%;
+            }
+        }
+        &.sign-ind-page{
+            overflow: unset;
+            .hero-inner-space{
+                .hero-text{
+                    position: sticky;
+                    top: 90px;
+                }
+            }
+        }
+    }
+    .contact-page-details{
+        >div{
+            flex-wrap: wrap;
+            row-gap: 20px;
+            flex-direction: column-reverse;
+            >div{
+                max-width: 100%;
+                width: 100%;
+                padding-left: 0px;
+            }
+            h2{
+                &.s-margin-b{
+                    margin-bottom: 18px;
+                }
+            }
+        }
+    }
+    .hero-slider{
+        .hero-outer-slide{
+            .hero-inner-slide{
+                >div{
+                    img{
+                        &:first-child, &:last-child{
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .outer-slide{
+        padding: 12px;
+        >.inner-slide{
+            img{
+                height: 200px;
+                border-radius: 4px;
+            }
+            .sign-name{
+                padding: 20px 0px 30px;
+            }
+            >div{
+                &:last-child{
+                    padding-bottom: 16px;
+                }
+            }
+            .btn-wrapper{
+                &.fill {
+                    button{
+                        &.btn-component{
+                            // position: relative!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .faq-cards {
+        .faq-cards-item{
+            padding: 12px;
+        }
+    }
+    .images-gallery-box {
+        > .single-image{
+            max-width: 50%;
+            height: 200px;
+        }
+    }
+    .building-outer-space{
+        .building-outer-space-text{
+            >div{
+                &.d-flex{
+                    margin-top: 28px;
+                }
+            }
+        }
+       
+        .ratings{
+            margin-top: 28px;
+        }
+    }
+    .building-something-outer-space{
+        .building-outer-space-text{
+            >div{
+                margin-top: 28px;
+            }
+        }
+    
+    }
+}
+
+@media (max-width: $ipad){
+    h1{
+        font-size: 40px;
+        line-height: 44px;
+        svg{
+            width: 26px;
+            height: 26px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    h2{
+        font-size: 18px;
+    }
+    .header-wrapper {
+        padding: 14px 14px;
+        &.scrolled{
+            padding: 6px 4px;
+        }
+    }
+    .d-margin{
+        margin: 14px;
+    }
+    .d-margin-l{
+        margin-left: 14px;
+    }
+    .d-margin-r{
+        margin-right: 14px;
+    }
+    .d-margin-t{
+        margin-top: 14px;
+    }
+    .d-margin-b{
+        margin-bottom: 14px;
+    }
+    .featured-outer-space-text, .news-outer-space-text{
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .faq-cards {
+        .faq-cards-item{
+            // max-width: 49%;
+        }
+    }
+    .btn-wrapper {
+        button.btn-component{
+            padding: 11px 14px;
+        }
+    }
+    
+}
+
+@media (max-width: $mobile){
+    .faq-cards .faq-cards-item.testimonial-item span{
+        font-size: 12px;
+    }
+    .hero-outer-space {
+        padding: 20px 0px 20px;
+        .contact-page-details{
+            >div{
+                // flex-wrap: wrap;
+            }
+        }
+    }
+    .hero-outer-space{
+        &.about-us {
+            .hero-inner-space{
+                .hero-text{
+                    max-width: 100%;
+                    &.full-width{
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        &.sign-ind-page{
+            .hero-inner-space{
+                .hero-text{
+                    position: unset;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+    .images-gallery-box {
+        &> .single-image{        
+            height: 120px;
+        }
+    }
+    img{
+        width: 100%;
+    }
+    .contact-page-details h2{
+        font-size: 18px;
+        line-height: 22px;
+    }
+    h1{
+        font-size: 33px;  
+        line-height: 38px;
+        >svg{
+            display: none;
+        }
+     } 
+     .outer-slide .inner-slide .sign-name .sign-description *{
+        font-size: 12px;
+        line-height: 16px;
+     }
+     .services-outer-space .services-outer-space-text > p, .hero-outer-space .hero-inner-space .hero-text > p{
+        font-size: 12px;
+        line-height: 16px;
+     }
+     p{
+        font-size: 12px;
+        line-height: 16px;
+     }
+     h2{
+        font-size: 12px;
+        line-height: 14px;
+        >svg{
+            display: none;
+        }
+    }
+    .header-wrapper {
+        padding: 16px 16px;
+        &.scrolled{
+            padding: 8px 6px;
+        }
+    }
+    .d-padding{
+        padding: 40px 16px;
+    }
+    .d-padding-t{
+        padding-top: 40px;
+    }
+    .d-padding-b{
+        padding-bottom: 40px;
+    }
+    .d-padding-l{
+        padding-left: 16px;
+    }
+    .d-padding-r{
+        padding-right: 16px;
+    }
+
+    .d-margin{
+        margin: 16px;
+    }
+    .d-margin-l{
+        margin-left: 16px;
+    }
+    .d-margin-r{
+        margin-right: 16px;
+    }
+    .d-margin-t{
+        margin-top: 16px;
+    }
+    .d-margin-b{
+        margin-bottom: 16px;
+    }
+
+    .faq-cards {
+        .faq-cards-item{
+            max-width: 100%;
+        }
+    }
+    .featured-outer-space-text, .news-outer-space-text{
+        justify-content: flex-start;
+        >div{
+            text-align: left;
+            margin-top: 16px;
+            >div{
+                >span{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .hero-outer-space {
+        .hero-inner-space {
+            .hero-text{
+                >div{
+                    &.d-flex-wrap{
+                        row-gap: 10px;
+                    }
+                }
+                .btn-wrapper{
+                    max-width: 100%;
+                   }
+            }
+            .hero-image{
+               
+            }
+        }
+        &.sign-ind-page{
+            .hero-inner-space{
+                .hero-text{
+                   .btn-wrapper{
+                    max-width: 100%;
+                   }
+                }
+            }
+        }
+    }
+    .services-outer-space {
+        .sign-types{
+            row-gap: 10px;
+        }
+    }
+    .building-something-outer-space {
+        .building-outer-space-text{
+            h1{
+                font-size: 22px;
+                line-height: 22px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span{
+                    line-height: inherit;
+                }
+            }   
+        }
+    }
+}

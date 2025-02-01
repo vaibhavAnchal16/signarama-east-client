@@ -152,7 +152,13 @@ const ContactUs = ({ query }) => {
               <h1 className="d-margin-b">
                 Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
               </h1>
-              <Button type="fill full-width">Show Address on Google</Button>
+              <Button
+                target="_blank"
+                href={`https://www.google.com/maps?rlz=1C1CHZN_enCA942CA942&sca_esv=9a9bb3b7773ff3ad&cs=1&biw=1536&bih=695&sxsrf=AHTn8zqbpaPCK-BCVOx8V1MJLzHhH7smQw:1738371756230&kgmid=/g/1tt1hvxf&shndl=30&shem=uaasie&kgs=6bd1e54d0191ba5b&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KX1l5Xk8PiuIMZplguhMixxV&daddr=Sign+A+Rama,+289+Rutherford+Rd+S+Unit15,+Brampton,+ON+L6W+3R9,+Canada`}
+                type="fill full-width"
+              >
+                Show Address on Google
+              </Button>
             </div>
 
             {/* <h1 className="d-margin-t d-margin-b">Connect with us</h1> */}
@@ -175,13 +181,17 @@ const ContactUs = ({ query }) => {
             }}
           >
             <h1
-              className="d-margin-b d-inline-flex d-flex-center d-column-gap"
+              className="s-margin-b d-inline-flex d-flex-center d-column-gap"
               style={{
                 whiteSpace: "nowrap",
               }}
             >
-              <QualityIcon /> Have a Project in your mind?
+              Fill Out Our Online Form <QualityIcon />
             </h1>
+            <h2 className="d-margin-b">
+              Provide us with some basic information and we'll contact you to
+              schedule a consultation.
+            </h2>
             <div className="bg-white">
               <div className="inner-slide">
                 <ConnectForm />
@@ -191,10 +201,34 @@ const ContactUs = ({ query }) => {
         </div>
       </div>
       <div className="bg-white">
-        <WhyChooseSignarama />
+        <WhyChooseSignarama>
+          <div className="hero-text full-width">
+            <p className="d-margin-b">
+              <span className="font-bold">Local Expertise:</span> We understand
+              the Brampton market and can help you create signage that meets
+              local regulations and resonates with your target audience.
+            </p>
+            <p className="d-margin-b">
+              <span className="font-bold">Full-Service Solutions:</span> From
+              design and fabrication to permitting and installation, we handle
+              every aspect of your project.
+            </p>
+            <p className="d-margin-b">
+              <span className="font-bold">High-Quality Materials:</span> Your
+              satisfaction is our top priority.
+            </p>
+            <p className="d-margin-b">
+              <span className="font-bold">Exceptional Customer Service:</span>{" "}
+              Your satisfaction is our ultimate goal. We work closely with you
+              to ensure your vision is realized.
+            </p>
+          </div>
+        </WhyChooseSignarama>
         <BuildingSomething
           title=""
           title2=""
+          target="_blank"
+          ctaLink="https://www.google.com/maps?rlz=1C1CHZN_enCA942CA942&sca_esv=9a9bb3b7773ff3ad&cs=1&biw=1536&bih=695&sxsrf=AHTn8zqbpaPCK-BCVOx8V1MJLzHhH7smQw:1738371756230&kgmid=/g/1tt1hvxf&shndl=30&shem=uaasie&kgs=6bd1e54d0191ba5b&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KX1l5Xk8PiuIMZplguhMixxV&daddr=Sign+A+Rama,+289+Rutherford+Rd+S+Unit15,+Brampton,+ON+L6W+3R9,+Canada"
           subTitle="<span>We're conveniently located in Brampton and serve businesses throughout the Greater Toronto Area.<br/><br/> Whether you need a storefront sign, Illuminated Sign, banner, or any other type of signage, Signarama Brampton is your trusted partner.</span>"
           icon={null}
           ctaTitle="Directions"

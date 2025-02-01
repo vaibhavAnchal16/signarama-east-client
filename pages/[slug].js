@@ -78,7 +78,7 @@ const Signs = ({ loading, sign }) => {
       </div>
 
       <div
-        className="hero-outer-space bg-white about-us"
+        className="hero-outer-space bg-white about-us sign-ind-page"
         style={{
           background: "#fff",
         }}

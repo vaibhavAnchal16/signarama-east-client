@@ -301,6 +301,15 @@ body{
     align-items: flex-start;
 }
 .hero-outer-space{
+    &.sign-ind-page{
+        overflow: unset;
+        .hero-inner-space{
+            .hero-text{
+                position: sticky;
+                top: 90px;
+            }
+        }
+    }
     &.illustrationbg{
         background-image: url(/newimages/menubg.svg);
         background-position: center 18%;
@@ -394,7 +403,7 @@ body{
         /* transform: translate(30%, 0px); */
     }
     .building-outer-space-text{
-        max-width: 768px;
+        max-width: 1024px;
     margin: 0px auto;
     >h1{
         color: var(--dark-bg-text);
@@ -653,7 +662,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
                 display: inline-flex;
                 color: var(--lite-font);
                 font-weight: 300;
-                margin-top: 24px;
+                // margin-top: 24px;
             }
         }
     }

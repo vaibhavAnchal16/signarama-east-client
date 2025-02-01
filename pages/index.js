@@ -34,13 +34,15 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       </Head>
       <Hero2 />
       {/* <Hero /> */}
-      {console.log(recentworks, trending)}
       <FeaturedProjects2 data={recentworks} />
       <Services data={signs} />
       <ClientSayings />
       <LatestNews2 data={trending} />
       <Faq2 />
-      <BuildingSomething />
+      <BuildingSomething
+        ctaLink="/sign-blog"
+        innerClasses="d-padding-l d-padding-r d-margin-b"
+      />
 
       {/* <ProjectsCompleted className="home-page" />
 

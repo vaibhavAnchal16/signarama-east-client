@@ -28,14 +28,12 @@ const options = {
     },
   },
   breakpoints: {
-    1400: {
-      perPage: 4,
-    },
     1200: {
-      perPage: 3,
-    },
-    767: {
       perPage: 2,
+    },
+    991: {
+      perPage: 2,
+      gap: "1rem",
     },
     416: {
       perPage: 1,
@@ -67,7 +65,9 @@ export default function FeaturedProjects2({ data }) {
               lorem Ipsum is simply dummy text of the printing and typesetting.
             </p>
           </div>
-          <Button type={`fill`}>View all Projects</Button>
+          <Button href={`/sign-blog`} type={`fill`}>
+            View all Projects
+          </Button>
         </div>
 
         <div className="services-inner d-margin-t">
@@ -80,7 +80,7 @@ export default function FeaturedProjects2({ data }) {
             {data?.map((item, i) => {
               return (
                 <SplideSlide className="outer-slide" key={i}>
-                  <Link href={`/${item?.slug}`}>
+                  <Link href={`/blog/${item?.slug}`}>
                     <div className="inner-slide d-flex d-flex-column">
                       <div style={{ overflow: "hidden" }}>
                         <LazyImage

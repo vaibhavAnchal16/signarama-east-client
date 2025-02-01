@@ -98,12 +98,25 @@
     max-width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0px 25px;
+    /* padding: 0px 25px; */
     justify-content: space-between;
   }
+  .serv-detail-text > *{
+    margin-bottom: 12px;
+  }
   .serv-detail-text p {
-    line-height: 28px;
-    padding: 12px 0px;
+    color: var(--lite-font);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    /* margin-top: 12px; */
+    margin-bottom: 12px;
+  }
+  .serv-detail-text li{
+    color: var(--lite-font);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
   }
   .serv-detail-btn {
     text-align: center;

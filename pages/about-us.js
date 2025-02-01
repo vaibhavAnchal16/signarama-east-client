@@ -163,7 +163,30 @@ const AboutUs = ({ teams }) => {
         </div>
       </div>
 
-      <WhyChooseSignarama />
+      <WhyChooseSignarama>
+        <div className="hero-text full-width">
+          <p className="d-margin-b">
+            <span className="font-bold">Local Expertise:</span> We understand
+            the Brampton market and the unique needs of local businesses. We
+            also have extensive knowledge of Brampton's sign permit process.
+          </p>
+          <p className="d-margin-b">
+            <span className="font-bold">Experienced Team:</span> Our skilled
+            designers, fabricators, and installers are committed to delivering
+            top-quality workmanship.
+          </p>
+          <p className="d-margin-b">
+            <span className="font-bold">Full-Service Solutions:</span> We handle
+            every aspect of your project, from initial concept and design to
+            fabrication, permitting, and installation.
+          </p>
+          <p className="d-margin-b">
+            <span className="font-bold">Customer Satisfaction:</span> Your
+            satisfaction is our ultimate goal. We work closely with you to
+            ensure your vision is realized.
+          </p>
+        </div>
+      </WhyChooseSignarama>
 
       <BuildingSomething
         title=""

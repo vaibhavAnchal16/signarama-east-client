@@ -46,14 +46,13 @@ const Services = ({ data }) => {
     //   },
     // },
     breakpoints: {
-      1400: {
-        perPage: 4,
-      },
       1200: {
         perPage: 3,
+        gap: "1rem",
       },
-      767: {
+      991: {
         perPage: 2,
+        gap: "1rem",
       },
       416: {
         perPage: 1,

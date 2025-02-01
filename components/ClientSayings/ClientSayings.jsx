@@ -39,7 +39,10 @@ export default function ClientSayings({
                   perferendis temporibus eius ad tempore, iusto voluptate esse!
                   Delectus cupiditate maxime minima. Temporibus.
                 </p>
-                <span> Emily J. Smith, Smith & Co. </span>
+                <span className="d-margin-t">
+                  {" "}
+                  Emily J. Smith, Smith & Co.{" "}
+                </span>
               </div>
             </div>
             <div className="faq-cards-item testimonial-item d-flex d-column-gap d-align-start">
@@ -53,7 +56,10 @@ export default function ClientSayings({
                   perferendis temporibus eius ad tempore, iusto voluptate esse!
                   Delectus cupiditate maxime minima. Temporibus.
                 </p>
-                <span> Asham Cheema, Prudent Analytics </span>
+                <span className="d-margin-t">
+                  {" "}
+                  Asham Cheema, Prudent Analytics{" "}
+                </span>
               </div>
             </div>
             <div className="faq-cards-item testimonial-item d-flex d-column-gap d-align-start">
@@ -67,7 +73,7 @@ export default function ClientSayings({
                   perferendis temporibus eius ad tempore, iusto voluptate esse!
                   Delectus cupiditate maxime minima. Temporibus.
                 </p>
-                <span> John Doe, Remax </span>
+                <span className="d-margin-t"> John Doe, Remax </span>
               </div>
             </div>
             <div className="faq-cards-item testimonial-item d-flex d-column-gap d-align-start">
@@ -81,7 +87,10 @@ export default function ClientSayings({
                   perferendis temporibus eius ad tempore, iusto voluptate esse!
                   Delectus cupiditate maxime minima. Temporibus.
                 </p>
-                <span> Emily J. Smith, Smith & Co. </span>
+                <span className="d-margin-t">
+                  {" "}
+                  Emily J. Smith, Smith & Co.{" "}
+                </span>
               </div>
             </div>
           </div>

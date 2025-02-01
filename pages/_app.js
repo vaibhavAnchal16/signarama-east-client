@@ -9,6 +9,7 @@ import "../styles/admin.css";
 import "../styles/new.scss";
 import "../styles/button.scss";
 import "animate.css";
+import "../styles/responsive.scss";
 import "@splidejs/react-splide/css";
 import Head from "next/head";
 import { useEffect } from "react";

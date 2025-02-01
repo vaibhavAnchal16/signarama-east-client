@@ -18,7 +18,7 @@ const GalleryGrid = ({ images }) => {
   };
 
   return (
-    <section className="images-gallery">
+    <section className="images-gallery d-margin-t d-margin-b">
       <div className="images-gallery-inner">
         <div className="images-gallery-box">
           {images?.map((image, i) => (
