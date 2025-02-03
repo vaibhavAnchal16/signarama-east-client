@@ -27,13 +27,13 @@ export default function AdminLayout({ children }) {
   }, []);
 
   const routes = [
+    // {
+    //   name: "Dashboard",
+    //   link: "/admin/dashboard",
+    // },
     {
-      name: "Dashboard",
-      link: "/admin/dashboard",
-    },
-    {
-      name: "Manage Menu",
-      link: "/admin/menus",
+      name: "Hero Slider",
+      link: "/admin/slider",
     },
     {
       name: "Manage Sign Pages",

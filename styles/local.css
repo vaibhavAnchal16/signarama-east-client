@@ -664,7 +664,7 @@ body {
 
     }
     .howsewingworks-inner .howsewingworksbox p {
-        margin: 15px 0px;
+        /* margin: 15px 0px; */
     }
     .howsewingworks-inner .howsewingworksbox:not(:last-child):before {
         /* content: "";

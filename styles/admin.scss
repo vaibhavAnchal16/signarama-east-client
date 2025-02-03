@@ -5,7 +5,7 @@
     left: 0;
     overflow: auto;
     max-height: 100vh;
-    background-color: #f1f1f1;
+    background-color: var(--dark-bg);
     max-width: 20%;
     width: 100%;
  }
@@ -14,7 +14,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: 0;
-    padding: 10px 20px;
+    padding: 32px;
  }
  #adminlayout .admin-side-float{
     /* padding: 10px 10px; */
@@ -30,7 +30,7 @@
  }
  .footer-admin-links button{
   margin-left: 10px;
-  background-color: #b60521;
+  background-color: var(--red-bg);
   color: #fff;
   border: none;
   padding: 5px 20px;
@@ -43,11 +43,22 @@
  #adminlayout .admin-side-float ul > li{
     /* margin:10px 0px; */
     padding: 10px 10px;
+    position: relative;
     cursor: pointer;
  }
  #adminlayout .admin-side-float ul > li.active{
-    background-color: #000;
-    color: #fff;
+    background-color: var(--dark-bg-text);
+    color: var(--red-bg);
+    &::after{
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      background-color: var(--red-bg);
+    }
  }
  .modal-form-wrapper{
    position: fixed;

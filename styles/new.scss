@@ -70,6 +70,10 @@
   }
   p, a {
     color: var(--lite-font);
+    font-weight: 300;
+    line-height: 22px;
+    font-size: 15px;
+    // line-height: ;
   }
   h1,h2,h3,h4,h5{
     color: var(--lite-font);
@@ -103,7 +107,15 @@ body{
     .bg-white{
         background-color: #fff;
     }
+    .splide__arrow{
+        background: var(--dark-bg);
+        border-radius: 0px;
+        border: 1px solid rgba(192, 191, 191, 0.3882352941);
+        height: 44px;
+        width: 44px;
+    }
 }
+
 .font-thin{
     font-weight: 100!important;
 }
@@ -183,6 +195,12 @@ body{
 }
 .d-column-gap{
     column-gap: 1.25%;   
+}
+.d-row-gap{
+    row-gap: 20px;  
+}
+.big-row-gap{
+    row-gap: 48px;
 }
 .s-margin{
     margin: 12px;
@@ -351,10 +369,10 @@ body{
         .hero-image{
             width: 100%;
             max-width: 49%;
-            height: 100%;
+            height: 90%;
             position: absolute;
             right: 0;
-            top: 0;
+            top: auto;
             bottom: 0; 
             // background: url(/newimages/canadathemebg2.png);
             // background-size: contain;
@@ -680,21 +698,22 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
                 overflow: hidden;
                 height: 100%;
                 column-gap: 20px;
-                padding-left: 20px;
+                // padding-left: 20px;
                 padding-top: 20px;
                 img{
-                    max-width: 50%;
-                    max-height: 75vh;
+                    max-width: 90%!important;
+                    max-height: 98%;
                     width: 100%;
+                    margin: 0px auto;
                     border-radius: 4px;
                     /* border: 2px solid var(--red-bg); */
                     &:first-child{
                         transition: 0.3s linear;
-                        box-shadow: 0 10px 22px #0000004f;
+                        // box-shadow: 0 10px 22px #0000004f;
                         animation: MoveUpDown 6s linear infinite;
                     }
                     &:last-child{
-                        filter: drop-shadow(-14px 15px 10px #6f6f6f);
+                        filter: drop-shadow(-7px 11px 6px #6f6f6f);
                         animation: MoveUpDown 8s linear infinite;
                     }
                 }
@@ -750,4 +769,16 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             }
     }
 }
+}
+
+.howsewingworks-inner {
+    .howsewingworksbox{
+        img{
+            max-width: 120px;
+            height: 120px;
+            object-fit: contain;
+            width: 100%;
+            border-radius: 100%;
+        }
+    }
 }

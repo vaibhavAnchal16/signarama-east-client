@@ -37,7 +37,6 @@ export default function Hero() {
   };
   return (
     <section className="hero-outer-space animate__animated">
-      <Wave />
       <div
         className="hero-wrapper"
         // style={{

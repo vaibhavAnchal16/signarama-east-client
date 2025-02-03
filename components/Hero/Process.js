@@ -1,116 +1,87 @@
 export const Process = () => {
   return (
-    <div className="howsewingworks-wrapper animate__animated animate__backInUp">
-      <div className="howsewingworks-inner">
-        <div className="howsewingworksbox">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
-          </svg>
-
-          <h2> Share </h2>
-          <p> Share with us your signage ideas, vision and inspirations.</p>
+    <div className="howsewingworks services-outer-space">
+      <div
+        className="howsewingworks-inner d-padding-l d-padding-r d-padding-t"
+        style={{
+          alignItems: "flex-start",
+        }}
+      >
+        <div className="services-outer-space-text l-margin-b d-column-gap">
+          <h1 className="d-margin-b">Our Process</h1>
+          <h2 className="l-margin-b">Your Journey to a Stunning Sign</h2>
         </div>
-        <div className="howsewingworksbox">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
-          </svg>
 
-          <h2> Discuss </h2>
-          <p>
-            {" "}
-            We will show and share with you our knowledge and experience with
-            options and costs.
-          </p>
-        </div>
-        <div className="howsewingworksbox">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
-          </svg>
+        <div
+          className="d-flex d-flex-between d-flex-wrap d-column-gap big-row-gap"
+          style={{
+            alignItems: "flex-start",
+          }}
+        >
+          <div className="howsewingworksbox">
+            <img src="/processimages/DreamIt.png" alt="Dream It" />
+            <h2 className="s-margin-t s-margin-b"> Dream It </h2>
 
-          <h2> Demonstration </h2>
-          <p>
-            {" "}
-            We will show you what your sign will look like finished and
-            installed.
-          </p>
-        </div>
-        <div className="howsewingworksbox">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
-          </svg>
-
-          <h2> Approvals </h2>
-          <p>
-            {" "}
-            Upon your approval of the proof and obtaining of permits, if
-            applicable, we will start production.
-          </p>
-        </div>
-        <div className="howsewingworksbox">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" fill="#FED8DE"></circle>
-          </svg>
-
-          <h2> Production </h2>
-          <p>
-            {" "}
-            After creating your signage, we will contact you for installation.
-          </p>
-        </div>
-        <div className="howsewingworksbox">
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12.4" cy="12" r="12" fill="#B60521"></circle>
-            <path
-              d="M7.03336 12L11.6334 15.8333L17.7667 8.16663"
-              stroke="white"
-              strokeWidth="2"
-            ></path>
-          </svg>
-
-          <h2> Installation </h2>
-          <p>
-            {" "}
-            Our in-house certified insured installers or our nationwide agents
-            will install your signage to proof and shop drawings. We are
-            Contractor Check, Comply Works Certified, and carry $10M liability
-            insurance for a worry-free experience.
-          </p>
+            <p>
+              Got a spark of an idea? A vision for your brand's presence? Share
+              your signage dreams, inspirations, and goals with us. We're all
+              ears!
+            </p>
+          </div>
+          <div className="howsewingworksbox">
+            <img src="/processimages/ExploreIt.png" alt="Explore It" />
+            <h2 className="s-margin-t s-margin-b"> Explore It </h2>
+            <p>
+              {" "}
+              Let's brainstorm! We'll dive deep into your vision, exploring a
+              universe of possibilities. Our expert team will guide you through
+              materials, styles, and innovative solutions, ensuring your sign is
+              both impactful and cost-effective.
+            </p>
+          </div>
+          <div className="howsewingworksbox">
+            <img src="/processimages/SeeIt.png" alt="See it" />
+            <h2 className="s-margin-t s-margin-b"> See It </h2>
+            <p>
+              {" "}
+              Witness your vision come to life! We'll craft detailed renderings
+              and mockups, allowing you to preview your sign in its intended
+              environment. You'll see exactly how it will enhance your brand and
+              captivate your audience.
+            </p>
+          </div>
+          <div className="howsewingworksbox">
+            <img src="/processimages/ApproveIt.png" alt="Approve It" />
+            <h2 className="s-margin-t s-margin-b"> Approve It </h2>
+            <p>
+              {" "}
+              Your satisfaction is our priority. Once you're thrilled with the
+              design, we'll handle the nitty-gritty, securing any necessary
+              permits and ensuring everything is set for seamless production.
+            </p>
+          </div>
+          <div className="howsewingworksbox">
+            <img src="/processimages/CraftIt.png" alt="Craft It" />
+            <h2 className="s-margin-t s-margin-b"> Craft It </h2>
+            <p>
+              {" "}
+              Our state-of-the-art facility and expert craftsmen bring your sign
+              to life with precision and passion. Using only the highest quality
+              materials, we meticulously build a sign that's not just visually
+              stunning but built to last.
+            </p>
+          </div>
+          <div className="howsewingworksbox">
+            <img src="/processimages/InstallIt.png" alt="Install It" />
+            <h2 className="s-margin-t s-margin-b"> Install It </h2>
+            <p>
+              {" "}
+              Leave the heavy lifting to us! Our certified, insured installation
+              team (or our trusted nationwide network) will expertly install
+              your sign, ensuring it's secure, perfectly positioned, and ready
+              to shine.
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import LatestNews2 from "../components/LatestNews2/LatestNews2";
 import BuildingSomething from "../components/BuildingSomething/BuildingSomething";
 import Faq2 from "../components/Faq2/Faq2";
 import ClientSayings from "../components/ClientSayings/ClientSayings";
+import { Process } from "../components/Hero/Process";
 
 export default function Home({ signs, recentworks, trending, teams, loader }) {
   if (loader) return "Loading...";
@@ -34,7 +35,9 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       </Head>
       <Hero2 />
       {/* <Hero /> */}
+      <Process />
       <FeaturedProjects2 data={recentworks} />
+
       <Services data={signs} />
       <ClientSayings />
       <LatestNews2 data={trending} />

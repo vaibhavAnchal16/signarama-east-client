@@ -7,6 +7,7 @@ import { BLOGS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 import { Colors } from "../../components/Helpers/Colors";
+import Button from "../../components/Button/Button";
 
 const Blogs = () => {
   const editorRef = useRef();
@@ -121,7 +122,13 @@ const Blogs = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <button
+        <Button
+          type={`outline`}
+          style={{
+            padding: "5px 10px",
+            maxWidth: "fit-content",
+            fontSize: "12px",
+          }}
           onClick={(e) => {
             setAction({
               module: "edit",
@@ -139,7 +146,7 @@ const Blogs = () => {
           }}
         >
           Edit{" "}
-        </button>
+        </Button>
       ),
     },
   ];
@@ -364,8 +371,9 @@ const Blogs = () => {
         </div>
       )}
 
-      <div className="cta-headers">
-        <button
+      <div className="cta-headers d-flex d-flex-end d-margin-b">
+        <Button
+          type={`outline`}
           onClick={(_) =>
             setAction({
               module: "add",
@@ -374,7 +382,7 @@ const Blogs = () => {
         >
           {" "}
           Add Blog
-        </button>
+        </Button>
       </div>
       <div>
         <DataTable data={data?.blogs?.blogs} columns={columns} />

@@ -45,7 +45,7 @@ const Login = () => {
                       "#error-welcome"
                     ).innerHTML = `Logged in as ${data?.loginUser?.name}`;
                     setTimeout(function () {
-                      router.push(`/admin/dashboard`);
+                      router.push(`/admin/signs`);
                     }, 1000);
                   }
                 } catch (error) {

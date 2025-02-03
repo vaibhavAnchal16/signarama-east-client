@@ -4,8 +4,16 @@ $mobile: 767px;
 
 
 @media (max-width: $tablet){
+    .hero-slider .hero-outer-slide .hero-inner-slide > div{
+        padding-left: 0px;
+    }
     h1{
         font-size: 48px;
+    }
+    .howsewingworks-inner {
+        .howsewingworksbox {
+            max-width: 49%;
+        }
     }
     .header-wrapper{
         padding: 24px 32px;
@@ -244,8 +252,22 @@ $mobile: 767px;
     .faq-cards .faq-cards-item.testimonial-item span{
         font-size: 12px;
     }
+    .big-row-gap{
+        row-gap: 20px;
+    }
+    .howsewingworks-inner {
+        .howsewingworksbox {
+            max-width: 100%;
+            text-align: center;
+            img{
+                max-width: 80px;
+                height: 80px;
+            }
+        }
+    }
     .hero-outer-space {
         padding: 20px 0px 20px;
+        background: none;
         .contact-page-details{
             >div{
                 // flex-wrap: wrap;
@@ -351,6 +373,7 @@ $mobile: 767px;
     .faq-cards {
         .faq-cards-item{
             max-width: 100%;
+            padding: 12px 6px;
         }
     }
     .featured-outer-space-text, .news-outer-space-text{
@@ -396,6 +419,12 @@ $mobile: 767px;
         .sign-types{
             row-gap: 10px;
         }
+    }
+    .logo {
+        max-width: 110px;
+    }
+    #nav-icon3 {
+        width: 16px;
     }
     .building-something-outer-space {
         .building-outer-space-text{

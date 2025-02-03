@@ -6,6 +6,7 @@ import { GALLERIES } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
 import { DropZoneMultiple } from "../../components/Helpers/DropZoneMultiple";
 import { Trash } from "../../components/Helpers/Icons";
+import Button from "../../components/Button/Button";
 
 const Galleries = () => {
   const [action, setAction] = useState(null);
@@ -35,7 +36,13 @@ const Galleries = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <button
+        <Button
+          type={`outline`}
+          style={{
+            padding: "5px 10px",
+            maxWidth: "fit-content",
+            fontSize: "12px",
+          }}
           onClick={(e) => {
             setAction({
               module: "edit",
@@ -47,7 +54,7 @@ const Galleries = () => {
           }}
         >
           Edit{" "}
-        </button>
+        </Button>
       ),
     },
   ];
@@ -256,8 +263,9 @@ const Galleries = () => {
         </div>
       )}
 
-      <div className="cta-headers">
-        <button
+      <div className="cta-headers d-flex d-flex-end d-margin-b">
+        <Button
+          type={`outline`}
           onClick={(_) =>
             setAction({
               module: "add",
@@ -266,7 +274,7 @@ const Galleries = () => {
         >
           {" "}
           Add Gallery
-        </button>
+        </Button>
       </div>
       <div>
         <DataTable data={data?.galleries?.galleries} columns={columns} />

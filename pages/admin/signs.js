@@ -8,6 +8,7 @@ import { GALLERYIDS, SIGNS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 import { SignTypes } from "../../components/Helpers/StaticData";
+import Button from "../../components/Button/Button";
 
 const Signs = () => {
   const editorRef = useRef();
@@ -110,7 +111,13 @@ const Signs = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <button
+        <Button
+          type={`outline`}
+          style={{
+            padding: "5px 10px",
+            maxWidth: "fit-content",
+            fontSize: "12px",
+          }}
           onClick={(e) => {
             setAction({
               module: "edit",
@@ -132,7 +139,7 @@ const Signs = () => {
           }}
         >
           Edit{" "}
-        </button>
+        </Button>
       ),
     },
   ];
@@ -367,8 +374,9 @@ const Signs = () => {
         </div>
       )}
 
-      <div className="cta-headers">
-        <button
+      <div className="cta-headers d-flex d-flex-end">
+        <Button
+          type={`outline d-margin-b`}
           onClick={(_) =>
             setAction({
               module: "add",
@@ -377,7 +385,7 @@ const Signs = () => {
         >
           {" "}
           Add Sign
-        </button>
+        </Button>
       </div>
       <div>
         <DataTable data={data?.signs?.signs} columns={columns} />
