@@ -132,7 +132,7 @@ const ContactUs = ({ query }) => {
               one of our signage specialists.
             </h2>
             <div className="d-flex d-flex-column d-margin-b">
-              <Button type="fill full-width">416.922.7446</Button>
+              <Button type="fill full-width"> +1 905-460-9300</Button>
             </div>
             <h2 className="s-margin-b font-thick">
               <span className="font-bold">Email Us:</span> Send us your project
@@ -150,7 +150,8 @@ const ContactUs = ({ query }) => {
 
             <div>
               <h1 className="d-margin-b">
-                Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
+                Sign A Rama, 289 Rutherford Rd S Unit15, Brampton, ON L6W 3R9,
+                Canada
               </h1>
               <Button
                 target="_blank"

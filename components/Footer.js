@@ -91,12 +91,13 @@ const Footer = ({ recentBlogs }) => {
                       {" "}
                       <p>
                         {" "}
-                        Signarama Toronto, 873 Bay St. Toronto, Ontario M5S 3K6
+                        Sign A Rama, 289 Rutherford Rd S Unit15, Brampton, ON
+                        L6W 3R9, Canada
                       </p>{" "}
                     </li>
                     <li className="phone">
                       {" "}
-                      <a href="tel:416.922.7446"> 416.922.7446</a>{" "}
+                      <a href="tel:+19054609300"> +1 905-460-9300</a>{" "}
                     </li>
                     <li className="email">
                       {" "}
