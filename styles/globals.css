@@ -84,6 +84,7 @@
   left: 48px;
 } */
 .howsewingworks-inner .howsewingworksbox p {
+  text-align: justify;
   /* line-height: 180%; */
   /* font-style: normal;
   font-weight: 300;

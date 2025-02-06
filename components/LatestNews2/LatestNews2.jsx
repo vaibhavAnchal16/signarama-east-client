@@ -50,7 +50,7 @@ export default function LatestNews2({ data }) {
     <section className="news-outer-space">
       <div className="d-padding-l d-padding-r d-padding-b">
         <div
-          className="news-outer-space-text d-flex d-flex-end l-margin-b d-column-gap"
+          className="news-outer-space-text d-flex d-flex-between l-margin-b d-column-gap"
           style={{
             alignItems: "flex-end",
           }}
@@ -124,8 +124,10 @@ export default function LatestNews2({ data }) {
                           <CalendarIcon />{" "}
                           <span>{moment(item?.createdAt).format("ll")}</span>
                         </p>
-
-                        <Link href={`/`}>Read more..</Link>
+                        <Button href={`/blog/${item?.slug}`} type={`fill`}>
+                          Read More
+                        </Button>
+                        {/* <Link href={`/`}>Read more..</Link> */}
                       </div>
                     </div>
                   </Link>

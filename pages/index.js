@@ -36,14 +36,15 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
       <Hero2 />
       {/* <Hero /> */}
       <Process />
-      <FeaturedProjects2 data={recentworks} />
 
       <Services data={signs} />
+      <FeaturedProjects2 data={recentworks} />
       <ClientSayings />
       <LatestNews2 data={trending} />
       <Faq2 />
       <BuildingSomething
-        ctaLink="/sign-blog"
+        ctaTitle="Get in Touch"
+        ctaLink="/contact-us/"
         innerClasses="d-padding-l d-padding-r d-margin-b"
       />
 

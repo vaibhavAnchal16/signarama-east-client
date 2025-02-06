@@ -217,18 +217,7 @@ export default function Hero2() {
                   Get in Touch
                   {/* Get in Touch */}
                 </Button>
-                <Button
-                  type={`outline`}
-                  onClick={(e) => {
-                    document
-                      .querySelector(".services-outer-space")
-                      .scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                  }}
-                  //   icon={heroCtaIcon}
-                >
+                <Button type={`outline`} href={`/our-signs`}>
                   View our Projects
                 </Button>
               </div>
@@ -252,8 +241,8 @@ export default function Hero2() {
             <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1712326521/BLOGSIMAGES/IMG_97381712326520386.jpg" />
           </div> */}
           <div className="d-flex d-flex-wrap d-flex-center">
-            <div className="building-outer-space-text">
-              <h1 className="d-margin-b">
+            <div className="building-outer-space-text red-section">
+              <h1 className="l-margin-b">
                 {" "}
                 {/* <div className="ab-image">
                   <img src="https://res.cloudinary.com/signaramatoronto/image/upload/v1688676366/BLOGSIMAGES/image4%20%281%29-min1688676366015.jpg" />
@@ -262,18 +251,18 @@ export default function Hero2() {
                   <Infinity />{" "}
                 </span>{" "} */}
                 {/* Signarama Brampton: */}
-                Where Your Vision <br /> Takes Shape
+                Signarama Toronto : Where Your Vision Takes Shape
               </h1>
               <h2 className="s-margin-b">
-                Helping Businesses In Brampton and the GTA Look Great For Over
+                * Helping Businesses In Brampton and the GTA Look Great For Over
                 20 Years.
               </h2>
               <h2 className="d-margin-b">
-                More Than Just Signs, We're Your Brand Storytellers
+                * More Than Just Signs, We're Your Brand Storytellers
               </h2>
 
               <h2 className="d-margin-b">
-                Full Service Sign Company From Design To Installation
+                * Full Service Sign Company From Design To Installation
               </h2>
 
               {/* <div className="ab-image">

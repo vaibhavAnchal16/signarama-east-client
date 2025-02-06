@@ -11,23 +11,29 @@ export default function Button({
   // console.log("Button -> href", href, target);
   return (
     <div className={`btn-wrapper ${type ?? ``}`}>
-      <button
-        onClick={(e) => {
-          if (href) {
-            window.open(href, target);
-          }
-        }}
-        className={`btn-component`}
-        {...props}
-      >
-        <span>{children}</span>
-        {icon && (
-          <span className="icon">
-            <span className="left">{icon}</span>
-            <span className="right">{icon}</span>
-          </span>
-        )}
-      </button>
+      {href ? (
+        <a className="btn-component" href={href}>
+          <span>{children}</span>
+          {icon && (
+            <span className="icon">
+              <span className="left">{icon}</span>
+              <span className="right">{icon}</span>
+            </span>
+          )}
+        </a>
+      ) : (
+        <>
+          <button className={`btn-component`} {...props}>
+            <span>{children}</span>
+            {icon && (
+              <span className="icon">
+                <span className="left">{icon}</span>
+                <span className="right">{icon}</span>
+              </span>
+            )}
+          </button>
+        </>
+      )}
     </div>
   );
 }

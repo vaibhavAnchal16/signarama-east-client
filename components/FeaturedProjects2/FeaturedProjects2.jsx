@@ -46,7 +46,7 @@ export default function FeaturedProjects2({ data }) {
   const splideRef = useRef(null);
   return (
     <section className="featured-outer-space">
-      <div className="d-padding-l d-padding-r d-padding-t">
+      <div className="d-padding-l d-padding-r d-padding-b">
         <div
           className="featured-outer-space-text d-flex d-flex-end l-margin-b d-column-gap"
           style={{
@@ -65,9 +65,11 @@ export default function FeaturedProjects2({ data }) {
               lorem Ipsum is simply dummy text of the printing and typesetting.
             </p>
           </div>
-          <Button href={`/sign-blog`} type={`fill`}>
-            View all Projects
-          </Button>
+          <div>
+            {/* <Button href={`/sign-blog`} type={`fill`}>
+              View all Projects
+            </Button> */}
+          </div>
         </div>
 
         <div className="services-inner d-margin-t">
@@ -103,7 +105,12 @@ export default function FeaturedProjects2({ data }) {
                         ></span>
                       </div>
                       <div className="d-margin-auto-t">
-                        <Button type={`full-width fill`}>View Project</Button>
+                        <Button
+                          href={`/blog/${item?.slug}`}
+                          type={`full-width fill`}
+                        >
+                          View Project
+                        </Button>
                       </div>
                     </div>
                   </Link>

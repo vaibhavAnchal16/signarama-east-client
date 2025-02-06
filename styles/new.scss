@@ -431,6 +431,12 @@ body{
         color: var(--dark-bg-text);
         text-align: center;
     }
+    &.red-section{
+        h2{
+            text-align: justify;
+            padding-left: 100px;
+        }
+    }
     >p{
         color: var(--dark-bg-text);
         font-size: 15px;
@@ -558,7 +564,7 @@ body{
                         color: var(--red-bg);
                     }
                     +div{
-                        a{
+                        a:not(.btn-component){
                             color: var(--red-bg);
                         }
                     }
@@ -596,9 +602,11 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
     >h2{
         color: var(--lite-bg-text);
         font-weight: 400;
-        *{
-            color: var(--lite-bg-text);
+        font-size: 18px;
+        >span{
+            color: var(--red-bg);
             font-weight: 400;
+            font-size: 18px;
         }
     }
 }
@@ -675,6 +683,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             p{
                 color: var(--white-font);
                 font-weight: 300;
+                text-align: justify;
             }
             span{
                 display: inline-flex;

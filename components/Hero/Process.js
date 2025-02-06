@@ -19,7 +19,7 @@ export const Process = () => {
           }}
         >
           <div className="howsewingworksbox">
-            <img src="/processimages/DreamIt.png" alt="Dream It" />
+            <img src="/processimages/DreamIt.webp" alt="Dream It" />
             <h2 className="s-margin-t s-margin-b"> Dream It </h2>
 
             <p>
@@ -29,7 +29,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/ExploreIt.png" alt="Explore It" />
+            <img src="/processimages/ExploreIt.webp" alt="Explore It" />
             <h2 className="s-margin-t s-margin-b"> Explore It </h2>
             <p>
               {" "}
@@ -40,7 +40,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/SeeIt.png" alt="See it" />
+            <img src="/processimages/SeeIt.webp" alt="See it" />
             <h2 className="s-margin-t s-margin-b"> See It </h2>
             <p>
               {" "}
@@ -51,7 +51,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/ApproveIt.png" alt="Approve It" />
+            <img src="/processimages/ApproveIt.webp" alt="Approve It" />
             <h2 className="s-margin-t s-margin-b"> Approve It </h2>
             <p>
               {" "}
@@ -61,7 +61,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/CraftIt.png" alt="Craft It" />
+            <img src="/processimages/CraftIt.webp" alt="Craft It" />
             <h2 className="s-margin-t s-margin-b"> Craft It </h2>
             <p>
               {" "}
@@ -72,7 +72,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/InstallIt.png" alt="Install It" />
+            <img src="/processimages/InstallIt.webp" alt="Install It" />
             <h2 className="s-margin-t s-margin-b"> Install It </h2>
             <p>
               {" "}

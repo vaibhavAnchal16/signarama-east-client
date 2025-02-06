@@ -3,7 +3,7 @@ import React from "react";
 import { Wave } from "./Helpers/Icons";
 const Footer = ({ recentBlogs }) => {
   return (
-    <div className="footer-outer-layer bg-white">
+    <div className="footer-outer-layer">
       <footer className="footer-wrapper d-padding">
         <div className="footer-inner">
           {/* <div className="footer-heading">
