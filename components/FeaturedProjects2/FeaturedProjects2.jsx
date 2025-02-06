@@ -66,7 +66,7 @@ export default function FeaturedProjects2({ data }) {
             </p>
           </div>
           <div>
-            {/* <Button href={`/sign-blog`} type={`fill`}>
+            {/* <Button href={`/blog`} type={`fill`}>
               View all Projects
             </Button> */}
           </div>

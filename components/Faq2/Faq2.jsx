@@ -22,8 +22,9 @@ export default function Faq2({ className = "" }) {
             <div className="faq-cards-item">
               <h3 className="s-margin-b">
                 {" "}
-                What types of signs does Signarama in Brampton, ON specialize
-                in?
+                What types of signs does{" "}
+                <span className="highlighted"> Signarama </span> in Brampton, ON
+                specialize in?
               </h3>
               <p>
                 We are a full-service sign company in Brampton from design to
@@ -46,9 +47,10 @@ export default function Faq2({ className = "" }) {
                 How long does it take to get a sign made in Brampton?
               </h3>
               <p>
-                The turnaround time for sign production at Signarama Brampton
-                varies depending on the complexity of the project, the type of
-                sign, materials used, and current workload. Simple projects like
+                The turnaround time for sign production at{" "}
+                <span className="highlighted"> Signarama </span> Brampton varies
+                depending on the complexity of the project, the type of sign,
+                materials used, and current workload. Simple projects like
                 banners or yard signs can often be completed within a few days.
                 More intricate projects such as illuminated channel letter signs
                 or custom-designed monument signs may take longer. For rush
@@ -68,30 +70,32 @@ export default function Faq2({ className = "" }) {
                 The cost of custom signs in Brampton varies depending on several
                 factors, including the type of sign, size, materials used,
                 complexity of design, and installation requirements. At
-                Signarama Brampton, we strive to provide affordable signs
-                without compromising quality. To get an accurate sign cost
-                estimate, we recommend contacting us for a free consultation.
-                We&#39;ll discuss your specific needs and provide you with a
-                personalized quote for your custom sign project in Brampton.
+                <span className="highlighted"> Signarama </span> Brampton, we
+                strive to provide affordable signs without compromising quality.
+                To get an accurate sign cost estimate, we recommend contacting
+                us for a free consultation. We&#39;ll discuss your specific
+                needs and provide you with a personalized quote for your custom
+                sign project in Brampton.
               </p>
             </div>
 
             <div className="faq-cards-item">
               <h3 className="s-margin-b">
                 {" "}
-                Does Signarama Brampton offer sign installation services near
-                me?
+                Does <span className="highlighted">Signarama </span> Brampton
+                offer sign installation services near me?
               </h3>
               <p>
-                Yes, Signarama Brampton provides professional sign installation
-                services throughout Brampton and the surrounding areas,
-                including Mississauga, Caledon, Georgetown, and other parts of
-                the Peel Region. We also serve as far as Etobicoke and Halton
-                region. Our experienced installation team ensures your signs are
-                installed safely, securely, and to your exact specifications. We
-                handle all aspects of the installation process, from obtaining
-                necessary permits to ensuring your sign is perfectly positioned
-                for maximum visibility and impact.
+                Yes, <span className="highlighted">Signarama</span> Brampton
+                provides professional sign installation services throughout
+                Brampton and the surrounding areas, including Mississauga,
+                Caledon, Georgetown, and other parts of the Peel Region. We also
+                serve as far as Etobicoke and Halton region. Our experienced
+                installation team ensures your signs are installed safely,
+                securely, and to your exact specifications. We handle all
+                aspects of the installation process, from obtaining necessary
+                permits to ensuring your sign is perfectly positioned for
+                maximum visibility and impact.
               </p>
             </div>
           </div>

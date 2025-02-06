@@ -1,16 +1,23 @@
-export default function WhyChooseSignarama({ children }) {
+export default function WhyChooseSignarama({
+  outerClass = "hero-outer-space about-us",
+  children,
+}) {
+  console.log(outerClass);
   return (
     <div
-      className="hero-outer-space about-us"
+      className={outerClass}
       style={{
-        background: "initial",
         padding: "0",
       }}
     >
       <div className="d-padding-l d-padding-r d-padding-b d-padding-t">
         <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
           <div className="hero-text">
-            <h1 className="d-margin-b"> Why Choose Signarama Brampton?</h1>
+            <h1 className="d-margin-b">
+              {" "}
+              Why Choose <span className="highlighted">Signarama</span>{" "}
+              Brampton?
+            </h1>
           </div>
           {children}
         </div>

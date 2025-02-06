@@ -132,7 +132,7 @@ const Services = ({ data }) => {
                   {value?.map((item, i) => {
                     return (
                       <SplideSlide className="outer-slide" key={i}>
-                        <Link href={`/${item?.slug}`} key={index}>
+                        <Link href={`/our-signs/${item?.slug}`} key={index}>
                           <div className="inner-slide">
                             <div style={{ overflow: "hidden" }}>
                               <LazyImage
@@ -156,7 +156,7 @@ const Services = ({ data }) => {
                             </div>
                             <div className="d-margin-t">
                               <Button
-                                href={`/${item?.slug}`}
+                                href={`/our-signs/${item?.slug}`}
                                 style={{
                                   position: "absolute",
                                   bottom: "0",

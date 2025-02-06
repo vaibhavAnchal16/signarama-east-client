@@ -14,8 +14,9 @@ body {
     position: relative;
     padding: 60px 0px 20px;
     overflow: hidden;
+}
+.hero-outer-space.gradient{
     background: linear-gradient(to left, #ffffff 42%, var(--black-bg) 50%);
-
 }
 
 /* .hero-outer-space>svg {
@@ -512,7 +513,7 @@ body {
     color: #b60521;
   }
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover::after{
-    content: "signarama toronto";
+    content: "signarama brampton";
     position: absolute;
     bottom: -10px;
     margin: 0px auto;
@@ -528,9 +529,9 @@ body {
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
       padding: 10px 15px;
   }
-  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
+  /* .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .context h3 {
       margin: 15px 0px;
-  }
+  } */
   .outer-slide > .inner-slide p {
       font-family: Montserrat, sans-serif;
   }

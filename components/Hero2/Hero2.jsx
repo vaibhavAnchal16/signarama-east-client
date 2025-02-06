@@ -199,7 +199,7 @@ export default function Hero2() {
 
   return (
     <>
-      <div className="hero-outer-space">
+      <div className="hero-outer-space gradient">
         <div className="d-padding">
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
@@ -261,7 +261,7 @@ export default function Hero2() {
                 * More Than Just Signs, We're Your Brand Storytellers
               </h2>
 
-              <h2 className="d-margin-b">
+              <h2 className="l-margin-b">
                 * Full Service Sign Company From Design To Installation
               </h2>
 
@@ -270,7 +270,7 @@ export default function Hero2() {
               </div> */}
               <div className="d-flex d-flex-wrap d-flex-center d-column-gap d-margin-b">
                 <Button
-                  type={`outline`}
+                  type={`outline dark`}
                   href={`/about-us`}
                   //   onClick={e => {
                   //     const params = new URLSearchParams(window.location.search)

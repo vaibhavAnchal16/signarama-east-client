@@ -494,7 +494,7 @@ ul > li.outer-slide .inner-slide:not(:last-child){
   max-width: 380px;
 }
 .highlighted {
-  color: #b60521;
+  color: var(--red-bg);
 }
 
 .login-info h2 {

@@ -6,6 +6,7 @@ import { BLOG } from "../../graphql/queries";
 import Head from "next/head";
 import Link from "next/link";
 import { useCallback, useEffect } from "react";
+import Button from "../../components/Button/Button";
 
 const Blog = ({ blog }) => {
   const createMarkup = (html) => {
@@ -57,7 +58,71 @@ const Blog = ({ blog }) => {
         <title>{blog?.seoData?.seoTitle}</title>
         <meta name="description" content={blog?.seoData?.seoDescription} />
       </Head>
-      <div className="blog-details">
+      <div className="bg-white">
+        <div className="wavepattern">
+          <div className="howsewingworks services-outer-space">
+            <div
+              className="howsewingworks-inner d-padding-l d-padding-r d-padding-t"
+              style={{
+                alignItems: "flex-start",
+              }}
+            >
+              <div className="services-outer-space-text l-margin-b d-column-gap">
+                <h1 className="d-margin-b"> {blog?.title}</h1>
+              </div>
+              <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
+                <div
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <LazyImage
+                    src={blog?.featuredImage}
+                    // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
+                    style={{
+                      maxWidth: "100%",
+                      width: "100%",
+                      borderRadius: "10px",
+                      maxHeight: "500px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="hero-outer-space bg-white about-us sign-ind-page"
+        style={{
+          background: "#fff",
+        }}
+      >
+        <div className="d-padding-l d-padding-r">
+          <div
+            className="hero-inner-space d-flex d-flex-wrap d-flex-between d-margin-b"
+            style={{
+              alignItems: "flex-start",
+            }}
+          >
+            <div className="hero-text">
+              <h1 className="d-margin-b">Need Sign ? </h1>
+              <Button href={`/contact-us`} type="fill full-width">
+                Schedule a Call
+              </Button>
+            </div>
+            <div className="hero-text full-width ">
+              <div
+                className="serv-detail-text"
+                dangerouslySetInnerHTML={createMarkup(blog?.description)}
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="blog-details">
         <div className="blog-details-inner">
           <div className="blog-content-box">
             <h1 className="blog-title"> {blog?.title} </h1>
@@ -77,7 +142,7 @@ const Blog = ({ blog }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

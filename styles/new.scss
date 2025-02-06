@@ -65,6 +65,9 @@
     font-family: "Open Sans", sans-serif;
 
   }
+  h3{
+    font-size: 16px;
+  }
   body.no-scroll{
     overflow: hidden;
   }
@@ -105,7 +108,7 @@ body{
         max-width: 100%;
     }
     .bg-white{
-        background-color: #fff;
+        background: #fff;
     }
     .splide__arrow{
         background: var(--dark-bg);
@@ -125,6 +128,7 @@ body{
 .font-bold{
     font-weight: 700!important;
 }
+
 .font-bolder{
     font-weight: 900!important;
 }
@@ -318,6 +322,10 @@ body{
 .d-flex-align-start{
     align-items: flex-start;
 }
+.serv-detail-text img{
+    max-width: 100%;
+    border-radius: 10px;
+  }
 .hero-outer-space{
     &.sign-ind-page{
         overflow: unset;
@@ -471,6 +479,8 @@ body{
     >h1{
         color: var(--dark-bg-text);
         text-align: center;
+            font-size: 42px;
+            line-height: 48px;
     }
     >p{
         color: var(--lite-font);
@@ -788,6 +798,33 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             object-fit: contain;
             width: 100%;
             border-radius: 100%;
+        }
+    }
+}
+
+.signs-outer-space{
+    .signs-inner-space{
+        .signs-list{
+            >div{
+                max-width: 32%;
+                width: 100%;
+                >div{
+                    line-height: 0px;
+                }
+                img{
+                    max-width: 100%;
+                    height: 260px;
+                    width: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+                .sign-name{
+                    padding: 20px 0px 20px;
+                    line-height: inherit;
+                }
+            }
         }
     }
 }

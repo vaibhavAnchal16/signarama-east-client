@@ -28,7 +28,7 @@ const RecentWorks = ({ recentworks }) => {
           />
         ))}
         <div className="read-more-link">
-          <Link href="/sign-blog">See More</Link>
+          <Link href="/blog">See More</Link>
         </div>
       </div>
     </section>

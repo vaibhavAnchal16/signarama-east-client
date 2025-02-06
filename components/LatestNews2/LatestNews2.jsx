@@ -77,7 +77,7 @@ export default function LatestNews2({ data }) {
               </div>
             </div>
           </div>
-          <Button href={`/sign-blog`} type={`fill`}>
+          <Button href={`/blog`} type={`fill`}>
             View all Stories
           </Button>
         </div>

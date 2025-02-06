@@ -87,7 +87,7 @@ const ContactUs = ({ query }) => {
         </div>
       </section> */}
 
-      <div className="hero-outer-space bg-white wavepattern">
+      <div className="hero-outer-space  wavepattern">
         <div className="d-padding">
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
@@ -204,22 +204,29 @@ const ContactUs = ({ query }) => {
       <div className="bg-white">
         <WhyChooseSignarama>
           <div className="hero-text full-width">
-            <p className="d-margin-b">
-              <span className="font-bold">Local Expertise:</span> We understand
-              the Brampton market and can help you create signage that meets
-              local regulations and resonates with your target audience.
+            <p className="d-margin-b highlighted">
+              <span className="font-bold highlighted">Local Expertise:</span> We
+              understand the Brampton market and can help you create signage
+              that meets local regulations and resonates with your target
+              audience.
             </p>
             <p className="d-margin-b">
-              <span className="font-bold">Full-Service Solutions:</span> From
-              design and fabrication to permitting and installation, we handle
-              every aspect of your project.
+              <span className="font-bold highlighted">
+                Full-Service Solutions:
+              </span>{" "}
+              From design and fabrication to permitting and installation, we
+              handle every aspect of your project.
             </p>
             <p className="d-margin-b">
-              <span className="font-bold">High-Quality Materials:</span> Your
-              satisfaction is our top priority.
+              <span className="font-bold highlighted">
+                High-Quality Materials:
+              </span>{" "}
+              Your satisfaction is our top priority.
             </p>
             <p className="d-margin-b">
-              <span className="font-bold">Exceptional Customer Service:</span>{" "}
+              <span className="font-bold highlighted">
+                Exceptional Customer Service:
+              </span>{" "}
               Your satisfaction is our ultimate goal. We work closely with you
               to ensure your vision is realized.
             </p>

@@ -15,6 +15,16 @@ $mobile: 767px;
             max-width: 49%;
         }
     }
+    .signs-outer-space{
+        .signs-inner-space{
+            .signs-list{
+                >div{
+                    max-width: 49%;
+                    width: 100%;
+                }
+            }
+        }
+    }
     .header-wrapper{
         padding: 24px 32px;
         &.scrolled{
@@ -194,9 +204,24 @@ $mobile: 767px;
         }
     
     }
+    .building-outer-space{
+        .building-outer-space-text.red-section{
+            h2{
+                padding-left: 40px;
+            }
+        }
+    }
 }
 
 @media (max-width: $ipad){
+    .building-outer-space{
+        .building-outer-space-text.red-section{
+            h2{
+                padding-left: 0px;
+                text-align: center;
+            }
+        }
+    }
     h1{
         font-size: 40px;
         line-height: 44px;
@@ -249,6 +274,23 @@ $mobile: 767px;
 }
 
 @media (max-width: $mobile){
+    .signs-outer-space{
+        .signs-inner-space{
+            .signs-list{
+                >div{
+                    max-width: 100%;
+                    width: 100%;
+                    .sign-name{
+                        padding: 12px 0px 12px;
+                    }
+                    img{
+                        height: 200px;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+    }
     .faq-cards .faq-cards-item.testimonial-item span{
         font-size: 12px;
     }
@@ -307,8 +349,8 @@ $mobile: 767px;
         line-height: 22px;
     }
     h1{
-        font-size: 33px;  
-        line-height: 38px;
+        font-size: 22px;  
+        line-height: 28px;
         >svg{
             display: none;
         }

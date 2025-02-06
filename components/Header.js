@@ -66,7 +66,7 @@ const Header = () => {
         },
         {
           name: "Signs",
-          link: null,
+          link: "/our-signs",
           subMenu: _.chain(data?.signs?.signs)
             ?.groupBy("type")
             .map((elm, key) => ({ name: key, signs: elm }))
@@ -74,7 +74,7 @@ const Header = () => {
         },
         {
           name: "Blogs",
-          link: "/sign-blog",
+          link: "/blog",
           subMenu: null,
         },
         {
@@ -161,7 +161,7 @@ const Header = () => {
                                     <li key={i}>
                                       {" "}
                                       <span
-                                        href={`/${item?.slug}`}
+                                        href={`/our-signs/${item?.slug}`}
                                         onClick={handleClick}
                                       >
                                         {" "}

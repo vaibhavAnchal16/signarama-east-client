@@ -1,11 +1,10 @@
-import client from "../apollo-client";
-import { Layout, LazyImage } from "../components";
-import { SIGN } from "../graphql/queries";
 import sanitizeHtml from "sanitize-html";
 import Head from "next/head";
-import GalleryGrid from "../components/GalleryGrid";
-import Link from "next/link";
-import Button from "../components/Button/Button";
+import client from "../../apollo-client";
+import { Layout, LazyImage } from "../../components";
+import { SIGN } from "../../graphql/queries";
+import GalleryGrid from "../../components/GalleryGrid";
+import Button from "../../components/Button/Button";
 
 const Signs = ({ loading, sign }) => {
   const createMarkup = (html) => {
@@ -43,35 +42,37 @@ const Signs = ({ loading, sign }) => {
         <title>{sign?.seoData?.seoTitle}</title>
         <meta name="description" content={sign?.seoData?.seoDescription} />
       </Head>
-      <div className="hero-outer-space bg-white wavepattern">
-        <div className="d-padding-t d-padding-l d-padding-r">
-          <div className="hero-inner-space d-flex d-flex-wrap d-flex-between d-margin-b">
-            <div className="hero-text">
-              <h1 className="d-margin-b"> {sign?.title} </h1>
-            </div>
-            <div className="hero-text full-width">
-              {/* <div className="illustration">
-                <img src="/newimages/canadathemebg2.png" />
-              </div> */}
-            </div>
-          </div>
-          <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
+      <div className="bg-white">
+        <div className="wavepattern">
+          <div className="howsewingworks services-outer-space">
             <div
+              className="howsewingworks-inner d-padding-l d-padding-r d-padding-t"
               style={{
-                width: "100%",
+                alignItems: "flex-start",
               }}
             >
-              <LazyImage
-                src={sign?.featuredImage}
-                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
-                style={{
-                  maxWidth: "100%",
-                  width: "100%",
-                  borderRadius: "10px",
-                  maxHeight: "500px",
-                  objectFit: "cover",
-                }}
-              />
+              <div className="services-outer-space-text l-margin-b d-column-gap">
+                <h1 className="d-margin-b"> {sign?.title}</h1>
+              </div>
+              <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
+                <div
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <LazyImage
+                    src={sign?.featuredImage}
+                    // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
+                    style={{
+                      maxWidth: "100%",
+                      width: "100%",
+                      borderRadius: "10px",
+                      maxHeight: "500px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -92,7 +93,9 @@ const Signs = ({ loading, sign }) => {
           >
             <div className="hero-text">
               <h1 className="d-margin-b"> Need {sign?.title} ? </h1>
-              <Button type="fill full-width">Schedule a Call</Button>
+              <Button href={`/contact-us`} type="fill full-width">
+                Schedule a Call
+              </Button>
             </div>
             <div className="hero-text full-width ">
               <div
