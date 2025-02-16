@@ -57,6 +57,35 @@ const Blog = ({ blog }) => {
       <Head>
         <title>{blog?.seoData?.seoTitle}</title>
         <meta name="description" content={blog?.seoData?.seoDescription} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "BlogPosting",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              // "@id": `${location.href}`,
+            },
+            headline: blog?.title,
+            description: blog?.seoData?.seoDescription,
+            image: {
+              "@type": "ImageObject",
+              url: blog?.featuredImage,
+              width: "200",
+              height: "200",
+            },
+            author: {
+              "@type": "Organization",
+              name: "Signarama Brampton",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Signarama",
+            },
+            datePublished: blog?.createdAt,
+            dateModified: blog?.updatedAt,
+          })}
+        </script>
       </Head>
       <div className="bg-white">
         <div className="wavepattern">
@@ -107,17 +136,27 @@ const Blog = ({ blog }) => {
               alignItems: "flex-start",
             }}
           >
-            <div className="hero-text">
+            {/* <div className="hero-text">
               <h1 className="d-margin-b">Need Sign ? </h1>
               <Button href={`/contact-us`} type="fill full-width">
                 Schedule a Call
               </Button>
-            </div>
-            <div className="hero-text full-width ">
+            </div> */}
+            <div
+              className="hero-text full-width"
+              style={{
+                maxWidth: "100%",
+              }}
+            >
               <div
                 className="serv-detail-text"
                 dangerouslySetInnerHTML={createMarkup(blog?.description)}
               ></div>
+              <div className="d-flex d-flex-center d-margin-t">
+                <Button href={`/contact-us`} type="fill">
+                  Schedule a Call
+                </Button>
+              </div>
             </div>
           </div>
         </div>

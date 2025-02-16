@@ -274,6 +274,26 @@ $mobile: 767px;
 }
 
 @media (max-width: $mobile){
+    .menu{
+        >ul{
+            li{
+                width: 100%;
+                padding-left: 8px;
+                padding-right: 0px;
+            }
+        }
+    }
+    .outer-slide {
+        > .inner-slide {
+            > div{
+                &:last-child{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    row-gap: 15px;
+                }
+            }
+        }
+    }
     .signs-outer-space{
         .signs-inner-space{
             .signs-list{
@@ -306,6 +326,15 @@ $mobile: 767px;
                 height: 80px;
             }
         }
+        // .services-outer-space-text{
+        //     background-color: #b60521;
+        //     border-radius: 3px;
+        //     >h1{
+        //         padding: 25px 15px;
+        //         font-size: 18px;
+        //         color: #fff;
+        //     }
+        // }
     }
     .hero-outer-space {
         padding: 20px 0px 20px;
@@ -329,12 +358,18 @@ $mobile: 767px;
         }
         &.sign-ind-page{
             .hero-inner-space{
+                flex-direction: column-reverse;
                 .hero-text{
                     position: unset;
                     margin-bottom: 16px;
+                    >h1{
+                        display: none;
+                    }
                 }
             }
+            
         }
+        
     }
     .images-gallery-box {
         &> .single-image{        
@@ -375,41 +410,48 @@ $mobile: 767px;
         }
     }
     .header-wrapper {
-        padding: 16px 16px;
+        padding: 14px 14px;
+        // background-color: #fff;
+        // box-shadow: 0 2px 5px rgb(0 0 0 / 6%), 0 4px 6px rgba(0, 0, 0, .1);
         &.scrolled{
-            padding: 8px 6px;
+            box-shadow: none;
+            background-color: transparent;
+            position: fixed;
+        }
+        .menu{
+            top: 34px;
         }
     }
     .d-padding{
-        padding: 40px 16px;
+        padding: 60px 16px;
     }
     .d-padding-t{
-        padding-top: 40px;
+        padding-top: 60px;
     }
     .d-padding-b{
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
     .d-padding-l{
-        padding-left: 16px;
+        padding-left: 14px;
     }
     .d-padding-r{
-        padding-right: 16px;
+        padding-right: 14px;
     }
 
     .d-margin{
-        margin: 16px;
+        margin: 14px;
     }
     .d-margin-l{
-        margin-left: 16px;
+        margin-left: 14px;
     }
     .d-margin-r{
-        margin-right: 16px;
+        margin-right: 14px;
     }
     .d-margin-t{
-        margin-top: 16px;
+        margin-top: 14px;
     }
     .d-margin-b{
-        margin-bottom: 16px;
+        margin-bottom: 14px;
     }
 
     .faq-cards {
@@ -462,12 +504,12 @@ $mobile: 767px;
             row-gap: 10px;
         }
     }
-    .logo {
-        max-width: 110px;
-    }
-    #nav-icon3 {
-        width: 16px;
-    }
+    // .logo {
+    //     max-width: 110px;
+    // }
+    // #nav-icon3 {
+    //     width: 16px;
+    // }
     .building-something-outer-space {
         .building-outer-space-text{
             h1{

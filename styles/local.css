@@ -59,7 +59,8 @@ body {
     transition: .25s ease-in-out;
 }
 .footer-outer-layer{
-    background-color: var(--dark-bg);
+    /* background-color: var(--dark-bg); */
+    background-color: #4c4c4c;
 }
 #nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
     top: 6px;
@@ -355,7 +356,7 @@ body {
 
 footer.footer-wrapper>.footer-inner * {
     transition: all 0.2s ease-in-out;
-    color: var(--lite-font);
+    color: var(--dark-bg-text);
     font-size: 15px;
     line-height: 22px;
     font-weight: 300;
@@ -373,7 +374,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
     max-width: 50%;
 }
 .footer-wrapper .footer-inner .recent-blogs-section li a{
-    color: var(--lite-font);
+    color: var(--dark-bg-text);
     font-size: 15px;
     line-height: 22px;
     font-weight: 300;
@@ -387,7 +388,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 }
 footer.footer-wrapper>.footer-inner a{
     cursor: pointer;
-    color: var(--lite-font);
+    color: var(--dark-bg-text);
     font-size: 15px;
     line-height: 22px;
     font-weight: 300;
@@ -423,7 +424,7 @@ ul.officehours>li {
 
 .credit-inner p {
     font-size: 18px;
-    color: var(--lite-bg-text);
+    color: var(--dark-bg-text);
 }
 
 ul.socialmedia>li a {
@@ -801,6 +802,7 @@ body {
     .credit-inner p{
         font-size: 16px;
         padding: 0px 15px;
+        line-height: 20px;
     }
     .section-heading h1, .section-heading-award h1{
         font-size: 18px;

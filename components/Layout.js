@@ -5,6 +5,7 @@ import { BLOGS } from "../graphql/queries";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ContactForm, Email, Phone } from "./Helpers/Icons";
+import Head from "next/head";
 
 export default function Layout({ children }) {
   const [recentBlogs, setRecentBlogs] = useState({
@@ -71,6 +72,115 @@ export default function Layout({ children }) {
 
   return (
     <>
+      <Head>
+        {/* <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Signarama Toronto",
+            description:
+              "Custom Sign Company in Toronto. We specialize in neon & LED signs, channel letters, Wall Graphics,Illuminated Signs, vehicle wraps, and more. Enhance your brand visibility with high-quality, durable signage.", // Compelling description
+            priceRange: "$$",
+            url: "https://signarama-toronto.ca",
+            telephone: "+1 416-922-7446", // Include country code
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "873 Bay St",
+              addressLocality: "Toronto",
+              addressRegion: "ON",
+              postalCode: "M5S 3K6",
+              addressCountry: "CA",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "43.662845878094586", // Accurate latitude
+              longitude: "-79.38604769217936", // Accurate longitude
+            },
+            openingHoursSpecification: [
+              // Detailed opening hours
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "08:30",
+                closes: "17:00",
+              },
+            ],
+            image: [
+              // Multiple images (high-quality)
+              "https://signarama-toronto.ca/wp-content/uploads/2023/03/Neon-Open-Signage-1024x640-1.jpg",
+              "https://signarama-toronto.ca/wp-content/uploads/2017/09/LED-Channel-Letters-Signage-1024x535-1.jpg",
+              //... more images
+            ],
+            hasMap: "https://maps.app.goo.gl/SMdNkWgRJiMq4YBZA", // Link to Google Maps
+            sameAs: [
+              "https://www.facebook.com/signaramatoronto/",
+              "https://www.instagram.com/signaramatoronto/",
+              "https://www.linkedin.com/company/signarama-toronto",
+            ],
+            areaServed: {
+              "@type": "GeoCircle",
+              geoMidpoint: {
+                "@type": "GeoCoordinates",
+                latitude: "43.6532",
+                longitude: "-79.3832",
+              },
+              geoRadius: "50000",
+            },
+            reviews: [
+              // Include reviews (as many as possible)
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Lee Petrie",
+                },
+                datePublished: "2023-02-15",
+                reviewBody:
+                  "We're thrilled with our new sign for the Melody Bar. It was a pleasure to work with Nicholas and the team. We thought we knew what we wanted (LED neon), but Nicholas made a recommendation of a backlit sign which allowed our wordmark to be executed perfectly. It was finished on schedule and Josh the installer was also great. We really appreciated their expertise and love the finished sign!",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                },
+              },
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Dr. Nick Tsaggarelis",
+                },
+                datePublished: "2025-01-23",
+                reviewBody:
+                  "For the last seven years I have been using Signaram on Bay for all my sign needs. They are always professional, efficient and well priced. When I moved locations, they moved my signs and placed them in their new location with limited hassle and outstanding service.",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                },
+              },
+              {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Nidia Timoteo",
+                },
+                datePublished: "2024-10-08",
+                reviewBody:
+                  "Thank you to Sarah and her team for creating such a beautiful sign for our store at Toronto Sports & Hobby Shows. Amazing service from beginning to the end. Amazing product! Signarama on Bay is the location to go! Thanks guys!",
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                },
+              },
+              //... more reviews
+            ],
+          })}
+        </script> */}
+      </Head>
       <Header />
       {/* <div className="floating-items">
         <div className="floating-items-inner">

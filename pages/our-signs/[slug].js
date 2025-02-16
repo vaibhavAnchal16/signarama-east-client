@@ -41,6 +41,11 @@ const Signs = ({ loading, sign }) => {
       <Head>
         <title>{sign?.seoData?.seoTitle}</title>
         <meta name="description" content={sign?.seoData?.seoDescription} />
+        {sign?.seoData?.structuredData && (
+          <script type="application/ld+json">
+            {sign?.seoData?.structuredData}
+          </script>
+        )}
       </Head>
       <div className="bg-white">
         <div className="wavepattern">
@@ -91,17 +96,22 @@ const Signs = ({ loading, sign }) => {
               alignItems: "flex-start",
             }}
           >
-            <div className="hero-text">
-              <h1 className="d-margin-b"> Need {sign?.title} ? </h1>
-              <Button href={`/contact-us`} type="fill full-width">
-                Schedule a Call
-              </Button>
-            </div>
-            <div className="hero-text full-width ">
+            <div
+              className="hero-text full-width"
+              style={{
+                maxWidth: "100%",
+              }}
+            >
               <div
                 className="serv-detail-text"
                 dangerouslySetInnerHTML={createMarkup(sign?.description)}
               ></div>
+
+              <div className="d-flex d-flex-wrap d-flex-center d-margin-t">
+                <Button href={`/contact-us`} type="fill">
+                  Contact Us
+                </Button>
+              </div>
 
               <GalleryGrid images={sign?.gallery?.images} />
             </div>

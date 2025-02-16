@@ -174,8 +174,8 @@ const Services = ({ data }) => {
                     );
                   })}
                 </Splide>
-                <div className="d-flex d-flex-between d-margin-t">
-                  <div>{/* <p>{data?.length}</p> */}</div>
+                {/* <div className="d-flex d-flex-between d-margin-t">
+                  <div></div>
                   <div
                     style={{
                       position: "relative",
@@ -197,14 +197,13 @@ const Services = ({ data }) => {
                           const currenIndex = splideRef.current.splide.index;
                           splideRef.current.go(currenIndex + 1);
                           splideRef.current.go(1);
-                          // console.log(splideRef.current);
                         }}
                       >
                         <ArrowNext fill="#fff" />
                       </button>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

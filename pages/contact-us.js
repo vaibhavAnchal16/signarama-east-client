@@ -164,15 +164,35 @@ const ContactUs = ({ query }) => {
 
             {/* <h1 className="d-margin-t d-margin-b">Connect with us</h1> */}
             <div className="d-flex d-column-gap social-icons d-margin-t">
-              <Button type="outline">
+              <Button
+                type="outline"
+                onClick={() => {
+                  window.open(
+                    `https://www.facebook.com/signaramabramptonwest`,
+                    "_blank"
+                  );
+                }}
+                // href={`https://www.facebook.com/signaramabramptonwest`}
+                target="_blank"
+              >
                 <Facebook />
               </Button>
-              <Button type="outline">
+              <Button
+                type="outline"
+                onClick={() => {
+                  window.open(
+                    `https://www.instagram.com/signaramabw`,
+                    "_blank"
+                  );
+                }}
+                // href={`https://www.instagram.com/signaramabw`}
+                target="_blank"
+              >
                 <Instagram />
               </Button>
-              <Button type="outline">
+              {/* <Button type="outline">
                 <LinkedIn />
-              </Button>
+              </Button> */}
             </div>
           </div>
           <div
