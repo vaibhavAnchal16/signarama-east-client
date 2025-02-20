@@ -16,7 +16,7 @@ const Header = () => {
       "scroll",
       () => {
         let top = window.scrollY;
-        if (top < 50) {
+        if (top < 30) {
           document.querySelector(".header-wrapper") &&
             document
               .querySelector(".header-wrapper")
@@ -24,12 +24,6 @@ const Header = () => {
         } else {
           document.querySelector(".header-wrapper") &&
             document.querySelector(".header-wrapper").classList.add("scrolled");
-        }
-
-        if (top < 250) {
-          document.querySelector("body").classList.remove("branding");
-        } else {
-          document.querySelector("body").classList.add("branding");
         }
       },
       false
@@ -65,7 +59,7 @@ const Header = () => {
           subMenu: null,
         },
         {
-          name: "Signs",
+          name: "Our Signs",
           link: "/our-signs",
           subMenu: _.chain(data?.signs?.signs)
             ?.groupBy("type")

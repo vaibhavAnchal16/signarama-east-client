@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { AspectRatio } from "react-aspect-ratio";
 import ImageViewer from "react-simple-image-viewer";
 
 const GalleryGrid = ({ images }) => {
@@ -24,13 +25,16 @@ const GalleryGrid = ({ images }) => {
           {images?.map((image, i) => (
             <div
               key={i}
-              onClick={() => openImageViewer(i)}
+              // onClick={() => openImageViewer(i)}
               className="single-image"
-              // style={{
-              //   backgroundImage: `url(${image})`,
-              // }}
             >
-              <img src={image} alt="gallery" />
+              <AspectRatio ratio="1 / 1" style={{ maxWidth: "400px" }}>
+                <img
+                  onClick={() => openImageViewer(i)}
+                  src={image}
+                  alt="gallery"
+                />
+              </AspectRatio>
             </div>
           ))}
         </div>

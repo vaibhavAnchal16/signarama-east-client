@@ -324,7 +324,7 @@ body {
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 250px;
     width: 100%;
     line-height: 0px;
 }
@@ -357,7 +357,7 @@ body {
 footer.footer-wrapper>.footer-inner * {
     transition: all 0.2s ease-in-out;
     color: var(--dark-bg-text);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
     font-weight: 300;
 }
@@ -375,7 +375,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 }
 .footer-wrapper .footer-inner .recent-blogs-section li a{
     color: var(--dark-bg-text);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
     font-weight: 300;
     text-align: center;
@@ -389,7 +389,7 @@ footer.footer-wrapper>.footer-inner .right-boxes > *{
 footer.footer-wrapper>.footer-inner a{
     cursor: pointer;
     color: var(--dark-bg-text);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
     font-weight: 300;
     text-align: center;
@@ -439,7 +439,7 @@ body {
   
   .menu>ul>li.open .submenu {
       max-width: 850px;
-      top: 70px;
+      top: 50px;
       /* right: 0;
       left: 670px; */
   }
@@ -447,7 +447,7 @@ body {
       position: static;
   }
   .menu>ul li {
-      font-size: 15px;
+      font-size: 16px;
   }
   .menu>ul li:hover > span{
     text-decoration: underline;
@@ -466,7 +466,7 @@ body {
   }
   .ghost h2 {
       padding: 10px 0px;
-      color: var(--white-font);
+      color: var(--red-bg);
   }
   .admin-side-float span{
       display: block;
@@ -520,7 +520,7 @@ body {
     margin: 0px auto;
     text-align: center;
     color: #b60521;
-    font-size: 15px;
+    font-size: 16px;
     left: 0;
     right: 0;
     width: 50%;
@@ -540,7 +540,7 @@ body {
       transition: .3s ease;
   }
   .fields-wrapper button span {
-      font-size: 15px;
+      font-size: 16px;
       font-family: 'Montserrat';
       font-weight: 500;
   }
@@ -627,7 +627,7 @@ body {
     
     }
     .menu>ul li {
-        font-size: 15px;
+        font-size: 16px;
         padding: 8px 15px;
     }
     .menu {
@@ -758,7 +758,7 @@ body {
         display: none;
     }
     .footer-wrapper>.footer-inner {
-        padding: 30px 15px;
+        padding: 0px 0px;
     }
     .help-section-inner .help-section-box .help-context p.intro {
         margin-bottom: 15px;
@@ -798,6 +798,7 @@ body {
     .footer-wrapper .footer-inner .footer-box-inner *{
         font-size: 16px;
         line-height: 26px;
+        font-weight: 500;
     }
     .credit-inner p{
         font-size: 16px;
@@ -861,6 +862,7 @@ body {
     }
     footer.footer-wrapper>.footer-inner .right-boxes {
         flex-wrap: wrap;
+        margin-top: 0px;
     }
     .footer-inner .left-boxes>div , footer.footer-wrapper>.footer-inner .right-boxes > * {
         max-width: 100%;

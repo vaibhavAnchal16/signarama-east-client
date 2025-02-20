@@ -14,54 +14,45 @@ const ConnectForm = (props) => {
   const [step, setStep] = useState(1);
   const [file, setFile] = useState(null);
   const manageForm = async (e, type, step) => {
+    e.preventDefault();
     const { name, email, phone, address, message } = formRef.current;
-    if (step === 1 && name.value?.trim() === "") {
+    if (name.value?.trim() === "") {
       name.closest(".fields-wrapper").classList.add("error");
       name.focus();
       return;
     }
-    if (
-      (step === 1 && email.value?.trim() === "") ||
-      email.value.indexOf("@") === -1
-    ) {
+    if (email.value?.trim() === "" || email.value.indexOf("@") === -1) {
       email.closest(".fields-wrapper").classList.add("error");
       email.focus();
       return;
     }
-    if (step === 1 && phone.value?.trim() === "") {
+    if (phone.value?.trim() === "") {
       phone.closest(".fields-wrapper").classList.add("error");
       phone.focus();
       return;
     }
-    if (step < 2 && type === "NEXT") {
-      setTimeout(function () {
-        setStep((step) => step + 1);
-      }, 500);
+    if (message.value?.trim() === "") {
+      message.closest(".fields-wrapper").classList.add("error");
+      message.focus();
+      return;
     }
-    if (step > 1 && type === "PREVIOUS") {
-      setTimeout(function () {
-        setStep((step) => step - 1);
-      }, 500);
-    }
-    if (step === 2 && !type) {
-      try {
-        const { data } = await client.mutate({
-          mutation: SENDFORM,
-          variables: {
-            name: name.value,
-            phoneNumber: phone.value,
-            address: address.value,
-            message: message.value,
-            attachment: file?.url,
-            email: email.value,
-          },
-        });
-        if (data) {
-          window.location.href = `${window.location.origin}/thankyou`;
-        }
-      } catch (error) {
-        console.log(error);
+    try {
+      const { data } = await client.mutate({
+        mutation: SENDFORM,
+        variables: {
+          name: name.value,
+          phoneNumber: phone.value,
+          address: address.value,
+          message: message.value,
+          attachment: file?.url,
+          email: email.value,
+        },
+      });
+      if (data) {
+        window.location.href = `${window.location.origin}/thankyou`;
       }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -86,15 +77,15 @@ const ConnectForm = (props) => {
         <form className="contact-form" ref={formRef} id="submitform">
           <div className={step === 1 ? `show` : `hide`}>
             <div className="fields-wrapper">
-              <label> Name </label>
+              <label> Name *</label>
               <input onChange={removeErrorClass} name="name" />
             </div>
             <div className="fields-wrapper">
-              <label> Email </label>
+              <label> Email *</label>
               <input onChange={removeErrorClass} name="email" />
             </div>
             <div className="fields-wrapper">
-              <label> Phone Number </label>
+              <label> Phone Number *</label>
               <input onChange={removeErrorClass} name="phone" />
             </div>
           </div>
@@ -107,11 +98,10 @@ const ConnectForm = (props) => {
               <input name="address" />
             </div>
             <div className="fields-wrapper">
-              <label> Message </label>
+              <label> Message *</label>
               <input name="message" />
             </div>
             <div className="fields-wrapper">
-              {/* <label> Upload File </label> */}
               <input
                 type="file"
                 name="file"

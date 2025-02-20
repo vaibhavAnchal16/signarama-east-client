@@ -8,7 +8,9 @@ export const Process = () => {
         }}
       >
         <div className="services-outer-space-text l-margin-b d-column-gap">
-          <h1 className="d-margin-b">Our Process</h1>
+          <h1 className="d-margin-b">
+            Our <span className="highlighted">Process</span>
+          </h1>
           <h2 className="l-margin-b">Your Journey to a Stunning Sign</h2>
         </div>
 
@@ -61,7 +63,7 @@ export const Process = () => {
             </p>
           </div>
           <div className="howsewingworksbox">
-            <img src="/processimages/CraftIt.webp" alt="Craft It" />
+            <img src="/processimages/craftsign.webp" alt="Craft It" />
             <h2 className="s-margin-t s-margin-b"> Craft It </h2>
             <p>
               {" "}

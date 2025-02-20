@@ -62,13 +62,17 @@ export default function LatestNews2({ data }) {
                 alignItems: "flex-start",
               }}
             >
-              <span className="d-margin-t">
+              <span
+                className="d-inline-flex"
+                style={{
+                  marginTop: "12px",
+                }}
+              >
                 <NewsIcon />
               </span>
-
               <div>
                 <h1 className="d-margin-b">
-                  Recent Projects & Signage Successes
+                  Our <span className="highlighted">Success</span> Stories
                 </h1>
                 <p className="">
                   Explore our latest work, discover innovative sign solutions,

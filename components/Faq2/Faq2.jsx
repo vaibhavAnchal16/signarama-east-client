@@ -7,7 +7,8 @@ export default function Faq2({ className = "" }) {
         <div className="faq-outer-space-text l-margin-b">
           <div>
             <h1 className="d-margin-b">
-              <FaqIcon /> Frequently Asked Questions
+              <FaqIcon /> Frequently Asked{" "}
+              <span className="highlighted">Questions</span>
             </h1>
           </div>
         </div>
@@ -20,10 +21,10 @@ export default function Faq2({ className = "" }) {
             }}
           >
             <div className="faq-cards-item">
-              <h3 className="s-margin-b">
+              <h3 className="s-margin-b s-padding-b">
                 {" "}
                 What types of signs does{" "}
-                <span className="highlighted"> Signarama </span> in Brampton, ON
+                <span className="highlighted"> Signarama </span> Brampton, ON
                 specialize in?
               </h3>
               <p>

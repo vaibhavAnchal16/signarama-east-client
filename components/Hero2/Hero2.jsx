@@ -204,7 +204,8 @@ export default function Hero2() {
           <div className="hero-inner-space d-flex d-flex-wrap d-flex-between">
             <div className="hero-text">
               <h1 className="d-margin-b">
-                Signarama Brampton: Your Expert Sign Makers
+                Signarama Brampton:{" "}
+                <span className="highlighted">Your Expert Sign</span> Makers
               </h1>
               <p className="d-margin-b">
                 Your trusted Brampton sign company for custom-designed
@@ -217,8 +218,8 @@ export default function Hero2() {
                   Get in Touch
                   {/* Get in Touch */}
                 </Button>
-                <Button type={`outline`} href={`/our-signs`}>
-                  View our Projects
+                <Button type={`outline lite`} href={`/our-signs`}>
+                  View Our Signs
                 </Button>
               </div>
             </div>
@@ -251,7 +252,7 @@ export default function Hero2() {
                   <Infinity />{" "}
                 </span>{" "} */}
                 {/* Signarama Brampton: */}
-                Signarama Toronto : Where Your Vision Takes Shape
+                Signarama Brampton : Where Your Vision Takes Shape
               </h1>
               <h2 className="s-margin-b">
                 * Helping Businesses In Brampton and the GTA Look Great For Over

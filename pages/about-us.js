@@ -54,7 +54,9 @@ const AboutUs = ({ teams }) => {
             <div className="services-outer-space-text l-margin-b d-column-gap">
               <h1 className="d-margin-b">
                 {" "}
-                Your Trusted Source for Custom Signs & Graphics
+                <span className="highlighted">
+                  Your Trusted Source for Custom Signs & Graphics
+                </span>
               </h1>
               <h2 className="">
                 Signarama Brampton is the leading innovator in the signs &
@@ -135,110 +137,121 @@ const AboutUs = ({ teams }) => {
                   high-quality materials to create signs that are not only
                   visually appealing but also durable and long-lasting.
                 </p>
-                <h2 className="d-margin-b">
-                  <span className="font-bold highlighted">Our Services:</span>
-                </h2>
-                <p className="d-margin-b">
-                  We offer a comprehensive range of signage solutions tailored
-                  to meet your specific needs, including:
-                </p>
-                <ul className="about-list">
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Storefront Signs:
-                      </span>{" "}
-                      Attract customers and build brand recognition with
-                      impactful storefront signage.
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Vehicle Wraps & Graphics:
-                      </span>{" "}
-                      Turn your vehicles into mobile billboards, maximizing your
-                      brand's reach.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Banners & Posters:
-                      </span>{" "}
-                      Promote events, sales, and special offers with vibrant,
-                      eye-catching banners.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Illuminated Signs:
-                      </span>{" "}
-                      Stand out day and night with illuminated signs, including
-                      channel letters and LED signs.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Interior Signs:
-                      </span>{" "}
-                      Enhance your interior space with wayfinding,
-                      ADA-compliant, and decorative signage.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>
-                      <span className="font-bold highlighted">
-                        Trade Show Displays:
-                      </span>{" "}
-                      Make a lasting impression at trade shows and events with
-                      custom displays.
-                    </p>
-                  </li>
-
-                  <li>
-                    <p>And much more! Including window frosting.</p>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <WhyChooseSignarama outerClass="hero-outer-space">
+      <WhyChooseSignarama
+        outerClass="hero-outer-space"
+        title={`<h1 className="d-margin-b">Our <span className="highlighted">Services</span></h1><h2 class="d-margin-b">We offer a comprehensive range of signage solutions tailored to meet your specific needs, including:</h2>`}
+      >
         <div className="hero-text full-width">
-          <p className="d-margin-b">
-            <span className="font-bold highlighted">Local Expertise:</span> We
-            understand the Brampton market and the unique needs of local
-            businesses. We also have extensive knowledge of Brampton's sign
-            permit process.
-          </p>
-          <p className="d-margin-b">
-            <span className="font-bold highlighted">Experienced Team:</span> Our
-            skilled designers, fabricators, and installers are committed to
-            delivering top-quality workmanship.
-          </p>
-          <p className="d-margin-b">
-            <span className="font-bold highlighted">
-              Full-Service Solutions:
-            </span>{" "}
-            We handle every aspect of your project, from initial concept and
-            design to fabrication, permitting, and installation.
-          </p>
-          <p className="">
-            <span className="font-bold highlighted">
-              Customer Satisfaction:
-            </span>{" "}
-            Your satisfaction is our ultimate goal. We work closely with you to
-            ensure your vision is realized.
-          </p>
+          <ul className="about-list">
+            <li>
+              <p>
+                <span className="font-bold highlighted">Storefront Signs:</span>{" "}
+                Attract customers and build brand recognition with impactful
+                storefront signage.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Vehicle Wraps & Graphics:
+                </span>{" "}
+                Turn your vehicles into mobile billboards, maximizing your
+                brand's reach.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Banners & Posters:
+                </span>{" "}
+                Promote events, sales, and special offers with vibrant,
+                eye-catching banners.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Illuminated Signs:
+                </span>{" "}
+                Stand out day and night with illuminated signs, including
+                channel letters and LED signs.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">Interior Signs:</span>{" "}
+                Enhance your interior space with wayfinding, ADA-compliant, and
+                decorative signage.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Trade Show Displays:
+                </span>{" "}
+                Make a lasting impression at trade shows and events with custom
+                displays.
+              </p>
+            </li>
+
+            <li>
+              <p>And much more! Including window frosting.</p>
+            </li>
+          </ul>
+        </div>
+      </WhyChooseSignarama>
+
+      <WhyChooseSignarama
+        outerClass="hero-outer-space bg-white"
+        innerClass="hero-inner-space d-flex d-flex-wrap d-flex-between d-flex-row-reverse"
+      >
+        <div className="hero-text full-width">
+          <ul>
+            <li>
+              <p>
+                <span className="font-bold highlighted">Local Expertise:</span>{" "}
+                We understand the Brampton market and the unique needs of local
+                businesses. We also have extensive knowledge of Brampton's sign
+                permit process.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">Experienced Team:</span>{" "}
+                Our skilled designers, fabricators, and installers are committed
+                to delivering top-quality workmanship.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Full-Service Solutions:
+                </span>{" "}
+                We handle every aspect of your project, from initial concept and
+                design to fabrication, permitting, and installation.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="font-bold highlighted">
+                  Customer Satisfaction:
+                </span>{" "}
+                Your satisfaction is our ultimate goal. We work closely with you
+                to ensure your vision is realized.
+              </p>
+            </li>
+          </ul>
         </div>
       </WhyChooseSignarama>
 

@@ -8,7 +8,8 @@ export default function ClientSayings({
       <div className={paddingClasses}>
         <div className="services-outer-space-text">
           <h1 className="d-margin-b">
-            Our Signs Speak for Themselves, But Our Clients Do Too.{" "}
+            Our Signs Speak for Themselves, But Our{" "}
+            <span className="highlighted"> Clients </span> Do Too.{" "}
             <ClientSaysIcon />
           </h1>
           <h2 className="d-margin-b">

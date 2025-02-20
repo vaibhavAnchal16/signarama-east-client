@@ -3,8 +3,9 @@ import React from "react";
 import LazyImage from "./LazyImage";
 import sanitizeHtml from "sanitize-html";
 import Link from "next/link";
+import Button from "./Button/Button";
 
-const BlogCard = ({ title, image, slug, description }) => {
+const BlogCard = ({ title, image, slug, description, type }) => {
   const router = useRouter();
 
   const createMarkup = (html) => {
@@ -29,7 +30,25 @@ const BlogCard = ({ title, image, slug, description }) => {
       }),
     };
   };
+  if (type === "sign") {
+    return (
+      <Link href={slug}>
+        <div className="blog-card-wrapper d-margin-b">
+          <div className="blog-card-inner">
+            <div className="image">
+              <LazyImage
+                style={{ maxWidth: "100%", cursor: "pointer" }}
+                src={image}
+                alt={title}
+              />
+            </div>
 
+            <Button type={`fill full-width`}>{title}</Button>
+          </div>
+        </div>
+      </Link>
+    );
+  }
   return (
     <Link href={slug}>
       <div className="blog-card-wrapper d-margin-b">

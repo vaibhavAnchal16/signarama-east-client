@@ -21,7 +21,7 @@ export default function OurSigns({ signs }) {
         >
           <div className="services-outer-space-text l-margin-b d-column-gap">
             <h1 className="d-margin-b">
-              Our Signs <QualityIcon />
+              Our <span className="highlighted">Signs</span> <QualityIcon />
             </h1>
             <h2 className="d-margin-b">
               Design, Craft, and Install - All Under One Roof
@@ -64,6 +64,7 @@ export default function OurSigns({ signs }) {
                     title={blg?.title}
                     image={blg?.featuredImage}
                     slug={`/our-signs/${blg?.slug}`}
+                    type="sign"
                   />
                 ))}
               </section>

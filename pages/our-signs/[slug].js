@@ -57,7 +57,10 @@ const Signs = ({ loading, sign }) => {
               }}
             >
               <div className="services-outer-space-text l-margin-b d-column-gap">
-                <h1 className="d-margin-b"> {sign?.title}</h1>
+                <h1 className="d-margin-b">
+                  {" "}
+                  <span className="highlighted">{sign?.title}</span>{" "}
+                </h1>
               </div>
               <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
                 <div
@@ -114,6 +117,11 @@ const Signs = ({ loading, sign }) => {
               </div>
 
               <GalleryGrid images={sign?.gallery?.images} />
+              <div className="d-flex d-flex-wrap d-flex-center d-margin-t">
+                <Button href={`/contact-us`} type="fill">
+                  Contact Us
+                </Button>
+              </div>
             </div>
           </div>
         </div>

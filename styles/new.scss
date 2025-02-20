@@ -75,15 +75,15 @@
     color: var(--lite-font);
     font-weight: 300;
     line-height: 22px;
-    font-size: 15px;
+    font-size: 16px;
     // line-height: ;
   }
   h1,h2,h3,h4,h5{
     color: var(--lite-font);
   }
   h1{
-    font-size: 60px;
-    line-height: 60px;
+    font-size: 56px;
+    line-height: 58px;
     color: var(--white-font);
 }
   .pulse {
@@ -369,7 +369,7 @@ body{
             }
             >p{
                 color: var(--lite-font);
-                font-size: 15px;
+                font-size: 16px;
                 line-height: 22px;
                 font-weight: 300;
             }
@@ -447,7 +447,7 @@ body{
     }
     >p{
         color: var(--dark-bg-text);
-        font-size: 15px;
+        font-size: 16px;
         line-height: 22px;
         font-weight: 300;
         text-align: center;
@@ -479,12 +479,12 @@ body{
     >h1{
         color: var(--dark-bg-text);
         text-align: center;
-            font-size: 42px;
-            line-height: 48px;
+        font-size: 35px;
+        line-height: 40px;
     }
     >p{
         color: var(--lite-font);
-        font-size: 15px;
+        font-size: 16px;
         line-height: 22px;
         font-weight: 300;
         text-align: center;
@@ -526,14 +526,24 @@ body{
         margin: 0px auto;
         >h1{
             color: var(--white-font);
+            // color: var(--red-bg);
             text-align: center;
+            &::after{
+                content: "";
+                display: block;
+                width: 130px;
+                height: 2px;
+                background: var(--red-bg);
+                margin: 0px auto;
+                margin-top: 12px;
+            }
         }
         >h2{
             text-align: center;
         }
         >p{
             color: var(--lite-font);
-            font-size: 15px;
+            font-size: 16px;
             line-height: 22px;
             font-weight: 300;
             text-align: center;
@@ -555,6 +565,16 @@ body{
         transition: all .3s ease-in-out;
         &.active{
             border: 1px solid var(--red-bg);
+        }
+        .inner-slide{
+            // .sign-name{
+            //     +div{
+            //         position: absolute;
+            //         bottom: 0;
+            //         left: 0;
+            //         right: 0;
+            //     }
+            // }
         }
     }
 }
@@ -599,7 +619,7 @@ body{
                 *{
                     color: var(--lite-font);
                     font-weight: 300;
-                    font-size: 15px;
+                    font-size: 16px;
                 }
             }
         }
@@ -654,7 +674,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
     .learn-more{
         p{
             color: var(--lite-font);
-            font-size: 15px;
+            font-size: 16px;
             line-height: 22px;
         }
         a{
@@ -673,10 +693,12 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
         padding: 24px;
         border: 1px solid rgba(241, 241, 241, 0.168627451);
         border-radius: 4px;
-        background: var(--black-bg);
+        // background: var(--black-bg);
         h3{
             color: var(--white-font);
             font-weight: 400;
+            border-bottom: 1px solid var(--red-bg);
+            padding-bottom: 10px;
         }
         &.testimonial-item{
             column-gap: 12px;
@@ -782,7 +804,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             margin-bottom: 12px;
             p{
                 color: var(--lite-font);
-                font-size: 15px;
+                font-size: 16px;
                 line-height: 22px;
                 font-weight: 300;
             }
@@ -793,8 +815,8 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
 .howsewingworks-inner {
     .howsewingworksbox{
         img{
-            max-width: 120px;
-            height: 120px;
+            max-width: 150px;
+            height: 150px;
             object-fit: contain;
             width: 100%;
             border-radius: 100%;
@@ -804,6 +826,14 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
 
 .signs-outer-space{
     .signs-inner-space{
+        >div{
+            h1{
+                color: var(--red-bg);
+                display: inline-flex;
+                border-bottom: 1px solid;
+                padding-bottom: 10px;
+            }
+        }
         .signs-list{
             >div{
                 max-width: 32%;
@@ -828,3 +858,40 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
         }
     }
 }
+
+[style*="--aspect-ratio"] > :first-child {
+    width: 100%;
+  }
+  
+  [style*="--aspect-ratio"] > img {
+    height: auto;
+  }
+  
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+  }
+  
+  @supports not (aspect-ratio: 1/1) {
+    [style*="--aspect-ratio"]::before {
+      height: 0;
+      padding-bottom: calc(100% / (var(--aspect-ratio)));
+    }
+  }
+  @supports (aspect-ratio: 1/1) {
+    [style*="--aspect-ratio"]::before {
+      aspect-ratio: calc(var(--aspect-ratio));
+    }
+  }
+  

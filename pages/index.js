@@ -88,7 +88,7 @@ export async function getServerSideProps({ params, query }) {
     query: BLOGS,
     variables: {
       page: 1,
-      size: 9,
+      size: 3,
       filters: {
         published: true,
         recentWork: true,

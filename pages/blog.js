@@ -50,7 +50,8 @@ const SignBlog = ({ blogs }) => {
               <div className="services-outer-space-text l-margin-b d-column-gap">
                 <h1 className="d-margin-b">
                   {" "}
-                  Signage Stories <NewsIcon />
+                  Signage <span className="highlighted">Stories</span>{" "}
+                  <NewsIcon />
                 </h1>
                 <h2 className="l-margin-b">
                   Explore our latest work, discover innovative sign solutions,

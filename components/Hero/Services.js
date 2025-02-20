@@ -65,7 +65,8 @@ const Services = ({ data }) => {
         <div className="d-padding">
           <div className="services-outer-space-text">
             <h1 className="d-margin-b">
-              Our Expertise
+              Our <span className="highlighted">Expertise</span>
+              &nbsp;
               <QualityIcon />
             </h1>
             <h2 className="d-margin-b">

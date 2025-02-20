@@ -179,8 +179,8 @@ $mobile: 767px;
     }
     .images-gallery-box {
         > .single-image{
-            max-width: 50%;
-            height: 200px;
+            // max-width: 50%;
+            // height: 200px;
         }
     }
     .building-outer-space{
@@ -373,7 +373,7 @@ $mobile: 767px;
     }
     .images-gallery-box {
         &> .single-image{        
-            height: 120px;
+            // height: 120px;
         }
     }
     img{
@@ -419,7 +419,7 @@ $mobile: 767px;
             position: fixed;
         }
         .menu{
-            top: 34px;
+            top: 40px;
         }
     }
     .d-padding{
@@ -513,7 +513,7 @@ $mobile: 767px;
     .building-something-outer-space {
         .building-outer-space-text{
             h1{
-                font-size: 22px;
+                font-size: 18px;
                 line-height: 22px;
                 display: flex;
                 align-items: center;

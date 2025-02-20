@@ -48,7 +48,7 @@ export default function FeaturedProjects2({ data }) {
     <section className="featured-outer-space">
       <div className="d-padding-l d-padding-r d-padding-b">
         <div
-          className="featured-outer-space-text d-flex d-flex-end l-margin-b d-column-gap"
+          className="featured-outer-space-text d-flex d-flex-start l-margin-b d-column-gap"
           style={{
             alignItems: "flex-end",
           }}
@@ -56,14 +56,10 @@ export default function FeaturedProjects2({ data }) {
           <div>
             <h1 className="d-margin-b">
               {" "}
+              Featured <span className="highlighted">Projects</span>{" "}
               <FeaturedIcon fill="#c3122f" />
-              Featured Projects
             </h1>
-            <p className="">
-              lorem Ipsum is simply dummy text of the printing and typesetting
-              lorem Ipsum is simply dummy text of the printing and typesetting
-              lorem Ipsum is simply dummy text of the printing and typesetting.
-            </p>
+            <h2 className="">Some Of Our Latest Sign Projects</h2>
           </div>
           <div>
             {/* <Button href={`/blog`} type={`fill`}>
@@ -118,8 +114,8 @@ export default function FeaturedProjects2({ data }) {
               );
             })}
           </Splide>
-          <div className="d-flex d-flex-between d-margin-t">
-            <div>{/* <p>{data?.length}</p> */}</div>
+          {/* <div className="d-flex d-flex-between d-margin-t">
+            <div></div>
             <div
               style={{
                 position: "relative",
@@ -147,7 +143,7 @@ export default function FeaturedProjects2({ data }) {
                 </button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
