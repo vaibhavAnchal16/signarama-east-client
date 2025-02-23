@@ -159,3 +159,14 @@ export const SENDFORM = gql`
     }
   }
 `;
+
+export const ADDUPDATEHEROGALLERY = gql`
+  mutation UpdateHeroGallery($gallery: ID!) {
+    updateHeroGallery(gallery: $gallery) {
+      _id
+      description
+      images
+      title
+    }
+  }
+`;

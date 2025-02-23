@@ -11,7 +11,7 @@ import {
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import RecentWorks from "../components/Hero/RecentWorks";
 import Wally from "../components/Hero/Wally";
-import { BLOGS, GALLERYBYTITLE, SIGNS } from "../graphql/queries";
+import { BLOGS, GALLERYBYTITLE, HEROGALLERY, SIGNS } from "../graphql/queries";
 import Hero2 from "../components/Hero2/Hero2";
 import FeaturedProjects2 from "../components/FeaturedProjects2/FeaturedProjects2";
 import LatestNews2 from "../components/LatestNews2/LatestNews2";
@@ -20,7 +20,13 @@ import Faq2 from "../components/Faq2/Faq2";
 import ClientSayings from "../components/ClientSayings/ClientSayings";
 import { Process } from "../components/Hero/Process";
 
-export default function Home({ signs, recentworks, trending, teams, loader }) {
+export default function Home({
+  signs,
+  recentworks,
+  trending,
+  loader,
+  heroGallery,
+}) {
   if (loader) return "Loading...";
   return (
     <div>
@@ -33,7 +39,7 @@ export default function Home({ signs, recentworks, trending, teams, loader }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero2 />
+      <Hero2 images={heroGallery?.gallery?.images} />
       {/* <Hero /> */}
       <Process />
 
@@ -111,6 +117,10 @@ export async function getServerSideProps({ params, query }) {
     },
   });
 
+  const heroGallery = await client.query({
+    query: HEROGALLERY,
+  });
+
   // Pass post data to the page via props
   return {
     props: {
@@ -125,6 +135,7 @@ export async function getServerSideProps({ params, query }) {
       recentworks: recent?.data?.blogs?.blogs,
       testimonials: testimonials?.data?.galleryByName,
       teams: team?.data?.galleryByName,
+      heroGallery: heroGallery?.data?.heroGalleryImages,
     },
   };
 }

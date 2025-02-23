@@ -120,10 +120,10 @@ const ContactUs = ({ query }) => {
 
             <div className="d-flex d-flex-column d-margin-b">
               <Button
-                href={`mailto:info@signarama-toronto.ca`}
+                href={`mailto:info@signarama-bramptonwest.ca`}
                 type="fill full-width"
               >
-                info@signarama-toronto.ca
+                info@signarama-bramptonwest.ca
               </Button>
             </div>
 
@@ -187,18 +187,6 @@ const ContactUs = ({ query }) => {
               width: "100%",
             }}
           >
-            <h1
-              className="s-margin-b d-inline-flex d-flex-center d-column-gap"
-              style={{
-                whiteSpace: "nowrap",
-              }}
-            >
-              Fill Out Our Online Form <QualityIcon />
-            </h1>
-            <h2 className="d-margin-b">
-              Provide us with some basic information and we'll contact you to
-              schedule a consultation.
-            </h2>
             <div className="bg-white">
               <div className="inner-slide">
                 <ConnectForm />

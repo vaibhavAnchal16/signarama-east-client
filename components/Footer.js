@@ -101,9 +101,9 @@ const Footer = ({ recentBlogs }) => {
                     </li>
                     <li className="email">
                       {" "}
-                      <a href="mailto:info@signarama-toronto.ca">
+                      <a href="mailto:info@signarama-bramptonwest.ca">
                         {" "}
-                        info@signarama-toronto.ca
+                        info@signarama-bramptonwest.ca{" "}
                       </a>{" "}
                     </li>
                   </ul>

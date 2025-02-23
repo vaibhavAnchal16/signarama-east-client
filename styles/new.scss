@@ -128,7 +128,11 @@ body{
 .font-bold{
     font-weight: 700!important;
 }
-
+.mx-80{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .font-bolder{
     font-weight: 900!important;
 }
@@ -325,6 +329,8 @@ body{
 .serv-detail-text img{
     max-width: 100%;
     border-radius: 10px;
+    margin: 0px auto;
+    display: block;
   }
 .hero-outer-space{
     &.sign-ind-page{
@@ -561,8 +567,27 @@ body{
     }
     .services-box{
         // padding: 10px 0px;
+        position: relative;
         border: 1px solid transparent;
         transition: all .3s ease-in-out;
+        .gesture-icon{
+            position: absolute;
+            transition: all .5s ease-in-out;
+            z-index: 2;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            margin: 0px auto;
+            pointer-events: none;
+            >div{
+                background-color: #fff;
+                padding: 10px;
+                border-radius: 50%;
+                filter: drop-shadow(0px 3px 8px #6f6f6f);
+            }
+        }
         &.active{
             border: 1px solid var(--red-bg);
         }
@@ -621,6 +646,28 @@ body{
                     font-weight: 300;
                     font-size: 16px;
                 }
+                -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    color: var(--desc-color-lite);
+                    display: -webkit-box;
+                    font-size: 14px;
+                    height: 60px;
+                    line-height: 20px;
+                    overflow: hidden;
+                    overflow-wrap: anywhere;
+                    text-overflow: ellipsis;
+                // > *{
+                //     -webkit-line-clamp: 3;
+                //     -webkit-box-orient: vertical;
+                //     color: var(--desc-color-lite);
+                //     display: -webkit-box;
+                //     font-size: 14px;
+                //     height: 60px;
+                //     line-height: 20px;
+                //     overflow: hidden;
+                //     overflow-wrap: anywhere;
+                //     text-overflow: ellipsis;
+                // }
             }
         }
         img{
@@ -638,6 +685,19 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             font-weight: 400;
             font-size: 18px;
         }
+    }
+}
+.form-wrapper{
+    .form-header{
+        // background-color: var(--white-font);
+        &.uplifted-content{
+            h1, h2{
+                color: var(--dark-bg-text);
+            }
+        }
+    }
+    .form-inner{
+        padding: 24px;
     }
 }
 .splide__arrows{
@@ -764,8 +824,8 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
 }
 .contact-page-details{
     h1{
-        font-size: 24px;
-        line-height: 26px;
+        font-size: 35px;
+        line-height: 40px;
     }
     h2{
         font-size: 18px;
@@ -853,6 +913,39 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
                 .sign-name{
                     padding: 20px 0px 20px;
                     line-height: inherit;
+                }
+            }
+        }
+    }
+}
+
+.sign-blogs-wrapper {
+    .sign-blogs-inner {
+        .blog-card-wrapper {
+            div.image{
+                position: relative;
+                &::after{
+                    content: "Signarama Brampton";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    text-align: center;
+                    background: #b605218c;
+                    color: #fff;
+                    padding: 5px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in;
+                }
+                &.image{
+
+                }
+            }
+            &:hover{
+                div{
+                    &::after{
+                        opacity: 1;
+                    }
                 }
             }
         }

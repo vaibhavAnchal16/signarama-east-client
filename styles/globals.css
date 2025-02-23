@@ -499,7 +499,6 @@ ul > li.outer-slide .inner-slide:not(:last-child){
 .login-info {
   display: flex;
   flex-direction: column;
-  max-width: 380px;
 }
 .highlighted {
   color: var(--red-bg);

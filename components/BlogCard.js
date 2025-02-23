@@ -43,7 +43,9 @@ const BlogCard = ({ title, image, slug, description, type }) => {
               />
             </div>
 
-            <Button type={`fill full-width`}>{title}</Button>
+            <Button href={slug} type={`fill full-width`}>
+              {title}
+            </Button>
           </div>
         </div>
       </Link>

@@ -7,6 +7,7 @@ import client from "../apollo-client";
 import { SENDFORM } from "../graphql/mutations";
 import { imageUpload } from "./Helpers/ImageUpload";
 import Button from "./Button/Button";
+import { QualityIcon } from "./icons";
 
 const ConnectForm = (props) => {
   const router = useRouter();
@@ -72,8 +73,19 @@ const ConnectForm = (props) => {
   };
 
   return (
-    <div className="form-wrapper" {...props}>
+    <div className="form-wrapper login-info" {...props}>
+      <div className="form-header uplifted-content">
+        <h1 className="s-margin-b  d-flex-center d-column-gap">
+          Let's <span className="highlighted">Connect.</span>
+        </h1>
+        <h1 className="s-margin-b d-flex-center d-column-gap">
+          Let's Do it Together.
+        </h1>
+        <h2 className="d-margin-b">Contact Us.</h2>
+      </div>
+
       <div className="form-inner">
+        <p className="d-margin-b">Please Fill Out The Online Form.</p>
         <form className="contact-form" ref={formRef} id="submitform">
           <div className={step === 1 ? `show` : `hide`}>
             <div className="fields-wrapper">

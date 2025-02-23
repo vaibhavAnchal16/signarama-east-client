@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import client from "../apollo-client";
 import { MYPROFILE } from "../graphql/queries";
+import { ToastContainer } from "react-toastify";
 
 export default function AdminLayout({ children }) {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function AdminLayout({ children }) {
   useEffect(() => {
     (async () => {
       try {
-        const { data, loading } = await client.query({
+        const { data } = await client.query({
           query: MYPROFILE,
         });
         setUser(data?.myProfile);
@@ -27,10 +28,10 @@ export default function AdminLayout({ children }) {
   }, []);
 
   const routes = [
-    // {
-    //   name: "Dashboard",
-    //   link: "/admin/dashboard",
-    // },
+    {
+      name: "Dashboard",
+      link: "/admin/dashboard",
+    },
     {
       name: "Hero Slider",
       link: "/admin/slider",
@@ -60,6 +61,7 @@ export default function AdminLayout({ children }) {
   if (typeof window === undefined) return <>Loading...</>;
   return (
     <ApolloProvider client={client}>
+      <ToastContainer />
       <section className="admin-template-wrapper" id="adminlayout">
         <div className="admin-template-inner">
           <div className="admin-side-bar">

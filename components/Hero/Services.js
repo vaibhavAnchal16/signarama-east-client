@@ -14,7 +14,7 @@ const _ = require("lodash");
 
 const Services = ({ data }) => {
   const [active, setActive] = useState("Storefront");
-  const splideRef = useRef(null);
+
   // useEffect(() => {
   //   setChunks(_.chunk(signs, 3));
   // }, [signs]);
@@ -37,14 +37,6 @@ const Services = ({ data }) => {
     autoplay: false,
     pauseOnHover: true,
     interval: 3000,
-    // grid: {
-    //   rows: 2,
-    //   cols: 2,
-    //   gap: {
-    //     row: "1rem",
-    //     col: "1.5rem",
-    //   },
-    // },
     breakpoints: {
       1200: {
         perPage: 3,
@@ -59,6 +51,76 @@ const Services = ({ data }) => {
       },
     },
   };
+
+  const SplideItemComponent = ({ value, keyName }) => {
+    const splideRef = useRef(null);
+    useEffect(() => {
+      if (splideRef.current) {
+        if (value.length < 3) {
+          document.querySelector(`#${keyName} .gesture-icon`).style.opacity = 0;
+        }
+        splideRef.current.splide.on("move", (newIndex, prevIndex) => {
+          if (newIndex !== prevIndex) {
+            document.querySelector(
+              `#${keyName} .gesture-icon`
+            ).style.opacity = 0;
+          }
+        });
+      }
+    }, [splideRef]);
+    return (
+      <Splide
+        ref={splideRef}
+        className="services-slider"
+        aria-label="My Favorite Images"
+        options={options}
+      >
+        {value?.map((item, i) => (
+          <SplideSlide className="outer-slide" key={i}>
+            <Link href={`/our-signs/${item?.slug}`}>
+              <div className="inner-slide">
+                <div style={{ overflow: "hidden" }}>
+                  <LazyImage
+                    src={item?.featuredImage}
+                    style={{
+                      maxWidth: "100%",
+                      width: "100%",
+                      cursor: "pointer",
+                    }}
+                  />
+                </div>
+                <div className="sign-name">
+                  <p className="d-margin-b">{item?.title}</p>
+                  <span
+                    className="sign-description"
+                    dangerouslySetInnerHTML={createMarkup(
+                      item?.description,
+                      200
+                    )}
+                  ></span>
+                </div>
+                <div className="d-margin-t">
+                  <Button
+                    href={`/our-signs/${item?.slug}`}
+                    style={{
+                      position: "absolute",
+                      bottom: "0",
+                      left: "0",
+                      right: "0",
+                    }}
+                    type={`full-width fill`}
+                  >
+                    See More
+                  </Button>
+                </div>
+              </div>
+            </Link>
+          </SplideSlide>
+        ))}
+      </Splide>
+    );
+  };
+
   return (
     <>
       <section className="services-outer-space">
@@ -124,57 +186,12 @@ const Services = ({ data }) => {
                 id={key}
                 key={index}
               >
-                <Splide
-                  ref={splideRef}
-                  className="services-slider"
-                  aria-label="My Favorite Images"
-                  options={options}
-                >
-                  {value?.map((item, i) => {
-                    return (
-                      <SplideSlide className="outer-slide" key={i}>
-                        <Link href={`/our-signs/${item?.slug}`} key={index}>
-                          <div className="inner-slide">
-                            <div style={{ overflow: "hidden" }}>
-                              <LazyImage
-                                src={item?.featuredImage}
-                                style={{
-                                  maxWidth: "100%",
-                                  width: "100%",
-                                  cursor: "pointer",
-                                }}
-                              />
-                            </div>
-                            <div className="sign-name">
-                              <p className="d-margin-b">{item?.title}</p>
-                              <span
-                                className="sign-description"
-                                dangerouslySetInnerHTML={createMarkup(
-                                  item?.description,
-                                  200
-                                )}
-                              ></span>
-                            </div>
-                            <div className="d-margin-t">
-                              <Button
-                                href={`/our-signs/${item?.slug}`}
-                                style={{
-                                  position: "absolute",
-                                  bottom: "0",
-                                  left: "0",
-                                  right: "0",
-                                }}
-                                type={`full-width fill`}
-                              >
-                                See More
-                              </Button>
-                            </div>
-                          </div>
-                        </Link>
-                      </SplideSlide>
-                    );
-                  })}
-                </Splide>
+                <div className="gesture-icon">
+                  <div>
+                    <img src="/newimages/dragleft.gif" />
+                  </div>
+                </div>
+                <SplideItemComponent value={value} keyName={key} />
                 {/* <div className="d-flex d-flex-between d-margin-t">
                   <div></div>
                   <div

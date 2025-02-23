@@ -95,7 +95,7 @@
   }
   
   .serv-detail-text {
-    max-width: 80%;
+    /* max-width: 80%; */
     width: 100%;
     display: flex;
     flex-direction: column;

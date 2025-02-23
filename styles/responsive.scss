@@ -35,7 +35,7 @@ $mobile: 767px;
         padding: 60px 32px;
     }
     .d-padding-t{
-        padding-top: 60px;
+        padding-top: 120px;
     }
     .d-padding-b{
         padding-bottom: 60px;
@@ -222,6 +222,9 @@ $mobile: 767px;
             }
         }
     }
+    .mx-80{
+        max-width: 100%;
+    }
     h1{
         font-size: 40px;
         line-height: 44px;
@@ -383,13 +386,16 @@ $mobile: 767px;
         font-size: 18px;
         line-height: 22px;
     }
-    h1{
+    h1, .contact-page-details h1{
         font-size: 22px;  
         line-height: 28px;
         >svg{
             display: none;
         }
      } 
+     .form-wrapper .form-inner {
+        padding: 24px 15px;
+    }
      .outer-slide .inner-slide .sign-name .sign-description *{
         font-size: 12px;
         line-height: 16px;
@@ -426,7 +432,7 @@ $mobile: 767px;
         padding: 60px 16px;
     }
     .d-padding-t{
-        padding-top: 60px;
+        padding-top: 70px;
     }
     .d-padding-b{
         padding-bottom: 60px;

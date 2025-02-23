@@ -99,7 +99,7 @@ const Blog = ({ blog }) => {
               <div className="services-outer-space-text l-margin-b d-column-gap">
                 <h1 className="d-margin-b"> {blog?.title}</h1>
               </div>
-              <div className="about-us-hero d-flex d-flex-wrap d-flex-between">
+              <div className="about-us-hero d-flex d-flex-wrap d-flex-between mx-80">
                 <div
                   style={{
                     width: "100%",
@@ -129,7 +129,7 @@ const Blog = ({ blog }) => {
           background: "#fff",
         }}
       >
-        <div className="d-padding-l d-padding-r">
+        <div className="d-padding-l d-padding-r  mx-80">
           <div
             className="hero-inner-space d-flex d-flex-wrap d-flex-between d-margin-b"
             style={{

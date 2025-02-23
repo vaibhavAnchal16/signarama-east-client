@@ -43,7 +43,7 @@ const options = {
   // },
 };
 
-export default function Hero2() {
+export default function Hero2({ images = [] }) {
   const HeroSliderComponent = () => {
     return (
       <Splide
@@ -52,147 +52,25 @@ export default function Hero2() {
         options={options}
         // extensions={{ AutoScroll }}
       >
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712326521/BLOGSIMAGES/IMG_97381712326520386.jpg`}
+        {images?.map((image, index) => (
+          <SplideSlide className="hero-outer-slide" key={index}>
+            <div className="hero-inner-slide">
+              <div
+                className="d-flex d-flex-between"
                 style={{
-                  maxWidth: "100%",
+                  alignItems: "flex-end",
                 }}
-              />
+              >
+                <LazyImage
+                  src={image}
+                  style={{
+                    maxWidth: "100%",
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664993995/BLOGSIMAGES/IMG_81551664993992095.jpg`}
-                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1734299871/BLOGSIMAGES/LORO%20PIANA%20X%20SAR-11734299869649.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664994745/BLOGSIMAGES/20211005_1802211664994742006.jpg`}
-                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1678032699/BLOGSIMAGES/unnamed%20%2851%291678032698082.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664907275/BLOGSIMAGES/IMG_8210-min1664907273491.jpg`}
-                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1664987264/BLOGSIMAGES/image-min%20%282%291664987262349.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1665065221/BLOGSIMAGES/image1-1%20%284%291665065218928.jpg`}
-                // src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1712327802/BLOGSIMAGES/pic%2021712327802311.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
-        <SplideSlide className="hero-outer-slide">
-          <div className="hero-inner-slide">
-            <div
-              className="d-flex d-flex-between"
-              style={{
-                alignItems: "flex-end",
-              }}
-            >
-              <LazyImage
-                src={`https://res.cloudinary.com/signaramatoronto/image/upload/v1733756975/BLOGSIMAGES/Michels%20X%20SAR%20-51733756974530.jpg`}
-                style={{
-                  maxWidth: "100%",
-                }}
-              />
-            </div>
-          </div>
-        </SplideSlide>
+          </SplideSlide>
+        ))}
       </Splide>
     );
   };

@@ -133,6 +133,19 @@ export const GALLERIES = gql`
     }
   }
 `;
+export const GALLERIESIDS = gql`
+  query Query($page: Int, $size: Int) {
+    galleries(page: $page, size: $size) {
+      page
+      size
+      total
+      galleries {
+        title
+        _id
+      }
+    }
+  }
+`;
 
 export const GALLERYBYTITLE = gql`
   query GalleryByName($title: String!) {
@@ -142,5 +155,11 @@ export const GALLERYBYTITLE = gql`
       description
       images
     }
+  }
+`;
+
+export const HEROGALLERY = gql`
+  query Query {
+    heroGalleryImages
   }
 `;
