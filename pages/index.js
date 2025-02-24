@@ -11,7 +11,13 @@ import {
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import RecentWorks from "../components/Hero/RecentWorks";
 import Wally from "../components/Hero/Wally";
-import { BLOGS, GALLERYBYTITLE, HEROGALLERY, SIGNS } from "../graphql/queries";
+import {
+  BLOGS,
+  GALLERYBYTITLE,
+  GETREVIEWS,
+  HEROGALLERY,
+  SIGNS,
+} from "../graphql/queries";
 import Hero2 from "../components/Hero2/Hero2";
 import FeaturedProjects2 from "../components/FeaturedProjects2/FeaturedProjects2";
 import LatestNews2 from "../components/LatestNews2/LatestNews2";
@@ -26,6 +32,7 @@ export default function Home({
   trending,
   loader,
   heroGallery,
+  reviews,
 }) {
   if (loader) return "Loading...";
   return (
@@ -45,7 +52,7 @@ export default function Home({
 
       <Services data={signs} />
       <FeaturedProjects2 data={recentworks} />
-      <ClientSayings />
+      <ClientSayings reviews={reviews} />
       <LatestNews2 data={trending} />
       <Faq2 />
       <BuildingSomething
@@ -102,22 +109,13 @@ export async function getServerSideProps({ params, query }) {
     },
   });
 
-  const testimonials = await client.query({
-    fetchPolicy: "no-cache",
-    query: GALLERYBYTITLE,
-    variables: {
-      title: "Testimonial",
-    },
-  });
-
-  const team = await client.query({
-    query: GALLERYBYTITLE,
-    variables: {
-      title: "Team",
-    },
+  const reviewsData = await client.query({
+    fetchPolicy: "network-only",
+    query: GETREVIEWS,
   });
 
   const heroGallery = await client.query({
+    fetchPolicy: "no-cache",
     query: HEROGALLERY,
   });
 
@@ -128,14 +126,12 @@ export async function getServerSideProps({ params, query }) {
         data?.loading ||
         trending?.loading ||
         recent?.loading ||
-        testimonials?.loading ||
-        team?.loading,
+        reviewsData?.loading,
       signs: data?.signs?.signs,
       trending: trending?.data?.blogs?.blogs,
       recentworks: recent?.data?.blogs?.blogs,
-      testimonials: testimonials?.data?.galleryByName,
-      teams: team?.data?.galleryByName,
       heroGallery: heroGallery?.data?.heroGalleryImages,
+      reviews: reviewsData?.data?.getGoogleReviews,
     },
   };
 }

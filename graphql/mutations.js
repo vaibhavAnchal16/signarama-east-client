@@ -170,3 +170,14 @@ export const ADDUPDATEHEROGALLERY = gql`
     }
   }
 `;
+
+export const ADDREVIEWDATA = gql`
+  mutation AddReviewData($reviewData: ReviewData) {
+    addReviewData(ReviewData: $reviewData) {
+      _id
+      reviewLink
+      reviewsCount
+      totalRating
+    }
+  }
+`;

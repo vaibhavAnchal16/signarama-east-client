@@ -12,14 +12,14 @@ import {
 } from "../components";
 import ProjectsCompleted from "../components/Hero/ProjectCompleted";
 import Wally from "../components/Hero/Wally";
-import { GALLERYBYTITLE } from "../graphql/queries";
+import { GALLERYBYTITLE, GETREVIEWS } from "../graphql/queries";
 import ClientSayings from "../components/ClientSayings/ClientSayings";
 import BuildingSomething from "../components/BuildingSomething/BuildingSomething";
 import WhyChooseSignarama from "../components/WhyChooseSignarama/WhyChooseSignarama";
 import { NewsIcon } from "../components/icons";
 import { BiSearchAlt } from "react-icons/bi";
 
-const AboutUs = ({ teams }) => {
+const AboutUs = ({ reviews }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -264,7 +264,10 @@ const AboutUs = ({ teams }) => {
         innerClasses="d-padding-l d-padding-r d-margin-t"
       />
 
-      <ClientSayings paddingClasses="d-padding-l d-padding-r d-padding-b d-padding-t" />
+      <ClientSayings
+        reviews={reviews}
+        paddingClasses="d-padding-l d-padding-r d-padding-b d-padding-t"
+      />
 
       {/* <ProjectsCompleted className="about-page" /> */}
 
@@ -278,18 +281,24 @@ const AboutUs = ({ teams }) => {
 export default AboutUs;
 
 export async function getServerSideProps({ params, query }) {
-  const team = await client.query({
-    query: GALLERYBYTITLE,
-    variables: {
-      title: "Team",
-    },
+  // const team = await client.query({
+  //   query: GALLERYBYTITLE,
+  //   variables: {
+  //     title: "Team",
+  //   },
+  // });
+
+  const reviewsData = await client.query({
+    fetchPolicy: "network-only",
+    query: GETREVIEWS,
   });
 
   // Pass post data to the page via props
   return {
     props: {
-      loader: team?.loading,
-      teams: team?.data?.galleryByName,
+      loader: reviewsData?.loading,
+      // teams: team?.data?.galleryByName,
+      reviews: reviewsData?.data?.getGoogleReviews,
     },
   };
 }

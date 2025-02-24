@@ -50,6 +50,26 @@
     /* transform: translateZ(-1px) scale(2); */
     z-index: -1;
 }
+.ratings{
+    column-gap: 15px;
+    cursor: pointer;
+    .images-stack{
+        >span{
+            &:not(:nth-child(1)) {
+                margin-left: -10px!important;
+            }
+            img{
+                max-width: 40px!important;
+            }
+        }
+       
+    }
+    .ratings-text{
+        p{
+            font-weight: 500;
+        }
+    }
+}
 .wavepattern{
     background: #fff;
     background-image: url(/newimages/menubg.svg);
@@ -764,7 +784,7 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
             column-gap: 12px;
             > div{
                 &:first-child{
-                    max-width: 100px;
+                    max-width: 50px;
                     width: 100%;
                     img{
                         max-width: 100%;
@@ -986,5 +1006,48 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
     [style*="--aspect-ratio"]::before {
       aspect-ratio: calc(var(--aspect-ratio));
     }
+  }
+  
+
+  /* Star Rating Container */
+.star-rating {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Outer stars (grey background) */
+  .stars-outer {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    color: #ccc; /* Grey color for empty stars */
+    letter-spacing: 2px;
+  }
+  
+  /* Inner stars (yellow filled) */
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #f8ce0b; /* Yellow color for filled stars */
+    letter-spacing: 2px;
+  }
+  
+  /* Use Unicode stars */
+  .stars-outer::before {
+    content: "★★★★★"; /* 5 empty stars */
+  }
+  
+  .stars-inner::before {
+    content: "★★★★★"; /* 5 filled stars */
+  }
+  
+  /* Rating text */
+  .rating-text {
+    margin-left: 10px;
+    font-size: 1.2rem;
   }
   

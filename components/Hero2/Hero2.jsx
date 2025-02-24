@@ -3,6 +3,8 @@ import Button from "../Button/Button";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import LazyImage from "../LazyImage";
+import { useQuery } from "@apollo/client";
+import { HEROGALLERY } from "../../graphql/queries";
 const options = {
   type: "slide",
   perPage: 1,

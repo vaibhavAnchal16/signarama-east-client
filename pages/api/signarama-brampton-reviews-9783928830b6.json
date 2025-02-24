@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "signarama-brampton-reviews",
+  "private_key_id": "9783928830b6d9da277f4d427d448b757ee6fcbf",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwhNxgYKpwh1cR\nCJ/en5oWKSlvUldkBPTCft+K2jYvsR7fosM89KIflor9TdAyIa+VERx7rhRRGM5r\n+J3HA/rV6/A6OZBoQJMIS5Zgl8QiZCNvEAQOSTFAZW9dql8Ujk7DyOIOtij2NmVt\n2BLzHC7tSvX0yIAJyZCP2imnj9IyXUJhsgviGYq1ZevP2qjACLMk08hdTgegSyOB\ntk+cvTHQ8pXTYQaTU4AMJZ1pVpr704Flxp4UfWKVLVxP1Jxju/utcsmw3akQ3Yi7\n+zSRvGCitl661Hj2iytMyxo2he0y8ZITZvOpdnNqZOEpnMy8ox/Q3gANM2VqRTvI\n/1yZw3DpAgMBAAECggEADSpbpXSQQcRWYhbalaghvfVj+cGScwtLlhYQZjLQR85W\nFyf0l99HGEQKKcpb9OE+T0fvb+oT6diHzNXGLsnFM59dU3pnot7uGHhKxvmKz2XY\nnrf7FXWwDrWCEOJcJRRYG5IoCiDb/UEhX4f2IdvAREKLBa7OnexCs/f5k13Ot6LM\n87c1Ec2npdzePG7XoNik2wNIM1glzHOCt23YTSzSp651YRfKu9P9POFKO02aoY19\n0ItmBeBTskv+F5RimrWEh7pEdkQWO5hZmbK4LsWRkVvTS7KgHJzQeOTZtl79+TtY\nPjk3WsITyv4sdRzEIzn52EuAJ/Kd8MGrbzkamuLNgQKBgQD3t8bYuVDIaS0lkspn\nXvvnrPLi95vTQ/6Q3hKsDrKffIzDgtYRyEKnc86ZGilbxduV2aMTZY1Ice0Nl9gQ\nUhh+vUV3f0hWZckgfsPpz2qQvAIp6qSbphxna0CS2tTB+80qcEolMfNMYLyi1faw\no2K4ZvbGy2h6KGLQ5K9SCsAE/QKBgQC2a7DrdbwdCIdUNNY5BAVfmPicJZK4hN9C\n4Mgazrcz0nQ4kg16rc3Aqto0q8f17rwJ0TU20czTMRgQhZQa/YVcZtAWQDgSlIdb\nJLBHv4EjwSG8luUV6se+Ip/Cr3PE+KT0wMi3oix/mNjf4gouiMzq2ysTXiNveuMJ\nOLXCSMJ1XQKBgQDnQbvzC13tGrM5BobKZhQJPp4pYTspyapXl9oaokYDOgU3aGds\nhmYjaauPpqrBsD7E8D6blwyEe0bwj7b31YxklVHKsxrW/YL8QRuopSg5Iitq8lDl\ntfeCXNAVyREiX24zlkzB2JXn0c+IvPLmCEHbINR01eQdVqKZnURG9R46CQKBgDz9\n1LFlM/ghGd41rEpz5bgI1Vaf2WaIRn192mncI7TX8LPZYVhbNCfu9/YUWU8I+yXt\nJPWnP+x8xacAgnxjt2sllP1bi2Pq9TasFaRniy4BLN55NS8WyKHxwai+MN7yo3SR\n4IpFVstyt1BjqzPT2W/Mx6I6H27uj2pN47eJzDqhAoGAS6sAulotlIgB1mQkrLLa\n4aaa75DZiNuQVsaDu4lxU9o2SxmVo7bHphlLzHzM8+awEHi+JHBiHhffm77iD66f\n6yVjDqlY/Rhq1XLtDyZOZKndrRh33q/lwaKbqZy1M825xsLSKgRWgOUB4XA3f7TI\n9p6pucWccOLqjuZCiNHcYiM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "signarama-brampton-reviews@signarama-brampton-reviews.iam.gserviceaccount.com",
+  "client_id": "108614078482005998470",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/signarama-brampton-reviews%40signarama-brampton-reviews.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com",
+  "redirect_uris": ["http://localhost:4000"]
+}

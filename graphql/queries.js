@@ -163,3 +163,15 @@ export const HEROGALLERY = gql`
     heroGalleryImages
   }
 `;
+
+export const GETREVIEWS = gql`
+  query GetGoogleReviews {
+    getGoogleReviews {
+      _id
+      reviewLink
+      reviews
+      reviewsCount
+      totalRating
+    }
+  }
+`;
