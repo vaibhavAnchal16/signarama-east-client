@@ -46,7 +46,7 @@ export default function Home({
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero2 images={heroGallery?.gallery?.images} />
+      <Hero2 images={heroGallery?.gallery?.images} reviews={reviews} />
       {/* <Hero /> */}
       <Process />
 
