@@ -64,7 +64,7 @@ const Blog = ({ blog }) => {
             "@type": "BlogPosting",
             mainEntityOfPage: {
               "@type": "WebPage",
-              // "@id": `${location.href}`,
+              "@id": `https://signarama-bramptonwest.ca/blog/${blog?.slug}`,
             },
             headline: blog?.title,
             description: blog?.seoData?.seoDescription,

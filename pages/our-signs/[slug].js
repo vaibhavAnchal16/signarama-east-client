@@ -134,6 +134,7 @@ export default Signs;
 export async function getServerSideProps(context) {
   const { slug } = context.query;
   const { data, loading } = await client.query({
+    fetchPolicy: "network-only",
     query: SIGN,
     variables: {
       slug,

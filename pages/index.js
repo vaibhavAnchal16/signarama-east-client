@@ -85,7 +85,7 @@ export async function getServerSideProps({ params, query }) {
     },
   });
   const trending = await client.query({
-    fetchPolicy: "no-cache",
+    fetchPolicy: "network-only",
     query: BLOGS,
     variables: {
       page: 1,
@@ -97,7 +97,7 @@ export async function getServerSideProps({ params, query }) {
     },
   });
   const recent = await client.query({
-    fetchPolicy: "no-cache",
+    fetchPolicy: "network-only",
     query: BLOGS,
     variables: {
       page: 1,

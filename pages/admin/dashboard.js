@@ -1,62 +1,42 @@
 import { useEffect } from "react";
 import AdminLayout from "../../components/AdminLayout";
+import { useMutation, useQuery } from "@apollo/client";
+import { ADDREVIEWDATA } from "../../graphql/mutations";
+import { toast } from "react-toastify";
+import Button from "../../components/Button/Button";
+import { GETREVIEWS } from "../../graphql/queries";
 
 const Dashboard = () => {
-  // const getReview = useCallback(async () => {
-  //   const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY; // Store your API key in a .env file
-  //   const PLACE_ID = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID; // Replace with your place ID
-  //   try {
-  //     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=name,rating,reviews&key=${API_KEY}`;
-  //     const response = await fetch(url);
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP error! status: ${response.status}`);
-  //     }
+  const [refetchreviews] = useMutation(ADDREVIEWDATA);
+  const { data, loading, error } = useQuery(GETREVIEWS);
 
-  //     if (response.data.result) {
-  //       console.log("Business Name:", response.data.result.name);
-  //       console.log("Rating:", response.data.result.rating);
-  //       console.log("Reviews:");
-  //       response.data.result.reviews.forEach((review, index) => {
-  //         console.log(
-  //           `\n${index + 1}. ⭐ ${review.rating} - ${review.author_name}`
-  //         );
-  //         console.log(review.text);
-  //       });
-  //     } else {
-  //       console.log("No reviews found or invalid place ID.");
-  //     }
-  //   } catch (error) {
-  //     console.error(
-  //       "Error fetching reviews:",
-  //       error.response?.data || error.message
-  //     );
-  //   }
-  // }, []);
-
-  useEffect(
-    () => {
-      // getReview();
-    },
-    [
-      // getReview
-    ]
-  );
-
+  if (loading) return <div>Loading...</div>;
   return (
     <div>
-      {/* <button
-        onClick={async (e) => {
-          const auth = await fetcher(`/api/getauthcode/`);
-          console.log(auth);
-          const client = await auth.getClient();
-          const projectId = await auth.getProjectId();
-          const url = `https://dns.googleapis.com/dns/v1/projects/${projectId}`;
-          const res = await client.request({ url });
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          marginBottom: "20px",
         }}
       >
-        Get TOken
-      </button> */}
-      Manage Review
+        <Button
+          type={`fill`}
+          onClick={async (e) => {
+            e.preventDefault();
+            await refetchreviews();
+            toast.success("Reviews refetched successfully");
+          }}
+        >
+          Refetch Latest Reviews
+        </Button>
+      </div>
+      <div>
+        {data?.getGoogleReviews && (
+          <pre>{JSON.stringify(data?.getGoogleReviews, null, 2)}</pre>
+        )}
+      </div>
     </div>
   );
 };

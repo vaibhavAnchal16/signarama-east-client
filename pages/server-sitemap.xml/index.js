@@ -45,9 +45,9 @@ export const getServerSideProps = async (ctx) => {
       lastmod: new Date().toISOString(),
     },
   ];
-  const galleryImages = signs?.data?.signs?.signs?.reduce((acc, item) => {
-    return [...acc, ...item.gallery?.images];
-  }, []);
+  // const galleryImages = signs?.data?.signs?.signs?.reduce((acc, item) => {
+  //   return [...acc, ...item.gallery?.images];
+  // }, []);
   const newsigns = signs?.data?.signs?.signs?.map((item) => ({
     loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}our-signs$/${item.slug}`,
     lastmod: item?.updatedAt,
@@ -60,9 +60,9 @@ export const getServerSideProps = async (ctx) => {
     ...staticPages,
     ...newblogs,
     ...newsigns,
-    ...galleryImages?.map((item) => ({
-      loc: item.replace(/\/v\d+\//, "/f_auto/").replace(/\.\w+$/, ".webp"),
-    })),
+    // ...galleryImages?.map((item) => ({
+    //   loc: item.replace(/\/v\d+\//, "/f_auto/").replace(/\.\w+$/, ".webp"),
+    // })),
   ];
 
   return getServerSideSitemap(ctx, fields);

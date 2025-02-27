@@ -88,9 +88,16 @@ const Blogs = () => {
         "bold",
         "color",
         "italic",
+        "strikethrough",
+        "subscript",
+        "superscript",
+        "code",
         "link",
         "bulletedList",
         "numberedList",
+        "todoList",
+        "outdent",
+        "indent",
         "|",
         "blockQuote",
         "insertTable",
@@ -292,7 +299,7 @@ const Blogs = () => {
                       className={trending ? `active` : ``}
                     >
                       {" "}
-                      Trending Story
+                      Add to Success Stories
                     </button>
                     <button
                       type="button"

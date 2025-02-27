@@ -176,6 +176,7 @@ export const ADDREVIEWDATA = gql`
     addReviewData(ReviewData: $reviewData) {
       _id
       reviewLink
+      reviews
       reviewsCount
       totalRating
     }
