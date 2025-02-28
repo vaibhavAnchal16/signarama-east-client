@@ -135,7 +135,7 @@ const Footer = ({ recentBlogs }) => {
       <div className="credit-wrapper">
         <div className="credit-inner">
           <div>
-            <p> Designed and Developed by Prudent Analytics. &copy; 2022</p>
+            <p> Designed and Developed by Prudent Analytics. &copy; 2025</p>
           </div>
         </div>
       </div>

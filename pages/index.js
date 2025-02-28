@@ -39,10 +39,12 @@ export default function Home({
     <div>
       {/* <div className="parallax-background"></div> */}
       <Head>
-        <title>Sign Company Toronto | Sign A Rama Toronto | Custom Signs</title>
+        <title>
+          Sign Company Brampton | Custom Signs | Signarama Brampton West
+        </title>
         <meta
           name="description"
-          content="Sign A Rama Toronto is a premier sign company based in Toronto delivering high-end custom signs for businesses in and around Toronto. Call us Today!"
+          content="Signarama Brampton West: Your local sign shop in Brampton, Ontario for custom signs, banners, vehicle wraps, and more. We provide comprehensive signage solutions for businesses of all sizes."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
