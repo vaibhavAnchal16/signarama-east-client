@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import client from "../apollo-client";
 import { MYPROFILE } from "../graphql/queries";
 import { ToastContainer } from "react-toastify";
+import Link from "next/link";
 
 export default function AdminLayout({ children }) {
   const router = useRouter();
@@ -73,10 +74,15 @@ export default function AdminLayout({ children }) {
                     className={router.pathname === route?.link ? `active` : ``}
                   >
                     {" "}
-                    <span href={route?.link} onClick={handleClick}>
-                      {" "}
-                      {route?.name}{" "}
-                    </span>{" "}
+                    <Link
+                      style={{
+                        textDecoration: "none",
+                        display: "block",
+                      }}
+                      href={route?.link}
+                    >
+                      <span>{route?.name}</span>
+                    </Link>{" "}
                   </li>
                 ))}
               </ul>

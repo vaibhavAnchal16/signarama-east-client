@@ -157,12 +157,12 @@ const Header = () => {
                               <ul>
                                 {navItem?.signs?.map((item, i) => (
                                   <li key={i}>
-                                    <a
+                                    <Link
                                       href={`/our-signs/${item?.slug}`}
                                       key={i}
                                     >
-                                      {item?.title}{" "}
-                                    </a>
+                                      <a>{item?.title} </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>

@@ -12,6 +12,10 @@
  .ck.ck-editor__main{
   >.ck-editor__editable{
     min-height: 300px;
+    padding: 0px 30px;
+    p{
+      color: #000;
+    }
   }
  }
  #adminlayout .admin-content{
@@ -46,11 +50,12 @@
     padding: 10px px;
  }
  #adminlayout .admin-side-float ul > li{
-    /* margin:10px 0px; */
-    padding: 10px 10px;
     position: relative;
     cursor: pointer;
  }
+  #adminlayout .admin-side-float ul > li > span{
+    padding: 10px 10px;
+  }
  #adminlayout .admin-side-float ul > li.active{
     background-color: var(--dark-bg-text);
     color: var(--red-bg);

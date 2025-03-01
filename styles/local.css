@@ -1,7 +1,10 @@
 
 
-ul {
-    list-style: none;
+body:not(:has(.ck-editor)){
+    ul {
+        list-style: none;
+    }
+    
 }
 
 

@@ -146,12 +146,6 @@ const Blog = ({ blog }) => {
               alignItems: "flex-start",
             }}
           >
-            {/* <div className="hero-text">
-              <h1 className="d-margin-b">Need Sign ? </h1>
-              <Button href={`/contact-us`} type="fill full-width">
-                Schedule a Call
-              </Button>
-            </div> */}
             <div
               className="hero-text full-width"
               style={{
@@ -164,7 +158,7 @@ const Blog = ({ blog }) => {
               ></div>
               <div className="d-flex d-flex-center d-margin-t">
                 <Button href={`/contact-us`} type="fill">
-                  Schedule a Call
+                  Contact us
                 </Button>
               </div>
             </div>
