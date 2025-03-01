@@ -181,8 +181,9 @@ $mobile: 767px;
                 border-color: var(--lite-bg-text);
                 &:hover{
                     color: var(--dark-bg-text);
+                    border-color: var(--red-bg);
                     &::before{
-                        background-color: var(--lite-bg-text);
+                        background-color: var(--red-bg);
                     }
                     &::after{
                         background-color: transparent;

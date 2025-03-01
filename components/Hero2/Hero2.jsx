@@ -196,7 +196,7 @@ export default function Hero2({ images = [], reviews }) {
                   style={{
                     textDecoration: "none",
                   }}
-                  href={reviews?.reviewLink}
+                  href={`https://www.google.com/search?hl=en-IN&gl=in&q=Signarama+Brampton,+Sign+A+Rama,+289+Rutherford+Rd+S+Unit15,+Brampton,+ON+L6W+3R9,+Canada&ludocid=6132929955006408090&lsig=AB86z5W8WhLSkXAimniua77FJA_Q&hl=en&gl=IN%23lrd=0x882b3e3c79e5657d:0x551c8b4ce882659a,1#lrd=0x882b3e3c79e5657d:0x551c8b4ce882659a,1,,,,`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -214,12 +214,6 @@ export default function Hero2({ images = [], reviews }) {
                     <div className="ratings-text">
                       <Stars />
                     </div>
-                    {/* <img
-                              style={{
-                                maxWidth: "768px",
-                              }}
-                              src="/newimages/ratings.png"
-                            /> */}
                   </div>
                 </a>
               </div>

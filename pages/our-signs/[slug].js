@@ -41,6 +41,18 @@ const Signs = ({ loading, sign }) => {
       <Head>
         <title>{sign?.seoData?.seoTitle}</title>
         <meta name="description" content={sign?.seoData?.seoDescription} />
+        <meta property="og:type" content="og:product" />
+        <meta property="og:title" content={sign?.title} />
+        <meta
+          property="og:description"
+          content={sign?.seoData?.seoDescription}
+        />
+        <meta
+          property="og:url"
+          content={`https://signarama-bramptonwest.ca/${sign?.slug}`}
+        />
+        <meta property="og:image" content={sign?.featuredImage} />
+
         {sign?.seoData?.structuredData && (
           <script type="application/ld+json">
             {sign?.seoData?.structuredData}

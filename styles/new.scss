@@ -545,6 +545,59 @@ body{
         }
     }
 }
+.featured-outer-space{
+    .featured-outer-space-text{
+        >div{
+            >h1{
+                &::after{
+                    content: "";
+                    display: block;
+                    width: 130px;
+                    height: 2px;
+                    background: var(--red-bg);
+                    margin: 0px 0px auto;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
+.faq-outer-space {
+    .faq-outer-space-text{
+        >div{
+            >h1{
+                &::after{
+                    content: "";
+                    display: block;
+                    width: 130px;
+                    height: 2px;
+                    background: var(--red-bg);
+                    margin: 0px 0px auto;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
+}
+.news-outer-space{
+    .news-outer-space-text{
+        >div{
+            div{
+                >h1{
+                    &::after{
+                        content: "";
+                        display: block;
+                        width: 130px;
+                        height: 2px;
+                        background: var(--red-bg);
+                        margin: 0px 0px auto;
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
 .services-outer-space{
     position: relative;
     .services-outer-space-text{
@@ -895,8 +948,8 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
 .howsewingworks-inner {
     .howsewingworksbox{
         img{
-            max-width: 150px;
-            height: 150px;
+            max-width: 170px;
+            height: 170px;
             object-fit: contain;
             width: 100%;
             border-radius: 100%;

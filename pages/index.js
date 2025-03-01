@@ -46,6 +46,18 @@ export default function Home({
           name="description"
           content="Signarama Brampton West: Your local sign shop in Brampton, Ontario for custom signs, banners, vehicle wraps, and more. We provide comprehensive signage solutions for businesses of all sizes."
         />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={` Sign Company Brampton | Custom Signs | Signarama Brampton West`}
+        />
+        <meta
+          property="og:description"
+          content={`Signarama Brampton West: Your local sign shop in Brampton, Ontario for custom signs, banners, vehicle wraps, and more. We provide comprehensive signage solutions for businesses of all sizes.`}
+        />
+        <meta property="og:url" content={`https://signarama-bramptonwest.ca`} />
+        <meta property="og:image" content={heroGallery?.gallery?.images[0]} />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero2 images={heroGallery?.gallery?.images} reviews={reviews} />

@@ -57,7 +57,17 @@ const Blog = ({ blog }) => {
       <Head>
         <title>{blog?.seoData?.seoTitle}</title>
         <meta name="description" content={blog?.seoData?.seoDescription} />
-
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={blog?.title} />
+        <meta
+          property="og:description"
+          content={blog?.seoData?.seoDescription}
+        />
+        <meta
+          property="og:url"
+          content={`https://signarama-bramptonwest.ca/blog/${blog?.slug}`}
+        />
+        <meta property="og:image" content={blog?.featuredImage} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org/",

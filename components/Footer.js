@@ -1,7 +1,33 @@
 import Link from "next/link";
 import React from "react";
 import { Wave } from "./Helpers/Icons";
+import Image from "next/image";
 const Footer = ({ recentBlogs }) => {
+  const Stars = () => {
+    return (
+      <div>
+        <div class="star-rating">
+          <div class="stars-outer">
+            <div
+              class="stars-inner"
+              style={{
+                width: `${(recentBlogs?.reviews?.totalRating / 5) * 100}%`,
+              }}
+            ></div>
+          </div>
+        </div>
+        <p
+          style={{
+            color: "white",
+          }}
+        >
+          {recentBlogs?.reviews?.totalRating}/5 Based on{" "}
+          {recentBlogs?.reviews?.reviewsCount}+ reviews
+        </p>
+      </div>
+    );
+  };
+
   return (
     <div className="footer-outer-layer">
       <footer className="footer-wrapper d-padding">
@@ -126,6 +152,36 @@ const Footer = ({ recentBlogs }) => {
                       <p> Saturday & Sunday Closed</p>{" "}
                     </li>
                   </ul>
+                  <div className="d-flex d-flex-wrap d-column-gap d-row-gap d-flex-start d-margin-t">
+                    <a
+                      style={{
+                        textDecoration: "none",
+                      }}
+                      href={`https://www.google.com/search?hl=en-IN&gl=in&q=Signarama+Brampton,+Sign+A+Rama,+289+Rutherford+Rd+S+Unit15,+Brampton,+ON+L6W+3R9,+Canada&ludocid=6132929955006408090&lsig=AB86z5W8WhLSkXAimniua77FJA_Q&hl=en&gl=IN%23lrd=0x882b3e3c79e5657d:0x551c8b4ce882659a,1#lrd=0x882b3e3c79e5657d:0x551c8b4ce882659a,1,,,,`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {recentBlogs?.reviews?.reviews && (
+                        <div className="ratings d-flex d-flex-wrap d-flex-start">
+                          <div className="images-stack">
+                            {recentBlogs?.reviews?.reviews?.map(
+                              ({ profile_photo_url }, index) => (
+                                <Image
+                                  key={index}
+                                  src={`${profile_photo_url}`}
+                                  width={100}
+                                  height={100}
+                                />
+                              )
+                            )}
+                          </div>
+                          <div className="ratings-text">
+                            <Stars />
+                          </div>
+                        </div>
+                      )}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

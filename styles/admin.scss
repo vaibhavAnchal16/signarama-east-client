@@ -9,6 +9,11 @@
     max-width: 20%;
     width: 100%;
  }
+ .ck.ck-editor__main{
+  >.ck-editor__editable{
+    min-height: 300px;
+  }
+ }
  #adminlayout .admin-content{
     max-width: 80%;
     width: 100%;

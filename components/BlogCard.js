@@ -54,28 +54,25 @@ const BlogCard = ({ title, image, slug, description, type }) => {
   return (
     <Link href={slug}>
       <div className="blog-card-wrapper d-margin-b">
-        <div className="blog-card-inner">
-          <div className="image">
-            <LazyImage
-              style={{ maxWidth: "100%", cursor: "pointer" }}
-              src={image}
-              alt={title}
-              // link="/"
-            />
+        <Button
+          href={slug}
+          type={`full-width`}
+          style={{ padding: "0", border: "none" }}
+        >
+          <div className="blog-card-inner">
+            <div className="image">
+              <LazyImage
+                style={{ maxWidth: "100%", cursor: "pointer" }}
+                src={image}
+                alt={title}
+                // link="/"
+              />
+            </div>
+            <div className="context">
+              <h3 className="s-margin-t"> {title} </h3>
+            </div>
           </div>
-          <div className="context">
-            <h3 className="s-margin-t"> {title} </h3>
-            {/* <hr /> */}
-            {/* <button>Read More</button> */}
-            {/* <p
-          
-          >
-            This is some description that we will pull directly from the back
-            end of the server and show it here as short description of this
-            blog.
-          </p> */}
-          </div>
-        </div>
+        </Button>
       </div>
     </Link>
   );

@@ -128,8 +128,8 @@ const ContactUs = ({ query }) => {
             </div>
 
             <h2 className="s-margin-b font-thick">
-              <span className="font-bold">Visit Our Office:</span> See examples
-              of our work and discuss your vision in person.
+              <span className="font-bold">Our Office Address:</span> See
+              examples of our work and discuss your vision in person.
             </h2>
 
             <div>

@@ -18,6 +18,7 @@ import BuildingSomething from "../components/BuildingSomething/BuildingSomething
 import WhyChooseSignarama from "../components/WhyChooseSignarama/WhyChooseSignarama";
 import { NewsIcon } from "../components/icons";
 import { BiSearchAlt } from "react-icons/bi";
+import Button from "../components/Button/Button";
 
 const AboutUs = ({ reviews }) => {
   const router = useRouter();
@@ -144,7 +145,7 @@ const AboutUs = ({ reviews }) => {
       </div>
       <WhyChooseSignarama
         outerClass="hero-outer-space"
-        title={`<h1 className="d-margin-b">Our <span className="highlighted">Services</span></h1><h2 class="d-margin-b">We offer a comprehensive range of signage solutions tailored to meet your specific needs, including:</h2>`}
+        title={`<h1 className="d-margin-b">Our <span className="highlighted">Signs</span></h1><h2 class="d-margin-b">We offer a comprehensive range of signage solutions tailored to meet your specific needs, including:</h2>`}
       >
         <div className="hero-text full-width">
           <ul className="about-list">
@@ -207,6 +208,11 @@ const AboutUs = ({ reviews }) => {
               <p>And much more! Including window frosting.</p>
             </li>
           </ul>
+          <div className="d-flex d-flex-center d-margin-t">
+            <Button href={`/our-signs`} type="fill">
+              Explore Our Signs
+            </Button>
+          </div>
         </div>
       </WhyChooseSignarama>
 

@@ -11,7 +11,7 @@ export default function Button({
   return (
     <div className={`btn-wrapper ${type ?? ``}`}>
       {href ? (
-        <a className="btn-component" href={href} target={target}>
+        <a className="btn-component" href={href} target={target} {...props}>
           <span>{children}</span>
           {icon && (
             <span className="icon">

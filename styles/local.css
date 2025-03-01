@@ -261,15 +261,16 @@ body {
     position: relative;
 }
 
-.menu>ul>li span {
+.menu>ul>li a {
     cursor: pointer;
     position: relative;
     display: inline-flex;
     align-items: center;
-    /* color: var(--lite-font); */
+    text-decoration: none;
     color:var(--white-font);
+    font-weight: 400;
 }
-.menu .submenu ul>li span::before{
+.menu .submenu ul>li a::before{
     content: "";
     position: relative;
     display: inline-block;
@@ -353,12 +354,16 @@ body {
     gap: 10%;
 }
 
-footer.footer-wrapper>.footer-inner * {
-    transition: all 0.2s ease-in-out;
+footer.footer-wrapper>.footer-inner {
+    p,a, li {
+        transition: all 0.2s ease-in-out;
     color: var(--dark-bg-text);
     font-size: 16px;
     line-height: 22px;
     font-weight: 300;
+
+    }
+    
 }
 footer.footer-wrapper>.footer-inner .footer-section-heading{
     margin: 0px 0px 20px;
@@ -448,7 +453,7 @@ body {
   .menu>ul li {
       font-size: 16px;
   }
-  .menu>ul li:hover > span{
+  .menu>ul li:hover > a{
     text-decoration: underline;
     color: var(--red-bg);
   }
@@ -512,7 +517,7 @@ body {
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover .context h3{
     color: #b60521;
   }
-  .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover::after{
+  /* .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper .blog-card-inner:hover::after{
     content: "signarama brampton";
     position: absolute;
     bottom: -10px;
@@ -525,7 +530,7 @@ body {
     width: 50%;
     height: 1px;
     background-color: #b60521;
-  }
+  } */
   .sign-blogs-wrapper .sign-blogs-inner .blog-card-wrapper {
       padding: 10px 15px;
   }

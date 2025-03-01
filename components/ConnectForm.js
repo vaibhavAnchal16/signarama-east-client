@@ -75,13 +75,11 @@ const ConnectForm = (props) => {
   return (
     <div className="form-wrapper login-info" {...props}>
       <div className="form-header uplifted-content">
-        <h1 className="s-margin-b  d-flex-center d-column-gap">
-          Let's <span className="highlighted">Connect.</span>
-        </h1>
-        <h1 className="s-margin-b d-flex-center d-column-gap">
-          Let's Do it Together.
-        </h1>
-        <h2 className="d-margin-b">Contact Us.</h2>
+        <h1 className="d-margin-b">Contact Us.</h1>
+        <h2 className="s-margin-b  d-flex-center d-column-gap">
+          Let's <span className="highlighted">Connect.</span> Let's Do it
+          Together.
+        </h2>
       </div>
 
       <div className="form-inner">

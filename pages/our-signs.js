@@ -27,7 +27,7 @@ export default function OurSigns({ signs }) {
               Design, Craft, and Install - All Under One Roof
             </h2>
             <p className="l-margin-b">
-              From concept to completion, Signarama Toronto is your one-stop
+              From concept to completion, Signarama Brampton is your one-stop
               shop. We have three in house graphic designers ready to work with
               you. Our comprehensive services include in-house design, expert
               fabrication, and flawless installation. We handle every detail,

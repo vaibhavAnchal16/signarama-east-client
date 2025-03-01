@@ -4,11 +4,12 @@ import { useEffect } from "react";
 import LazyImage from "./LazyImage";
 import client from "../apollo-client";
 import { SIGNS } from "../graphql/queries";
+import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const _ = require("lodash");
   const router = useRouter();
-  const [signs, setSigns] = useState([]);
   const [menu, setMenu] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
   useEffect(() => {
@@ -48,10 +49,6 @@ const Header = () => {
           filters: null,
         },
       });
-      setSigns({
-        signs: data?.signs?.signs,
-        loading,
-      });
       setMenu([
         {
           name: "Home",
@@ -83,7 +80,7 @@ const Header = () => {
         },
       ]);
     })();
-  }, [setSigns, setMenu]);
+  }, [setMenu]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -100,97 +97,101 @@ const Header = () => {
     }
   };
 
-  if (signs?.loading) return "Loading";
   return (
-    <>
-      <div className="header-wrapper">
-        <div className="header-inner">
-          <div className="header">
-            <div className="logo">
-              <LazyImage
-                style={{ maxWidth: "100%", cursor: "pointer" }}
-                src="/images/logo.png"
+    <div className="header-wrapper">
+      <div className="header-inner">
+        <div className="header">
+          <div className="logo">
+            <Link href={"/"}>
+              <Image
+                style={{
+                  maxWidth: "100%",
+                  cursor: "pointer",
+                }}
+                src={"/images/logo.png"}
                 alt="Signarama Toronto"
-                link="/"
+                width={250}
+                height={47}
               />
-            </div>
+            </Link>
+          </div>
 
-            <div className={`menu ${mobileMenu ? `open-mobile` : ``}`}>
-              <ul>
-                {menu?.map((menuItem, i) => {
-                  return (
-                    <li
-                      key={i}
-                      onMouseOver={(e) => {
-                        document
-                          .querySelectorAll(".menu ul > li")
-                          .forEach(function (el) {
-                            el.classList.remove("open");
-                          });
-                        if (menuItem?.subMenu) {
-                          e.currentTarget.classList.add("open");
-                        }
-                      }}
+          <div className={`menu ${mobileMenu ? `open-mobile` : ``}`}>
+            <ul>
+              {menu?.map((menuItem, i) => {
+                return (
+                  <li
+                    key={i}
+                    onMouseOver={(e) => {
+                      document
+                        .querySelectorAll(".menu ul > li")
+                        .forEach(function (el) {
+                          el.classList.remove("open");
+                        });
+                      if (menuItem?.subMenu) {
+                        e.currentTarget.classList.add("open");
+                      }
+                    }}
+                  >
+                    <Link
+                      // onClick={handleClick}
+                      href={menuItem?.link}
                     >
-                      <span onClick={handleClick} href={menuItem?.link}>
-                        {menuItem?.name}
-                      </span>
-                      {menuItem?.subMenu ? (
-                        <div
-                          className="submenu open"
-                          onMouseLeave={(e) => {
-                            if (menuItem?.subMenu) {
-                              e.currentTarget
-                                .closest("li")
-                                .classList.remove("open");
-                            }
-                          }}
-                        >
-                          <div className="ghost">
-                            {menuItem?.subMenu?.map((navItem, ind) => (
-                              <div className={`item-${ind}`} key={ind}>
-                                <h2>{navItem?.name}</h2>
-                                <ul>
-                                  {navItem?.signs?.map((item, i) => (
-                                    <li key={i}>
-                                      {" "}
-                                      <span
-                                        href={`/our-signs/${item?.slug}`}
-                                        onClick={handleClick}
-                                      >
-                                        {" "}
-                                        {item?.title}{" "}
-                                      </span>{" "}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
+                      {menuItem?.name}
+                    </Link>
+                    {menuItem?.subMenu ? (
+                      <div
+                        className="submenu open"
+                        onMouseLeave={(e) => {
+                          if (menuItem?.subMenu) {
+                            e.currentTarget
+                              .closest("li")
+                              .classList.remove("open");
+                          }
+                        }}
+                      >
+                        <div className="ghost">
+                          {menuItem?.subMenu?.map((navItem, ind) => (
+                            <div className={`item-${ind}`} key={ind}>
+                              <h2>{navItem?.name}</h2>
+                              <ul>
+                                {navItem?.signs?.map((item, i) => (
+                                  <li key={i}>
+                                    <a
+                                      href={`/our-signs/${item?.slug}`}
+                                      key={i}
+                                    >
+                                      {item?.title}{" "}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
                         </div>
-                      ) : (
-                        ""
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div
-              className="hamburger-icon"
-              onClick={(e) => setMobileMenu(!mobileMenu)}
-            >
-              <div id="nav-icon3" className={mobileMenu ? `open` : ``}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div
+            className="hamburger-icon"
+            onClick={(e) => setMobileMenu(!mobileMenu)}
+          >
+            <div id="nav-icon3" className={mobileMenu ? `open` : ``}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

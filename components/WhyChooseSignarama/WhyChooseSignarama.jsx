@@ -4,6 +4,7 @@ export default function WhyChooseSignarama({
   outerClass = "hero-outer-space about-us",
   innerClass = "hero-inner-space d-flex d-flex-wrap d-flex-between",
   title = `<h1 className="d-margin-b">Why Choose <span className="highlighted">Signarama</span> Brampton? </h1>`,
+  cta = null,
   children,
 }) {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import client from "../apollo-client";
-import { BLOGS } from "../graphql/queries";
+import { BLOGS, GETREVIEWS } from "../graphql/queries";
 import Footer from "./Footer";
 import Header from "./Header";
 import { ContactForm, Email, Phone } from "./Helpers/Icons";
@@ -15,6 +15,7 @@ export default function Layout({ children }) {
   useEffect(() => {
     (async () => {
       const { data, loading, error } = await client.query({
+        fetchPolicy: "network-only",
         query: BLOGS,
         variables: {
           page: 1,
@@ -25,10 +26,19 @@ export default function Layout({ children }) {
           },
         },
       });
+      const {
+        data: data2,
+        loading: loading2,
+        error: error2,
+      } = await client.query({
+        fetchPolicy: "network-only",
+        query: GETREVIEWS,
+      });
       setRecentBlogs({
-        loading,
+        loading: loading || loading2,
         blogs: data?.blogs?.blogs,
-        error,
+        error: error || error2,
+        reviews: data2?.getGoogleReviews,
       });
     })();
   }, []);

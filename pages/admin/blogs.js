@@ -12,7 +12,7 @@ import Button from "../../components/Button/Button";
 const Blogs = () => {
   const editorRef = useRef();
   const [editorLoaded, setEditorLoaded] = useState(false);
-  const { CKEditor, ClassicEditor, HtmlEmbed } = editorRef.current || {};
+  const { CKEditor, ClassicEditor } = editorRef.current || {};
   const [action, setAction] = useState(null);
   const [blockRichText, setBlockRichText] = useState(true);
   const [description, setDescription] = useState("");
@@ -71,7 +71,7 @@ const Blogs = () => {
   };
 
   const custom_config = {
-    // plugins: [ImageCaptionPlugin, ImageStylePlugin, ImageToolbarPlugin],
+    // plugins: [Alignment],
     extraPlugins: [MyCustomUploadAdapterPlugin, pasteUploadImage],
     fontColor: {
       colors: Colors.map((color) => {

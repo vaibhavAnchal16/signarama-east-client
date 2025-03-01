@@ -7,8 +7,8 @@ export default function Faq2({ className = "" }) {
         <div className="faq-outer-space-text l-margin-b">
           <div>
             <h1 className="d-margin-b">
-              <FaqIcon /> Frequently Asked{" "}
-              <span className="highlighted">Questions</span>
+              Frequently Asked <span className="highlighted">Questions</span>{" "}
+              <FaqIcon />
             </h1>
           </div>
         </div>
