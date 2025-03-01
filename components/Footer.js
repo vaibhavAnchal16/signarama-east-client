@@ -119,7 +119,7 @@ const Footer = ({ recentBlogs }) => {
                   </div>
                   <ul className="officehours">
                     <li>
-                      <p> Monday - Friday 8:30 A.M - 5 P.M</p>
+                      <p> Monday - Friday 09:00 A.M - 05:30 P.M</p>
                     </li>
                     <li>
                       {" "}

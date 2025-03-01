@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { ContactForm, Email, Phone } from "./Helpers/Icons";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function Layout({ children }) {
   const [recentBlogs, setRecentBlogs] = useState({
@@ -181,6 +182,7 @@ export default function Layout({ children }) {
           })}
         </script> */}
       </Head>
+
       <Header />
       {/* <div className="floating-items">
         <div className="floating-items-inner">

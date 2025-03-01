@@ -17,7 +17,7 @@ import { useEffect } from "react";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const tagManagerArgs = {
-      gtmId: "GTM-TDXML5",
+      gtmId: "GTM-PFWLSM3T",
     };
     TagManager.initialize(tagManagerArgs);
   }, []);
@@ -26,10 +26,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="h_QtqfyzK99ssLNCxeTGaDF3joPBXCkYcx00DKFHF58"
-        />
+        /> */}
         <link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
 
