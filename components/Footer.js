@@ -152,6 +152,7 @@ const Footer = ({ recentBlogs }) => {
                       <p> Saturday & Sunday Closed</p>{" "}
                     </li>
                   </ul>
+
                   <div className="d-flex d-flex-wrap d-column-gap d-row-gap d-flex-start d-margin-t">
                     <a
                       style={{
@@ -161,6 +162,17 @@ const Footer = ({ recentBlogs }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      <h3
+                        className="s-margin-b"
+                        style={{
+                          textAlign: "left",
+                          color: "#f0f0f0",
+                          fontWeight: "400",
+                        }}
+                      >
+                        {" "}
+                        Google Reviews
+                      </h3>
                       {recentBlogs?.reviews?.reviews && (
                         <div className="ratings d-flex d-flex-wrap d-flex-start">
                           <div className="images-stack">

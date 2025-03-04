@@ -39,6 +39,15 @@ export default function ClientSayings({
             See how Signarama Brampton has helped businesses like yours achieve
             real results with impactful signage.
           </h2>
+          <h3
+            className="s-margin-b"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            {" "}
+            Google Reviews
+          </h3>
           <div className="d-flex d-flex-wrap d-column-gap d-row-gap d-flex-center">
             <a
               style={{
@@ -49,7 +58,7 @@ export default function ClientSayings({
               rel="noopener noreferrer"
             >
               <div className="ratings d-flex d-flex-wrap d-flex-center">
-                <div className="images-stack">
+                <div className="images-stack d-inline-flex">
                   {reviews?.reviews?.map(({ profile_photo_url }, index) => (
                     <Image
                       key={index}
