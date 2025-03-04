@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { DropZone } from "../../components/Helpers/DropZone";
 import { useMutation, useQuery } from "@apollo/client";
-import { CREATESIGN, UPDATESIGN } from "../../graphql/mutations";
+import { CREATESIGN, REMOVESIGN, UPDATESIGN } from "../../graphql/mutations";
 import Select from "react-select";
 import { GALLERYIDS, SIGNS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
 import { SignTypes } from "../../components/Helpers/StaticData";
 import Button from "../../components/Button/Button";
 import dynamic from "next/dynamic";
+import { toast } from "react-toastify";
 
 const Signs = () => {
   const CustomEditor = dynamic(
@@ -22,6 +23,7 @@ const Signs = () => {
   const [gallerySelected, setGallerySelected] = useState(null);
   const [createsign] = useMutation(CREATESIGN);
   const [updatesign] = useMutation(UPDATESIGN);
+  const [removesignentry] = useMutation(REMOVESIGN);
   const [page, setPage] = useState(null);
   const [filters, setFilters] = useState({});
 
@@ -73,35 +75,56 @@ const Signs = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <Button
-          type={`outline`}
-          style={{
-            padding: "5px 10px",
-            maxWidth: "fit-content",
-            fontSize: "12px",
-          }}
-          onClick={(e) => {
-            setAction({
-              module: "edit",
-              data: {
-                ...row,
-              },
-            });
-            setImage({
-              preview: row?.featuredImage,
-            });
-            setSignTypeSelected(row?.type);
-            setDescription(row?.description);
-            if (row?.gallery) {
-              setGallerySelected({
-                label: row?.gallery?.title,
-                value: row?.gallery?._id,
+        <>
+          <Button
+            type={`outline`}
+            style={{
+              padding: "5px 10px",
+              maxWidth: "fit-content",
+              fontSize: "12px",
+            }}
+            onClick={(e) => {
+              setAction({
+                module: "edit",
+                data: {
+                  ...row,
+                },
               });
-            }
-          }}
-        >
-          Edit{" "}
-        </Button>
+              setImage({
+                preview: row?.featuredImage,
+              });
+              setSignTypeSelected(row?.type);
+              setDescription(row?.description);
+              if (row?.gallery) {
+                setGallerySelected({
+                  label: row?.gallery?.title,
+                  value: row?.gallery?._id,
+                });
+              }
+            }}
+          >
+            Edit{" "}
+          </Button>
+          <Button
+            type={`fill`}
+            style={{
+              padding: "5px 10px",
+              maxWidth: "fit-content",
+              fontSize: "12px",
+            }}
+            onClick={async (e) => {
+              await removesignentry({
+                variables: {
+                  id: row._id,
+                },
+              });
+              toast.success("Sign Deleted");
+              refetch();
+            }}
+          >
+            Delete
+          </Button>
+        </>
       ),
     },
   ];
@@ -145,6 +168,7 @@ const Signs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Sign Created");
                     }
                   } catch (error) {
                     console.log(error);
@@ -161,6 +185,7 @@ const Signs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Sign Updated");
                     }
                   } catch (error) {
                     console.log(error);

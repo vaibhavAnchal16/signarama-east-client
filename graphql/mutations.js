@@ -182,3 +182,18 @@ export const ADDREVIEWDATA = gql`
     }
   }
 `;
+
+export const REMOVEBLOG = gql`
+  mutation RemoveBlog($id: ID!) {
+    removeBlog(_id: $id) {
+      _id
+    }
+  }
+`;
+export const REMOVESIGN = gql`
+  mutation RemoveSign($id: ID!) {
+    removeSign(_id: $id) {
+      _id
+    }
+  }
+`;

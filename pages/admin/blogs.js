@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import AdminLayout from "../../components/AdminLayout";
 import { DropZone } from "../../components/Helpers/DropZone";
 import { useMutation, useQuery } from "@apollo/client";
-import { CREATEBLOG, UPDATEBLOG } from "../../graphql/mutations";
+import { CREATEBLOG, REMOVEBLOG, UPDATEBLOG } from "../../graphql/mutations";
 import { BLOGS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 import { Colors } from "../../components/Helpers/Colors";
 import Button from "../../components/Button/Button";
 import dynamic from "next/dynamic";
+import { toast } from "react-toastify";
 
 const Blogs = () => {
   const CustomEditor = dynamic(
@@ -23,6 +24,7 @@ const Blogs = () => {
   const [trending, setTrending] = useState(false);
   const [recentWork, setRecentWork] = useState(false);
   const [createblog] = useMutation(CREATEBLOG);
+  const [removeblogentry] = useMutation(REMOVEBLOG);
   const [updateblog] = useMutation(UPDATEBLOG);
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState({});
@@ -65,31 +67,52 @@ const Blogs = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <Button
-          type={`outline`}
-          style={{
-            padding: "5px 10px",
-            maxWidth: "fit-content",
-            fontSize: "12px",
-          }}
-          onClick={(e) => {
-            setAction({
-              module: "edit",
-              data: {
-                ...row,
-              },
-            });
-            setImage({
-              preview: row?.featuredImage,
-            });
-            setPublished(row?.published);
-            setRecentWork(row?.recentWork);
-            setTrending(row?.trending);
-            setDescription(row?.description);
-          }}
-        >
-          Edit{" "}
-        </Button>
+        <>
+          <Button
+            type={`outline`}
+            style={{
+              padding: "5px 10px",
+              maxWidth: "fit-content",
+              fontSize: "12px",
+            }}
+            onClick={(e) => {
+              setAction({
+                module: "edit",
+                data: {
+                  ...row,
+                },
+              });
+              setImage({
+                preview: row?.featuredImage,
+              });
+              setPublished(row?.published);
+              setRecentWork(row?.recentWork);
+              setTrending(row?.trending);
+              setDescription(row?.description);
+            }}
+          >
+            Edit{" "}
+          </Button>
+          <Button
+            type={`fill`}
+            style={{
+              padding: "5px 10px",
+              maxWidth: "fit-content",
+              fontSize: "12px",
+            }}
+            onClick={async (e) => {
+              await removeblogentry({
+                variables: {
+                  id: row._id,
+                },
+              });
+              toast.success("Blog Deleted");
+              refetch();
+            }}
+          >
+            Delete
+          </Button>
+        </>
       ),
     },
   ];
@@ -133,6 +156,7 @@ const Blogs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Blog Created");
                       setFormLoading(false);
                     }
                   } catch (error) {
@@ -151,6 +175,7 @@ const Blogs = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Blog Updated");
                       setFormLoading(false);
                     }
                   } catch (error) {

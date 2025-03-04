@@ -7,6 +7,7 @@ import DataTable from "react-data-table-component";
 import { DropZoneMultiple } from "../../components/Helpers/DropZoneMultiple";
 import { Trash } from "../../components/Helpers/Icons";
 import Button from "../../components/Button/Button";
+import { toast } from "react-toastify";
 
 const Galleries = () => {
   const [action, setAction] = useState(null);
@@ -170,6 +171,7 @@ const Galleries = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Gallery created successfully");
                     }
                   } catch (error) {
                     console.log(error);
@@ -186,6 +188,7 @@ const Galleries = () => {
                     if (data) {
                       resetForm();
                       refetch();
+                      toast.success("Gallery updated successfully");
                     }
                   } catch (error) {
                     console.log(error);
