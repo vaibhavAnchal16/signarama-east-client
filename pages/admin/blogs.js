@@ -8,11 +8,14 @@ import DataTable from "react-data-table-component";
 import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 import { Colors } from "../../components/Helpers/Colors";
 import Button from "../../components/Button/Button";
+import dynamic from "next/dynamic";
 
 const Blogs = () => {
-  const editorRef = useRef();
-  const [editorLoaded, setEditorLoaded] = useState(false);
-  const { CKEditor, ClassicEditor } = editorRef.current || {};
+  const CustomEditor = dynamic(
+    () => import("./../../components/CustomEditor"),
+    { ssr: false }
+  );
+
   const [action, setAction] = useState(null);
   const [blockRichText, setBlockRichText] = useState(true);
   const [description, setDescription] = useState("");
@@ -49,101 +52,6 @@ const Blogs = () => {
       });
     });
   }, [action]);
-
-  useEffect(() => {
-    editorRef.current = {
-      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      ClassicEditor: require("ckeditor5-build-classic-nextjs"),
-    };
-    setEditorLoaded(true);
-  }, []);
-
-  const MyCustomUploadAdapterPlugin = (editor) => {
-    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
-      return new MyUploadAdapter(loader);
-    };
-  };
-
-  const pasteUploadImage = (editor) => {
-    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
-      return new MyUploadAdapter(loader);
-    };
-  };
-
-  const custom_config = {
-    // plugins: [Alignment],
-    extraPlugins: [MyCustomUploadAdapterPlugin, pasteUploadImage],
-    fontColor: {
-      colors: Colors.map((color) => {
-        return {
-          color,
-        };
-      }),
-    },
-    // toolbar: {
-    // items: [
-    //   "heading",
-    //   "fontColor",
-    //   "|",
-    //   "bold",
-    //   "color",
-    //   "italic",
-    //   "strikethrough",
-
-    //   "code",
-    //   "link",
-    //   "bulletedList",
-    //   "numberedList",
-    //   "todoList",
-    //   "outdent",
-    //   "indent",
-    //   "|",
-    //   "blockQuote",
-    //   "|",
-    //   "imageUpload",
-    //   "ImageTextAlternative",
-    //   "mediaEmbed",
-    //   "undo",
-    //   "redo",
-    // ],
-    // },
-    toolbar: [
-      "heading",
-      "|",
-      "bold",
-      "color",
-      "italic",
-      "underline",
-      "strikethrough",
-      "subscript",
-      "superscript",
-      "|",
-      "alignment",
-      "bulletedList",
-      "numberedList",
-      "todoList",
-      "outdent",
-      "indent",
-      "|",
-      "link",
-      "blockQuote",
-      "insertTable",
-      "codeBlock",
-      "imageUpload",
-      "ImageTextAlternative",
-      "mediaEmbed",
-      "undo",
-      "redo",
-    ],
-
-    table: {
-      contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-    },
-
-    mediaEmbed: {
-      previewsInData: true,
-    },
-  };
 
   const columns = [
     {
@@ -268,28 +176,21 @@ const Blogs = () => {
 
                 <div className="fields-wrapper">
                   <div className="rich-content-wrapper">
-                    {editorLoaded ? (
-                      <>
-                        {blockRichText ? (
-                          <CKEditor
-                            editor={ClassicEditor}
-                            config={custom_config}
-                            className="mt-3 wrap-ckeditor"
-                            data={description}
-                            onChange={(event, editor) => {
-                              const data = editor.getData();
-                              setDescription(data);
-                            }}
-                          />
-                        ) : (
-                          <>
-                            {" "}
-                            <textarea defaultValue={description} />
-                          </>
-                        )}
-                      </>
+                    {blockRichText ? (
+                      <CustomEditor
+                        onChange={(data) => setDescription(data)}
+                        initialData={description}
+                      />
                     ) : (
-                      "loading..."
+                      <>
+                        {" "}
+                        <textarea
+                          defaultValue={description}
+                          onChange={(e) => {
+                            setDescription(e.currentTarget.value);
+                          }}
+                        />
+                      </>
                     )}
                   </div>
                 </div>

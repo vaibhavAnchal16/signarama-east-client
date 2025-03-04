@@ -6,14 +6,15 @@ import { CREATESIGN, UPDATESIGN } from "../../graphql/mutations";
 import Select from "react-select";
 import { GALLERYIDS, SIGNS } from "../../graphql/queries";
 import DataTable from "react-data-table-component";
-import MyUploadAdapter from "../../components/Helpers/MyUploadAdapter";
 import { SignTypes } from "../../components/Helpers/StaticData";
 import Button from "../../components/Button/Button";
+import dynamic from "next/dynamic";
 
 const Signs = () => {
-  const editorRef = useRef();
-  const [editorLoaded, setEditorLoaded] = useState(false);
-  const { CKEditor, ClassicEditor, HtmlEmbed } = editorRef.current || {};
+  const CustomEditor = dynamic(
+    () => import("./../../components/CustomEditor"),
+    { ssr: false }
+  );
   const [action, setAction] = useState(null);
   const [blockRichText, setBlockRichText] = useState(true);
   const [signTypeSelected, setSignTypeSelected] = useState("");
@@ -59,56 +60,6 @@ const Signs = () => {
       });
     });
   }, [action]);
-
-  useEffect(() => {
-    editorRef.current = {
-      CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
-      ClassicEditor: require("ckeditor5-build-classic-nextjs"),
-    };
-    setEditorLoaded(true);
-  }, []);
-
-  const MyCustomUploadAdapterPlugin = (editor) => {
-    editor.plugins.get("FileRepository").createUploadAdapter = (loader) => {
-      return new MyUploadAdapter(loader);
-    };
-  };
-
-  const custom_config = {
-    extraPlugins: [MyCustomUploadAdapterPlugin],
-    toolbar: {
-      items: [
-        "heading",
-        "fontColor",
-        "|",
-        "bold",
-        "color",
-        "italic",
-        "strikethrough",
-        "subscript",
-        "superscript",
-        "code",
-        "link",
-        "bulletedList",
-        "numberedList",
-        "todoList",
-        "outdent",
-        "indent",
-        "|",
-        "blockQuote",
-        "insertTable",
-        "|",
-        "imageUpload",
-        "ImageTextAlternative",
-        "mediaEmbed",
-        "undo",
-        "redo",
-      ],
-    },
-    table: {
-      contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
-    },
-  };
 
   const columns = [
     {
@@ -233,35 +184,25 @@ const Signs = () => {
 
                 <div className="fields-wrapper">
                   <div className="rich-content-wrapper">
-                    {editorLoaded ? (
-                      <>
-                        {blockRichText ? (
-                          <CKEditor
-                            editor={ClassicEditor}
-                            config={custom_config}
-                            className="mt-3 wrap-ckeditor"
-                            data={description}
-                            onChange={(event, editor) => {
-                              const data = editor.getData();
-
-                              setDescription(data);
+                    <>
+                      {blockRichText ? (
+                        <CustomEditor
+                          onChange={(data) => setDescription(data)}
+                          initialData={description}
+                        />
+                      ) : (
+                        <>
+                          {" "}
+                          <textarea
+                            defaultValue={description}
+                            onChange={(e) => {
+                              setDescription(e.currentTarget.value);
                             }}
                           />
-                        ) : (
-                          <>
-                            {" "}
-                            <textarea
-                              defaultValue={description}
-                              onChange={(e) => {
-                                setDescription(e.currentTarget.value);
-                              }}
-                            />
-                          </>
-                        )}
-                      </>
-                    ) : (
-                      "loading..."
-                    )}
+                        </>
+                      )}
+                    </>
+
                     <button
                       type="button"
                       onClick={(_) => setBlockRichText(!blockRichText)}

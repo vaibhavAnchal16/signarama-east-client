@@ -10,24 +10,8 @@ const Signs = ({ loading, sign }) => {
   const createMarkup = (html) => {
     return {
       __html: sanitizeHtml(html, {
-        allowedTags: [
-          "p",
-          "h1",
-          "h2",
-          "h3",
-          "h4",
-          "h5",
-          "strong",
-          "a",
-          "img",
-          "ul",
-          "li",
-          "figure",
-        ],
-        allowedAttributes: {
-          a: ["href"],
-          img: ["src", "alt"],
-        },
+        allowedTags: false,
+        allowedAttributes: false,
         exclusiveFilter: function (frame) {
           return frame.tag === "p" && !frame.text.trim();
         },
