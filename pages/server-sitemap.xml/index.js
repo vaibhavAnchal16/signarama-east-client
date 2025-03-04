@@ -33,7 +33,7 @@ export const getServerSideProps = async (ctx) => {
       lastmod: new Date().toISOString(),
     },
     {
-      loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}/our-signs`,
+      loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}our-signs`,
       lastmod: new Date().toISOString(),
     },
     {
@@ -49,7 +49,7 @@ export const getServerSideProps = async (ctx) => {
   //   return [...acc, ...item.gallery?.images];
   // }, []);
   const newsigns = signs?.data?.signs?.signs?.map((item) => ({
-    loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}our-signs$/${item.slug}`,
+    loc: `${process.env.NEXT_PUBLIC_DOMAIN_URL}our-signs/${item.slug}`,
     lastmod: item?.updatedAt,
   }));
   const newblogs = blogs?.data?.blogs?.blogs?.map((item) => ({
