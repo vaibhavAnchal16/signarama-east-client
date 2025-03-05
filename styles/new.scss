@@ -36,6 +36,14 @@
       margin-bottom: 30px;
     }
   }
+  .google-text {
+    .g1 { color: #4285F4; } /* Blue */
+    .o1 { color: #EA4335; } /* Red */
+    .o2 { color: #FBBC05; } /* Yellow */
+    .g2 { color: #4285F4; } /* Blue */
+    .l { color: #34A853; }  /* Green */
+    .e { color: #EA4335; } /* Red */
+  }
 .parallax-background{
     opacity: 0.6;
     position: absolute;
@@ -558,7 +566,7 @@ body{
                     width: 130px;
                     height: 2px;
                     background: var(--red-bg);
-                    margin: 0px 0px auto;
+                    margin: 0px auto;
                     margin-top: 12px;
                 }
             }
@@ -575,7 +583,7 @@ body{
                     width: 130px;
                     height: 2px;
                     background: var(--red-bg);
-                    margin: 0px 0px auto;
+                    margin: 0px auto;
                     margin-top: 12px;
                 }
             }
@@ -585,20 +593,18 @@ body{
 .news-outer-space{
     .news-outer-space-text{
         >div{
-            div{
-                >h1{
+            >h1{
                     &::after{
                         content: "";
                         display: block;
                         width: 130px;
                         height: 2px;
                         background: var(--red-bg);
-                        margin: 0px 0px auto;
+                        margin: 0px auto;
                         margin-top: 12px;
                     }
                 }
             }
-        }
     }
 }
 .services-outer-space{
@@ -794,6 +800,24 @@ footer.footer-wrapper>.footer-inner .footer-section-heading {
         }
     }
 }
+.services-box{
+    .services-slider{
+        .splide__arrows{
+            display: block;
+            .splide__arrow{
+                background-color: var(--red-bg);
+                &:disabled{
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                svg{
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
+
 .ab-image{
     max-width: 200px;
     position: absolute;

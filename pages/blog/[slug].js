@@ -1,21 +1,23 @@
 import client from "../../apollo-client";
 import sanitizeHtml from "sanitize-html";
 
-import { Layout, LazyImage } from "../../components";
+import { LazyImage } from "../../components";
 import { BLOG } from "../../graphql/queries";
 import Head from "next/head";
-import Link from "next/link";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import Button from "../../components/Button/Button";
+import BlogLayout from "../../components/BlogLayout";
 
 const Blog = ({ blog }) => {
   const createMarkup = (html) => {
     return {
       __html: sanitizeHtml(html, {
-        allowedTags: false,
-        allowedAttributes: false,
+        // allowedTags: false,
+        // allowedAttributes: false,
         exclusiveFilter: function (frame) {
-          return frame.tag === "p" && !frame.text.trim();
+          return (
+            (frame.tag === "p" && !frame.text.trim()) || frame.tag === "script"
+          );
         },
       }),
     };
@@ -210,5 +212,5 @@ export async function getServerSideProps(context) {
 export default Blog;
 
 Blog.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <BlogLayout>{page}</BlogLayout>;
 };

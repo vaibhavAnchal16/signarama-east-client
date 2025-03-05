@@ -10,10 +10,10 @@ export default function ClientSayings({
   const Stars = () => {
     return (
       <div>
-        <div class="star-rating">
-          <div class="stars-outer">
+        <div className="star-rating">
+          <div className="stars-outer">
             <div
-              class="stars-inner"
+              className="stars-inner"
               style={{
                 width: `${(reviews?.totalRating / 5) * 100}%`,
               }}
@@ -45,8 +45,15 @@ export default function ClientSayings({
               textAlign: "center",
             }}
           >
-            {" "}
-            Google Reviews
+            <span class="google-text">
+              <span class="g1">G</span>
+              <span class="o1">o</span>
+              <span class="o2">o</span>
+              <span class="g2">g</span>
+              <span class="l">l</span>
+              <span class="e">e</span>
+              <span class="r"> Reviews</span>
+            </span>
           </h3>
           <div className="d-flex d-flex-wrap d-column-gap d-row-gap d-flex-center">
             <a

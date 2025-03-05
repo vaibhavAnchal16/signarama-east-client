@@ -50,10 +50,10 @@ export default function Hero2({ images = [], reviews }) {
   const Stars = () => {
     return (
       <div>
-        <div class="star-rating">
-          <div class="stars-outer">
+        <div className="star-rating">
+          <div className="stars-outer">
             <div
-              class="stars-inner"
+              className="stars-inner"
               style={{
                 width: `${(reviews?.totalRating / 5) * 100}%`,
               }}

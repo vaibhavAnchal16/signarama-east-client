@@ -1,7 +1,5 @@
-import React, { useState, useSyncExternalStore } from "react";
-import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import LazyImage from "./LazyImage";
 import client from "../apollo-client";
 import { SIGNS } from "../graphql/queries";
 import Image from "next/image";
@@ -9,7 +7,6 @@ import Link from "next/link";
 
 const Header = () => {
   const _ = require("lodash");
-  const router = useRouter();
   const [menu, setMenu] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
   useEffect(() => {
@@ -83,17 +80,13 @@ const Header = () => {
   }, [setMenu]);
 
   const handleClick = (e) => {
-    e.preventDefault();
+    console.log("clicked");
     const vw = Math.max(
       document.documentElement.clientWidth || 0,
       window.innerWidth || 0
     );
-    const href = e.currentTarget.getAttribute("href");
-    if (href) {
-      router.push(href);
-      if (vw < 1024) {
-        setMobileMenu(false);
-      }
+    if (vw < 1024) {
+      setMobileMenu(false);
     }
   };
 
@@ -132,13 +125,9 @@ const Header = () => {
                         e.currentTarget.classList.add("open");
                       }
                     }}
+                    onClick={handleClick}
                   >
-                    <Link
-                      // onClick={handleClick}
-                      href={menuItem?.link}
-                    >
-                      {menuItem?.name}
-                    </Link>
+                    <Link href={menuItem?.link}>{menuItem?.name}</Link>
                     {menuItem?.subMenu ? (
                       <div
                         className="submenu open"
@@ -156,7 +145,7 @@ const Header = () => {
                               <h2>{navItem?.name}</h2>
                               <ul>
                                 {navItem?.signs?.map((item, i) => (
-                                  <li key={i}>
+                                  <li key={i} onClick={handleClick}>
                                     <Link
                                       href={`/our-signs/${item?.slug}`}
                                       key={i}

@@ -5,6 +5,7 @@ import { SIGNS } from "../graphql/queries";
 import client from "../apollo-client";
 import Link from "next/link";
 import _ from "lodash";
+import Head from "next/head";
 
 export default function OurSigns({ signs }) {
   const signGroups = useMemo(() => {
@@ -12,6 +13,12 @@ export default function OurSigns({ signs }) {
   }, [signs]);
   return (
     <div>
+      <Head>
+        <title>
+          {" "}
+          Our Signs | Signarama Brampton West | Sign Company Brampton
+        </title>
+      </Head>
       <div className="howsewingworks services-outer-space">
         <div
           className="howsewingworks-inner d-padding-l d-padding-r d-padding-t"

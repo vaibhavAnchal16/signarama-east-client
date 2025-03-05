@@ -35,9 +35,7 @@ const AboutUs = ({ reviews }) => {
   return (
     <>
       <Head>
-        <title>
-          About Sign A Rama Toronto | Sign Company Toronto | Custom Signs |
-        </title>
+        <title>About us | Signarama Brampton West</title>
         <meta
           name="description"
           content="Sign A Rama Toronto is a premier sign company in Toronto delivering high-end signs to businesses in and around Toronto since 1986. We are a one-stop destination for all your signage needs offering end to end signage solutions from design to installation."
@@ -144,8 +142,8 @@ const AboutUs = ({ reviews }) => {
         </div>
       </div>
       <WhyChooseSignarama
-        outerClass="hero-outer-space"
-        title={`<h1 className="d-margin-b">Our <span className="highlighted">Signs</span></h1><h2 class="d-margin-b">We offer a comprehensive range of signage solutions tailored to meet your specific needs, including:</h2>`}
+        outerclassName="hero-outer-space"
+        title={`<h1 className="d-margin-b">Our <span className="highlighted">Signs</span></h1><h2 className="d-margin-b">We offer a comprehensive range of signage solutions tailored to meet your specific needs, including:</h2>`}
       >
         <div className="hero-text full-width">
           <ul className="about-list">
@@ -217,8 +215,8 @@ const AboutUs = ({ reviews }) => {
       </WhyChooseSignarama>
 
       <WhyChooseSignarama
-        outerClass="hero-outer-space bg-white"
-        innerClass="hero-inner-space d-flex d-flex-wrap d-flex-between d-flex-row-reverse"
+        outerclassName="hero-outer-space bg-white"
+        innerclassName="hero-inner-space d-flex d-flex-wrap d-flex-between d-flex-row-reverse"
       >
         <div className="hero-text full-width">
           <ul>

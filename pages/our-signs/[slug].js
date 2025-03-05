@@ -10,10 +10,10 @@ const Signs = ({ loading, sign }) => {
   const createMarkup = (html) => {
     return {
       __html: sanitizeHtml(html, {
-        allowedTags: false,
-        allowedAttributes: false,
+        // allowedTags: false,
+        // allowedAttributes: false,
         exclusiveFilter: function (frame) {
-          return frame.tag === "p" && !frame.text.trim();
+          (frame.tag === "p" && !frame.text.trim()) || frame.tag === "script";
         },
       }),
     };
@@ -21,7 +21,6 @@ const Signs = ({ loading, sign }) => {
   if (loading) return ``;
   return (
     <>
-      {/* {console.log(sign)} */}
       <Head>
         <title>{sign?.seoData?.seoTitle}</title>
         <meta name="description" content={sign?.seoData?.seoDescription} />

@@ -30,10 +30,11 @@ const Services = ({ data }) => {
     gap: "2rem",
     speed: 1000,
     rewindSpeed: 1000,
+    perMove: 1,
     center: true,
     interval: 3000,
     pagination: false,
-    arrows: false,
+    arrows: true,
     autoplay: false,
     pauseOnHover: true,
     interval: 3000,
@@ -54,20 +55,20 @@ const Services = ({ data }) => {
 
   const SplideItemComponent = ({ value, keyName }) => {
     const splideRef = useRef(null);
-    useEffect(() => {
-      if (splideRef.current) {
-        if (value.length < 3) {
-          document.querySelector(`#${keyName} .gesture-icon`).style.opacity = 0;
-        }
-        splideRef.current.splide.on("move", (newIndex, prevIndex) => {
-          if (newIndex !== prevIndex) {
-            document.querySelector(
-              `#${keyName} .gesture-icon`
-            ).style.opacity = 0;
-          }
-        });
-      }
-    }, [splideRef]);
+    // useEffect(() => {
+    //   if (splideRef.current) {
+    //     if (value.length < 3) {
+    //       document.querySelector(`#${keyName} .gesture-icon`).style.opacity = 0;
+    //     }
+    //     splideRef.current.splide.on("move", (newIndex, prevIndex) => {
+    //       if (newIndex !== prevIndex) {
+    //         document.querySelector(
+    //           `#${keyName} .gesture-icon`
+    //         ).style.opacity = 0;
+    //       }
+    //     });
+    //   }
+    // }, [splideRef]);
     return (
       <Splide
         ref={splideRef}
@@ -186,11 +187,11 @@ const Services = ({ data }) => {
                 id={key}
                 key={index}
               >
-                <div className="gesture-icon">
+                {/* <div className="gesture-icon">
                   <div>
                     <img src="/newimages/dragleft.gif" />
                   </div>
-                </div>
+                </div> */}
                 <SplideItemComponent value={value} keyName={key} />
                 {/* <div className="d-flex d-flex-between d-margin-t">
                   <div></div>

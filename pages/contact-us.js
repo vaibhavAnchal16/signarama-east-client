@@ -28,9 +28,7 @@ const ContactUs = ({ query }) => {
   return (
     <>
       <Head>
-        <title>
-          Contact Us | Sign A Rama Toronto | Sign Company Toronto | Custom Signs
-        </title>
+        <title>Contact us | Signarama Brampton West</title>
         <meta
           name="description"
           content="Sign A Rama Toronto is one of the oldest full-service sign company in Toronto delivering high-end signs to businesses in & around Toronto since 1986. Contact us today by calling us or filling in the contact form with your sign queries and we'll get back to you in no time!"

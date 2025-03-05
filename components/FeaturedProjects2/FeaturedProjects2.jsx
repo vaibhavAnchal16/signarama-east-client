@@ -47,24 +47,21 @@ export default function FeaturedProjects2({ data }) {
   return (
     <section className="featured-outer-space">
       <div className="d-padding-l d-padding-r d-padding-b">
-        <div
-          className="featured-outer-space-text d-flex d-flex-start l-margin-b d-column-gap"
-          style={{
-            alignItems: "flex-end",
-          }}
-        >
+        <div className="featured-outer-space-text d-flex d-flex-center l-margin-b d-column-gap">
           <div>
             <h1 className="d-margin-b">
               {" "}
               Featured <span className="highlighted">Projects</span>{" "}
               <FeaturedIcon fill="#c3122f" />
             </h1>
-            <h2 className="">Some Of Our Latest Sign Projects</h2>
-          </div>
-          <div>
-            {/* <Button href={`/blog`} type={`fill`}>
-              View all Projects
-            </Button> */}
+            <h2
+              className=""
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Some Of Our Latest Sign Projects
+            </h2>
           </div>
         </div>
 

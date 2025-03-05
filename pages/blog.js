@@ -6,6 +6,7 @@ import client from "../apollo-client";
 import { BlogCard, Layout } from "../components";
 import { BLOGS } from "../graphql/queries";
 import { NewsIcon } from "../components/icons";
+import BlogLayout from "../components/BlogLayout";
 const SignBlog = ({ blogs }) => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -35,7 +36,7 @@ const SignBlog = ({ blogs }) => {
   return (
     <>
       <Head>
-        <title>Blog | Sign A Rama Toronto</title>
+        <title>Blogs | Signarama Brampton West</title>
         <meta name="description" content="Blogs & Stories" />
       </Head>
       <div className="bg-white">
@@ -143,5 +144,5 @@ export async function getServerSideProps({ params, query }) {
 export default SignBlog;
 
 SignBlog.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <BlogLayout>{page}</BlogLayout>;
 };

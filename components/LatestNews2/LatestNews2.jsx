@@ -49,41 +49,27 @@ export default function LatestNews2({ data }) {
   return (
     <section className="news-outer-space">
       <div className="d-padding-l d-padding-r d-padding-b">
-        <div
-          className="news-outer-space-text d-flex d-flex-between l-margin-b d-column-gap"
-          style={{
-            alignItems: "flex-end",
-          }}
-        >
+        <div className="news-outer-space-text d-flex d-flex-center l-margin-b d-column-gap">
           <div>
-            <div
-              className="d-flex d-flex-center d-column-gap"
+            <h1
+              className="d-margin-b"
               style={{
-                alignItems: "flex-start",
+                textAlign: "center",
               }}
             >
-              <span
-                className="d-inline-flex"
-                style={{
-                  marginTop: "12px",
-                }}
-              >
-                <NewsIcon />
-              </span>
-              <div>
-                <h1 className="d-margin-b">
-                  Our <span className="highlighted">Success</span> Stories
-                </h1>
-                <p className="">
-                  Explore our latest work, discover innovative sign solutions,
-                  and see how we're helping Brampton businesses shine.
-                </p>
-              </div>
-            </div>
+              Our <span className="highlighted">Success</span> Stories{" "}
+              <NewsIcon />
+            </h1>
+            <p
+              className=""
+              style={{
+                textAlign: "center",
+              }}
+            >
+              Explore our latest work, discover innovative sign solutions, and
+              see how we're helping Brampton businesses shine.
+            </p>
           </div>
-          <Button href={`/blog`} type={`fill`}>
-            View all Stories
-          </Button>
         </div>
 
         <div className="services-inner d-margin-t">
@@ -169,6 +155,11 @@ export default function LatestNews2({ data }) {
               </div>
             </div>
           </div>
+        </div>
+        <div className="d-flex d-flex-center s-margin-t">
+          <Button href={`/blog`} type={`fill`}>
+            View all Stories
+          </Button>
         </div>
       </div>
     </section>

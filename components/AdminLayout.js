@@ -1,4 +1,4 @@
-import { ApolloProvider, useQuery } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import client from "../apollo-client";

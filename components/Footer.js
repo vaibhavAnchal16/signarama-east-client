@@ -6,10 +6,10 @@ const Footer = ({ recentBlogs }) => {
   const Stars = () => {
     return (
       <div>
-        <div class="star-rating">
-          <div class="stars-outer">
+        <div className="star-rating">
+          <div className="stars-outer">
             <div
-              class="stars-inner"
+              className="stars-inner"
               style={{
                 width: `${(recentBlogs?.reviews?.totalRating / 5) * 100}%`,
               }}
@@ -73,14 +73,14 @@ const Footer = ({ recentBlogs }) => {
                   <li>
                     {" "}
                     <a
-                      href="https://www.facebook.com/SignaramaToronto/"
+                      href="https://www.facebook.com/signaramabramptonwest"
                       rel="noreferrer"
                       target="_blank"
                     >
                       Facebook
                     </a>{" "}
                   </li>
-                  <li>
+                  {/* <li>
                     {" "}
                     <a
                       href="https://www.linkedin.com/company/sign-a-rama-toronto/"
@@ -89,11 +89,11 @@ const Footer = ({ recentBlogs }) => {
                     >
                       Linked In
                     </a>{" "}
-                  </li>
+                  </li> */}
                   <li>
                     {" "}
                     <a
-                      href="https://www.instagram.com/signaramato/"
+                      href="https://www.instagram.com/signaramabw/"
                       rel="noreferrer"
                       target="_blank"
                     >
@@ -171,7 +171,15 @@ const Footer = ({ recentBlogs }) => {
                         }}
                       >
                         {" "}
-                        Google Reviews
+                        <span class="google-text">
+                          <span class="g1">G</span>
+                          <span class="o1">o</span>
+                          <span class="o2">o</span>
+                          <span class="g2">g</span>
+                          <span class="l">l</span>
+                          <span class="e">e</span>
+                          <span class="r"> Reviews</span>
+                        </span>
                       </h3>
                       {recentBlogs?.reviews?.reviews && (
                         <div className="ratings d-flex d-flex-wrap d-flex-start">

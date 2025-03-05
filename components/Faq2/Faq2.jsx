@@ -6,7 +6,12 @@ export default function Faq2({ className = "" }) {
       <div className="d-padding-l d-padding-r d-padding-b">
         <div className="faq-outer-space-text l-margin-b">
           <div>
-            <h1 className="d-margin-b">
+            <h1
+              className="d-margin-b"
+              style={{
+                textAlign: "center",
+              }}
+            >
               Frequently Asked <span className="highlighted">Questions</span>{" "}
               <FaqIcon />
             </h1>
