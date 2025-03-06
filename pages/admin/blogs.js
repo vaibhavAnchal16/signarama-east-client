@@ -101,13 +101,15 @@ const Blogs = () => {
               fontSize: "12px",
             }}
             onClick={async (e) => {
-              await removeblogentry({
-                variables: {
-                  id: row._id,
-                },
-              });
-              toast.success("Blog Deleted");
-              refetch();
+              if (confirm("Are you sure you want to delete this blog?")) {
+                await removeblogentry({
+                  variables: {
+                    id: row._id,
+                  },
+                });
+                toast.success("Blog Deleted");
+                refetch();
+              }
             }}
           >
             Delete

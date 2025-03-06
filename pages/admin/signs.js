@@ -113,13 +113,15 @@ const Signs = () => {
               fontSize: "12px",
             }}
             onClick={async (e) => {
-              await removesignentry({
-                variables: {
-                  id: row._id,
-                },
-              });
-              toast.success("Sign Deleted");
-              refetch();
+              if (confirm("Are you sure you want to delete this sign?")) {
+                await removesignentry({
+                  variables: {
+                    id: row._id,
+                  },
+                });
+                toast.success("Sign Deleted");
+                refetch();
+              }
             }}
           >
             Delete

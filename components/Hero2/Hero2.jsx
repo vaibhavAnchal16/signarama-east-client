@@ -200,6 +200,25 @@ export default function Hero2({ images = [], reviews }) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <h3
+                    className="s-margin-b"
+                    style={{
+                      textAlign: "center",
+                      color: "#f0f0f0",
+                      fontWeight: "400",
+                    }}
+                  >
+                    {" "}
+                    <span class="google-text">
+                      <span class="g1">G</span>
+                      <span class="o1">o</span>
+                      <span class="o2">o</span>
+                      <span class="g2">g</span>
+                      <span class="l">l</span>
+                      <span class="e">e</span>
+                      <span class="r"> Reviews</span>
+                    </span>
+                  </h3>
                   <div className="ratings d-flex d-flex-wrap d-flex-center">
                     <div className="images-stack">
                       {reviews?.reviews?.map(({ profile_photo_url }, index) => (
