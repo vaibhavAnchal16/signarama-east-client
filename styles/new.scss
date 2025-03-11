@@ -38,11 +38,19 @@
   }
   .google-text {
     .g1 { color: #4285F4; } /* Blue */
-    .o1 { color: #EA4335; } /* Red */
+    .o1 { color: #EA4335;
+    &.w{
+        color: #fff;
+    }
+    } /* Red */
     .o2 { color: #FBBC05; } /* Yellow */
     .g2 { color: #4285F4; } /* Blue */
     .l { color: #34A853; }  /* Green */
-    .e { color: #EA4335; } /* Red */
+    .e { color: #EA4335;
+    
+    &.w{
+        color: #fff;
+    }} /* Red */
   }
 .parallax-background{
     opacity: 0.6;

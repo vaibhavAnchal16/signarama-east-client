@@ -211,11 +211,11 @@ export default function Hero2({ images = [], reviews }) {
                     {" "}
                     <span class="google-text">
                       <span class="g1">G</span>
-                      <span class="o1">o</span>
+                      <span class="o1 w">o</span>
                       <span class="o2">o</span>
                       <span class="g2">g</span>
                       <span class="l">l</span>
-                      <span class="e">e</span>
+                      <span class="e w">e</span>
                       <span class="r"> Reviews</span>
                     </span>
                   </h3>
